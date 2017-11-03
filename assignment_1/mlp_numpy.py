@@ -40,7 +40,7 @@ class MLP(object):
   def inference(self, x):
     """
     Performs inference given an input array. This is the central portion
-    of the network. Here an input tensor is transformed through application
+    of the network. Here an input array is transformed through application
     of several hidden layer transformations (as defined in the constructor).
     We recommend you to iterate through the list self.n_hidden in order to
     perform the sequential transformations in the MLP. Do not forget to
@@ -100,10 +100,10 @@ class MLP(object):
   def train_step(self, loss, flags):
     """
     Implements a training step using a parameters in flags.
-    Use Stochastic Gradient Descent to update the parameters of the MLP.
+    Use mini-batch Stochastic Gradient Descent to update the parameters of the MLP.
 
     Args:
-      loss: scalar float Tensor.
+      loss: scalar float.
       flags: contains necessary parameters for optimization.
     Returns:
 
