@@ -34,6 +34,13 @@ class Layer(object):
             grads.shape, self.W.shape)
         self.W -= eta * grads
 
+    def log_prior(self):
+        """
+        Log prior over each weight scaler N(0,1)
+        :return: log( prod_i[ p(w_i) ]) = sum_i[ log N(w_i | 0,1)] = -0.5 * sum_i [w_i ** 2]
+        """
+        return - 0.5 * (self.W ** 2).sum()
+
     # keras style printing
     def __repr__(self):
         return "W_{} : {} x {}".format(self.k, *self.W.shape)
@@ -79,7 +86,7 @@ class MLP(object):
         # infer shapes of each layer: dimension-first notation W.shape=(D_k+1, D_k)
         W_shapes = [self.input_dim] + n_hidden + [self.n_classes]
         W_shapes = [(W_shapes[i + 1], W_shapes[i]) for i in range(len(W_shapes) - 1)]
-        bias_shapes = [(shape[0],1) for shape in W_shapes]
+        bias_shapes = [(shape[0], 1) for shape in W_shapes]
 
         # initialize weights
         self.weights = [
@@ -95,6 +102,7 @@ class MLP(object):
         def linear(x):
             return x
 
+        # relu activations for all hidden layers, linear for final layer
         self.activations = [relu for _ in n_hidden] + [linear]
 
         # layer wrapper objects
@@ -145,6 +153,26 @@ class MLP(object):
 
         return logits
 
+    def _softmax2D(self, logits):
+        """
+        Performs a softmax transformation over logits. Maximum normalization is used for numerical stability.
+        :param logits: output of final (hidden) layer [n_classes, batch_size]
+        :return: class probabilities [n_classes, batch_size]
+        """
+        max_per_class = np.max(logits, axis=1, keepdims=True)
+        e = np.exp(logits - max_per_class)
+        probs = e / e.sum(axis=1, keepdims=True)
+        return probs
+
+    def _weight_complexity_cost(self):
+        """
+        Computes the complexity cost of the network parameters.
+        We define a prior over each parameter as w_i ~ N(0,1), for all parameters/weights indexed by i and are assumed to be mutually-independent.
+        This complexity cost is the negative log prior over the weights, and optimizing it corresponds to obtaining a MAP solution for the network weights.
+        :return: scalar complexity cost
+        """
+        return sum([layer.log_prior() for layer in self.layers])
+
     def loss(self, logits, labels):
         """
         Computes the multiclass cross-entropy loss from the logits predictions and
@@ -164,13 +192,11 @@ class MLP(object):
           loss: scalar float, full loss = cross_entropy + reg_loss
         """
 
-        ########################
-        # PUT YOUR CODE HERE  #
-        #######################
-        raise NotImplementedError
-        ########################
-        # END OF YOUR CODE    #
-        #######################
+        preds = self._softmax2D(logits)
+
+        complexity_cost = self._weight_complexity_cost()
+
+
 
         return loss
 
@@ -228,16 +254,17 @@ class MLP(object):
         defs = ['X : {} x batch_size'.format(3 * 32 * 32)] + [str(layer) for layer in self.layers] + [
             'y:{}'.format(self.n_classes)]
 
-        return sep.join(['|\tNetwork Overview'] + defs) + '\n' + '--'*15
+        return sep.join(['|\tNetwork Overview'] + defs) + '\n' + '--' * 15
 
 
 def test():
     net = MLP(n_hidden=[100, 200], n_classes=10)
     print(net)
 
-    X = np.random.rand(256, 3*32*32)
+    X = np.random.rand(256, 3 * 32 * 32)
     logits = net.inference(X)
     print(logits.shape)
+
 
 if __name__ == '__main__':
     test()
