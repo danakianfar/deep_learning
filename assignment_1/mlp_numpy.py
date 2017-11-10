@@ -20,7 +20,9 @@ class Layer(object):
     def forward(self, Z):
         assert Z.shape[0] == self.W.shape[1]
 
-        return np.dot(self.W, Z) + self.b
+        S_k = np.dot(self.W, Z) + self.b
+        Z_k = self.activation(S_k)
+        return Z_k
 
     def backward(self, delta):
         # compute gradients
@@ -43,7 +45,7 @@ class Layer(object):
 
     # keras style printing
     def __repr__(self):
-        return "W_{} : {} x {}".format(self.k, *self.W.shape)
+        return "W_{} : {} x {}, f: {}".format(self.k, *self.W.shape, self.activation.__name__)
 
 
 class MLP(object):
@@ -58,7 +60,8 @@ class MLP(object):
                  n_hidden,
                  n_classes,
                  weight_decay=0.0,
-                 weight_scale=0.0001):
+                 weight_scale=0.0001,
+                 input_dim=3 * 32 * 32):
         """
         Constructor for an MLP object. Default values should be used as hints for
         the usage of each parameter. Weights of the linear layers should be initialized
@@ -81,7 +84,7 @@ class MLP(object):
         self.n_classes = n_classes
         self.weight_decay = weight_decay
         self.weight_scale = weight_scale
-        self.input_dim = 3 * 32 * 32
+        self.input_dim = input_dim
 
         # infer shapes of each layer: dimension-first notation W.shape=(D_k+1, D_k)
         W_shapes = [self.input_dim] + n_hidden + [self.n_classes]
@@ -139,7 +142,7 @@ class MLP(object):
                  to evaluate the model.
         """
 
-        self.results = []
+        self._ff_cache = []
 
         # dim-first convention
         Z = x.T
@@ -147,21 +150,27 @@ class MLP(object):
         # feed-forward through each layer and keep results
         for layer in self.layers:
             Z = layer.forward(Z)
-            self.results.append(Z)
+            self._ff_cache.append(Z)
 
-        logits = self.results[-1]
+        logits = Z.T
 
         return logits
 
     def _softmax2D(self, logits):
         """
         Performs a softmax transformation over logits. Maximum normalization is used for numerical stability.
+
         :param logits: output of final (hidden) layer [n_classes, batch_size]
+
         :return: class probabilities [n_classes, batch_size]
         """
+
+        # subtract maximum logit per mini-batch for numerical stability
         max_per_class = np.max(logits, axis=1, keepdims=True)
         e = np.exp(logits - max_per_class)
-        probs = e / e.sum(axis=1, keepdims=True)
+
+        normalizer = e.sum(axis=1, keepdims=True)
+        probs = e / normalizer
         return probs
 
     def _weight_complexity_cost(self):
@@ -169,9 +178,33 @@ class MLP(object):
         Computes the complexity cost of the network parameters.
         We define a prior over each parameter as w_i ~ N(0,1), for all parameters/weights indexed by i and are assumed to be mutually-independent.
         This complexity cost is the negative log prior over the weights, and optimizing it corresponds to obtaining a MAP solution for the network weights.
+
         :return: scalar complexity cost
         """
         return sum([layer.log_prior() for layer in self.layers])
+
+    def _cross_entropy_loss(self, pred_class_probs, labels):
+        """
+        Computes the cross-entropy loss between predictions and labels (one-hot vectors)
+
+        For each datapoint x with true class label c among K classes, we obtain a predicted class probability vector y
+
+        p: dirac's delta function centered on c (here, a one-hot encoding of K classes)
+        q: softmax probability over K classes
+
+        cross-entropy loss, computed on one-hot encodings
+        H[p,q] = - sum_k p(y_k) * log q(y_k) = - log q(y_c)
+
+        :param pred_class_probs: predicted class probabilities. 2D float array of size [batch_size, self.n_classes].
+        :param labels: true class probabilities as 1-hot vectors. 2D int array [batch_size, n_classes]
+
+        :return: cross-entropy loss, scalar float
+        """
+
+        true_class_probs = np.sum(pred_class_probs * labels, axis=1)
+        loss = - np.log(true_class_probs).sum()
+
+        return loss
 
     def loss(self, logits, labels):
         """
@@ -194,9 +227,11 @@ class MLP(object):
 
         preds = self._softmax2D(logits)
 
-        complexity_cost = self._weight_complexity_cost()
+        nl_prior = self._weight_complexity_cost()
 
+        nl_likelihood = self._cross_entropy_loss(preds, labels)
 
+        loss = nl_likelihood + self.weight_decay * nl_prior
 
         return loss
 
@@ -211,14 +246,11 @@ class MLP(object):
         Returns:
 
         """
+        # compute gradients
 
-        ########################
-        # PUT YOUR CODE HERE  #
-        #######################
-        raise NotImplementedError
-        ########################
-        # END OF YOUR CODE    #
-        #######################
+        # apply grads
+
+        # keep stats
 
         return
 
@@ -237,14 +269,20 @@ class MLP(object):
           accuracy: scalar float, the accuracy of predictions,
                     i.e. the average correct predictions over the whole batch.
         """
+        batch_size = logits.shape[0]
+        class_preds = np.zeros_like(logits)
 
-        ########################
-        # PUT YOUR CODE HERE  #
-        #######################
-        raise NotImplementedError
-        ########################
-        # END OF YOUR CODE    #
-        #######################
+        # top predicted class per datapoint in minibatch
+        top_class = np.argmax(logits, axis=1)
+
+        # create one-hot matrix of predicted class
+        class_preds[np.arange(batch_size), top_class] = 1.
+
+        # correct predictions
+        correct_preds = class_preds * labels
+
+        # total number of correct preds: sum of values in matrix
+        accuracy = correct_preds.sum() / batch_size
 
         return accuracy
 
@@ -258,12 +296,32 @@ class MLP(object):
 
 
 def test():
-    net = MLP(n_hidden=[100, 200], n_classes=10)
+    batch_size = 256
+    n_classes = 10
+    input_dim = 3*32*32
+
+    net = MLP(n_hidden=[1000, 100, 200], n_classes=10, input_dim=input_dim)
     print(net)
 
-    X = np.random.rand(256, 3 * 32 * 32)
+    X = np.random.standard_normal((batch_size, input_dim))
+    Y = np.zeros((batch_size, n_classes))
+    Y[np.arange(batch_size), np.random.choice(10, size=batch_size)] = 1
+
     logits = net.inference(X)
-    print(logits.shape)
+    print('logits shape = ', logits.shape)
+
+    complexity_cost = net._weight_complexity_cost()
+    print('complexity cost', complexity_cost)
+
+    pred_probs = net._softmax2D(logits)
+    crossent_loss = net._cross_entropy_loss(pred_class_probs=pred_probs, labels=Y)
+    print('X entropy loss', crossent_loss)
+
+    loss = net.loss(logits, Y)
+    print('Total loss', loss)
+
+    accuracy = net.accuracy(logits, Y)
+    print('Accuracy', accuracy)
 
 
 if __name__ == '__main__':
