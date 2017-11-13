@@ -1,530 +1,2610 @@
 {'dnn_hidden_units': '100', 'learning_rate': 0.002, 'max_steps': 1500, 'batch_size': 200, 'weight_init': 'normal', 'weight_init_scale': 0.0001, 'weight_reg': 'l2', 'weight_reg_strength': 0.0, 'dropout_rate': 0.0, 'activation': 'relu', 'optimizer': 'sgd', 'data_dir': './cifar10/cifar-10-batches-py', 'log_dir': './logs/cifar10', 'grad_clipping': False, 'save_path': './trained_models/', 'model_name': 'default', 'train_settings_path': 'mlp_train_settings.json'}
-Ep.0: train_loss:+2.3026, train_accuracy:+0.0375
-Ep.10: train_loss:+2.2991, train_accuracy:+0.1778
-Ep.20: train_loss:+2.2560, train_accuracy:+0.1870
-Ep.30: train_loss:+2.0756, train_accuracy:+0.1960
-Ep.40: train_loss:+1.9837, train_accuracy:+0.2051
-Ep.50: train_loss:+2.0475, train_accuracy:+0.2184
-Ep.60: train_loss:+1.8641, train_accuracy:+0.2314
-Ep.70: train_loss:+1.8800, train_accuracy:+0.2417
-Ep.80: train_loss:+1.8533, train_accuracy:+0.2521
-Ep.90: train_loss:+1.8399, train_accuracy:+0.2590
-==> Ep.99: test_loss:+1.8065, test_accuracy:+0.2972
+Ep.0: train_loss:+2.3026, train_accuracy:+0.0550
+Ep.10: train_loss:+2.2992, train_accuracy:+0.1851
+Ep.20: train_loss:+2.2475, train_accuracy:+0.1943
+Ep.30: train_loss:+2.0740, train_accuracy:+0.2029
+Ep.40: train_loss:+1.9832, train_accuracy:+0.2110
+Ep.50: train_loss:+2.0436, train_accuracy:+0.2235
+Ep.60: train_loss:+1.8618, train_accuracy:+0.2353
+Ep.70: train_loss:+1.8754, train_accuracy:+0.2459
+Ep.80: train_loss:+1.8438, train_accuracy:+0.2555
+Ep.90: train_loss:+1.8315, train_accuracy:+0.2626
+==> Ep.99: test_loss:+1.7972, test_accuracy:+0.3017
 ==> Confusion Matrix on test set 
- [[446  70  62  25  26  25  18  76 208  44]
- [ 67 482   9  11  25  61  27  48 101 169]
- [128  86 100  21 202 167 103 138  35  20]
- [ 34 118  39  56  95 344  60 195  27  32]
- [ 52  79  41  22 347 158 117 130  37  17]
- [ 19  56  36  31  95 471  61 155  60  16]
- [ 13  99  39  23 157 231 282 131   6  19]
- [ 40  72  19  21 142 141  28 447  48  42]
- [180 108  10   8  10  74   3  41 476  90]
- [ 50 222   5  14  15  31  22 110 133 398]] 
+ [[448  62  47  40  28  26  18  76 210  45]
+ [ 62 480   8  16  30  64  23  47  99 171]
+ [134  77 101  32 200 159 103 136  40  18]
+ [ 33 103  42  63  94 356  64 181  30  34]
+ [ 49  67  51  25 341 162 107 146  38  14]
+ [ 25  52  35  34  81 475  60 163  61  14]
+ [ 13  85  51  32 159 244 269 121   8  18]
+ [ 33  72  20  25 129 140  30 456  52  43]
+ [176 100   6  10  13  73   3  39 485  95]
+ [ 48 226   4  21  14  32  22  88 129 416]] 
 
-Ep.100: train_loss:+1.7724, train_accuracy:+0.2681
-Ep.110: train_loss:+1.7636, train_accuracy:+0.2775
-Ep.120: train_loss:+1.6091, train_accuracy:+0.2853
-Ep.130: train_loss:+1.5276, train_accuracy:+0.2933
-Ep.140: train_loss:+1.9450, train_accuracy:+0.2981
-Ep.150: train_loss:+1.7178, train_accuracy:+0.3028
-Ep.160: train_loss:+1.6662, train_accuracy:+0.3080
-Ep.170: train_loss:+1.6550, train_accuracy:+0.3124
-Ep.180: train_loss:+1.6870, train_accuracy:+0.3175
-Ep.190: train_loss:+1.7520, train_accuracy:+0.3217
-==> Ep.199: test_loss:+1.6765, test_accuracy:+0.3580
+Ep.100: train_loss:+1.7638, train_accuracy:+0.2721
+Ep.110: train_loss:+1.7551, train_accuracy:+0.2811
+Ep.120: train_loss:+1.6008, train_accuracy:+0.2879
+Ep.130: train_loss:+1.5269, train_accuracy:+0.2958
+Ep.140: train_loss:+1.9376, train_accuracy:+0.3004
+Ep.150: train_loss:+1.7122, train_accuracy:+0.3051
+Ep.160: train_loss:+1.6665, train_accuracy:+0.3102
+Ep.170: train_loss:+1.6511, train_accuracy:+0.3146
+Ep.180: train_loss:+1.6849, train_accuracy:+0.3199
+Ep.190: train_loss:+1.7388, train_accuracy:+0.3245
+==> Ep.199: test_loss:+1.6696, test_accuracy:+0.3603
 ==> Confusion Matrix on test set 
- [[444  59  76  61   5  19  38  31 148 119]
- [ 42 526  22  31   6   7  57  17  58 234]
- [100  38 393 124  22  21 204  36  30  32]
- [ 28  70 138 324   8  78 225  27  30  72]
- [ 44  49 367  91  77  21 234  54  27  36]
- [ 23  37 163 254  10 214 182  36  38  43]
- [  9  49 139 124   4  18 593   9  14  41]
- [ 33  50 145 113  33  34 103 347  15 127]
- [119 110  25  38   5  21  16   4 473 189]
- [ 37 176  24  41   3   9  35  24  48 603]] 
+ [[449  67  90  52   6  21  34  29 133 119]
+ [ 39 537  29  32   6  10  51  14  49 233]
+ [ 95  43 387 124  22  24 206  40  31  28]
+ [ 27  59 146 328  12  87 208  26  29  78]
+ [ 49  43 361  96  89  23 219  50  27  43]
+ [ 15  44 168 241  13 228 179  38  34  40]
+ [ 11  51 144 141   4  15 573   8  13  40]
+ [ 25  51 157 110  34  35  96 346  16 130]
+ [116 116  29  32   5  26   9   7 465 195]
+ [ 38 189  19  53   4   7  35  23  44 588]] 
 
-Ep.200: train_loss:+1.6531, train_accuracy:+0.3252
-Ep.210: train_loss:+1.7328, train_accuracy:+0.3277
-Ep.220: train_loss:+1.6489, train_accuracy:+0.3309
-Ep.230: train_loss:+1.5835, train_accuracy:+0.3339
-Ep.240: train_loss:+1.7591, train_accuracy:+0.3369
-Ep.250: train_loss:+1.5886, train_accuracy:+0.3403
-Ep.260: train_loss:+1.6101, train_accuracy:+0.3438
-Ep.270: train_loss:+1.6397, train_accuracy:+0.3455
-Ep.280: train_loss:+1.5406, train_accuracy:+0.3482
-Ep.290: train_loss:+1.6176, train_accuracy:+0.3511
-==> Ep.299: test_loss:+1.7492, test_accuracy:+0.3751
+Ep.200: train_loss:+1.6265, train_accuracy:+0.3278
+Ep.210: train_loss:+1.7301, train_accuracy:+0.3303
+Ep.220: train_loss:+1.6387, train_accuracy:+0.3334
+Ep.230: train_loss:+1.5614, train_accuracy:+0.3363
+Ep.240: train_loss:+1.7371, train_accuracy:+0.3394
+Ep.250: train_loss:+1.5844, train_accuracy:+0.3426
+Ep.260: train_loss:+1.5795, train_accuracy:+0.3461
+Ep.270: train_loss:+1.6115, train_accuracy:+0.3480
+Ep.280: train_loss:+1.5443, train_accuracy:+0.3508
+Ep.290: train_loss:+1.5959, train_accuracy:+0.3537
+==> Ep.299: test_loss:+1.7287, test_accuracy:+0.3777
 ==> Confusion Matrix on test set 
- [[357  18  48  33  12  12  32  31 427  30]
- [ 31 336  34  72   6  25  52  68 249 127]
- [119  14 282 134  47  57 147  96  96   8]
- [ 53  14  70 368  10 123 142  95  97  28]
- [ 62  13 179  96 180  43 164 185  66  12]
- [ 36  12  94 241  27 251 103 133  91  12]
- [ 23  17  74 140  36  43 530  75  53   9]
- [ 57  13  52  73  23  54  48 529 111  40]
- [ 42  53  15  54   4  18  12  18 749  35]
- [ 39 104  17  57   8  17  52  46 364 296]] 
+ [[415  20  47  28   8  11  28  31 378  34]
+ [ 34 361  33  62   6  28  52  61 223 140]
+ [152  18 294 133  39  48 144  87  75  10]
+ [ 77  15  83 352  11 122 136  85  83  36]
+ [ 73  16 201 102 174  40 149 166  66  13]
+ [ 50  16  91 253  24 244 101 122  86  13]
+ [ 38  14  94 148  41  31 517  62  41  14]
+ [ 72  15  61  73  21  47  51 525  91  44]
+ [ 52  56  15  48   6  21  11  19 731  41]
+ [ 47 117  23  46   4  16  50  52 319 326]] 
 
-Ep.300: train_loss:+1.7845, train_accuracy:+0.3536
-Ep.310: train_loss:+1.5362, train_accuracy:+0.3566
-Ep.320: train_loss:+1.6471, train_accuracy:+0.3592
-Ep.330: train_loss:+1.6648, train_accuracy:+0.3612
-Ep.340: train_loss:+1.6021, train_accuracy:+0.3625
-Ep.350: train_loss:+1.6854, train_accuracy:+0.3646
-Ep.360: train_loss:+1.4915, train_accuracy:+0.3661
-Ep.370: train_loss:+1.4525, train_accuracy:+0.3678
-Ep.380: train_loss:+1.6140, train_accuracy:+0.3696
-Ep.390: train_loss:+1.5849, train_accuracy:+0.3712
-==> Ep.399: test_loss:+1.5871, test_accuracy:+0.3848
+Ep.300: train_loss:+1.7677, train_accuracy:+0.3556
+Ep.310: train_loss:+1.5395, train_accuracy:+0.3580
+Ep.320: train_loss:+1.6106, train_accuracy:+0.3605
+Ep.330: train_loss:+1.6408, train_accuracy:+0.3624
+Ep.340: train_loss:+1.5749, train_accuracy:+0.3639
+Ep.350: train_loss:+1.6810, train_accuracy:+0.3659
+Ep.360: train_loss:+1.4892, train_accuracy:+0.3675
+Ep.370: train_loss:+1.4328, train_accuracy:+0.3691
+Ep.380: train_loss:+1.6191, train_accuracy:+0.3709
+Ep.390: train_loss:+1.6018, train_accuracy:+0.3725
+==> Ep.399: test_loss:+1.5811, test_accuracy:+0.3876
 ==> Confusion Matrix on test set 
- [[466  70 176  25  48  18  21  31  73  72]
- [ 38 616  16  26  46   7  15  25  33 178]
- [ 64  45 286 104 267  41  87  66  19  21]
- [ 15  37  84 327 160 105 130  53  23  66]
- [ 48  25 110  55 527  29  90  82  14  20]
- [ 13  30 101 210 171 267  87  63  28  30]
- [  4  33  63 104 282  30 422  19  16  27]
- [ 36  39  47  65 190  59  26 454  11  73]
- [153 160  34  28  40  21   8  17 426 113]
- [ 42 204  15  33  41  12  25  41  20 567]] 
+ [[439  94 153  28  50  25  21  32  86  72]
+ [ 24 646  21  22  47   6  19  18  34 163]
+ [ 63  45 274 109 247  45 108  69  17  23]
+ [ 13  36  72 291 166 108 146  75  24  69]
+ [ 45  25  99  60 505  31 104  92  15  24]
+ [  9  33  90 217 165 259 100  75  30  22]
+ [  7  33  54 108 251  29 451  25  16  26]
+ [ 24  48  39  58 172  55  35 486  12  71]
+ [121 174  27  31  42  26   7  18 449 105]
+ [ 32 221  14  31  36  12  23  49  24 558]] 
 
-Ep.400: train_loss:+1.7091, train_accuracy:+0.3732
-Ep.410: train_loss:+1.7415, train_accuracy:+0.3744
-Ep.420: train_loss:+1.6006, train_accuracy:+0.3764
-Ep.430: train_loss:+1.5887, train_accuracy:+0.3779
-Ep.440: train_loss:+1.6847, train_accuracy:+0.3790
-Ep.450: train_loss:+1.5622, train_accuracy:+0.3804
-Ep.460: train_loss:+1.6315, train_accuracy:+0.3816
-Ep.470: train_loss:+1.6739, train_accuracy:+0.3830
-Ep.480: train_loss:+1.6703, train_accuracy:+0.3840
-Ep.490: train_loss:+1.5997, train_accuracy:+0.3849
-==> Ep.499: test_loss:+1.5524, test_accuracy:+0.3980
+Ep.400: train_loss:+1.7331, train_accuracy:+0.3743
+Ep.410: train_loss:+1.7144, train_accuracy:+0.3753
+Ep.420: train_loss:+1.5539, train_accuracy:+0.3771
+Ep.430: train_loss:+1.5864, train_accuracy:+0.3785
+Ep.440: train_loss:+1.6699, train_accuracy:+0.3797
+Ep.450: train_loss:+1.5544, train_accuracy:+0.3809
+Ep.460: train_loss:+1.6628, train_accuracy:+0.3822
+Ep.470: train_loss:+1.6885, train_accuracy:+0.3835
+Ep.480: train_loss:+1.6577, train_accuracy:+0.3848
+Ep.490: train_loss:+1.5912, train_accuracy:+0.3855
+==> Ep.499: test_loss:+1.5450, test_accuracy:+0.4006
 ==> Confusion Matrix on test set 
- [[658  66  19  34   9   6  23  34 125  26]
- [ 58 661  13  35  13  13  14  35  78  80]
- [180  55 253 158  50  51 128  95  20  10]
- [ 77  56  50 419  31 110 115  75  27  40]
- [107  33 154 115 238  39 153 124  27  10]
- [ 53  38  62 306  32 281  85  96  32  15]
- [ 26  56  68 145  72  32 529  40  14  18]
- [106  33  33 104  54  51  32 523  19  45]
- [199 106   3  48   7  14  11  16 571  25]
- [103 269   7  47   9  14  33  33 103 382]] 
+ [[649  60  17  37  12   9  23  35 126  32]
+ [ 56 658   9  39   9  10  27  32  71  89]
+ [179  51 233 150  53  60 173  76  18   7]
+ [ 75  46  51 408  26 114 151  63  27  39]
+ [103  30 128 118 230  34 208 113  27   9]
+ [ 44  24  63 308  26 276 119  89  37  14]
+ [ 25  43  52 127  39  27 628  29  16  14]
+ [ 87  40  32 118  44  47  58 504  20  50]
+ [184  99   2  41   5  15  15  17 597  25]
+ [ 94 280   8  44   8  15  37  34  89 391]] 
 
-Ep.500: train_loss:+1.5178, train_accuracy:+0.3854
-Ep.510: train_loss:+1.3955, train_accuracy:+0.3870
-Ep.520: train_loss:+1.6982, train_accuracy:+0.3883
-Ep.530: train_loss:+1.4949, train_accuracy:+0.3894
-Ep.540: train_loss:+1.5899, train_accuracy:+0.3906
-Ep.550: train_loss:+1.4543, train_accuracy:+0.3919
-Ep.560: train_loss:+1.6971, train_accuracy:+0.3929
-Ep.570: train_loss:+1.5032, train_accuracy:+0.3944
-Ep.580: train_loss:+1.6066, train_accuracy:+0.3957
-Ep.590: train_loss:+1.4756, train_accuracy:+0.3967
-==> Ep.599: test_loss:+1.5724, test_accuracy:+0.4079
+Ep.500: train_loss:+1.5334, train_accuracy:+0.3862
+Ep.510: train_loss:+1.4838, train_accuracy:+0.3876
+Ep.520: train_loss:+1.6970, train_accuracy:+0.3890
+Ep.530: train_loss:+1.5553, train_accuracy:+0.3900
+Ep.540: train_loss:+1.6498, train_accuracy:+0.3913
+Ep.550: train_loss:+1.4630, train_accuracy:+0.3927
+Ep.560: train_loss:+1.7208, train_accuracy:+0.3938
+Ep.570: train_loss:+1.5381, train_accuracy:+0.3952
+Ep.580: train_loss:+1.6115, train_accuracy:+0.3963
+Ep.590: train_loss:+1.4371, train_accuracy:+0.3973
+==> Ep.599: test_loss:+1.5768, test_accuracy:+0.4105
 ==> Confusion Matrix on test set 
- [[430  68 163  26  25  46  18  37 162  25]
- [ 33 669  39  21   9  26  14  18  77  94]
- [ 49  73 486  66  52 129  39  76  26   4]
- [ 19  87 151 242  21 307  60  69  27  17]
- [ 30  81 254  47 244 104  37 163  35   5]
- [ 12  54 143 123  32 489  21  95  26   5]
- [ 14  87 175 134 100 141 290  39  13   7]
- [ 29  55  86  52  39 108   8 595  12  16]
- [ 72 107  47  19  13  51   6  13 633  39]
- [ 36 277  43  47  13  38  29  44  96 377]] 
+ [[353  62 169  27  20  79  22  50 184  34]
+ [ 21 673  31  28  10  33  12  16  63 113]
+ [ 48  79 439  69  68 127  54  89  23   4]
+ [ 18  88 117 272  27 261  78  82  34  23]
+ [ 42  82 202  61 264  87  68 154  33   7]
+ [ 11  57 126 159  35 457  34  92  25   4]
+ [ 18  76 135 128 107 101 373  39  16   7]
+ [ 25  60  69  54  42  99  14 602  11  24]
+ [ 55  99  44  19  17  61   5  15 633  52]
+ [ 26 271  40  56  12  33  25  59  71 407]] 
 
-Ep.600: train_loss:+1.4777, train_accuracy:+0.3977
-Ep.610: train_loss:+1.6379, train_accuracy:+0.3987
-Ep.620: train_loss:+1.3928, train_accuracy:+0.3998
-Ep.630: train_loss:+1.5855, train_accuracy:+0.4005
-Ep.640: train_loss:+1.6490, train_accuracy:+0.4012
-Ep.650: train_loss:+1.4359, train_accuracy:+0.4025
-Ep.660: train_loss:+1.5228, train_accuracy:+0.4033
-Ep.670: train_loss:+1.4973, train_accuracy:+0.4042
-Ep.680: train_loss:+1.7695, train_accuracy:+0.4049
-Ep.690: train_loss:+1.5237, train_accuracy:+0.4057
-==> Ep.699: test_loss:+1.5575, test_accuracy:+0.4137
+Ep.600: train_loss:+1.4861, train_accuracy:+0.3983
+Ep.610: train_loss:+1.6417, train_accuracy:+0.3992
+Ep.620: train_loss:+1.3976, train_accuracy:+0.4001
+Ep.630: train_loss:+1.5809, train_accuracy:+0.4010
+Ep.640: train_loss:+1.6287, train_accuracy:+0.4016
+Ep.650: train_loss:+1.4073, train_accuracy:+0.4027
+Ep.660: train_loss:+1.5091, train_accuracy:+0.4035
+Ep.670: train_loss:+1.4908, train_accuracy:+0.4045
+Ep.680: train_loss:+1.7782, train_accuracy:+0.4054
+Ep.690: train_loss:+1.5146, train_accuracy:+0.4060
+==> Ep.699: test_loss:+1.5912, test_accuracy:+0.4153
 ==> Confusion Matrix on test set 
- [[486  64  48  62  26  60   9  42 176  27]
- [ 33 688  21  26  12  36  11  50  71  52]
- [ 80  38 337 163 103 102  30 113  28   6]
- [ 21  49  85 351  57 278  47  81  16  15]
- [ 43  41 147  92 337  96  38 165  30  11]
- [ 16  32  86 228  56 438  18  99  22   5]
- [  9  46 144 151 133 158 279  57  18   5]
- [ 53  32  42  85  56 115   8 581  10  18]
- [ 88 118  14  27  10  69   2  31 621  20]
- [ 69 311  18  51  24  38  20  69  78 322]] 
+ [[580  54  52  31  22  41  18  33 152  17]
+ [ 51 690  39  29  10  31   8  36  64  42]
+ [120  30 390 131  70 106  20  99  32   2]
+ [ 48  42 129 331  29 262  44  76  20  19]
+ [ 82  21 261  90 233 101  24 159  23   6]
+ [ 39  29 106 220  37 436  17  92  23   1]
+ [ 17  41 262 135  90 155 217  61  17   5]
+ [ 89  33  58  82  46 100  10 549  19  14]
+ [119 100  17  27   9  67   3  23 618  17]
+ [ 94 337  22  45  19  38  14  52  97 282]] 
 
-Ep.700: train_loss:+1.4420, train_accuracy:+0.4066
-Ep.710: train_loss:+1.5173, train_accuracy:+0.4075
-Ep.720: train_loss:+1.3741, train_accuracy:+0.4082
-Ep.730: train_loss:+1.4764, train_accuracy:+0.4091
-Ep.740: train_loss:+1.5028, train_accuracy:+0.4098
-Ep.750: train_loss:+1.6920, train_accuracy:+0.4104
-Ep.760: train_loss:+1.5628, train_accuracy:+0.4114
-Ep.770: train_loss:+1.2597, train_accuracy:+0.4124
-Ep.780: train_loss:+1.7347, train_accuracy:+0.4133
-Ep.790: train_loss:+1.6727, train_accuracy:+0.4142
-==> Ep.799: test_loss:+1.5721, test_accuracy:+0.4188
+Ep.700: train_loss:+1.4985, train_accuracy:+0.4068
+Ep.710: train_loss:+1.5187, train_accuracy:+0.4077
+Ep.720: train_loss:+1.3587, train_accuracy:+0.4081
+Ep.730: train_loss:+1.5131, train_accuracy:+0.4091
+Ep.740: train_loss:+1.4651, train_accuracy:+0.4096
+Ep.750: train_loss:+1.6888, train_accuracy:+0.4102
+Ep.760: train_loss:+1.5493, train_accuracy:+0.4111
+Ep.770: train_loss:+1.2484, train_accuracy:+0.4123
+Ep.780: train_loss:+1.7821, train_accuracy:+0.4132
+Ep.790: train_loss:+1.6179, train_accuracy:+0.4141
+==> Ep.799: test_loss:+1.6118, test_accuracy:+0.4190
 ==> Confusion Matrix on test set 
- [[465  40  29   0  33  48  30  45 233  77]
- [ 30 503  11   0   9  45  26  14 120 242]
- [ 85  44 256  10  85 216 157  79  50  18]
- [ 39  36  47  14  44 474 170  60  35  81]
- [ 57  43 110   1 213 188 223 105  40  20]
- [ 18  17  48  10  54 607 109  71  40  26]
- [ 13  40  36   4  50 123 646  27  20  41]
- [ 20  34  36   4  63 182  52 533  23  53]
- [ 56  71   4   2  11  56  13  15 720  52]
- [ 24 128   6   2  17  45  31  51 126 570]] 
+ [[491  25  16   2  28  33  37  34 250  84]
+ [ 24 388   7   1   7  72  51  19 130 301]
+ [104  19 195   4  83 233 202  74  60  26]
+ [ 48  10  39  19  42 452 199  60  51  80]
+ [ 60   9  76   5 200 190 265 119  52  24]
+ [ 32   7  34   5  46 569 130  79  53  45]
+ [ 20  10  23   1  42 124 690  16  19  55]
+ [ 25  12  24   5  49 168  62 559  41  55]
+ [ 56  44   3   1  12  56  14  11 735  68]
+ [ 23  76   6   1  16  56  37  60 122 603]] 
 
-Ep.800: train_loss:+1.6669, train_accuracy:+0.4149
-Ep.810: train_loss:+1.4999, train_accuracy:+0.4156
-Ep.820: train_loss:+1.5142, train_accuracy:+0.4161
-Ep.830: train_loss:+1.4905, train_accuracy:+0.4167
-Ep.840: train_loss:+1.5291, train_accuracy:+0.4172
-Ep.850: train_loss:+1.3385, train_accuracy:+0.4182
-Ep.860: train_loss:+1.7513, train_accuracy:+0.4187
-Ep.870: train_loss:+1.5346, train_accuracy:+0.4194
-Ep.880: train_loss:+1.5554, train_accuracy:+0.4200
-Ep.890: train_loss:+1.2590, train_accuracy:+0.4202
-==> Ep.899: test_loss:+1.5417, test_accuracy:+0.4230
+Ep.800: train_loss:+1.6915, train_accuracy:+0.4148
+Ep.810: train_loss:+1.4980, train_accuracy:+0.4155
+Ep.820: train_loss:+1.5387, train_accuracy:+0.4160
+Ep.830: train_loss:+1.4681, train_accuracy:+0.4167
+Ep.840: train_loss:+1.5330, train_accuracy:+0.4172
+Ep.850: train_loss:+1.3329, train_accuracy:+0.4181
+Ep.860: train_loss:+1.7825, train_accuracy:+0.4186
+Ep.870: train_loss:+1.4885, train_accuracy:+0.4194
+Ep.880: train_loss:+1.5057, train_accuracy:+0.4200
+Ep.890: train_loss:+1.2220, train_accuracy:+0.4203
+==> Ep.899: test_loss:+1.5349, test_accuracy:+0.4227
 ==> Confusion Matrix on test set 
- [[649  37  26   9  15  84  20  25 114  21]
- [ 78 634   4  13   2  86  21  13  86  63]
- [124  26 210  38  65 350 107  49  22   9]
- [ 35  26  28 135  18 618  58  24  29  29]
- [ 76  25  58  45 249 287 152  76  25   7]
- [ 27  22  28  52  39 726  38  34  27   7]
- [ 16  29  34  58  37 312 467  14  11  22]
- [ 72  28  16  25  59 292  16 461   9  22]
- [186  70   4   6  10  72   5  14 607  26]
- [110 266   6  22   7  87  26  39  74 363]] 
+ [[662  31  34  14  17  80  17  17 105  23]
+ [ 81 612   6  14   3  77  20  12  94  81]
+ [142  29 211  47  75 349  79  44  17   7]
+ [ 37  19  32 136  24 608  55  29  27  33]
+ [ 76  22  73  43 264 268 142  76  21  15]
+ [ 37  17  35  65  35 717  27  34  23  10]
+ [ 17  19  47  81  44 323 424   9  15  21]
+ [ 69  29  18  30  59 275  18 466   7  29]
+ [196  67   4   9   9  71   3   8 600  33]
+ [115 226   5  22   5  82  20  43  79 403]] 
 
-Ep.900: train_loss:+1.3734, train_accuracy:+0.4209
-Ep.910: train_loss:+1.6186, train_accuracy:+0.4215
-Ep.920: train_loss:+1.3922, train_accuracy:+0.4220
-Ep.930: train_loss:+1.4965, train_accuracy:+0.4227
-Ep.940: train_loss:+1.4090, train_accuracy:+0.4234
-Ep.950: train_loss:+1.5682, train_accuracy:+0.4239
-Ep.960: train_loss:+1.7169, train_accuracy:+0.4244
-Ep.970: train_loss:+1.5030, train_accuracy:+0.4249
-Ep.980: train_loss:+1.5388, train_accuracy:+0.4252
-Ep.990: train_loss:+1.4137, train_accuracy:+0.4257
-==> Ep.999: test_loss:+1.5207, test_accuracy:+0.4271
+Ep.900: train_loss:+1.3929, train_accuracy:+0.4211
+Ep.910: train_loss:+1.6671, train_accuracy:+0.4217
+Ep.920: train_loss:+1.4146, train_accuracy:+0.4222
+Ep.930: train_loss:+1.5242, train_accuracy:+0.4228
+Ep.940: train_loss:+1.4305, train_accuracy:+0.4234
+Ep.950: train_loss:+1.6074, train_accuracy:+0.4239
+Ep.960: train_loss:+1.7279, train_accuracy:+0.4243
+Ep.970: train_loss:+1.5276, train_accuracy:+0.4248
+Ep.980: train_loss:+1.5585, train_accuracy:+0.4252
+Ep.990: train_loss:+1.4581, train_accuracy:+0.4257
+==> Ep.999: test_loss:+1.5290, test_accuracy:+0.4267
 ==> Confusion Matrix on test set 
- [[554  80  19  63  15  17  14  51 136  51]
- [ 42 726   7  31   3   9   9  12  60 101]
- [ 94  86 274 201  82  66  93  53  25  26]
- [ 34 106  37 485  34 119  75  45  24  41]
- [ 52  93 119 122 317  44 123  76  25  29]
- [ 17  62  54 379  47 277  56  56  31  21]
- [ 17  96  49 223  67  34 456  15  17  26]
- [ 30  86  34 126  87  62  21 483  13  58]
- [ 97 112  13  44  11  17   4   8 651  43]
- [ 36 279   9  73   6  18  16  32  63 468]] 
+ [[569  81  17  77  14  16  17  50 115  44]
+ [ 39 741   3  31   4   7  12  10  58  95]
+ [100  95 259 206  73  73 104  57  21  12]
+ [ 29 103  34 516  22 106  90  43  23  34]
+ [ 55  91 118 139 266  38 154  91  23  25]
+ [ 20  70  45 389  41 256  68  66  28  17]
+ [ 18  80  52 247  43  27 488  14  14  17]
+ [ 29  87  30 124  65  59  35 525  14  32]
+ [127 118  10  46  10  18   4  10 617  40]
+ [ 42 310   4  91   6  20  11  38  64 414]] 
 
-Ep.1000: train_loss:+1.4812, train_accuracy:+0.4263
-Ep.1010: train_loss:+1.1921, train_accuracy:+0.4272
-Ep.1020: train_loss:+1.4535, train_accuracy:+0.4278
-Ep.1030: train_loss:+1.3528, train_accuracy:+0.4283
-Ep.1040: train_loss:+1.4748, train_accuracy:+0.4287
-Ep.1050: train_loss:+1.4591, train_accuracy:+0.4293
-Ep.1060: train_loss:+1.5814, train_accuracy:+0.4299
-Ep.1070: train_loss:+1.5708, train_accuracy:+0.4305
-Ep.1080: train_loss:+1.4760, train_accuracy:+0.4310
-Ep.1090: train_loss:+1.7150, train_accuracy:+0.4316
-==> Ep.1099: test_loss:+1.5885, test_accuracy:+0.4302
+Ep.1000: train_loss:+1.4962, train_accuracy:+0.4264
+Ep.1010: train_loss:+1.1989, train_accuracy:+0.4270
+Ep.1020: train_loss:+1.4859, train_accuracy:+0.4276
+Ep.1030: train_loss:+1.3617, train_accuracy:+0.4281
+Ep.1040: train_loss:+1.4342, train_accuracy:+0.4285
+Ep.1050: train_loss:+1.4872, train_accuracy:+0.4290
+Ep.1060: train_loss:+1.5611, train_accuracy:+0.4296
+Ep.1070: train_loss:+1.6159, train_accuracy:+0.4302
+Ep.1080: train_loss:+1.5394, train_accuracy:+0.4307
+Ep.1090: train_loss:+1.7128, train_accuracy:+0.4312
+==> Ep.1099: test_loss:+1.5848, test_accuracy:+0.4301
 ==> Confusion Matrix on test set 
- [[687  32  19  43  34  20  21  13 109  22]
- [118 542  13  29  31  23  10  10  64 160]
- [149  24 229 137 243 108  18  47  29  16]
- [ 47  20  49 391 101 214  42  43  46  47]
- [ 93  13  83  77 541  70  16  63  28  16]
- [ 60  11  60 253 100 398  14  40  45  19]
- [ 25  27  91 174 290 132 193  14  28  26]
- [111  13  35  94 152  96   2 452  13  32]
- [267  63  11  33  21  15   2   9 541  38]
- [145 148  11  51  28  21  14  41  46 495]] 
+ [[659  38  24  51  41  13  23  15 115  21]
+ [ 99 606  12  31  25  22   9  10  73 113]
+ [126  26 244 163 219 111  22  52  27  10]
+ [ 45  21  46 453  82 189  40  47  45  32]
+ [ 87  14  93 112 504  63  19  71  23  14]
+ [ 40   9  48 294  96 383  17  46  48  19]
+ [ 23  31  96 217 269 104 192  17  32  19]
+ [ 91  14  30 110 139  78   5 488  21  24]
+ [241  74  10  30  20  18   6   9 560  32]
+ [144 185  10  61  25  26  21  32  46 450]] 
 
-Ep.1100: train_loss:+1.5573, train_accuracy:+0.4318
-Ep.1110: train_loss:+1.4448, train_accuracy:+0.4324
-Ep.1120: train_loss:+1.4441, train_accuracy:+0.4328
-Ep.1130: train_loss:+1.5813, train_accuracy:+0.4332
-Ep.1140: train_loss:+1.5788, train_accuracy:+0.4336
-Ep.1150: train_loss:+1.4569, train_accuracy:+0.4342
-Ep.1160: train_loss:+1.4766, train_accuracy:+0.4347
-Ep.1170: train_loss:+1.3972, train_accuracy:+0.4350
-Ep.1180: train_loss:+1.5637, train_accuracy:+0.4356
-Ep.1190: train_loss:+1.6389, train_accuracy:+0.4357
-==> Ep.1199: test_loss:+1.5013, test_accuracy:+0.4331
+Ep.1100: train_loss:+1.5362, train_accuracy:+0.4315
+Ep.1110: train_loss:+1.4223, train_accuracy:+0.4321
+Ep.1120: train_loss:+1.4315, train_accuracy:+0.4327
+Ep.1130: train_loss:+1.4711, train_accuracy:+0.4331
+Ep.1140: train_loss:+1.5372, train_accuracy:+0.4338
+Ep.1150: train_loss:+1.5201, train_accuracy:+0.4342
+Ep.1160: train_loss:+1.4814, train_accuracy:+0.4347
+Ep.1170: train_loss:+1.4443, train_accuracy:+0.4351
+Ep.1180: train_loss:+1.5210, train_accuracy:+0.4356
+Ep.1190: train_loss:+1.6032, train_accuracy:+0.4359
+==> Ep.1199: test_loss:+1.4942, test_accuracy:+0.4333
 ==> Confusion Matrix on test set 
- [[591  45  48  10  49  28  28   9 162  30]
- [ 40 596   9  11  48  18  21  12 120 125]
- [ 96  37 271  41 271 121  82  39  25  17]
- [ 34  30  59 158 155 309 152  29  31  43]
- [ 72  22  72  13 566  68  93  49  28  17]
- [ 22  19  76  83 146 470  81  51  33  19]
- [  9  26  38  23 227  79 539  21  19  19]
- [ 53  30  58  33 227  98  38 411  18  34]
- [120  77  13   9  27  29  10   4 675  36]
- [ 64 160  17  20  53  30  33  11 109 503]] 
+ [[639  54  41   8  57  12  36  13 100  40]
+ [ 51 641   3  15  52  11  15  11  63 138]
+ [102  38 240  39 313 129  67  30  24  18]
+ [ 43  33  56 176 159 277 153  30  25  48]
+ [ 68  18  60  25 605  63  79  45  24  13]
+ [ 37  17  56  99 146 458  95  51  26  15]
+ [  4  26  26  39 272  90 487  19  15  22]
+ [ 67  28  42  45 243  97  40 388  14  36]
+ [150  92  11  11  29  30   9   6 614  48]
+ [ 62 194  14  10  56  33  30  13  63 525]] 
 
-Ep.1200: train_loss:+1.4698, train_accuracy:+0.4361
-Ep.1210: train_loss:+1.5780, train_accuracy:+0.4366
-Ep.1220: train_loss:+1.5152, train_accuracy:+0.4370
-Ep.1230: train_loss:+1.3709, train_accuracy:+0.4375
-Ep.1240: train_loss:+1.3517, train_accuracy:+0.4379
-Ep.1250: train_loss:+1.3596, train_accuracy:+0.4383
-Ep.1260: train_loss:+1.4223, train_accuracy:+0.4389
-Ep.1270: train_loss:+1.4512, train_accuracy:+0.4393
-Ep.1280: train_loss:+1.4070, train_accuracy:+0.4399
-Ep.1290: train_loss:+1.4303, train_accuracy:+0.4404
-==> Ep.1299: test_loss:+1.5604, test_accuracy:+0.4362
+Ep.1200: train_loss:+1.4311, train_accuracy:+0.4362
+Ep.1210: train_loss:+1.5946, train_accuracy:+0.4368
+Ep.1220: train_loss:+1.5609, train_accuracy:+0.4370
+Ep.1230: train_loss:+1.3845, train_accuracy:+0.4375
+Ep.1240: train_loss:+1.3637, train_accuracy:+0.4380
+Ep.1250: train_loss:+1.3670, train_accuracy:+0.4384
+Ep.1260: train_loss:+1.5204, train_accuracy:+0.4389
+Ep.1270: train_loss:+1.4355, train_accuracy:+0.4394
+Ep.1280: train_loss:+1.4457, train_accuracy:+0.4399
+Ep.1290: train_loss:+1.3899, train_accuracy:+0.4405
+==> Ep.1299: test_loss:+1.5719, test_accuracy:+0.4363
 ==> Confusion Matrix on test set 
- [[766  51  12   2  21  25  18  14  37  54]
- [117 587   6   3  12  22  21  11  25 196]
- [186  48 206  26 185 131 120  49  14  35]
- [ 98  56  33  83 100 320 181  35  13  81]
- [132  39  56  10 446  94 119  66  11  27]
- [ 78  25  51  56  85 489 112  53  16  35]
- [ 35  46  27  21 144  72 596  15   5  39]
- [108  33  30  19 117 110  28 485   4  66]
- [371  85   4   7  18  34  13   7 381  80]
- [131 133   8   7  21  30  28  19  26 597]] 
+ [[763  34  17   1  26  18  21  17  45  58]
+ [122 559   6   3  25  20  28   5  20 212]
+ [191  38 211  11 222 121 126  44  13  23]
+ [107  25  38  50 115 325 220  40  17  63]
+ [122  22  53   5 490  77 128  59  13  31]
+ [ 83  17  47  34 115 463 130  59  17  35]
+ [ 47  24  31   6 160  75 599  17   9  32]
+ [107  25  23  12 144  95  39 483   7  65]
+ [340  71   8   2  24  34   5   7 420  89]
+ [135 121   9   6  21  29  33  25  18 603]] 
 
-Ep.1300: train_loss:+1.3627, train_accuracy:+0.4411
-Ep.1310: train_loss:+1.4003, train_accuracy:+0.4414
-Ep.1320: train_loss:+1.5356, train_accuracy:+0.4417
-Ep.1330: train_loss:+1.5844, train_accuracy:+0.4420
-Ep.1340: train_loss:+1.5480, train_accuracy:+0.4421
-Ep.1350: train_loss:+1.2481, train_accuracy:+0.4427
-Ep.1360: train_loss:+1.4245, train_accuracy:+0.4430
-Ep.1370: train_loss:+1.2802, train_accuracy:+0.4434
-Ep.1380: train_loss:+1.3734, train_accuracy:+0.4439
-Ep.1390: train_loss:+1.5850, train_accuracy:+0.4439
-==> Ep.1399: test_loss:+1.5345, test_accuracy:+0.4383
+Ep.1300: train_loss:+1.4085, train_accuracy:+0.4413
+Ep.1310: train_loss:+1.4421, train_accuracy:+0.4416
+Ep.1320: train_loss:+1.6825, train_accuracy:+0.4419
+Ep.1330: train_loss:+1.5386, train_accuracy:+0.4421
+Ep.1340: train_loss:+1.4719, train_accuracy:+0.4423
+Ep.1350: train_loss:+1.3286, train_accuracy:+0.4429
+Ep.1360: train_loss:+1.4568, train_accuracy:+0.4432
+Ep.1370: train_loss:+1.3107, train_accuracy:+0.4437
+Ep.1380: train_loss:+1.4179, train_accuracy:+0.4442
+Ep.1390: train_loss:+1.4057, train_accuracy:+0.4443
+==> Ep.1399: test_loss:+1.5706, test_accuracy:+0.4384
 ==> Confusion Matrix on test set 
- [[223  61  52  29  50   6  40  35 447  57]
- [  9 636  17  10  21   2  13  25 121 146]
- [ 44  54 281 110 187  31 115  86  67  25]
- [  8  35  52 330 126  77 149  96  57  70]
- [ 18  32  77  62 475  23 126 108  57  22]
- [  4  27  68 285 118 174  97 122  76  29]
- [  1  41  39  74 139  21 596  34  22  33]
- [ 13  31  49  57 138  22  27 570  43  50]
- [ 14  85   4  15  31   8   7  16 782  38]
- [ 13 200   9  20  44   7  23  34 127 523]] 
+ [[165  64  60   8  54   5  34  29 523  58]
+ [  5 662  10  11  15   5  22  24 143 103]
+ [ 29  51 311  89 112  54 148  89  96  21]
+ [  9  58  55 290  67 135 182  70  78  56]
+ [ 16  31 115  53 330  30 203 127  70  25]
+ [  5  33  76 194  79 277 116 100  92  28]
+ [  1  45  42  53  57  39 672  34  28  29]
+ [  9  39  42  38 110  46  41 570  53  52]
+ [ 10  99   4  15  24  12   6  13 783  34]
+ [  3 231  12  22  27  10  27  40 155 473]] 
 
-Ep.1400: train_loss:+1.3767, train_accuracy:+0.4442
-Ep.1410: train_loss:+1.5149, train_accuracy:+0.4445
-Ep.1420: train_loss:+1.6200, train_accuracy:+0.4449
-Ep.1430: train_loss:+1.7417, train_accuracy:+0.4452
-Ep.1440: train_loss:+1.8199, train_accuracy:+0.4453
-Ep.1450: train_loss:+1.5138, train_accuracy:+0.4455
-Ep.1460: train_loss:+1.3900, train_accuracy:+0.4458
-Ep.1470: train_loss:+1.5368, train_accuracy:+0.4460
-Ep.1480: train_loss:+1.6864, train_accuracy:+0.4463
-Ep.1490: train_loss:+1.2866, train_accuracy:+0.4466
-==> Ep.1499: test_loss:+1.7060, test_accuracy:+0.4391
+Ep.1400: train_loss:+1.4438, train_accuracy:+0.4447
+Ep.1410: train_loss:+1.4411, train_accuracy:+0.4450
+Ep.1420: train_loss:+1.6307, train_accuracy:+0.4454
+Ep.1430: train_loss:+1.7448, train_accuracy:+0.4456
+Ep.1440: train_loss:+1.9039, train_accuracy:+0.4457
+Ep.1450: train_loss:+1.4999, train_accuracy:+0.4459
+Ep.1460: train_loss:+1.4023, train_accuracy:+0.4462
+Ep.1470: train_loss:+1.4804, train_accuracy:+0.4464
+Ep.1480: train_loss:+1.5728, train_accuracy:+0.4468
+Ep.1490: train_loss:+1.4032, train_accuracy:+0.4471
+==> Ep.1499: test_loss:+1.6257, test_accuracy:+0.4395
 ==> Confusion Matrix on test set 
- [[827  23  17  31  19  19   9  17  20  18]
- [161 512  27  77  19  33  13   7  23 128]
- [244  17 221 165 142 123  46  27   3  12]
- [127  21  42 461  51 200  33  16   6  43]
- [136   9  87 141 429  98  46  38   5  11]
- [100  10  46 303  72 407  17  26   6  13]
- [ 83  34  48 265 133  95 313   5   3  21]
- [139  11  36  89 134 151   6 388   1  45]
- [515  90  11  81  16  22   2   7 213  43]
- [200 155  11  56  19  33  19  18   6 483]] 
+ [[805  24  21  27  19  23  13   9  23  36]
+ [140 536  26  63  19  27  11   6  26 146]
+ [215  16 258 134 146 148  34  29   7  13]
+ [114  17  41 404  54 245  42  28   7  48]
+ [130  12 118 118 424  89  42  44   6  17]
+ [ 96  14  52 259  58 456  16  28   7  14]
+ [ 60  29  71 222 125 112 343  12   5  21]
+ [127   9  29  79 129 161   6 412   2  46]
+ [460 100  11  65  14  24   2   6 253  65]
+ [164 149  11  46  15  40  12  28   9 526]] 
 
 {'dnn_hidden_units': '100', 'learning_rate': 0.0003, 'max_steps': 1500, 'batch_size': 256, 'weight_init': 'normal', 'weight_init_scale': 0.001, 'weight_reg': 'l2', 'weight_reg_strength': 5e-05, 'dropout_rate': 0.4, 'activation': 'relu', 'optimizer': 'adam', 'data_dir': './cifar10/cifar-10-batches-py', 'log_dir': './logs/cifar10', 'grad_clipping': True, 'save_path': './trained_models/', 'model_name': 'default_adam_normal_l2', 'train_settings_path': 'mlp_train_settings.json'}
-Ep.0: train_loss:+2.3025, train_accuracy:+0.0605
-Ep.10: train_loss:+2.2116, train_accuracy:+0.1968
-Ep.20: train_loss:+2.1985, train_accuracy:+0.2027
-Ep.30: train_loss:+2.1909, train_accuracy:+0.2025
-Ep.40: train_loss:+2.2512, train_accuracy:+0.2047
-Ep.50: train_loss:+2.1926, train_accuracy:+0.2087
-Ep.60: train_loss:+2.1976, train_accuracy:+0.2061
-Ep.70: train_loss:+2.2275, train_accuracy:+0.2030
-Ep.80: train_loss:+2.2658, train_accuracy:+0.1981
-Ep.90: train_loss:+2.2793, train_accuracy:+0.1961
-==> Ep.99: test_loss:+2.1113, test_accuracy:+0.2360
+Ep.0: train_loss:+2.3038, train_accuracy:+0.0508
+Ep.10: train_loss:+2.2114, train_accuracy:+0.1813
+Ep.20: train_loss:+2.0811, train_accuracy:+0.2083
+Ep.30: train_loss:+2.2128, train_accuracy:+0.2157
+Ep.40: train_loss:+2.1663, train_accuracy:+0.2133
+Ep.50: train_loss:+2.2323, train_accuracy:+0.2072
+Ep.60: train_loss:+2.2082, train_accuracy:+0.2013
+Ep.70: train_loss:+2.2339, train_accuracy:+0.1979
+Ep.80: train_loss:+2.1765, train_accuracy:+0.1954
+Ep.90: train_loss:+2.1971, train_accuracy:+0.1936
+==> Ep.99: test_loss:+2.1367, test_accuracy:+0.2235
 ==> Confusion Matrix on test set 
- [[651  36   0   0   0   1  25   0 263  24]
- [401 370   0   0   0   9  32   0 112  76]
- [717  11   0   0   4  28 163   0  61  16]
- [716  31   0   1   0  92  99   0  47  14]
- [740  15   0   0   3  14 165   0  47  16]
- [629  28   0   0   0 173  98   0  68   4]
- [559  30   0   0   0  17 379   0   9   6]
- [754  30   0   0   0  28  66   0  73  49]
- [259  65   0   0   0   8  11   0 608  49]
- [357 202   0   0   0  13  24   0 165 239]] 
+ [[596  32   0   0   0   1   4  42 290  35]
+ [463 304   0   0   0   0   1  15 153  64]
+ [841  11   0   0   0   2  21  40  74  11]
+ [859  25   0   0   0   8   2  26  52  28]
+ [841  11   0   0   0   2  26  61  49  10]
+ [815  17   0   0   0  53   9  36  61   9]
+ [897  42   0   0   0   2  23  13  10  13]
+ [625   5   0   0   0   5   3 260  50  52]
+ [239  58   0   0   0   1   1  13 642  46]
+ [330 215   0   0   0   4   3  30 179 239]] 
 
-Ep.100: train_loss:+2.2086, train_accuracy:+0.1948
-Ep.110: train_loss:+2.2856, train_accuracy:+0.1927
-Ep.120: train_loss:+2.2520, train_accuracy:+0.1909
-Ep.130: train_loss:+2.2489, train_accuracy:+0.1894
-Ep.140: train_loss:+2.2325, train_accuracy:+0.1875
-Ep.150: train_loss:+2.2193, train_accuracy:+0.1858
-Ep.160: train_loss:+2.2919, train_accuracy:+0.1836
-Ep.170: train_loss:+2.3081, train_accuracy:+0.1814
-Ep.180: train_loss:+2.2337, train_accuracy:+0.1793
-Ep.190: train_loss:+2.1588, train_accuracy:+0.1780
-==> Ep.199: test_loss:+2.1619, test_accuracy:+0.2292
+Ep.100: train_loss:+2.1913, train_accuracy:+0.1921
+Ep.110: train_loss:+2.2429, train_accuracy:+0.1897
+Ep.120: train_loss:+2.1877, train_accuracy:+0.1883
+Ep.130: train_loss:+2.2342, train_accuracy:+0.1868
+Ep.140: train_loss:+2.1622, train_accuracy:+0.1866
+Ep.150: train_loss:+2.1850, train_accuracy:+0.1860
+Ep.160: train_loss:+2.2420, train_accuracy:+0.1850
+Ep.170: train_loss:+2.1891, train_accuracy:+0.1844
+Ep.180: train_loss:+2.1801, train_accuracy:+0.1833
+Ep.190: train_loss:+2.2213, train_accuracy:+0.1827
+==> Ep.199: test_loss:+2.1523, test_accuracy:+0.2160
 ==> Confusion Matrix on test set 
- [[745  49   0   0   1   0   0   0 143  62]
- [444 367   0   0   0   1   0   0  34 154]
- [921  21   0   0   0   1   0   0  33  24]
- [911  19   0   0   0   0   0   0  25  45]
- [931  11   0   0   0   3   0   0  24  31]
- [930  15   0   0   0   5   0   0  28  22]
- [949  16   0   0   0   0   0   0   6  29]
- [855  27   0   0   0   0   0   0  21  97]
- [345  68   0   0   0   0   0   0 484 103]
- [360 157   0   0   0   0   0   0  45 438]] 
+ [[724  32   0   0   0   2   0   1 166  75]
+ [451 328   0   0   0   1   0   3  39 178]
+ [926  14   0   0   0  10   0   5  24  21]
+ [914  18   0   0   0  22   0   2   9  35]
+ [931   7   0   0   0   5   0   7  22  28]
+ [850   7   0   0   0 103   0   5  20  15]
+ [962  14   0   0   0   2   0   1   5  16]
+ [752  14   0   0   0   7   0 125  21  81]
+ [385  56   0   0   0   6   0   0 421 132]
+ [351 124   0   0   0   8   0   4  45 468]] 
 
-Ep.200: train_loss:+2.1877, train_accuracy:+0.1777
-Ep.210: train_loss:+2.2451, train_accuracy:+0.1758
-Ep.220: train_loss:+2.2116, train_accuracy:+0.1749
-Ep.230: train_loss:+2.2127, train_accuracy:+0.1736
-Ep.240: train_loss:+2.2006, train_accuracy:+0.1727
-Ep.250: train_loss:+2.2207, train_accuracy:+0.1726
-Ep.260: train_loss:+2.2998, train_accuracy:+0.1719
-Ep.270: train_loss:+2.1984, train_accuracy:+0.1713
-Ep.280: train_loss:+2.1843, train_accuracy:+0.1709
-Ep.290: train_loss:+2.1423, train_accuracy:+0.1705
-==> Ep.299: test_loss:+2.1490, test_accuracy:+0.2161
+Ep.200: train_loss:+2.1936, train_accuracy:+0.1821
+Ep.210: train_loss:+2.1698, train_accuracy:+0.1817
+Ep.220: train_loss:+2.2450, train_accuracy:+0.1814
+Ep.230: train_loss:+2.1434, train_accuracy:+0.1809
+Ep.240: train_loss:+2.1741, train_accuracy:+0.1800
+Ep.250: train_loss:+2.1838, train_accuracy:+0.1797
+Ep.260: train_loss:+2.2782, train_accuracy:+0.1787
+Ep.270: train_loss:+2.2492, train_accuracy:+0.1775
+Ep.280: train_loss:+2.2553, train_accuracy:+0.1767
+Ep.290: train_loss:+2.1402, train_accuracy:+0.1760
+==> Ep.299: test_loss:+2.1079, test_accuracy:+0.2140
 ==> Confusion Matrix on test set 
- [[788  15   0   0   0   5   0   0  84 108]
- [527 221   0   0   0  10   0   0  29 213]
- [935   7   0   0   0  13   0   0  21  24]
- [894  14   0   0   0  38   0   0  15  39]
- [938   6   0   0   0   8   0   0  16  32]
- [838   5   0   0   0 115   0   0  14  28]
- [956  10   0   0   0   6   0   0   7  21]
- [851   6   0   0   0  30   0   0  10 103]
- [416  50   0   0   0  11   0   0 350 173]
- [374 101   0   0   0  15   0   0  32 478]] 
+ [[727   7   0   0   0   0   0   6 174  86]
+ [531 196   0   0   0   0   0   4  75 194]
+ [915   4   0   0   0   0   0  15  40  26]
+ [919   1   0   0   0   0   0   3  19  58]
+ [910   0   0   0   0   0   0  25  38  27]
+ [932   0   0   0   0   0   0   7  27  34]
+ [954   7   0   0   0   0   0   3  13  23]
+ [714   3   0   0   0   0   0 161  34  88]
+ [331  20   0   0   0   0   0   1 527 121]
+ [387  49   0   0   0   0   0   4  83 477]] 
 
-Ep.300: train_loss:+2.2225, train_accuracy:+0.1701
-Ep.310: train_loss:+2.2138, train_accuracy:+0.1692
-Ep.320: train_loss:+2.1915, train_accuracy:+0.1683
-Ep.330: train_loss:+2.2778, train_accuracy:+0.1680
-Ep.340: train_loss:+2.3131, train_accuracy:+0.1680
-Ep.350: train_loss:+2.1790, train_accuracy:+0.1680
-Ep.360: train_loss:+2.2502, train_accuracy:+0.1675
-Ep.370: train_loss:+2.1891, train_accuracy:+0.1669
-Ep.380: train_loss:+2.1762, train_accuracy:+0.1665
-Ep.390: train_loss:+2.1861, train_accuracy:+0.1663
-==> Ep.399: test_loss:+2.1744, test_accuracy:+0.2092
+Ep.300: train_loss:+2.1875, train_accuracy:+0.1758
+Ep.310: train_loss:+2.1759, train_accuracy:+0.1751
+Ep.320: train_loss:+2.2089, train_accuracy:+0.1747
+Ep.330: train_loss:+2.1542, train_accuracy:+0.1749
+Ep.340: train_loss:+2.2651, train_accuracy:+0.1746
+Ep.350: train_loss:+2.1938, train_accuracy:+0.1742
+Ep.360: train_loss:+2.1813, train_accuracy:+0.1739
+Ep.370: train_loss:+2.2142, train_accuracy:+0.1734
+Ep.380: train_loss:+2.1862, train_accuracy:+0.1730
+Ep.390: train_loss:+2.2345, train_accuracy:+0.1728
+==> Ep.399: test_loss:+2.1137, test_accuracy:+0.2121
 ==> Confusion Matrix on test set 
- [[789  16   0   0   0   0   0   0 176  19]
- [572 253   0   0   0   0   0   0  93  82]
- [951  11   0   0   0   0   0   0  31   7]
- [959  11   0   0   0   0   0   0  13  17]
- [962   3   0   0   0   0   0   0  25  10]
- [972   5   0   0   0   0   0   0  16   7]
- [974   9   0   0   0   0   0   0  11   6]
- [935   5   0   0   0   0   0   0  24  36]
- [439  24   0   0   0   0   0   0 505  32]
- [493  97   0   0   0   0   0   0 112 298]] 
+ [[700  20   0   0   0   0   0  14 217  49]
+ [555 209   0   0   0   0   0   8 109 119]
+ [916   8   0   0   0   0   0  24  38  14]
+ [921  17   0   0   0   0   0   4  31  27]
+ [914   6   0   0   0   0   0  26  33  21]
+ [937   9   0   0   0   0   0  13  30  11]
+ [952  18   0   0   0   0   0   1  15  14]
+ [714  10   0   0   0   0   0 177  39  60]
+ [326  26   0   0   0   0   0   8 598  42]
+ [375 116   0   0   0   0   0  10 137 362]] 
 
-Ep.400: train_loss:+2.2354, train_accuracy:+0.1659
-Ep.410: train_loss:+2.1413, train_accuracy:+0.1657
-Ep.420: train_loss:+2.2003, train_accuracy:+0.1654
-Ep.430: train_loss:+2.1890, train_accuracy:+0.1653
-Ep.440: train_loss:+2.2022, train_accuracy:+0.1652
-Ep.450: train_loss:+2.1716, train_accuracy:+0.1654
-Ep.460: train_loss:+2.2357, train_accuracy:+0.1653
-Ep.470: train_loss:+2.2125, train_accuracy:+0.1653
-Ep.480: train_loss:+2.2120, train_accuracy:+0.1647
-Ep.490: train_loss:+2.2429, train_accuracy:+0.1646
-==> Ep.499: test_loss:+2.1189, test_accuracy:+0.2060
+Ep.400: train_loss:+2.2581, train_accuracy:+0.1726
+Ep.410: train_loss:+2.2083, train_accuracy:+0.1723
+Ep.420: train_loss:+2.2154, train_accuracy:+0.1722
+Ep.430: train_loss:+2.1773, train_accuracy:+0.1718
+Ep.440: train_loss:+2.1837, train_accuracy:+0.1714
+Ep.450: train_loss:+2.1792, train_accuracy:+0.1711
+Ep.460: train_loss:+2.1856, train_accuracy:+0.1710
+Ep.470: train_loss:+2.2246, train_accuracy:+0.1710
+Ep.480: train_loss:+2.2010, train_accuracy:+0.1704
+Ep.490: train_loss:+2.2339, train_accuracy:+0.1700
+==> Ep.499: test_loss:+2.1268, test_accuracy:+0.2111
 ==> Confusion Matrix on test set 
- [[788  19   0   0   2   3   0   0 107  81]
- [509 304   0   0   0   3   0   0  27 157]
- [933  12   0   0   6  10   0   0  15  24]
- [909  10   0   0   2  24   0   0   9  46]
- [935   6   0   0   3   9   0   0  14  33]
- [865   4   0   0   3  92   0   0  16  20]
- [954  11   0   0   3   5   0   0   4  23]
- [862   6   0   0   1  14   0   0  19  98]
- [408  51   0   0   0   9   0   0 392 140]
- [370 114   0   0   1   7   0   0  32 476]] 
+ [[776  10   0   0   0   0   0  25  84 105]
+ [581 145   0   0   0   0   0   8  34 232]
+ [913   6   0   0   0   0   0  32  17  32]
+ [917   1   0   0   0   0   0  24   9  49]
+ [910   2   0   0   0   0   0  41  15  32]
+ [932   0   0   0   0   0   0  32  13  23]
+ [936   3   0   0   0   0   0  23   3  35]
+ [660   3   0   0   0   0   0 239  16  82]
+ [434  15   0   0   0   0   0   7 384 160]
+ [399  34   0   0   0   0   0  13  23 531]] 
 
-Ep.500: train_loss:+2.0724, train_accuracy:+0.1646
-Ep.510: train_loss:+2.2063, train_accuracy:+0.1645
-Ep.520: train_loss:+2.1900, train_accuracy:+0.1643
-Ep.530: train_loss:+2.2103, train_accuracy:+0.1642
-Ep.540: train_loss:+2.1614, train_accuracy:+0.1642
-Ep.550: train_loss:+2.1944, train_accuracy:+0.1640
-Ep.560: train_loss:+2.1880, train_accuracy:+0.1637
-Ep.570: train_loss:+2.2148, train_accuracy:+0.1635
-Ep.580: train_loss:+2.1943, train_accuracy:+0.1632
-Ep.590: train_loss:+2.1541, train_accuracy:+0.1627
-==> Ep.599: test_loss:+2.1603, test_accuracy:+0.2049
+Ep.500: train_loss:+2.1673, train_accuracy:+0.1699
+Ep.510: train_loss:+2.1608, train_accuracy:+0.1698
+Ep.520: train_loss:+2.2191, train_accuracy:+0.1697
+Ep.530: train_loss:+2.3210, train_accuracy:+0.1697
+Ep.540: train_loss:+2.1662, train_accuracy:+0.1695
+Ep.550: train_loss:+2.1977, train_accuracy:+0.1692
+Ep.560: train_loss:+2.2244, train_accuracy:+0.1690
+Ep.570: train_loss:+2.2267, train_accuracy:+0.1689
+Ep.580: train_loss:+2.2272, train_accuracy:+0.1687
+Ep.590: train_loss:+2.1291, train_accuracy:+0.1683
+==> Ep.599: test_loss:+2.1109, test_accuracy:+0.2109
 ==> Confusion Matrix on test set 
- [[650  26   0   0   0   0   0   0 269  55]
- [496 327   0   0   0   0   0   0  76 101]
- [920  12   0   0   1   0   0   0  55  12]
- [940  14   0   0   0   0   0   0  25  21]
- [941   6   0   0   0   0   0   0  37  16]
- [940   5   0   0   0   0   0   0  44  11]
- [967  10   0   0   0   0   0   0  10  13]
- [897   9   0   0   0   1   0   0  36  57]
- [300  47   0   0   0   0   0   0 584  69]
- [399 132   0   0   0   0   0   0  93 376]] 
+ [[665  35   0   0   0   0   0   8 188 104]
+ [467 322   0   0   0   0   0   2  68 141]
+ [914  13   0   0   0   0   0  10  35  28]
+ [907  21   0   0   0   0   0   5  22  45]
+ [929   6   0   0   0   0   0  14  24  27]
+ [931  15   0   0   0   0   0   5  31  18]
+ [947  15   0   0   0   0   0   1   9  28]
+ [750  17   0   0   0   0   0 129  28  76]
+ [297  52   0   0   0   0   0   3 552  96]
+ [333 159   0   0   0   0   0  13  56 439]] 
 
-Ep.600: train_loss:+2.2491, train_accuracy:+0.1625
-Ep.610: train_loss:+2.1648, train_accuracy:+0.1625
-Ep.620: train_loss:+2.2954, train_accuracy:+0.1624
-Ep.630: train_loss:+2.2103, train_accuracy:+0.1620
-Ep.640: train_loss:+2.2578, train_accuracy:+0.1616
-Ep.650: train_loss:+2.2423, train_accuracy:+0.1613
-Ep.660: train_loss:+2.2083, train_accuracy:+0.1610
-Ep.670: train_loss:+2.1920, train_accuracy:+0.1608
-Ep.680: train_loss:+2.2281, train_accuracy:+0.1606
-Ep.690: train_loss:+2.1560, train_accuracy:+0.1604
-==> Ep.699: test_loss:+2.1622, test_accuracy:+0.2032
+Ep.600: train_loss:+2.2309, train_accuracy:+0.1683
+Ep.610: train_loss:+2.2293, train_accuracy:+0.1684
+Ep.620: train_loss:+2.2667, train_accuracy:+0.1683
+Ep.630: train_loss:+2.1401, train_accuracy:+0.1683
+Ep.640: train_loss:+2.1969, train_accuracy:+0.1680
+Ep.650: train_loss:+2.1438, train_accuracy:+0.1679
+Ep.660: train_loss:+2.2197, train_accuracy:+0.1678
+Ep.670: train_loss:+2.1796, train_accuracy:+0.1676
+Ep.680: train_loss:+2.2173, train_accuracy:+0.1674
+Ep.690: train_loss:+2.2444, train_accuracy:+0.1672
+==> Ep.699: test_loss:+2.1062, test_accuracy:+0.2112
 ==> Confusion Matrix on test set 
- [[748  30   0   0   0   0   0   0 131  91]
- [502 301   0   0   0   0   0   0  31 166]
- [948   9   0   0   0   0   0   0  15  28]
- [937  10   0   0   0   0   0   0  12  41]
- [947   5   0   0   0   0   0   0  16  32]
- [961   7   0   0   0   0   0   0  14  18]
- [952  20   0   0   0   0   0   0   7  21]
- [905   7   0   0   0   0   0   0   7  81]
- [364  36   0   0   0   0   0   0 432 168]
- [376 132   0   0   0   0   0   0  21 471]] 
+ [[797  14   0   0   0   0   0   3 122  64]
+ [502 295   0   0   0   0   0   2  52 149]
+ [926  10   0   0   0   0   0  18  24  22]
+ [931  10   0   0   0   0   0   4  14  41]
+ [941   5   0   0   0   0   0  22  20  12]
+ [942   7   0   0   0   0   0  15  12  24]
+ [947   7   0   0   0   0   0  11   8  27]
+ [724  11   0   0   0   0   0 167  20  78]
+ [407  47   0   0   0   0   0   2 452  92]
+ [378 105   0   0   0   0   0  11  70 436]] 
 
-Ep.700: train_loss:+2.1852, train_accuracy:+0.1606
-Ep.710: train_loss:+2.1863, train_accuracy:+0.1606
-Ep.720: train_loss:+2.1934, train_accuracy:+0.1606
-Ep.730: train_loss:+2.2927, train_accuracy:+0.1605
-Ep.740: train_loss:+2.2142, train_accuracy:+0.1605
-Ep.750: train_loss:+2.2293, train_accuracy:+0.1603
-Ep.760: train_loss:+2.1777, train_accuracy:+0.1603
-Ep.770: train_loss:+2.2519, train_accuracy:+0.1601
-Ep.780: train_loss:+2.2056, train_accuracy:+0.1601
-Ep.790: train_loss:+2.1434, train_accuracy:+0.1601
-==> Ep.799: test_loss:+2.1832, test_accuracy:+0.2013
+Ep.700: train_loss:+2.1963, train_accuracy:+0.1672
+Ep.710: train_loss:+2.2318, train_accuracy:+0.1673
+Ep.720: train_loss:+2.1504, train_accuracy:+0.1673
+Ep.730: train_loss:+2.2222, train_accuracy:+0.1673
+Ep.740: train_loss:+2.1512, train_accuracy:+0.1671
+Ep.750: train_loss:+2.1980, train_accuracy:+0.1670
+Ep.760: train_loss:+2.2188, train_accuracy:+0.1669
+Ep.770: train_loss:+2.1874, train_accuracy:+0.1669
+Ep.780: train_loss:+2.2104, train_accuracy:+0.1668
+Ep.790: train_loss:+2.1583, train_accuracy:+0.1667
+==> Ep.799: test_loss:+2.1169, test_accuracy:+0.2109
 ==> Confusion Matrix on test set 
- [[743   6   0   0   0   0   0   0 212  39]
- [634 187   0   0   0   0   0   0  88  91]
- [948   7   0   0   0   0   0   0  37   8]
- [962   2   0   0   0   0   0   0  14  22]
- [959   3   0   0   0   0   0   0  25  13]
- [966   3   0   0   0   0   0   0  25   6]
- [979   4   0   0   0   0   0   0  10   7]
- [941   5   0   0   0   0   0   0  29  25]
- [399  19   0   0   0   0   0   0 544  38]
- [533  55   0   0   0   0   0   0 103 309]] 
+ [[761   7   0   0   0   0   0  17 148  67]
+ [565 194   0   0   0   0   0   3  86 152]
+ [929   5   0   0   0   0   0  11  32  23]
+ [936   3   0   0   0   0   0   1  20  40]
+ [941   2   0   0   0   0   0  17  21  19]
+ [944   3   0   0   0   0   0  15  16  22]
+ [956   2   0   0   0   0   0   7  11  24]
+ [743   5   0   0   0   0   0 157  17  78]
+ [389  26   0   0   0   0   0   1 506  78]
+ [401  56   0   0   0   0   0   7  87 449]] 
+
+Ep.800: train_loss:+2.2093, train_accuracy:+0.1664
+Ep.810: train_loss:+2.2118, train_accuracy:+0.1664
+Ep.820: train_loss:+2.2225, train_accuracy:+0.1665
+Ep.830: train_loss:+2.1768, train_accuracy:+0.1664
+Ep.840: train_loss:+2.2285, train_accuracy:+0.1664
+Ep.850: train_loss:+2.3252, train_accuracy:+0.1664
+Ep.860: train_loss:+2.1873, train_accuracy:+0.1663
+Ep.870: train_loss:+2.2545, train_accuracy:+0.1661
+Ep.880: train_loss:+2.2364, train_accuracy:+0.1659
+Ep.890: train_loss:+2.2140, train_accuracy:+0.1658
+==> Ep.899: test_loss:+2.1541, test_accuracy:+0.2099
+==> Confusion Matrix on test set 
+ [[797   6   0   0   0   0   0  19 124  54]
+ [639 151   0   0   0   0   0   3  49 158]
+ [937   5   0   0   0   0   0  16  25  17]
+ [958   3   0   0   0   0   0   6  13  20]
+ [947   1   0   0   0   0   0  20  14  18]
+ [959   0   0   0   0   0   0  13  17  11]
+ [968   2   0   0   0   0   0   7  10  13]
+ [782   3   0   0   0   0   0 160   9  46]
+ [428  16   0   0   0   0   0   5 457  94]
+ [495  51   0   0   0   0   0   9  51 394]] 
+
+Ep.900: train_loss:+2.2081, train_accuracy:+0.1656
+Ep.910: train_loss:+2.1837, train_accuracy:+0.1655
+Ep.920: train_loss:+2.2461, train_accuracy:+0.1656
+Ep.930: train_loss:+2.2810, train_accuracy:+0.1655
+Ep.940: train_loss:+2.2270, train_accuracy:+0.1653
+Ep.950: train_loss:+2.1830, train_accuracy:+0.1652
+Ep.960: train_loss:+2.1951, train_accuracy:+0.1652
+Ep.970: train_loss:+2.3140, train_accuracy:+0.1651
+Ep.980: train_loss:+2.2160, train_accuracy:+0.1649
+Ep.990: train_loss:+2.2124, train_accuracy:+0.1648
+==> Ep.999: test_loss:+2.1402, test_accuracy:+0.2089
+==> Confusion Matrix on test set 
+ [[739  13   0   0   0   0   0  20 198  30]
+ [593 247   0   0   0   0   0   6  78  76]
+ [920  10   0   0   0   0   0  17  43  10]
+ [937  11   0   0   0   0   0   6  25  21]
+ [940   4   0   0   0   0   0  25  24   7]
+ [955   8   0   0   0   0   0   8  22   7]
+ [964  10   0   0   0   0   0   1  15  10]
+ [756   8   0   0   0   0   0 171  29  36]
+ [346  32   0   0   0   0   0   5 574  43]
+ [438 168   0   0   0   0   0  11  93 290]] 
+
+Ep.1000: train_loss:+2.2193, train_accuracy:+0.1647
+Ep.1010: train_loss:+2.1976, train_accuracy:+0.1646
+Ep.1020: train_loss:+2.1680, train_accuracy:+0.1646
+Ep.1030: train_loss:+2.1769, train_accuracy:+0.1646
+Ep.1040: train_loss:+2.1804, train_accuracy:+0.1646
+Ep.1050: train_loss:+2.2137, train_accuracy:+0.1646
+Ep.1060: train_loss:+2.2021, train_accuracy:+0.1647
+Ep.1070: train_loss:+2.2322, train_accuracy:+0.1645
+Ep.1080: train_loss:+2.1903, train_accuracy:+0.1645
+Ep.1090: train_loss:+2.1602, train_accuracy:+0.1644
+==> Ep.1099: test_loss:+2.1102, test_accuracy:+0.2092
+==> Confusion Matrix on test set 
+ [[755  43   0   0   0   0   0  13 127  62]
+ [476 324   0   0   0   0   0   6  57 137]
+ [924  23   0   0   0   2   0  18  19  14]
+ [927  23   0   0   0   0   0   6  14  30]
+ [926   6   0   0   0   0   0  33  19  16]
+ [954   9   0   0   0   1   0  10  10  16]
+ [954  15   0   0   0   0   0   4   8  19]
+ [720  10   0   0   0   0   0 197  17  56]
+ [356  49   0   0   0   0   0   7 501  87]
+ [349 139   0   0   0   0   0  13  68 431]] 
+
+Ep.1100: train_loss:+2.2423, train_accuracy:+0.1645
+Ep.1110: train_loss:+2.2556, train_accuracy:+0.1644
+Ep.1120: train_loss:+2.1427, train_accuracy:+0.1643
+Ep.1130: train_loss:+2.1251, train_accuracy:+0.1642
+Ep.1140: train_loss:+2.2053, train_accuracy:+0.1642
+Ep.1150: train_loss:+2.2538, train_accuracy:+0.1642
+Ep.1160: train_loss:+2.2418, train_accuracy:+0.1641
+Ep.1170: train_loss:+2.1760, train_accuracy:+0.1641
+Ep.1180: train_loss:+2.1765, train_accuracy:+0.1641
+Ep.1190: train_loss:+2.1630, train_accuracy:+0.1642
+==> Ep.1199: test_loss:+2.1156, test_accuracy:+0.2097
+==> Confusion Matrix on test set 
+ [[816   8   0   0   0   0   0   9 130  37]
+ [573 229   0   0   0   0   0   7  89 102]
+ [937   6   0   0   0   0   0  12  31  14]
+ [936   6   0   0   0   0   0  12  16  30]
+ [940   9   0   0   0   0   0  15  27   9]
+ [961   1   0   0   0   0   0   9  15  14]
+ [960   5   0   0   0   0   0   4  13  18]
+ [779   1   0   0   0   0   0 152  21  47]
+ [411  28   0   0   0   0   0   4 516  41]
+ [409  78   0   0   0   0   0  12 123 378]] 
+
+Ep.1200: train_loss:+2.0850, train_accuracy:+0.1643
+Ep.1210: train_loss:+2.1770, train_accuracy:+0.1643
+Ep.1220: train_loss:+2.1902, train_accuracy:+0.1643
+Ep.1230: train_loss:+2.1364, train_accuracy:+0.1642
+Ep.1240: train_loss:+2.1741, train_accuracy:+0.1642
+Ep.1250: train_loss:+2.2085, train_accuracy:+0.1642
+Ep.1260: train_loss:+2.1438, train_accuracy:+0.1641
+Ep.1270: train_loss:+2.1777, train_accuracy:+0.1642
+Ep.1280: train_loss:+2.1712, train_accuracy:+0.1641
+Ep.1290: train_loss:+2.2402, train_accuracy:+0.1641
+==> Ep.1299: test_loss:+2.1193, test_accuracy:+0.2092
+==> Confusion Matrix on test set 
+ [[835   4   0   0   0   0   0   1 132  28]
+ [651 165   0   0   0   0   0   3  75 106]
+ [953   4   0   0   0   0   0  10  21  12]
+ [943   6   0   0   0   0   0   3  15  33]
+ [962   1   0   0   0   0   0  11  14  12]
+ [969   3   0   0   0   0   0   2  13  13]
+ [963  11   0   0   0   0   0   0   4  22]
+ [793   6   0   0   0   0   0 139  25  37]
+ [453  20   0   0   0   0   0   3 487  37]
+ [470  60   0   0   0   0   0   8  86 376]] 
+
+Ep.1300: train_loss:+2.1479, train_accuracy:+0.1642
+Ep.1310: train_loss:+2.2225, train_accuracy:+0.1641
+Ep.1320: train_loss:+2.2046, train_accuracy:+0.1640
+Ep.1330: train_loss:+2.2634, train_accuracy:+0.1641
+Ep.1340: train_loss:+2.1563, train_accuracy:+0.1641
+Ep.1350: train_loss:+2.2745, train_accuracy:+0.1640
+Ep.1360: train_loss:+2.1547, train_accuracy:+0.1639
+Ep.1370: train_loss:+2.2171, train_accuracy:+0.1639
+Ep.1380: train_loss:+2.1906, train_accuracy:+0.1638
+Ep.1390: train_loss:+2.2770, train_accuracy:+0.1637
+==> Ep.1399: test_loss:+2.1458, test_accuracy:+0.2086
+==> Confusion Matrix on test set 
+ [[820   5   0   0   0   0   0   2 129  44]
+ [620 183   0   0   0   0   0   2  48 147]
+ [946   6   0   0   0   0   0   6  21  21]
+ [961   5   0   0   0   0   0   0  10  24]
+ [966   2   0   0   0   0   0   3  15  14]
+ [972   1   0   0   0   0   0   1  12  14]
+ [968   8   0   0   0   0   0   0   7  17]
+ [852   3   0   0   0   0   0  90   9  46]
+ [444  11   0   0   0   0   0   2 466  77]
+ [470  47   0   0   0   0   0   3  48 432]] 
+
+Ep.1400: train_loss:+2.2648, train_accuracy:+0.1637
+Ep.1410: train_loss:+2.1669, train_accuracy:+0.1637
+Ep.1420: train_loss:+2.2468, train_accuracy:+0.1637
+Ep.1430: train_loss:+2.1961, train_accuracy:+0.1636
+Ep.1440: train_loss:+2.2138, train_accuracy:+0.1637
+Ep.1450: train_loss:+2.1613, train_accuracy:+0.1637
+Ep.1460: train_loss:+2.1893, train_accuracy:+0.1637
+Ep.1470: train_loss:+2.1868, train_accuracy:+0.1637
+Ep.1480: train_loss:+2.2076, train_accuracy:+0.1635
+Ep.1490: train_loss:+2.2301, train_accuracy:+0.1636
+==> Ep.1499: test_loss:+2.1228, test_accuracy:+0.2082
+==> Confusion Matrix on test set 
+ [[777   6   0   0   0   0   0   4 170  43]
+ [653 169   0   0   0   0   0   2  77  99]
+ [939   6   0   0   0   0   0  11  32  12]
+ [940   5   0   0   0   0   0   2  21  32]
+ [949   0   0   0   0   0   0  10  28  13]
+ [969   5   0   0   0   0   0   2  16   8]
+ [961   7   0   0   0   0   0   1  11  20]
+ [783   2   0   0   0   0   0 134  32  49]
+ [390  11   0   0   0   0   0   2 554  43]
+ [458  70   0   0   0   0   0   2 108 362]] 
+
+{'dnn_hidden_units': '100', 'learning_rate': 0.0003, 'max_steps': 1500, 'batch_size': 256, 'weight_init': 'normal', 'weight_init_scale': 0.001, 'weight_reg': 'l1', 'weight_reg_strength': 5e-05, 'dropout_rate': 0.4, 'activation': 'relu', 'optimizer': 'adam', 'data_dir': './cifar10/cifar-10-batches-py', 'log_dir': './logs/cifar10', 'grad_clipping': True, 'save_path': './trained_models/', 'model_name': 'default_adam_normal_l1', 'train_settings_path': 'mlp_train_settings.json'}
+Ep.0: train_loss:+2.3156, train_accuracy:+0.0488
+Ep.10: train_loss:+2.2944, train_accuracy:+0.1849
+Ep.20: train_loss:+2.3225, train_accuracy:+0.1914
+Ep.30: train_loss:+2.2110, train_accuracy:+0.1935
+Ep.40: train_loss:+2.1912, train_accuracy:+0.1925
+Ep.50: train_loss:+2.1562, train_accuracy:+0.1920
+Ep.60: train_loss:+2.2109, train_accuracy:+0.1874
+Ep.70: train_loss:+2.2249, train_accuracy:+0.1847
+Ep.80: train_loss:+2.2586, train_accuracy:+0.1833
+Ep.90: train_loss:+2.2734, train_accuracy:+0.1841
+==> Ep.99: test_loss:+2.1673, test_accuracy:+0.2281
+==> Confusion Matrix on test set 
+ [[760  43   0   0   0   3   6  32 135  21]
+ [451 365   0   0   0   1   4  23  59  97]
+ [812  24   0   0   0  16  56  55  25  12]
+ [869  32   0   0   0  32   9  26  15  17]
+ [822  17   0   0   0  10  59  58  28   6]
+ [795  14   0   0   0 107  17  43  18   6]
+ [853  28   0   0   0   6  80  19   4  10]
+ [573  34   0   0   0   3   6 313  34  37]
+ [421  62   0   0   0  12   1  13 425  66]
+ [400 170   0   0   0   4   4  40  87 295]] 
+
+Ep.100: train_loss:+2.2615, train_accuracy:+0.1857
+Ep.110: train_loss:+2.2841, train_accuracy:+0.1844
+Ep.120: train_loss:+2.2525, train_accuracy:+0.1838
+Ep.130: train_loss:+2.3022, train_accuracy:+0.1825
+Ep.140: train_loss:+2.2738, train_accuracy:+0.1811
+Ep.150: train_loss:+2.2361, train_accuracy:+0.1799
+Ep.160: train_loss:+2.2477, train_accuracy:+0.1788
+Ep.170: train_loss:+2.2499, train_accuracy:+0.1779
+Ep.180: train_loss:+2.2788, train_accuracy:+0.1774
+Ep.190: train_loss:+2.2002, train_accuracy:+0.1772
+==> Ep.199: test_loss:+2.1789, test_accuracy:+0.2255
+==> Confusion Matrix on test set 
+ [[656  17   0   0   0   0   0  44 173 110]
+ [504 224   0   0   0   0   0  15  59 198]
+ [876  11   0   0   0   0   0  59  24  30]
+ [886  19   0   0   0   1   0  26  15  53]
+ [881   0   0   0   0   0   0  60  27  32]
+ [876   9   0   0   0   1   1  56  20  37]
+ [925   6   0   0   0   0   1  33   6  29]
+ [606   4   0   0   0   0   0 258  24 108]
+ [302  24   0   0   0   0   0  11 484 179]
+ [321  89   0   0   0   0   0  24  56 510]] 
+
+Ep.200: train_loss:+2.2032, train_accuracy:+0.1765
+Ep.210: train_loss:+2.2744, train_accuracy:+0.1757
+Ep.220: train_loss:+2.2452, train_accuracy:+0.1753
+Ep.230: train_loss:+2.1525, train_accuracy:+0.1748
+Ep.240: train_loss:+2.2191, train_accuracy:+0.1745
+Ep.250: train_loss:+2.2356, train_accuracy:+0.1742
+Ep.260: train_loss:+2.2765, train_accuracy:+0.1735
+Ep.270: train_loss:+2.2193, train_accuracy:+0.1729
+Ep.280: train_loss:+2.2548, train_accuracy:+0.1728
+Ep.290: train_loss:+2.3040, train_accuracy:+0.1722
+==> Ep.299: test_loss:+2.1880, test_accuracy:+0.2176
+==> Confusion Matrix on test set 
+ [[739  15   0   0   0   0   0  16 174  56]
+ [575 190   0   0   0   0   0   5  71 159]
+ [917   8   0   0   0   0   0  25  28  22]
+ [940  10   0   0   0   0   0   9  12  29]
+ [925   6   0   0   0   0   0  22  31  16]
+ [938   5   0   0   0   0   0  12  24  21]
+ [960   8   0   0   0   0   0   3   8  21]
+ [718   0   0   0   0   0   0 189  31  62]
+ [376  29   0   0   0   0   0   5 513  77]
+ [408  85   0   0   0   1   0  13  86 407]] 
+
+Ep.300: train_loss:+2.2488, train_accuracy:+0.1717
+Ep.310: train_loss:+2.3644, train_accuracy:+0.1711
+Ep.320: train_loss:+2.2823, train_accuracy:+0.1703
+Ep.330: train_loss:+2.2388, train_accuracy:+0.1705
+Ep.340: train_loss:+2.3047, train_accuracy:+0.1704
+Ep.350: train_loss:+2.1885, train_accuracy:+0.1703
+Ep.360: train_loss:+2.1812, train_accuracy:+0.1701
+Ep.370: train_loss:+2.2190, train_accuracy:+0.1700
+Ep.380: train_loss:+2.2068, train_accuracy:+0.1702
+Ep.390: train_loss:+2.2508, train_accuracy:+0.1702
+==> Ep.399: test_loss:+2.1973, test_accuracy:+0.2142
+==> Confusion Matrix on test set 
+ [[724  12   0   0   0   0   0  35 196  33]
+ [570 221   0   0   0   0   0  12  78 119]
+ [872  11   0   0   0   0   0  68  42   7]
+ [915   9   0   0   0   0   0  29  22  25]
+ [884   3   0   0   0   0   0  74  30   9]
+ [900   7   0   0   0   0   0  57  22  14]
+ [947  11   0   0   0   0   0  17   8  17]
+ [635   3   0   0   0   0   0 284  42  36]
+ [389  24   0   0   0   0   0  13 518  56]
+ [393 108   0   0   0   0   0  26 121 352]] 
+
+Ep.400: train_loss:+2.2053, train_accuracy:+0.1699
+Ep.410: train_loss:+2.2450, train_accuracy:+0.1700
+Ep.420: train_loss:+2.2535, train_accuracy:+0.1699
+Ep.430: train_loss:+2.2724, train_accuracy:+0.1699
+Ep.440: train_loss:+2.2322, train_accuracy:+0.1697
+Ep.450: train_loss:+2.2307, train_accuracy:+0.1697
+Ep.460: train_loss:+2.1969, train_accuracy:+0.1697
+Ep.470: train_loss:+2.3189, train_accuracy:+0.1694
+Ep.480: train_loss:+2.1749, train_accuracy:+0.1690
+Ep.490: train_loss:+2.3298, train_accuracy:+0.1689
+==> Ep.499: test_loss:+2.1692, test_accuracy:+0.2137
+==> Confusion Matrix on test set 
+ [[827   3   0   0   0   0   0  19 101  50]
+ [607 141   0   0   0   0   0  11  42 199]
+ [956   7   0   0   0   0   0  16   8  13]
+ [935   3   0   0   0   0   0   6  13  43]
+ [939   2   0   0   0   0   0  27  14  18]
+ [949   4   0   0   0   0   0  14  15  18]
+ [957   3   0   0   0   0   0   9   4  27]
+ [729   2   0   0   0   0   0 210  12  47]
+ [461  11   0   0   0   0   0   7 437  84]
+ [403  38   0   0   0   0   0  21  50 488]] 
+
+Ep.500: train_loss:+2.1850, train_accuracy:+0.1686
+Ep.510: train_loss:+2.2769, train_accuracy:+0.1686
+Ep.520: train_loss:+2.2842, train_accuracy:+0.1685
+Ep.530: train_loss:+2.2172, train_accuracy:+0.1683
+Ep.540: train_loss:+2.2511, train_accuracy:+0.1681
+Ep.550: train_loss:+2.2500, train_accuracy:+0.1680
+Ep.560: train_loss:+2.2487, train_accuracy:+0.1680
+Ep.570: train_loss:+2.2627, train_accuracy:+0.1677
+Ep.580: train_loss:+2.3176, train_accuracy:+0.1674
+Ep.590: train_loss:+2.2650, train_accuracy:+0.1670
+==> Ep.599: test_loss:+2.1998, test_accuracy:+0.2128
+==> Confusion Matrix on test set 
+ [[708  22   0   0   0   0   0  20 215  35]
+ [506 265   0   0   0   0   0   7 116 106]
+ [924  11   0   0   0   0   0  14  40  11]
+ [935  14   0   0   0   0   0   5  24  22]
+ [919   2   0   0   0   0   0  21  44  14]
+ [946  10   0   0   0   0   0   3  31  10]
+ [964  12   0   0   0   0   0   2  11  11]
+ [758   8   0   0   0   0   0 156  42  36]
+ [330  32   0   0   0   0   0   2 594  42]
+ [342 157   0   0   0   0   0  19 138 344]] 
+
+Ep.600: train_loss:+2.2420, train_accuracy:+0.1668
+Ep.610: train_loss:+2.3011, train_accuracy:+0.1668
+Ep.620: train_loss:+2.2662, train_accuracy:+0.1668
+Ep.630: train_loss:+2.2402, train_accuracy:+0.1666
+Ep.640: train_loss:+2.2865, train_accuracy:+0.1665
+Ep.650: train_loss:+2.2278, train_accuracy:+0.1665
+Ep.660: train_loss:+2.1831, train_accuracy:+0.1666
+Ep.670: train_loss:+2.2921, train_accuracy:+0.1665
+Ep.680: train_loss:+2.3023, train_accuracy:+0.1664
+Ep.690: train_loss:+2.2567, train_accuracy:+0.1663
+==> Ep.699: test_loss:+2.1643, test_accuracy:+0.2123
+==> Confusion Matrix on test set 
+ [[811  10   0   0   0   0   0   8 120  51]
+ [588 238   0   0   0   0   0   2  60 112]
+ [932  10   0   0   0   0   0  17  25  16]
+ [933  14   0   0   0   0   0  12  11  30]
+ [933   3   0   0   0   0   0  19  22  23]
+ [953   3   0   0   0   0   0  12  16  16]
+ [963   6   0   0   0   0   0   3   9  19]
+ [717   8   0   0   0   0   0 179  22  74]
+ [435  36   0   0   0   0   0   1 481  47]
+ [390 127   0   0   0   0   0  10  98 375]] 
+
+Ep.700: train_loss:+2.2177, train_accuracy:+0.1663
+Ep.710: train_loss:+2.2309, train_accuracy:+0.1665
+Ep.720: train_loss:+2.1563, train_accuracy:+0.1664
+Ep.730: train_loss:+2.3410, train_accuracy:+0.1664
+Ep.740: train_loss:+2.2511, train_accuracy:+0.1664
+Ep.750: train_loss:+2.3511, train_accuracy:+0.1663
+Ep.760: train_loss:+2.2563, train_accuracy:+0.1661
+Ep.770: train_loss:+2.2469, train_accuracy:+0.1660
+Ep.780: train_loss:+2.2443, train_accuracy:+0.1659
+Ep.790: train_loss:+2.2487, train_accuracy:+0.1660
+==> Ep.799: test_loss:+2.1879, test_accuracy:+0.2117
+==> Confusion Matrix on test set 
+ [[697  17   0   0   0   0   0  15 206  65]
+ [546 254   0   0   0   0   0   2  77 121]
+ [919   5   0   0   0   0   0   9  34  33]
+ [922  15   0   0   0   0   0   1  26  36]
+ [926   4   0   0   0   0   0  18  33  19]
+ [938   8   0   0   0   0   0   7  25  22]
+ [955  14   0   0   0   0   0   0   9  22]
+ [738   5   0   0   0   0   0 157  30  70]
+ [347  36   0   0   0   0   0   5 544  68]
+ [367 115   0   0   0   0   0  12 108 398]] 
+
+Ep.800: train_loss:+2.2293, train_accuracy:+0.1657
+Ep.810: train_loss:+2.2415, train_accuracy:+0.1657
+Ep.820: train_loss:+2.2095, train_accuracy:+0.1659
+Ep.830: train_loss:+2.2470, train_accuracy:+0.1659
+Ep.840: train_loss:+2.2512, train_accuracy:+0.1659
+Ep.850: train_loss:+2.2726, train_accuracy:+0.1659
+Ep.860: train_loss:+2.2991, train_accuracy:+0.1659
+Ep.870: train_loss:+2.2476, train_accuracy:+0.1658
+Ep.880: train_loss:+2.3122, train_accuracy:+0.1657
+Ep.890: train_loss:+2.2108, train_accuracy:+0.1657
+==> Ep.899: test_loss:+2.1842, test_accuracy:+0.2114
+==> Confusion Matrix on test set 
+ [[691  14   0   0   0   0   0  21 207  67]
+ [534 267   0   0   0   0   0   8  62 129]
+ [899  14   0   0   0   0   0  32  35  20]
+ [915  18   0   0   0   0   0  10  22  35]
+ [907   6   0   0   0   0   0  35  32  20]
+ [930  11   0   0   0   0   0  16  22  21]
+ [943  24   0   0   0   0   0   2   9  22]
+ [689   8   0   0   0   0   1 204  28  70]
+ [322  42   0   0   0   0   0  11 542  83]
+ [355 113   0   0   0   0   0  23  73 436]] 
+
+Ep.900: train_loss:+2.3319, train_accuracy:+0.1656
+Ep.910: train_loss:+2.2351, train_accuracy:+0.1655
+Ep.920: train_loss:+2.2855, train_accuracy:+0.1655
+Ep.930: train_loss:+2.3313, train_accuracy:+0.1655
+Ep.940: train_loss:+2.2042, train_accuracy:+0.1653
+Ep.950: train_loss:+2.2096, train_accuracy:+0.1652
+Ep.960: train_loss:+2.1605, train_accuracy:+0.1652
+Ep.970: train_loss:+2.2828, train_accuracy:+0.1650
+Ep.980: train_loss:+2.3186, train_accuracy:+0.1649
+Ep.990: train_loss:+2.2422, train_accuracy:+0.1648
+==> Ep.999: test_loss:+2.1690, test_accuracy:+0.2117
+==> Confusion Matrix on test set 
+ [[763  19   0   0   0   0   0  17 139  62]
+ [475 311   0   0   0   0   0   8  39 167]
+ [927  12   0   0   0   0   0  21  21  19]
+ [925   8   0   0   0   0   0   8  17  42]
+ [938   9   0   0   0   0   0  20  15  18]
+ [951   7   0   0   0   0   0  13  12  17]
+ [960  13   0   0   0   0   0   1   6  20]
+ [737   7   0   0   0   0   0 188   7  61]
+ [388  44   0   0   0   0   0  11 432 125]
+ [371 101   0   0   0   0   0  17  42 469]] 
+
+Ep.1000: train_loss:+2.2685, train_accuracy:+0.1647
+Ep.1010: train_loss:+2.2173, train_accuracy:+0.1648
+Ep.1020: train_loss:+2.2793, train_accuracy:+0.1648
+Ep.1030: train_loss:+2.1993, train_accuracy:+0.1648
+Ep.1040: train_loss:+2.2083, train_accuracy:+0.1648
+Ep.1050: train_loss:+2.2199, train_accuracy:+0.1648
+Ep.1060: train_loss:+2.2781, train_accuracy:+0.1648
+Ep.1070: train_loss:+2.2651, train_accuracy:+0.1647
+Ep.1080: train_loss:+2.2101, train_accuracy:+0.1647
+Ep.1090: train_loss:+2.3377, train_accuracy:+0.1647
+==> Ep.1099: test_loss:+2.1838, test_accuracy:+0.2119
+==> Confusion Matrix on test set 
+ [[689  18   0   0   0   0   0  12 228  53]
+ [498 297   0   0   0   0   0   4  74 127]
+ [931   8   0   0   0   0   0   9  38  14]
+ [940  13   0   0   0   0   0   4  26  17]
+ [938   4   0   0   0   0   0  12  26  20]
+ [953   5   0   0   0   0   0  10  22  10]
+ [962  11   0   0   0   0   0   3   7  17]
+ [755  14   0   0   0   0   0 146  27  58]
+ [330  34   0   0   0   0   0   2 554  80]
+ [371  97   0   0   0   0   0  11  98 423]] 
+
+Ep.1100: train_loss:+2.2287, train_accuracy:+0.1647
+Ep.1110: train_loss:+2.2381, train_accuracy:+0.1646
+Ep.1120: train_loss:+2.2270, train_accuracy:+0.1645
+Ep.1130: train_loss:+2.2407, train_accuracy:+0.1645
+Ep.1140: train_loss:+2.2389, train_accuracy:+0.1645
+Ep.1150: train_loss:+2.2603, train_accuracy:+0.1645
+Ep.1160: train_loss:+2.3234, train_accuracy:+0.1644
+Ep.1170: train_loss:+2.2490, train_accuracy:+0.1646
+Ep.1180: train_loss:+2.2181, train_accuracy:+0.1648
+Ep.1190: train_loss:+2.2594, train_accuracy:+0.1648
+==> Ep.1199: test_loss:+2.2021, test_accuracy:+0.2115
+==> Confusion Matrix on test set 
+ [[767  12   0   0   0   0   0   1 135  85]
+ [583 240   0   0   0   0   0   1  53 123]
+ [942   4   0   0   0   0   0   6  26  22]
+ [948   8   0   0   0   0   0   0  14  30]
+ [946   3   0   0   0   0   0   5  17  29]
+ [954   3   0   0   0   0   0   1  19  23]
+ [971   7   0   0   0   0   0   0   6  16]
+ [826   4   0   0   0   0   0  76  18  76]
+ [364  29   0   0   0   0   0   1 473 133]
+ [417  98   0   0   0   0   0   3  54 428]] 
+
+Ep.1200: train_loss:+2.2647, train_accuracy:+0.1648
+Ep.1210: train_loss:+2.2110, train_accuracy:+0.1647
+Ep.1220: train_loss:+2.2945, train_accuracy:+0.1648
+Ep.1230: train_loss:+2.2775, train_accuracy:+0.1648
+Ep.1240: train_loss:+2.2636, train_accuracy:+0.1648
+Ep.1250: train_loss:+2.2541, train_accuracy:+0.1647
+Ep.1260: train_loss:+2.3248, train_accuracy:+0.1646
+Ep.1270: train_loss:+2.3088, train_accuracy:+0.1646
+Ep.1280: train_loss:+2.2900, train_accuracy:+0.1646
+Ep.1290: train_loss:+2.2205, train_accuracy:+0.1646
+==> Ep.1299: test_loss:+2.1774, test_accuracy:+0.2108
+==> Confusion Matrix on test set 
+ [[829   6   0   0   0   0   0   9 113  43]
+ [622 148   0   0   0   0   0   3  72 155]
+ [947   1   0   0   0   0   0  16  19  17]
+ [942   3   0   0   0   0   0   3  21  31]
+ [951   0   0   0   0   0   0  13  15  21]
+ [960   3   0   0   0   0   0   6  14  17]
+ [969   3   0   0   0   0   0   1   8  19]
+ [756   0   0   0   0   0   0 149  24  71]
+ [417   9   0   0   0   0   0   3 505  66]
+ [423  47   0   0   0   0   0   4  84 442]] 
+
+Ep.1300: train_loss:+2.2537, train_accuracy:+0.1646
+Ep.1310: train_loss:+2.2805, train_accuracy:+0.1646
+Ep.1320: train_loss:+2.3109, train_accuracy:+0.1644
+Ep.1330: train_loss:+2.3846, train_accuracy:+0.1643
+Ep.1340: train_loss:+2.2638, train_accuracy:+0.1641
+Ep.1350: train_loss:+2.3210, train_accuracy:+0.1639
+Ep.1360: train_loss:+2.3107, train_accuracy:+0.1639
+Ep.1370: train_loss:+2.3079, train_accuracy:+0.1638
+Ep.1380: train_loss:+2.2478, train_accuracy:+0.1637
+Ep.1390: train_loss:+2.2841, train_accuracy:+0.1637
+==> Ep.1399: test_loss:+2.1733, test_accuracy:+0.2104
+==> Confusion Matrix on test set 
+ [[777   3   0   0   0   0   0  13 171  36]
+ [644 145   0   0   0   0   0   7  67 137]
+ [933   5   0   0   0   0   0  16  33  13]
+ [944   2   0   0   0   0   0  10  23  21]
+ [944   1   0   0   0   0   0  26  17  12]
+ [958   2   0   0   0   0   0   9  18  13]
+ [969   1   0   0   0   0   0   6   6  18]
+ [763   1   0   0   0   0   0 176  23  37]
+ [395  16   0   0   0   0   0   6 534  49]
+ [489  39   0   0   0   0   0  15  76 381]] 
+
+Ep.1400: train_loss:+2.2299, train_accuracy:+0.1636
+Ep.1410: train_loss:+2.2621, train_accuracy:+0.1636
+Ep.1420: train_loss:+2.2406, train_accuracy:+0.1636
+Ep.1430: train_loss:+2.2438, train_accuracy:+0.1636
+Ep.1440: train_loss:+2.2938, train_accuracy:+0.1635
+Ep.1450: train_loss:+2.2497, train_accuracy:+0.1635
+Ep.1460: train_loss:+2.2714, train_accuracy:+0.1635
+Ep.1470: train_loss:+2.2547, train_accuracy:+0.1635
+Ep.1480: train_loss:+2.2740, train_accuracy:+0.1633
+Ep.1490: train_loss:+2.2750, train_accuracy:+0.1633
+==> Ep.1499: test_loss:+2.1883, test_accuracy:+0.2098
+==> Confusion Matrix on test set 
+ [[826   4   0   0   0   0   0   3 103  64]
+ [619 138   0   0   0   0   0   2  45 196]
+ [962   2   0   0   0   0   0   4  17  15]
+ [951   6   0   0   0   0   0   1  13  29]
+ [963   1   0   0   0   0   0   5  14  17]
+ [962   1   0   0   0   0   0   1  13  23]
+ [968   5   0   0   0   0   0   0   5  22]
+ [834   0   0   0   0   0   0  88  18  60]
+ [458  15   0   0   0   0   0   1 441  85]
+ [459  26   0   0   0   0   0   2  54 459]] 
+
+{'dnn_hidden_units': '300,200', 'learning_rate': 0.0003, 'max_steps': 1500, 'batch_size': 256, 'weight_init': 'normal', 'weight_init_scale': 0.001, 'weight_reg': 'l2', 'weight_reg_strength': 5e-05, 'dropout_rate': 0.4, 'activation': 'relu', 'optimizer': 'adam', 'data_dir': './cifar10/cifar-10-batches-py', 'log_dir': './logs/cifar10', 'grad_clipping': True, 'save_path': './trained_models/', 'model_name': 'moreunits_adam_normal_l2', 'train_settings_path': 'mlp_train_settings.json'}
+Ep.0: train_loss:+2.3025, train_accuracy:+0.0566
+Ep.10: train_loss:+2.2446, train_accuracy:+0.1502
+Ep.20: train_loss:+2.1851, train_accuracy:+0.1639
+Ep.30: train_loss:+2.2393, train_accuracy:+0.1801
+Ep.40: train_loss:+2.2177, train_accuracy:+0.1863
+Ep.50: train_loss:+2.1840, train_accuracy:+0.1931
+Ep.60: train_loss:+2.1550, train_accuracy:+0.1988
+Ep.70: train_loss:+2.1241, train_accuracy:+0.2020
+Ep.80: train_loss:+2.2671, train_accuracy:+0.2054
+Ep.90: train_loss:+2.1418, train_accuracy:+0.2117
+==> Ep.99: test_loss:+2.0167, test_accuracy:+0.2893
+==> Confusion Matrix on test set 
+ [[500  58  70   0   1   0  41  71 177  82]
+ [ 78 412  28   0   3   0  80  48  93 258]
+ [147  44 325   0  22   0 256 133  40  33]
+ [124 103 154   0  49   0 277 162  46  85]
+ [ 91  48 276   0  53   0 247 225  32  28]
+ [129 113 193   0  51   0 222 182  68  42]
+ [ 33  51 139   0  17   0 607 104   6  43]
+ [ 74  84 106   0  15   0 110 509  31  71]
+ [172  96  32   0   3   0  21  39 505 132]
+ [ 66 138  18   0   2   0  66  71 111 528]] 
+
+Ep.100: train_loss:+2.1409, train_accuracy:+0.2165
+Ep.110: train_loss:+2.1356, train_accuracy:+0.2194
+Ep.120: train_loss:+2.1027, train_accuracy:+0.2225
+Ep.130: train_loss:+2.1679, train_accuracy:+0.2240
+Ep.140: train_loss:+2.0859, train_accuracy:+0.2263
+Ep.150: train_loss:+2.1706, train_accuracy:+0.2285
+Ep.160: train_loss:+2.1598, train_accuracy:+0.2304
+Ep.170: train_loss:+2.0701, train_accuracy:+0.2327
+Ep.180: train_loss:+2.1876, train_accuracy:+0.2336
+Ep.190: train_loss:+2.0967, train_accuracy:+0.2349
+==> Ep.199: test_loss:+1.9589, test_accuracy:+0.3423
+==> Confusion Matrix on test set 
+ [[446 110  43   4   6   0  29  91 227  44]
+ [ 30 655   8  13   2   0  44  26 102 120]
+ [110 106 246  43  58   0 230 134  54  19]
+ [ 73 189  79 159  19   0 227 123  59  72]
+ [ 58 102 152  35 119   0 293 178  45  18]
+ [ 57 143 106 236  27   0 175 164  66  26]
+ [ 20 106  63  41  22   0 625  83  11  29]
+ [ 40 123  52  44  28   0  93 504  34  82]
+ [ 90 136  15  20   2   0  12  27 637  61]
+ [ 39 288   9   5   0   0  41  58 138 422]] 
+
+Ep.200: train_loss:+2.1570, train_accuracy:+0.2367
+Ep.210: train_loss:+2.0436, train_accuracy:+0.2385
+Ep.220: train_loss:+2.1681, train_accuracy:+0.2404
+Ep.230: train_loss:+1.9875, train_accuracy:+0.2417
+Ep.240: train_loss:+2.0853, train_accuracy:+0.2434
+Ep.250: train_loss:+2.0006, train_accuracy:+0.2447
+Ep.260: train_loss:+2.1175, train_accuracy:+0.2459
+Ep.270: train_loss:+2.1137, train_accuracy:+0.2469
+Ep.280: train_loss:+2.1609, train_accuracy:+0.2482
+Ep.290: train_loss:+1.9583, train_accuracy:+0.2495
+==> Ep.299: test_loss:+1.9508, test_accuracy:+0.3617
+==> Confusion Matrix on test set 
+ [[576  35  35  31  17   0  39  43 154  70]
+ [ 73 475   9  27  28   0  57  21  87 223]
+ [170  37 219  89 144   0 210  61  35  35]
+ [ 69  43  62 277 111   0 236  61  42  99]
+ [ 86  23 120  72 337   0 207  88  33  34]
+ [ 72  32 103 305 123   0 170  80  53  62]
+ [ 23  34  57  81  97   0 602  39  17  50]
+ [ 77  25  44  67 143   0  86 421  18 119]
+ [185  49   4  45  16   0  15  14 567 105]
+ [ 72 149   6  24   8   0  40  39  80 582]] 
+
+Ep.300: train_loss:+2.0697, train_accuracy:+0.2508
+Ep.310: train_loss:+2.0241, train_accuracy:+0.2517
+Ep.320: train_loss:+2.2331, train_accuracy:+0.2525
+Ep.330: train_loss:+2.0213, train_accuracy:+0.2531
+Ep.340: train_loss:+2.2643, train_accuracy:+0.2538
+Ep.350: train_loss:+2.0738, train_accuracy:+0.2544
+Ep.360: train_loss:+2.0884, train_accuracy:+0.2549
+Ep.370: train_loss:+1.9902, train_accuracy:+0.2555
+Ep.380: train_loss:+2.0717, train_accuracy:+0.2564
+Ep.390: train_loss:+2.0759, train_accuracy:+0.2571
+==> Ep.399: test_loss:+1.9374, test_accuracy:+0.3746
+==> Confusion Matrix on test set 
+ [[514  47  90   9  15   0  27  36 184  78]
+ [ 43 566  29  16  21   0  16  25  78 206]
+ [146  53 373  65 117   0 110  75  26  35]
+ [ 81  72 163 203  93   0 148  63  51 126]
+ [ 70  34 263  41 302   0 107 101  31  51]
+ [ 98  52 182 226  80   0 110  99  87  66]
+ [ 22  47 157  55 117   0 493  27  11  71]
+ [ 81  45  99  37 105   0  40 451  20 122]
+ [126  76   8  15  22   0   5   8 620 120]
+ [ 60 181  20   9   8   0  32  28  76 586]] 
+
+Ep.400: train_loss:+2.1620, train_accuracy:+0.2580
+Ep.410: train_loss:+2.0799, train_accuracy:+0.2588
+Ep.420: train_loss:+2.0400, train_accuracy:+0.2595
+Ep.430: train_loss:+2.0274, train_accuracy:+0.2599
+Ep.440: train_loss:+1.9862, train_accuracy:+0.2606
+Ep.450: train_loss:+2.0660, train_accuracy:+0.2613
+Ep.460: train_loss:+2.1123, train_accuracy:+0.2623
+Ep.470: train_loss:+2.1176, train_accuracy:+0.2628
+Ep.480: train_loss:+2.0024, train_accuracy:+0.2633
+Ep.490: train_loss:+2.1110, train_accuracy:+0.2639
+==> Ep.499: test_loss:+1.9285, test_accuracy:+0.3834
+==> Confusion Matrix on test set 
+ [[505  44  49  21  13   0  36  41 170 121]
+ [ 24 516  21  25   8   0  54  28  80 244]
+ [125  46 252 142 110   0 179  59  41  46]
+ [ 66  45  71 348  44   0 186  59  66 115]
+ [ 65  20 150  94 299   0 205  79  35  53]
+ [ 67  38 124 295  86   0 155  67  97  71]
+ [ 12  21  72 130  71   0 593  18  14  69]
+ [ 39  30  53  76 146   0  61 450  31 114]
+ [103  83  16  23   8   0  12  15 613 127]
+ [ 25 172  12  19   8   0  30  34  77 623]] 
+
+Ep.500: train_loss:+2.0511, train_accuracy:+0.2645
+Ep.510: train_loss:+2.0461, train_accuracy:+0.2651
+Ep.520: train_loss:+2.0320, train_accuracy:+0.2655
+Ep.530: train_loss:+2.1859, train_accuracy:+0.2660
+Ep.540: train_loss:+2.0526, train_accuracy:+0.2663
+Ep.550: train_loss:+1.9794, train_accuracy:+0.2667
+Ep.560: train_loss:+2.0868, train_accuracy:+0.2673
+Ep.570: train_loss:+2.0604, train_accuracy:+0.2677
+Ep.580: train_loss:+2.0939, train_accuracy:+0.2682
+Ep.590: train_loss:+2.0472, train_accuracy:+0.2685
+==> Ep.599: test_loss:+1.9207, test_accuracy:+0.3909
+==> Confusion Matrix on test set 
+ [[447  50  54  24  13   0  35  32 294  51]
+ [ 19 603   7  24  15   0  51  26 139 116]
+ [ 97  40 295 108 111   0 186  79  59  25]
+ [ 40  60  82 321  54   0 226  88  72  57]
+ [ 48  34 170  59 282   0 207 120  49  31]
+ [ 33  50 113 317  49   0 180 122  98  38]
+ [  9  39  72  82  90   0 634  32  21  21]
+ [ 41  44  50  64  80   0  70 521  47  83]
+ [ 48  74   6  34  14   0  13  14 739  58]
+ [ 35 268   6  28   6   0  52  35 128 442]] 
+
+Ep.600: train_loss:+1.9929, train_accuracy:+0.2690
+Ep.610: train_loss:+1.9595, train_accuracy:+0.2695
+Ep.620: train_loss:+2.0490, train_accuracy:+0.2702
+Ep.630: train_loss:+2.0324, train_accuracy:+0.2706
+Ep.640: train_loss:+2.1277, train_accuracy:+0.2708
+Ep.650: train_loss:+2.0799, train_accuracy:+0.2712
+Ep.660: train_loss:+2.0985, train_accuracy:+0.2716
+Ep.670: train_loss:+2.0297, train_accuracy:+0.2718
+Ep.680: train_loss:+2.0780, train_accuracy:+0.2720
+Ep.690: train_loss:+1.8782, train_accuracy:+0.2722
+==> Ep.699: test_loss:+1.9142, test_accuracy:+0.3965
+==> Confusion Matrix on test set 
+ [[651  46  26  29  25   0  38  23 108  54]
+ [ 83 590   9  48   9   0  38  25  60 138]
+ [150  50 181 158 119   0 234  53  31  24]
+ [ 76  48  51 445  41   0 178  42  42  77]
+ [ 93  21  65 125 286   0 279  78  22  31]
+ [ 67  40  54 416  85   0 163  67  56  52]
+ [ 29  32  24 155  60   0 626  19  18  37]
+ [ 80  30  39 125  98   0  80 445  11  92]
+ [218  78   5  51  16   0  10   7 549  66]
+ [104 202   8  43   7   0  32  33  51 520]] 
+
+Ep.700: train_loss:+2.0107, train_accuracy:+0.2726
+Ep.710: train_loss:+2.0594, train_accuracy:+0.2731
+Ep.720: train_loss:+1.9848, train_accuracy:+0.2733
+Ep.730: train_loss:+2.1487, train_accuracy:+0.2738
+Ep.740: train_loss:+2.0531, train_accuracy:+0.2741
+Ep.750: train_loss:+2.1100, train_accuracy:+0.2744
+Ep.760: train_loss:+2.1002, train_accuracy:+0.2745
+Ep.770: train_loss:+2.0457, train_accuracy:+0.2747
+Ep.780: train_loss:+2.0072, train_accuracy:+0.2750
+Ep.790: train_loss:+2.0921, train_accuracy:+0.2756
+==> Ep.799: test_loss:+1.8963, test_accuracy:+0.4011
+==> Confusion Matrix on test set 
+ [[353  66 102  24  11  11  23  54 285  71]
+ [ 14 581  10  23  17   7  33  34 122 159]
+ [ 72  59 275 104 122  87 131  72  54  24]
+ [ 26  69  70 321  64 122 126  75  63  64]
+ [ 37  37 117  67 314  93 147 110  48  30]
+ [ 12  48  74 281  64 199 102 113  65  42]
+ [  5  46  62 118 112  38 531  30  23  35]
+ [ 16  38  43  73 103  34  51 524  37  81]
+ [ 41  90  14  34   7  10  10  17 711  66]
+ [ 18 216  12  36  13   4  34  44 105 518]] 
+
+Ep.800: train_loss:+2.0124, train_accuracy:+0.2759
+Ep.810: train_loss:+2.0057, train_accuracy:+0.2763
+Ep.820: train_loss:+2.0145, train_accuracy:+0.2769
+Ep.830: train_loss:+2.0417, train_accuracy:+0.2773
+Ep.840: train_loss:+1.9891, train_accuracy:+0.2778
+Ep.850: train_loss:+2.1268, train_accuracy:+0.2782
+Ep.860: train_loss:+1.9813, train_accuracy:+0.2786
+Ep.870: train_loss:+2.1131, train_accuracy:+0.2788
+Ep.880: train_loss:+2.0988, train_accuracy:+0.2790
+Ep.890: train_loss:+2.0116, train_accuracy:+0.2791
+==> Ep.899: test_loss:+1.8891, test_accuracy:+0.4053
+==> Confusion Matrix on test set 
+ [[557  28  59  53  19  12  19  33 126  94]
+ [ 52 401  42  42  13  17  24  32  78 299]
+ [104  27 390 132  89  46  76  78  24  34]
+ [ 50  18 134 336  34 141 110  61  32  84]
+ [ 70  16 259 102 274  22  90 107  22  38]
+ [ 37  25 160 221  56 243  84  86  44  44]
+ [  8  14 187 128 109  41 446  20  14  33]
+ [ 40  21  69 103  86  37  39 491   8 106]
+ [129  42  18  40  11  14   7  26 606 107]
+ [ 44  83  12  55   7  16  28  44  51 660]] 
+
+Ep.900: train_loss:+2.1029, train_accuracy:+0.2793
+Ep.910: train_loss:+1.9588, train_accuracy:+0.2797
+Ep.920: train_loss:+2.0587, train_accuracy:+0.2800
+Ep.930: train_loss:+2.0140, train_accuracy:+0.2802
+Ep.940: train_loss:+2.0126, train_accuracy:+0.2804
+Ep.950: train_loss:+1.9683, train_accuracy:+0.2806
+Ep.960: train_loss:+1.8530, train_accuracy:+0.2810
+Ep.970: train_loss:+2.1196, train_accuracy:+0.2813
+Ep.980: train_loss:+2.1719, train_accuracy:+0.2817
+Ep.990: train_loss:+2.0084, train_accuracy:+0.2820
+==> Ep.999: test_loss:+1.8570, test_accuracy:+0.4095
+==> Confusion Matrix on test set 
+ [[555  66  47  32  14  14  25  35 133  79]
+ [ 45 644   4  40  15  14  19  22  54 143]
+ [118  68 253 123 135  72 127  59  25  20]
+ [ 47  73  61 365  47 173 101  49  36  48]
+ [ 67  40 151 123 278  50 128 111  24  28]
+ [ 41  52  91 244  63 308  73  54  42  32]
+ [ 10  58  73 201  95  40 473  20   8  22]
+ [ 37  53  33  99  85  75  33 505  13  67]
+ [126  94  15  30   9  16   7  14 608  81]
+ [ 38 226   8  39   6  13  36  43  47 544]] 
+
+Ep.1000: train_loss:+2.0316, train_accuracy:+0.2825
+Ep.1010: train_loss:+1.9877, train_accuracy:+0.2829
+Ep.1020: train_loss:+2.0300, train_accuracy:+0.2833
+Ep.1030: train_loss:+2.0667, train_accuracy:+0.2837
+Ep.1040: train_loss:+2.0452, train_accuracy:+0.2839
+Ep.1050: train_loss:+1.9789, train_accuracy:+0.2842
+Ep.1060: train_loss:+2.0393, train_accuracy:+0.2843
+Ep.1070: train_loss:+1.9899, train_accuracy:+0.2846
+Ep.1080: train_loss:+2.0026, train_accuracy:+0.2849
+Ep.1090: train_loss:+2.0150, train_accuracy:+0.2853
+==> Ep.1099: test_loss:+1.8418, test_accuracy:+0.4141
+==> Confusion Matrix on test set 
+ [[414  44  81  38  15  12  40  31 247  78]
+ [ 15 562  20  34  13   9  43  23  91 190]
+ [ 68  40 353 109  89  48 155  80  33  25]
+ [ 19  35  94 255  60 150 201  80  41  65]
+ [ 44  24 195  61 288  31 173 125  30  29]
+ [  9  25 101 161  61 298 161  99  46  39]
+ [  1  28  90  71  96  37 607  24  11  35]
+ [ 16  33  54  56  72  47  71 558  18  75]
+ [ 56  69  19  23  13  27  13  12 678  90]
+ [ 17 157   7  32  11  16  45  51  87 577]] 
+
+Ep.1100: train_loss:+1.9997, train_accuracy:+0.2856
+Ep.1110: train_loss:+2.0592, train_accuracy:+0.2859
+Ep.1120: train_loss:+1.9843, train_accuracy:+0.2861
+Ep.1130: train_loss:+1.9694, train_accuracy:+0.2863
+Ep.1140: train_loss:+2.0829, train_accuracy:+0.2864
+Ep.1150: train_loss:+1.9559, train_accuracy:+0.2867
+Ep.1160: train_loss:+2.0058, train_accuracy:+0.2870
+Ep.1170: train_loss:+1.9956, train_accuracy:+0.2872
+Ep.1180: train_loss:+1.9730, train_accuracy:+0.2875
+Ep.1190: train_loss:+1.9638, train_accuracy:+0.2878
+==> Ep.1199: test_loss:+1.8326, test_accuracy:+0.4181
+==> Confusion Matrix on test set 
+ [[460  28  78  20  24  34  41  22 201  92]
+ [ 34 480  23  23  21  25  38  30  88 238]
+ [ 80  21 278  63 150 142 150  43  40  33]
+ [ 22  19  79 205  59 288 178  45  41  64]
+ [ 46   8 131  40 369 100 149  82  38  37]
+ [ 12  14  76 127  71 422 118  65  51  44]
+ [  3  12  47  77 134  88 572  20  17  30]
+ [ 23  20  51  48 102 104  53 473  33  93]
+ [ 80  37  13  18  15  38  13  11 675 100]
+ [ 28 124  15  34  12  18  47  27  82 613]] 
+
+Ep.1200: train_loss:+2.0178, train_accuracy:+0.2882
+Ep.1210: train_loss:+1.9747, train_accuracy:+0.2884
+Ep.1220: train_loss:+1.9726, train_accuracy:+0.2887
+Ep.1230: train_loss:+1.9979, train_accuracy:+0.2891
+Ep.1240: train_loss:+2.0856, train_accuracy:+0.2894
+Ep.1250: train_loss:+2.0218, train_accuracy:+0.2897
+Ep.1260: train_loss:+2.0119, train_accuracy:+0.2899
+Ep.1270: train_loss:+2.0453, train_accuracy:+0.2901
+Ep.1280: train_loss:+2.0031, train_accuracy:+0.2902
+Ep.1290: train_loss:+2.0840, train_accuracy:+0.2904
+==> Ep.1299: test_loss:+1.8404, test_accuracy:+0.4210
+==> Confusion Matrix on test set 
+ [[545  41  53  27   9  37  29  33 162  64]
+ [ 34 540  25  43   9  22  38  12  80 197]
+ [ 97  42 335  61  45 161 142  61  31  25]
+ [ 29  43  99 192  30 316 118  49  41  83]
+ [ 54  33 208  46 175 129 190  98  30  37]
+ [ 12  37 119 127  27 456  79  61  39  43]
+ [  7  33 114  71  42 119 531  26  15  42]
+ [ 41  31  69  46  66 107  49 491  16  84]
+ [ 95  66  13  43   4  38  10   7 648  76]
+ [ 41 146  10  40   5  17  26  33  70 612]] 
+
+Ep.1300: train_loss:+2.0716, train_accuracy:+0.2906
+Ep.1310: train_loss:+2.0059, train_accuracy:+0.2910
+Ep.1320: train_loss:+2.0231, train_accuracy:+0.2911
+Ep.1330: train_loss:+2.0928, train_accuracy:+0.2913
+Ep.1340: train_loss:+1.9403, train_accuracy:+0.2916
+Ep.1350: train_loss:+2.0702, train_accuracy:+0.2916
+Ep.1360: train_loss:+2.0181, train_accuracy:+0.2919
+Ep.1370: train_loss:+2.0342, train_accuracy:+0.2920
+Ep.1380: train_loss:+2.0552, train_accuracy:+0.2921
+Ep.1390: train_loss:+2.0075, train_accuracy:+0.2922
+==> Ep.1399: test_loss:+1.8110, test_accuracy:+0.4237
+==> Confusion Matrix on test set 
+ [[533  29  41  41  26  16  23  29 197  65]
+ [ 27 497  15  43  15  10  27  25 122 219]
+ [ 87  29 277 135 157  66 119  69  35  26]
+ [ 32  30  83 299  54 189 169  37  49  58]
+ [ 60  16 103  88 381  51 129  99  39  34]
+ [ 21  18  87 217  74 328 111  54  52  38]
+ [  6  22  52 112 147  57 543  18  19  24]
+ [ 33  18  50  94  86  86  33 502  30  68]
+ [ 87  44  10  34   9  20  10  13 701  72]
+ [ 35 144   4  50  16  15  30  40 105 561]] 
+
+Ep.1400: train_loss:+1.9074, train_accuracy:+0.2925
+Ep.1410: train_loss:+2.0724, train_accuracy:+0.2926
+Ep.1420: train_loss:+2.0339, train_accuracy:+0.2929
+Ep.1430: train_loss:+2.0932, train_accuracy:+0.2931
+Ep.1440: train_loss:+2.0588, train_accuracy:+0.2933
+Ep.1450: train_loss:+1.9738, train_accuracy:+0.2935
+Ep.1460: train_loss:+1.9833, train_accuracy:+0.2937
+Ep.1470: train_loss:+2.0174, train_accuracy:+0.2940
+Ep.1480: train_loss:+1.9908, train_accuracy:+0.2941
+Ep.1490: train_loss:+1.9553, train_accuracy:+0.2942
+==> Ep.1499: test_loss:+1.8201, test_accuracy:+0.4265
+==> Confusion Matrix on test set 
+ [[612  38  30  39   9  14  25  25 148  60]
+ [ 63 452  24  33  10  20  28  25  83 262]
+ [137  27 294 131  45  97 133  76  35  25]
+ [ 55  28  65 293  21 239 144  51  42  62]
+ [ 80  13 165  96 215  95 162 112  27  35]
+ [ 43  14  85 194  31 386  79  81  41  46]
+ [ 11  16 100 131  56  64 544  31  15  32]
+ [ 56  23  50  91  33  94  41 503  20  89]
+ [138  54   6  34   6  24   8   7 650  73]
+ [ 55  93   9  56   6  14  30  29  71 637]] 
+
+{'dnn_hidden_units': '300,200', 'learning_rate': 0.0003, 'max_steps': 1500, 'batch_size': 256, 'weight_init': 'normal', 'weight_init_scale': 0.001, 'weight_reg': 'l2', 'weight_reg_strength': 5e-05, 'dropout_rate': 0.4, 'activation': 'elu', 'optimizer': 'adam', 'data_dir': './cifar10/cifar-10-batches-py', 'log_dir': './logs/cifar10', 'grad_clipping': True, 'save_path': './trained_models/', 'model_name': 'moreunits_adam_normal_l2_elu', 'train_settings_path': 'mlp_train_settings.json'}
+Ep.0: train_loss:+2.3024, train_accuracy:+0.0703
+Ep.10: train_loss:+2.1098, train_accuracy:+0.1801
+Ep.20: train_loss:+2.0756, train_accuracy:+0.2064
+Ep.30: train_loss:+2.0532, train_accuracy:+0.2215
+Ep.40: train_loss:+2.0882, train_accuracy:+0.2324
+Ep.50: train_loss:+1.9649, train_accuracy:+0.2395
+Ep.60: train_loss:+2.0457, train_accuracy:+0.2477
+Ep.70: train_loss:+1.9917, train_accuracy:+0.2525
+Ep.80: train_loss:+1.9587, train_accuracy:+0.2571
+Ep.90: train_loss:+1.9389, train_accuracy:+0.2637
+==> Ep.99: test_loss:+1.8074, test_accuracy:+0.3465
+==> Confusion Matrix on test set 
+ [[512  28  46  30   2  28  41  46 200  67]
+ [ 51 391   4  83   0  44  56  44 111 216]
+ [138  19 218 109   3 101 221 131  31  29]
+ [ 58  23  67 272   0 282 127  90  19  62]
+ [ 68  18 151  92  10  80 276 245  29  31]
+ [ 43  12  82 152   1 408 115 129  27  31]
+ [ 18  23  87 112   0  86 577  56   5  36]
+ [ 50  26  33  97   2  71  58 538  30  95]
+ [129  65   6  24   0  75  10  24 563 104]
+ [ 47 138   7  67   0  31  35  52 134 489]] 
+
+Ep.100: train_loss:+1.9419, train_accuracy:+0.2685
+Ep.110: train_loss:+1.9791, train_accuracy:+0.2719
+Ep.120: train_loss:+1.9826, train_accuracy:+0.2753
+Ep.130: train_loss:+2.0546, train_accuracy:+0.2765
+Ep.140: train_loss:+2.0016, train_accuracy:+0.2778
+Ep.150: train_loss:+1.9274, train_accuracy:+0.2804
+Ep.160: train_loss:+2.0440, train_accuracy:+0.2816
+Ep.170: train_loss:+2.0080, train_accuracy:+0.2827
+Ep.180: train_loss:+1.8960, train_accuracy:+0.2832
+Ep.190: train_loss:+1.9379, train_accuracy:+0.2848
+==> Ep.199: test_loss:+1.7582, test_accuracy:+0.3951
+==> Confusion Matrix on test set 
+ [[362  60  33  12  10  27  27  96 300  73]
+ [ 22 631  10  39   8  22  20  24  89 135]
+ [ 98  53 228  63  75 124 140 138  51  30]
+ [ 34  64  86 206  13 297 102  93  38  67]
+ [ 47  48 158  55 203  93 155 176  35  30]
+ [ 16  33  98 109  24 432  78 125  52  33]
+ [  8  62 104  80  65 121 464  60  10  26]
+ [ 26  56  30  35  27 105  39 575  29  78]
+ [ 39 117  13  19   8  28  10  21 641 104]
+ [ 27 261   5  30   5  31  34  48  79 480]] 
+
+Ep.200: train_loss:+1.9644, train_accuracy:+0.2869
+Ep.210: train_loss:+1.8833, train_accuracy:+0.2878
+Ep.220: train_loss:+1.9603, train_accuracy:+0.2891
+Ep.230: train_loss:+1.8739, train_accuracy:+0.2901
+Ep.240: train_loss:+1.8607, train_accuracy:+0.2914
+Ep.250: train_loss:+1.8749, train_accuracy:+0.2927
+Ep.260: train_loss:+2.0015, train_accuracy:+0.2936
+Ep.270: train_loss:+1.9222, train_accuracy:+0.2940
+Ep.280: train_loss:+1.8841, train_accuracy:+0.2950
+Ep.290: train_loss:+1.8641, train_accuracy:+0.2954
+==> Ep.299: test_loss:+1.7173, test_accuracy:+0.4073
+==> Confusion Matrix on test set 
+ [[621  27  19  19  44   9  31  21 136  73]
+ [ 78 461   7  34  30  17  34  22  68 249]
+ [178  33 130  83 286  45 146  42  32  25]
+ [ 78  16  56 257 120 136 189  46  30  72]
+ [ 78  10  57  50 489  33 135  80  32  36]
+ [ 72  10  49 183 125 288 136  76  25  36]
+ [ 25  20  22  73 242  33 501  26  20  38]
+ [ 81  22  34  51 139  52  67 439  11 104]
+ [238  53   4  31  19  18  10   8 516 103]
+ [ 68 136   4  33  18  12  42  27  67 593]] 
+
+Ep.300: train_loss:+1.9403, train_accuracy:+0.2961
+Ep.310: train_loss:+1.8639, train_accuracy:+0.2970
+Ep.320: train_loss:+1.9713, train_accuracy:+0.2977
+Ep.330: train_loss:+1.9404, train_accuracy:+0.2986
+Ep.340: train_loss:+1.9489, train_accuracy:+0.2996
+Ep.350: train_loss:+1.9740, train_accuracy:+0.2998
+Ep.360: train_loss:+1.9138, train_accuracy:+0.3003
+Ep.370: train_loss:+1.8397, train_accuracy:+0.3011
+Ep.380: train_loss:+1.9586, train_accuracy:+0.3014
+Ep.390: train_loss:+1.8437, train_accuracy:+0.3016
+==> Ep.399: test_loss:+1.6664, test_accuracy:+0.4166
+==> Confusion Matrix on test set 
+ [[495  36  26  26  47  21  18  38 202  91]
+ [ 23 522  16  12  25  29  26  23  97 227]
+ [119  27 227  73 167  87 156  81  32  31]
+ [ 54  15  44 272  87 205 123  64  29 107]
+ [ 59  19 123  50 337  49 189  99  28  47]
+ [ 31  13  48 206  91 339 100  87  34  51]
+ [ 17  21  49  85 104  64 560  35  10  55]
+ [ 34  23  25  48 104  91  45 517  24  89]
+ [ 93  67   8  33  29  20   3  13 637  97]
+ [ 24 157   6  21  11  23  30  42  92 594]] 
+
+Ep.400: train_loss:+1.9136, train_accuracy:+0.3031
+Ep.410: train_loss:+1.8377, train_accuracy:+0.3039
+Ep.420: train_loss:+1.9353, train_accuracy:+0.3044
+Ep.430: train_loss:+1.8471, train_accuracy:+0.3047
+Ep.440: train_loss:+1.8357, train_accuracy:+0.3053
+Ep.450: train_loss:+1.8622, train_accuracy:+0.3060
+Ep.460: train_loss:+1.8570, train_accuracy:+0.3064
+Ep.470: train_loss:+1.8984, train_accuracy:+0.3067
+Ep.480: train_loss:+1.8873, train_accuracy:+0.3070
+Ep.490: train_loss:+1.9544, train_accuracy:+0.3072
+==> Ep.499: test_loss:+1.6759, test_accuracy:+0.4246
+==> Confusion Matrix on test set 
+ [[516  38  42  15  32  12  65  36 164  80]
+ [ 22 594  10  39  21  18  47  23  54 172]
+ [107  22 225  91 121  70 258  51  33  22]
+ [ 37  28  61 217  61 211 253  38  28  66]
+ [ 56  10  96  47 348  51 271  61  29  31]
+ [ 31  19  66 135  67 359 200  62  30  31]
+ [ 12  20  34  41  73  42 716  14  11  37]
+ [ 36  22  66  46  96  77  89 463  14  91]
+ [ 93 119   8  23  14  35  25   9 580  94]
+ [ 30 200   5  29  19  16  52  36  59 554]] 
+
+Ep.500: train_loss:+1.8303, train_accuracy:+0.3077
+Ep.510: train_loss:+1.9340, train_accuracy:+0.3084
+Ep.520: train_loss:+1.8836, train_accuracy:+0.3090
+Ep.530: train_loss:+2.0222, train_accuracy:+0.3094
+Ep.540: train_loss:+1.8148, train_accuracy:+0.3100
+Ep.550: train_loss:+1.8521, train_accuracy:+0.3104
+Ep.560: train_loss:+1.9023, train_accuracy:+0.3107
+Ep.570: train_loss:+1.8508, train_accuracy:+0.3109
+Ep.580: train_loss:+1.8816, train_accuracy:+0.3113
+Ep.590: train_loss:+1.8721, train_accuracy:+0.3114
+==> Ep.599: test_loss:+1.6683, test_accuracy:+0.4304
+==> Confusion Matrix on test set 
+ [[482  18  79  11  38  22  23  25 217  85]
+ [ 37 403   9  22  22  25  22  28 209 223]
+ [ 80  20 272  71 201  99 113  67  47  30]
+ [ 34  12  73 253  77 228 140  43  50  90]
+ [ 53   6  99  46 434  70 117  82  46  47]
+ [ 33   8  91 150  93 377  84  60  54  50]
+ [  8  12  41  70 173  68 522  29  26  51]
+ [ 41  19  62  52  84  93  37 486  22 104]
+ [ 94  32  18  16  19  12   8   8 708  85]
+ [ 39 120   6  21  15  24  28  28 120 599]] 
+
+Ep.600: train_loss:+1.8445, train_accuracy:+0.3119
+Ep.610: train_loss:+1.7831, train_accuracy:+0.3125
+Ep.620: train_loss:+1.9488, train_accuracy:+0.3128
+Ep.630: train_loss:+1.8989, train_accuracy:+0.3129
+Ep.640: train_loss:+1.8941, train_accuracy:+0.3130
+Ep.650: train_loss:+1.8884, train_accuracy:+0.3135
+Ep.660: train_loss:+1.9347, train_accuracy:+0.3142
+Ep.670: train_loss:+1.9265, train_accuracy:+0.3147
+Ep.680: train_loss:+1.8907, train_accuracy:+0.3150
+Ep.690: train_loss:+1.8294, train_accuracy:+0.3152
+==> Ep.699: test_loss:+1.6800, test_accuracy:+0.4337
+==> Confusion Matrix on test set 
+ [[560  18  66  20  59   2  54  16 129  76]
+ [ 66 464  19  30  35   6  54  15  93 218]
+ [ 92  15 278  99 181  17 237  30  28  23]
+ [ 32  14  96 338 126  43 234  26  52  39]
+ [ 50   5 135  59 399   7 253  34  31  27]
+ [ 22   9 113 265 110 164 178  38  71  30]
+ [  6  14  64  80  88   2 697   9  19  21]
+ [ 39  17  61  77 202  26  84 390  21  83]
+ [163  35  10  23  33   2  25   6 599 104]
+ [ 34 130  10  48  38   5  48  18  59 610]] 
+
+Ep.700: train_loss:+1.8754, train_accuracy:+0.3151
+Ep.710: train_loss:+1.8870, train_accuracy:+0.3155
+Ep.720: train_loss:+1.6909, train_accuracy:+0.3158
+Ep.730: train_loss:+2.0547, train_accuracy:+0.3162
+Ep.740: train_loss:+1.8324, train_accuracy:+0.3166
+Ep.750: train_loss:+1.9664, train_accuracy:+0.3166
+Ep.760: train_loss:+1.9414, train_accuracy:+0.3167
+Ep.770: train_loss:+1.8593, train_accuracy:+0.3169
+Ep.780: train_loss:+1.8778, train_accuracy:+0.3171
+Ep.790: train_loss:+1.8658, train_accuracy:+0.3172
+==> Ep.799: test_loss:+1.6535, test_accuracy:+0.4366
+==> Confusion Matrix on test set 
+ [[491  16  75  34  24  11  35  58 179  77]
+ [ 46 460  13  16  30  18  50  22  77 268]
+ [ 78   9 308  85  71  92 236  58  29  34]
+ [ 24   5  89 217  40 220 252  54  31  68]
+ [ 45   5 158  40 253  81 279  82  29  28]
+ [ 23   7  96 139  40 409 164  56  29  37]
+ [  8   8  64  47  61  55 688  29  11  29]
+ [ 22  13  55  41  71 110  83 537  13  55]
+ [ 94  47  13  23  27  22  14  21 645  94]
+ [ 35 131   6  19  22  17  54  68  54 594]] 
+
+Ep.800: train_loss:+1.9196, train_accuracy:+0.3174
+Ep.810: train_loss:+1.9025, train_accuracy:+0.3176
+Ep.820: train_loss:+1.7894, train_accuracy:+0.3179
+Ep.830: train_loss:+1.8339, train_accuracy:+0.3183
+Ep.840: train_loss:+1.8152, train_accuracy:+0.3186
+Ep.850: train_loss:+1.8734, train_accuracy:+0.3189
+Ep.860: train_loss:+1.8928, train_accuracy:+0.3189
+Ep.870: train_loss:+1.8834, train_accuracy:+0.3191
+Ep.880: train_loss:+1.8748, train_accuracy:+0.3193
+Ep.890: train_loss:+1.8808, train_accuracy:+0.3197
+==> Ep.899: test_loss:+1.6269, test_accuracy:+0.4397
+==> Confusion Matrix on test set 
+ [[591  46  39  34  31  16  21  35 139  48]
+ [ 61 590  17  32  30  10  17  17  84 142]
+ [103  27 282 118 204  71  89  62  27  17]
+ [ 51  18  56 325 115 197 110  43  32  53]
+ [ 71  16 116  70 466  48  91  71  29  22]
+ [ 42  19  76 227 108 337  73  66  29  23]
+ [ 10  22  51 135 235  45 450  18  13  21]
+ [ 58  15  58  90 118  55  38 496   9  63]
+ [138  68   6  31  22  21   7  13 612  82]
+ [ 67 219   4  47  17   9  28  43  54 512]] 
+
+Ep.900: train_loss:+1.9820, train_accuracy:+0.3199
+Ep.910: train_loss:+1.8712, train_accuracy:+0.3200
+Ep.920: train_loss:+1.8668, train_accuracy:+0.3203
+Ep.930: train_loss:+1.9616, train_accuracy:+0.3205
+Ep.940: train_loss:+1.8037, train_accuracy:+0.3209
+Ep.950: train_loss:+1.9211, train_accuracy:+0.3210
+Ep.960: train_loss:+1.8311, train_accuracy:+0.3213
+Ep.970: train_loss:+1.9012, train_accuracy:+0.3214
+Ep.980: train_loss:+1.8939, train_accuracy:+0.3217
+Ep.990: train_loss:+1.8561, train_accuracy:+0.3219
+==> Ep.999: test_loss:+1.6303, test_accuracy:+0.4430
+==> Confusion Matrix on test set 
+ [[530  24  56  12  37  15  29  25 215  57]
+ [ 39 516  16  13  33  24  33  22 110 194]
+ [107  13 306  94 119  83 169  48  38  23]
+ [ 48  10  76 295  85 170 177  39  41  59]
+ [ 61   7 138  51 355  57 207  75  28  21]
+ [ 24   9  92 204  87 350 121  48  38  27]
+ [ 11  12  56  92  87  38 646  17  11  30]
+ [ 45  20  43  62 121  89  46 509  16  49]
+ [ 85  41  10  15  35  24  15   8 707  60]
+ [ 33 137  11  23  30  16  45  43  88 574]] 
+
+Ep.1000: train_loss:+1.7543, train_accuracy:+0.3222
+Ep.1010: train_loss:+1.8594, train_accuracy:+0.3223
+Ep.1020: train_loss:+1.8929, train_accuracy:+0.3227
+Ep.1030: train_loss:+1.8485, train_accuracy:+0.3228
+Ep.1040: train_loss:+1.9885, train_accuracy:+0.3229
+Ep.1050: train_loss:+1.9100, train_accuracy:+0.3233
+Ep.1060: train_loss:+1.9103, train_accuracy:+0.3234
+Ep.1070: train_loss:+1.7718, train_accuracy:+0.3236
+Ep.1080: train_loss:+1.8566, train_accuracy:+0.3239
+Ep.1090: train_loss:+1.9084, train_accuracy:+0.3242
+==> Ep.1099: test_loss:+1.6136, test_accuracy:+0.4465
+==> Confusion Matrix on test set 
+ [[492  28  82  26  38   8  45  17 213  51]
+ [ 33 523  18  31  25  15  36  17 126 176]
+ [ 77  19 393 115 108  51 127  49  39  22]
+ [ 28   8 110 313  53 165 175  50  39  59]
+ [ 60   8 210  64 326  52 130  90  35  25]
+ [ 19  12 124 202  59 333 113  69  44  25]
+ [  5   8  97  86 115  44 577  28  15  25]
+ [ 33  15  69  70  90  63  59 505  26  70]
+ [ 78  41  10  24  19  22  14   5 716  71]
+ [ 39 127   9  35  19  17  46  24 119 565]] 
+
+Ep.1100: train_loss:+1.8068, train_accuracy:+0.3245
+Ep.1110: train_loss:+1.9064, train_accuracy:+0.3247
+Ep.1120: train_loss:+1.9111, train_accuracy:+0.3248
+Ep.1130: train_loss:+1.8138, train_accuracy:+0.3247
+Ep.1140: train_loss:+1.8822, train_accuracy:+0.3249
+Ep.1150: train_loss:+1.9352, train_accuracy:+0.3249
+Ep.1160: train_loss:+1.9045, train_accuracy:+0.3251
+Ep.1170: train_loss:+1.8486, train_accuracy:+0.3253
+Ep.1180: train_loss:+1.7519, train_accuracy:+0.3256
+Ep.1190: train_loss:+1.8283, train_accuracy:+0.3257
+==> Ep.1199: test_loss:+1.6197, test_accuracy:+0.4490
+==> Confusion Matrix on test set 
+ [[470  16  84  13  41  12  47  21 261  35]
+ [ 35 519  12  10  34  13  35  29 161 152]
+ [ 79  11 321  47 159  99 154  69  43  18]
+ [ 22  12  81 172  93 257 213  50  46  54]
+ [ 49   6 136  29 404  76 137  94  44  25]
+ [ 19   7  93 111  82 408 122  82  51  25]
+ [  5  12  52  48 156  45 601  41  13  27]
+ [ 40  13  44  25  91 111  58 527  32  59]
+ [ 63  38  13  16  29  21  21   5 744  50]
+ [ 36 129  16  16  23  22  56  37 156 509]] 
+
+Ep.1200: train_loss:+1.9611, train_accuracy:+0.3260
+Ep.1210: train_loss:+1.8670, train_accuracy:+0.3262
+Ep.1220: train_loss:+1.8469, train_accuracy:+0.3264
+Ep.1230: train_loss:+1.8436, train_accuracy:+0.3266
+Ep.1240: train_loss:+1.9181, train_accuracy:+0.3266
+Ep.1250: train_loss:+1.8399, train_accuracy:+0.3268
+Ep.1260: train_loss:+1.8243, train_accuracy:+0.3268
+Ep.1270: train_loss:+1.8500, train_accuracy:+0.3270
+Ep.1280: train_loss:+1.8495, train_accuracy:+0.3271
+Ep.1290: train_loss:+1.9726, train_accuracy:+0.3272
+==> Ep.1299: test_loss:+1.6101, test_accuracy:+0.4509
+==> Confusion Matrix on test set 
+ [[583  24  68  22  27  21  36  16 113  90]
+ [ 55 510  27  14  16  26  18  16  67 251]
+ [ 98  28 310 103 127 107 145  38  20  24]
+ [ 30  23  78 276  61 241 146  43  25  77]
+ [ 64  11 120  48 363  98 174  69  22  31]
+ [ 23  12  78 206  64 429  81  43  26  38]
+ [  3  22  66  82  86  78 605  15   6  37]
+ [ 54  21  52  63  95 125  32 463   9  86]
+ [162  50  18  27  21  26  14   9 558 115]
+ [ 52 120  17  36   9  16  31  21  43 655]] 
+
+Ep.1300: train_loss:+1.8231, train_accuracy:+0.3273
+Ep.1310: train_loss:+1.8619, train_accuracy:+0.3273
+Ep.1320: train_loss:+1.9214, train_accuracy:+0.3274
+Ep.1330: train_loss:+1.9080, train_accuracy:+0.3275
+Ep.1340: train_loss:+1.8474, train_accuracy:+0.3276
+Ep.1350: train_loss:+1.7785, train_accuracy:+0.3277
+Ep.1360: train_loss:+1.8644, train_accuracy:+0.3277
+Ep.1370: train_loss:+1.8593, train_accuracy:+0.3279
+Ep.1380: train_loss:+1.8140, train_accuracy:+0.3280
+Ep.1390: train_loss:+1.9295, train_accuracy:+0.3283
+==> Ep.1399: test_loss:+1.6099, test_accuracy:+0.4529
+==> Confusion Matrix on test set 
+ [[497  26  66  20  68  11  33  18 199  62]
+ [ 38 498  24  22  36   9  24  26  81 242]
+ [ 69  24 278 110 285  55  93  45  23  18]
+ [ 25  11  88 357 147 121 139  35  35  42]
+ [ 49   7  77  61 534  41 110  72  32  17]
+ [ 17  10  90 305 134 267  82  41  30  24]
+ [  5  14  47 102 218  26 541  17  10  20]
+ [ 34  17  56  65 175  77  22 489  19  46]
+ [ 70  56  15  40  46  10   9   4 683  67]
+ [ 39  93  16  35  35  13  30  43  86 610]] 
+
+Ep.1400: train_loss:+1.8504, train_accuracy:+0.3284
+Ep.1410: train_loss:+1.9010, train_accuracy:+0.3285
+Ep.1420: train_loss:+1.9360, train_accuracy:+0.3287
+Ep.1430: train_loss:+1.8458, train_accuracy:+0.3288
+Ep.1440: train_loss:+1.7897, train_accuracy:+0.3289
+Ep.1450: train_loss:+1.7550, train_accuracy:+0.3291
+Ep.1460: train_loss:+1.8085, train_accuracy:+0.3292
+Ep.1470: train_loss:+1.8519, train_accuracy:+0.3293
+Ep.1480: train_loss:+1.8257, train_accuracy:+0.3295
+Ep.1490: train_loss:+1.8458, train_accuracy:+0.3297
+==> Ep.1499: test_loss:+1.5936, test_accuracy:+0.4554
+==> Confusion Matrix on test set 
+ [[564  33  56  22  46  15  13  26 170  55]
+ [ 43 538  14  24  28  10  23  17  93 210]
+ [ 95  33 329 104 161  81  87  55  30  25]
+ [ 38  19  95 310  83 197 119  37  37  65]
+ [ 56  17 147  60 430  60  94  75  36  25]
+ [ 24  12  90 201  84 387  73  57  41  31]
+ [  9  14  73  97 182  57 504  15  21  28]
+ [ 35  21  67  65 115  86  18 507  15  71]
+ [105  61   9  25  29  16  11   9 681  54]
+ [ 56 114   6  31  20  16  29  30  87 611]] 
+
+{'dnn_hidden_units': '300,200', 'learning_rate': 0.0003, 'max_steps': 1500, 'batch_size': 256, 'weight_init': 'xavier', 'weight_init_scale': 0.001, 'weight_reg': 'l2', 'weight_reg_strength': 5e-05, 'dropout_rate': 0.4, 'activation': 'relu', 'optimizer': 'adam', 'data_dir': './cifar10/cifar-10-batches-py', 'log_dir': './logs/cifar10', 'grad_clipping': True, 'save_path': './trained_models/', 'model_name': 'moreunits_adam_xavier_l2', 'train_settings_path': 'mlp_train_settings.json'}
+Ep.0: train_loss:+158.6538, train_accuracy:+0.0371
+Ep.10: train_loss:+31.0817, train_accuracy:+0.1127
+Ep.20: train_loss:+8.3805, train_accuracy:+0.1102
+Ep.30: train_loss:+3.4810, train_accuracy:+0.1060
+Ep.40: train_loss:+3.1107, train_accuracy:+0.1060
+Ep.50: train_loss:+2.5131, train_accuracy:+0.1058
+Ep.60: train_loss:+2.6447, train_accuracy:+0.1034
+Ep.70: train_loss:+3.7290, train_accuracy:+0.1026
+Ep.80: train_loss:+2.3551, train_accuracy:+0.1022
+Ep.90: train_loss:+2.3228, train_accuracy:+0.1018
+==> Ep.99: test_loss:+2.3228, test_accuracy:+0.0918
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.100: train_loss:+2.3228, train_accuracy:+0.1023
+Ep.110: train_loss:+2.3385, train_accuracy:+0.1014
+Ep.120: train_loss:+3.2198, train_accuracy:+0.1012
+Ep.130: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.140: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.150: train_loss:+2.3823, train_accuracy:+0.1011
+Ep.160: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.170: train_loss:+2.3228, train_accuracy:+0.1009
+Ep.180: train_loss:+2.7000, train_accuracy:+0.1009
+Ep.190: train_loss:+2.3228, train_accuracy:+0.1014
+==> Ep.199: test_loss:+2.3228, test_accuracy:+0.0978
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.200: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.210: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.220: train_loss:+2.5509, train_accuracy:+0.1006
+Ep.230: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.240: train_loss:+2.9662, train_accuracy:+0.1006
+Ep.250: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.260: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.270: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.280: train_loss:+2.9069, train_accuracy:+0.1003
+Ep.290: train_loss:+2.3228, train_accuracy:+0.1003
+==> Ep.299: test_loss:+2.3228, test_accuracy:+0.0980
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.300: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.310: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.320: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.330: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.340: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.350: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.360: train_loss:+2.3228, train_accuracy:+0.1008
+Ep.370: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.380: train_loss:+2.3820, train_accuracy:+0.1006
+Ep.390: train_loss:+2.3228, train_accuracy:+0.1007
+==> Ep.399: test_loss:+2.3228, test_accuracy:+0.0989
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.400: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.410: train_loss:+2.3228, train_accuracy:+0.1008
+Ep.420: train_loss:+2.3228, train_accuracy:+0.1008
+Ep.430: train_loss:+2.3228, train_accuracy:+0.1009
+Ep.440: train_loss:+2.3228, train_accuracy:+0.1008
+Ep.450: train_loss:+2.3228, train_accuracy:+0.1008
+Ep.460: train_loss:+2.3228, train_accuracy:+0.1010
+Ep.470: train_loss:+2.3228, train_accuracy:+0.1010
+Ep.480: train_loss:+2.3228, train_accuracy:+0.1008
+Ep.490: train_loss:+2.3228, train_accuracy:+0.1009
+==> Ep.499: test_loss:+2.3228, test_accuracy:+0.0994
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.500: train_loss:+2.3228, train_accuracy:+0.1009
+Ep.510: train_loss:+2.3228, train_accuracy:+0.1008
+Ep.520: train_loss:+2.3230, train_accuracy:+0.1008
+Ep.530: train_loss:+2.3228, train_accuracy:+0.1009
+Ep.540: train_loss:+2.3228, train_accuracy:+0.1008
+Ep.550: train_loss:+2.3228, train_accuracy:+0.1008
+Ep.560: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.570: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.580: train_loss:+2.4622, train_accuracy:+0.1006
+Ep.590: train_loss:+2.3228, train_accuracy:+0.1004
+==> Ep.599: test_loss:+2.3228, test_accuracy:+0.0995
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.600: train_loss:+2.3138, train_accuracy:+0.1005
+Ep.610: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.620: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.630: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.640: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.650: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.660: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.670: train_loss:+2.3788, train_accuracy:+0.1002
+Ep.680: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.690: train_loss:+2.3228, train_accuracy:+0.1001
+==> Ep.699: test_loss:+2.3228, test_accuracy:+0.0999
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.700: train_loss:+2.3158, train_accuracy:+0.1002
+Ep.710: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.720: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.730: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.740: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.750: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.760: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.770: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.780: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.790: train_loss:+2.3228, train_accuracy:+0.1005
+==> Ep.799: test_loss:+2.3228, test_accuracy:+0.1001
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.800: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.810: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.820: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.830: train_loss:+2.5215, train_accuracy:+0.1005
+Ep.840: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.850: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.860: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.870: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.880: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.890: train_loss:+2.3228, train_accuracy:+0.1004
+==> Ep.899: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.900: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.910: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.920: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.930: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.940: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.950: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.960: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.970: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.980: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.990: train_loss:+2.3228, train_accuracy:+0.1002
+==> Ep.999: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1000: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1010: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1020: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1030: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1040: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1050: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1060: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1070: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1080: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1090: train_loss:+2.3228, train_accuracy:+0.1003
+==> Ep.1099: test_loss:+2.3228, test_accuracy:+0.1003
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1100: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1110: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1120: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1130: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1140: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1150: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1160: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1170: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1180: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1190: train_loss:+2.3228, train_accuracy:+0.1004
+==> Ep.1199: test_loss:+2.3228, test_accuracy:+0.1003
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1200: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1210: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1220: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.1230: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1240: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1250: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1260: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1270: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1280: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1290: train_loss:+2.3228, train_accuracy:+0.1003
+==> Ep.1299: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1300: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1310: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1320: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1330: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1340: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1350: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1360: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1370: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1380: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1390: train_loss:+2.3228, train_accuracy:+0.1003
+==> Ep.1399: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1400: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1410: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1420: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1430: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1440: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1450: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1460: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1470: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1480: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1490: train_loss:+2.3228, train_accuracy:+0.1003
+==> Ep.1499: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+{'dnn_hidden_units': '300,200', 'learning_rate': 0.0003, 'max_steps': 6000, 'batch_size': 256, 'weight_init': 'xavier', 'weight_init_scale': 0.001, 'weight_reg': 'l2', 'weight_reg_strength': 5e-05, 'dropout_rate': 0.4, 'activation': 'relu', 'optimizer': 'adam', 'data_dir': './cifar10/cifar-10-batches-py', 'log_dir': './logs/cifar10', 'grad_clipping': True, 'save_path': './trained_models/', 'model_name': 'moreunits_adam_xavier_l2_6Ksteps', 'train_settings_path': 'mlp_train_settings.json'}
+Ep.0: train_loss:+174.7525, train_accuracy:+0.0449
+Ep.10: train_loss:+58.9307, train_accuracy:+0.1206
+Ep.20: train_loss:+19.5212, train_accuracy:+0.1142
+Ep.30: train_loss:+9.9204, train_accuracy:+0.1103
+Ep.40: train_loss:+3.9421, train_accuracy:+0.1087
+Ep.50: train_loss:+4.0124, train_accuracy:+0.1087
+Ep.60: train_loss:+2.4776, train_accuracy:+0.1060
+Ep.70: train_loss:+3.0349, train_accuracy:+0.1048
+Ep.80: train_loss:+2.3228, train_accuracy:+0.1043
+Ep.90: train_loss:+2.3138, train_accuracy:+0.1037
+==> Ep.99: test_loss:+2.3228, test_accuracy:+0.0943
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.100: train_loss:+2.6184, train_accuracy:+0.1042
+Ep.110: train_loss:+3.2050, train_accuracy:+0.1034
+Ep.120: train_loss:+2.7837, train_accuracy:+0.1029
+Ep.130: train_loss:+3.1131, train_accuracy:+0.1023
+Ep.140: train_loss:+2.5532, train_accuracy:+0.1022
+Ep.150: train_loss:+2.8197, train_accuracy:+0.1025
+Ep.160: train_loss:+2.3228, train_accuracy:+0.1024
+Ep.170: train_loss:+2.4506, train_accuracy:+0.1021
+Ep.180: train_loss:+2.7978, train_accuracy:+0.1021
+Ep.190: train_loss:+2.3686, train_accuracy:+0.1025
+==> Ep.199: test_loss:+2.3228, test_accuracy:+0.0983
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.200: train_loss:+2.4202, train_accuracy:+0.1021
+Ep.210: train_loss:+2.3228, train_accuracy:+0.1017
+Ep.220: train_loss:+2.9692, train_accuracy:+0.1015
+Ep.230: train_loss:+2.3228, train_accuracy:+0.1015
+Ep.240: train_loss:+2.4846, train_accuracy:+0.1014
+Ep.250: train_loss:+2.6400, train_accuracy:+0.1014
+Ep.260: train_loss:+2.3696, train_accuracy:+0.1013
+Ep.270: train_loss:+2.6258, train_accuracy:+0.1011
+Ep.280: train_loss:+2.3228, train_accuracy:+0.1009
+Ep.290: train_loss:+2.6872, train_accuracy:+0.1009
+==> Ep.299: test_loss:+2.3228, test_accuracy:+0.0983
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.300: train_loss:+2.3277, train_accuracy:+0.1009
+Ep.310: train_loss:+2.3228, train_accuracy:+0.1009
+Ep.320: train_loss:+2.4015, train_accuracy:+0.1008
+Ep.330: train_loss:+2.3228, train_accuracy:+0.1012
+Ep.340: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.350: train_loss:+2.3810, train_accuracy:+0.1011
+Ep.360: train_loss:+2.3228, train_accuracy:+0.1012
+Ep.370: train_loss:+2.3721, train_accuracy:+0.1011
+Ep.380: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.390: train_loss:+2.3228, train_accuracy:+0.1011
+==> Ep.399: test_loss:+2.3228, test_accuracy:+0.0991
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.400: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.410: train_loss:+2.3228, train_accuracy:+0.1012
+Ep.420: train_loss:+2.3228, train_accuracy:+0.1012
+Ep.430: train_loss:+2.3228, train_accuracy:+0.1012
+Ep.440: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.450: train_loss:+2.3228, train_accuracy:+0.1012
+Ep.460: train_loss:+2.3463, train_accuracy:+0.1014
+Ep.470: train_loss:+2.3228, train_accuracy:+0.1014
+Ep.480: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.490: train_loss:+2.3228, train_accuracy:+0.1012
+==> Ep.499: test_loss:+2.3228, test_accuracy:+0.0995
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.500: train_loss:+2.3228, train_accuracy:+0.1012
+Ep.510: train_loss:+2.3138, train_accuracy:+0.1011
+Ep.520: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.530: train_loss:+2.5855, train_accuracy:+0.1012
+Ep.540: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.550: train_loss:+2.3228, train_accuracy:+0.1011
+Ep.560: train_loss:+2.3228, train_accuracy:+0.1010
+Ep.570: train_loss:+2.3228, train_accuracy:+0.1009
+Ep.580: train_loss:+2.3228, train_accuracy:+0.1009
+Ep.590: train_loss:+2.3346, train_accuracy:+0.1007
+==> Ep.599: test_loss:+2.3228, test_accuracy:+0.0996
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.600: train_loss:+2.3667, train_accuracy:+0.1008
+Ep.610: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.620: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.630: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.640: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.650: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.660: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.670: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.680: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.690: train_loss:+2.3228, train_accuracy:+0.1004
+==> Ep.699: test_loss:+2.3228, test_accuracy:+0.1001
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.700: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.710: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.720: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.730: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.740: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.750: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.760: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.770: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.780: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.790: train_loss:+2.3228, train_accuracy:+0.1007
+==> Ep.799: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.800: train_loss:+2.3235, train_accuracy:+0.1006
+Ep.810: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.820: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.830: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.840: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.850: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.860: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.870: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.880: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.890: train_loss:+2.4201, train_accuracy:+0.1006
+==> Ep.899: test_loss:+2.3228, test_accuracy:+0.1003
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.900: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.910: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.920: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.930: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.940: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.950: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.960: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.970: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.980: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.990: train_loss:+2.3228, train_accuracy:+0.1004
+==> Ep.999: test_loss:+2.3228, test_accuracy:+0.1003
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1000: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1010: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1020: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1030: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1040: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1050: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1060: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1070: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1080: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1090: train_loss:+2.3228, train_accuracy:+0.1005
+==> Ep.1099: test_loss:+2.3228, test_accuracy:+0.1003
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1100: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1110: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1120: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1130: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1140: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1150: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1160: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1170: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1180: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1190: train_loss:+2.3228, train_accuracy:+0.1006
+==> Ep.1199: test_loss:+2.3228, test_accuracy:+0.1004
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1200: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.1210: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.1220: train_loss:+2.3228, train_accuracy:+0.1007
+Ep.1230: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.1240: train_loss:+2.3228, train_accuracy:+0.1006
+Ep.1250: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1260: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1270: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1280: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1290: train_loss:+2.3228, train_accuracy:+0.1004
+==> Ep.1299: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1300: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1310: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1320: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1330: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1340: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1350: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1360: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1370: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1380: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1390: train_loss:+2.3228, train_accuracy:+0.1004
+==> Ep.1399: test_loss:+2.3228, test_accuracy:+0.1003
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1400: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1410: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1420: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1430: train_loss:+2.5857, train_accuracy:+0.1004
+Ep.1440: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1450: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1460: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1470: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1480: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1490: train_loss:+2.3228, train_accuracy:+0.1004
+==> Ep.1499: test_loss:+2.3228, test_accuracy:+0.1003
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1500: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1510: train_loss:+2.3668, train_accuracy:+0.1005
+Ep.1520: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1530: train_loss:+2.3228, train_accuracy:+0.1005
+Ep.1540: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1550: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1560: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1570: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1580: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1590: train_loss:+2.3302, train_accuracy:+0.1004
+==> Ep.1599: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1600: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1610: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1620: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1630: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1640: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1650: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1660: train_loss:+2.3228, train_accuracy:+0.1004
+Ep.1670: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1680: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1690: train_loss:+2.3228, train_accuracy:+0.1003
+==> Ep.1699: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1700: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1710: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1720: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1730: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1740: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1750: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1760: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1770: train_loss:+2.3346, train_accuracy:+0.1003
+Ep.1780: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1790: train_loss:+2.3228, train_accuracy:+0.1002
+==> Ep.1799: test_loss:+2.3228, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1800: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1810: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1820: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1830: train_loss:+2.3228, train_accuracy:+0.1001
+Ep.1840: train_loss:+2.3228, train_accuracy:+0.1001
+Ep.1850: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1860: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1870: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1880: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1890: train_loss:+2.3228, train_accuracy:+0.1002
+==> Ep.1899: test_loss:+2.3228, test_accuracy:+0.1001
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.1900: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1910: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1920: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1930: train_loss:+2.3228, train_accuracy:+0.1002
+Ep.1940: train_loss:+2.3228, train_accuracy:+0.1003
+Ep.1950: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.1960: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.1970: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.1980: train_loss:+2.3603, train_accuracy:+0.1003
+Ep.1990: train_loss:+2.3229, train_accuracy:+0.1003
+==> Ep.1999: test_loss:+2.3229, test_accuracy:+0.1001
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.2000: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2010: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2020: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2030: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2040: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2050: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2060: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2070: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2080: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2090: train_loss:+2.3229, train_accuracy:+0.1002
+==> Ep.2099: test_loss:+2.3229, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.2100: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2110: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2120: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2130: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2140: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2150: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2160: train_loss:+2.3229, train_accuracy:+0.1003
+Ep.2170: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2180: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2190: train_loss:+2.3229, train_accuracy:+0.1002
+==> Ep.2199: test_loss:+2.3229, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.2200: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2210: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2220: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2230: train_loss:+2.3229, train_accuracy:+0.1001
+Ep.2240: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2250: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2260: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2270: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2280: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2290: train_loss:+2.3229, train_accuracy:+0.1002
+==> Ep.2299: test_loss:+2.3229, test_accuracy:+0.1002
+==> Confusion Matrix on test set 
+ [[1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]
+ [1000    0    0    0    0    0    0    0    0    0]] 
+
+Ep.2300: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2310: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2320: train_loss:+2.3229, train_accuracy:+0.1002
+Ep.2330: train_loss:+2.8313, train_accuracy:+0.1002
