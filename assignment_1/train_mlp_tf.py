@@ -15,6 +15,8 @@ from mlp_tf import MLP
 import cifar10_utils
 from tqdm import tqdm
 from util import Args
+from collections import defaultdict
+import pickle
 
 # Default constants
 LEARNING_RATE_DEFAULT = 2e-3
@@ -93,6 +95,22 @@ def _parse_flags(flags):
            max_steps, log_dir, data_dir
 
 
+def _update_stats(stats, train_loss=None, train_accuracy=None, test_loss=None, test_accuracy=None,
+                  test_confusion_matrix=None):
+    if train_loss:
+        stats['train_loss'].append(train_loss)
+    if train_accuracy:
+        stats['train_accuracy'].append(train_accuracy)
+    if test_loss:
+        stats['test_loss'].append(test_loss)
+    if test_accuracy:
+        stats['test_accuracy'].append(test_accuracy)
+    if test_confusion_matrix is not None:
+        stats['test_confusion_matrix'].append(test_confusion_matrix)
+
+    return stats
+
+
 def train():
     """
     Performs training and evaluation of MLP model. Evaluate your model each 100 iterations
@@ -146,14 +164,14 @@ def train():
     loss_op = net.loss(logits_op, y)
     accuracy_op = net.accuracy(logits_op, y)
     train_op = net.train_step(loss_op, train_flags)
-    confusion_matrix_op = net._get_confusion_matrix(logits=logits_op, labels=y)
+    confusion_matrix_op = net.confusion_matrix(logits=logits_op, labels=y)
 
     # Inference ops
     net.is_training = False
     logits_deterministic_op = net.inference(X)
     loss_deterministic_op = net.loss(logits_deterministic_op, y)
     accuracy_deterministic_op = net.accuracy(logits_deterministic_op, y)
-    confusion_matrix_deterministic_op = net._get_confusion_matrix(logits=logits_deterministic_op, labels=y)
+    confusion_matrix_deterministic_op = net.confusion_matrix(logits=logits_deterministic_op, labels=y)
     net.is_training = True  # revert back
 
     # utility ops
@@ -167,6 +185,9 @@ def train():
     init_op = tf.global_variables_initializer()
     local_init_op = tf.local_variables_initializer()
     session.run(fetches=[init_op, local_init_op])
+
+    # track losses
+    stats = defaultdict(list)
 
     # loop over steps
     for _step in tqdm(range(FLAGS.max_steps)):
@@ -186,6 +207,7 @@ def train():
             _, train_loss, train_accuracy = session.run(fetches=fetches, feed_dict=train_feed)
 
         print('Ep.{}: train_loss:{:+.4f}, train_accuracy:{:+.4f}'.format(_step, train_loss, train_accuracy))
+        stats = _update_stats(stats, train_loss=train_loss, train_accuracy=train_accuracy)
 
         # Sanity check
         if np.isnan(train_loss):
@@ -201,6 +223,9 @@ def train():
                 fetches=[loss_deterministic_op, accuracy_deterministic_op, logits_deterministic_op,
                          confusion_matrix_deterministic_op],
                 feed_dict=test_feed)
+
+            stats = _update_stats(stats, train_loss=train_loss, train_accuracy=train_accuracy,
+                                  test_confusion_matrix=confusion_matrix)
             print('==> Ep.{}: test_loss:{:+.4f}, test_accuracy:{:+.4f}'.format(_step, test_loss, test_accuracy))
             print('==> Confusion Matrix on test set \n {} \n'.format(confusion_matrix))
 
@@ -212,9 +237,18 @@ def train():
         tf.gfile.MakeDirs(save_dir)
     saver.save(session, save_path=os.path.join(save_dir, 'model.ckpt'))
 
-    ########################
-    # END OF YOUR CODE    #
-    #######################
+    # save results for easy plotting
+    results_dir = os.path.relpath('./results')
+    if not tf.gfile.Exists(results_dir):
+        tf.gfile.MakeDirs(results_dir)
+
+    with open(os.path.join(results_dir, '{}.pkl'.format(FLAGS.model_name)), 'wb') as f:
+        pickle.dump(stats, f)
+
+
+        ########################
+        # END OF YOUR CODE    #
+        #######################
 
 
 def print_flags():

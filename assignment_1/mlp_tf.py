@@ -282,7 +282,7 @@ class MLP(object):
 
         return accuracy
 
-    def _get_confusion_matrix(self, logits, labels):
+    def confusion_matrix(self, logits, labels):
 
         predictions = tf.argmax(input=logits, axis=1)
         class_labels = tf.argmax(input=labels, axis=1)
