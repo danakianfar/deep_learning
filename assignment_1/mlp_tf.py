@@ -194,7 +194,7 @@ class MLP(object):
         tf.summary.scalar('cross entropy loss', loss)
 
         complexity_cost = self._complexity_cost()
-        if complexity_cost:
+        if complexity_cost is not None:
             loss = tf.add(loss, complexity_cost, name='total_loss')
             tf.summary.scalar('total loss', loss)
 
