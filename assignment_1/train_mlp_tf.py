@@ -142,6 +142,11 @@ def train():
     # dataset
     cifar10 = cifar10_utils.get_cifar10(data_dir=data_dir)
 
+    # Session
+    tf.reset_default_graph()
+    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.33, allow_growth=True)
+    session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+
     # Placeholders for images, labels input.
     X = tf.placeholder(dtype=tf.float32, shape=[None, input_dim])
     y = tf.placeholder(dtype=tf.int32, shape=[None, n_classes])
@@ -151,11 +156,6 @@ def train():
               activation_fn=activation_fn, dropout_rate=dropout_rate,
               weight_initializer=weight_initializer,
               weight_regularizer=weight_regularizer)
-
-    # Session
-    tf.reset_default_graph()
-    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.33, allow_growth=True)
-    session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
     # Trainings ops
     net.is_training = True
