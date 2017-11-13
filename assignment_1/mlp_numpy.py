@@ -142,6 +142,10 @@ class MLP(object):
                  to evaluate the model.
         """
 
+        ########################
+        # PUT YOUR CODE HERE  #
+        #######################
+
         self._ff_cache = []
 
         # dim-first convention
@@ -153,6 +157,10 @@ class MLP(object):
             self._ff_cache.append(Z)
 
         logits = Z.T
+
+        ########################
+        # END OF YOUR CODE    #
+        #######################
 
         return logits
 
@@ -225,6 +233,10 @@ class MLP(object):
           loss: scalar float, full loss = cross_entropy + reg_loss
         """
 
+        ########################
+        # PUT YOUR CODE HERE  #
+        #######################
+
         preds = self._softmax2D(logits)
 
         nl_prior = self._weight_complexity_cost()
@@ -232,6 +244,10 @@ class MLP(object):
         nl_likelihood = self._cross_entropy_loss(preds, labels)
 
         loss = nl_likelihood + self.weight_decay * nl_prior
+
+        ########################
+        # END OF YOUR CODE    #
+        #######################
 
         return loss
 
@@ -244,13 +260,21 @@ class MLP(object):
           loss: scalar float.
           flags: contains necessary parameters for optimization.
         Returns:
-
         """
+
+        ########################
+        # PUT YOUR CODE HERE  #
+        #######################
+
         # compute gradients
 
         # apply grads
 
         # keep stats
+
+        ########################
+        # END OF YOUR CODE    #
+        #######################
 
         return
 
@@ -269,6 +293,11 @@ class MLP(object):
           accuracy: scalar float, the accuracy of predictions,
                     i.e. the average correct predictions over the whole batch.
         """
+
+        ########################
+        # PUT YOUR CODE HERE  #
+        #######################
+
         batch_size = logits.shape[0]
         class_preds = np.zeros_like(logits)
 
@@ -284,6 +313,10 @@ class MLP(object):
         # total number of correct preds: sum of values in matrix
         accuracy = correct_preds.sum() / batch_size
 
+        ########################
+        # END OF YOUR CODE    #
+        #######################
+
         return accuracy
 
     def __repr__(self):
@@ -298,7 +331,7 @@ class MLP(object):
 def test():
     batch_size = 256
     n_classes = 10
-    input_dim = 3*32*32
+    input_dim = 3 * 32 * 32
 
     net = MLP(n_hidden=[1000, 100, 200], n_classes=10, input_dim=input_dim)
     print(net)
