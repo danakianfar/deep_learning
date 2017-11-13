@@ -153,7 +153,8 @@ def train():
               weight_regularizer=weight_regularizer)
 
     # Session
-    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.33)
+    tf.reset_default_graph()
+    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.33, allow_growth=True)
     session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
     # Trainings ops
@@ -190,7 +191,7 @@ def train():
     stats = defaultdict(list)
 
     # loop over steps
-    for _step in tqdm(range(FLAGS.max_steps)):
+    for _step in range(FLAGS.max_steps):
 
         # get batch of data
         inputs, labels = cifar10.train.next_batch(batch_size)
@@ -206,8 +207,9 @@ def train():
         else:
             _, train_loss, train_accuracy = session.run(fetches=fetches, feed_dict=train_feed)
 
-        print('Ep.{}: train_loss:{:+.4f}, train_accuracy:{:+.4f}'.format(_step, train_loss, train_accuracy))
-        stats = _update_stats(stats, train_loss=train_loss, train_accuracy=train_accuracy)
+        if _step % 10 == 0:
+            print('Ep.{}: train_loss:{:+.4f}, train_accuracy:{:+.4f}'.format(_step, train_loss, train_accuracy))
+            stats = _update_stats(stats, train_loss=train_loss, train_accuracy=train_accuracy)
 
         # Sanity check
         if np.isnan(train_loss):
