@@ -9,10 +9,12 @@ import argparse
 import tensorflow as tf
 import numpy as np
 import os
+import json
 
 from mlp_tf import MLP
 import cifar10_utils
 from tqdm import tqdm
+from util import Args
 
 # Default constants
 LEARNING_RATE_DEFAULT = 2e-3
@@ -136,7 +138,8 @@ def train():
     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.33)
     session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
-    # Trainings and Inference ops
+    # Trainings ops
+    net.is_training = True
     global_step = tf.Variable(0, trainable=False, name='global_step')
     logits_op = net.inference(X)
     train_flags = {'optimizer': optimizer, 'global_step': global_step, 'grad_clipping': FLAGS.grad_clipping}
@@ -144,9 +147,21 @@ def train():
     accuracy_op = net.accuracy(logits_op, y)
     train_op = net.train_step(loss_op, train_flags)
     confusion_matrix_op = net._get_confusion_matrix(logits=logits_op, labels=y)
+
+    # Inference ops
+    net.is_training = False
+    logits_deterministic_op = net.inference(X)
+    loss_deterministic_op = net.loss(logits_deterministic_op, y)
+    accuracy_deterministic_op = net.accuracy(logits_deterministic_op, y)
+    confusion_matrix_deterministic_op = net._get_confusion_matrix(logits=logits_deterministic_op, labels=y)
+    net.is_training = True  # revert back
+
     # utility ops
     summary_op = tf.summary.merge_all()
-    log_writer = tf.summary.FileWriter(log_dir, graph=session.graph)
+    log_path = os.path.join(log_dir, FLAGS.model_name)
+    if not tf.gfile.Exists(log_path):
+        tf.gfile.MakeDirs(log_path)
+    log_writer = tf.summary.FileWriter(log_path, graph=session.graph)
 
     # Initialize variables
     init_op = tf.global_variables_initializer()
@@ -163,7 +178,7 @@ def train():
         train_feed = {X: inputs, y: labels}
         fetches = [train_op, loss_op, accuracy_op]
 
-        if _step % 33 == 0:  # write summary
+        if _step % 13 == 0:  # write summary
             fetches += [summary_op]
             _, train_loss, train_accuracy, train_summary = session.run(fetches=fetches, feed_dict=train_feed)
             log_writer.add_summary(train_summary, _step)
@@ -178,12 +193,14 @@ def train():
             break
 
         # eval on test set every 100 steps
-        if (_step + 1 )% 100 == 0:
+        if (_step + 1) % 100 == 0:
             X_test, y_test = cifar10.test.images, cifar10.test.labels
-            X_test = np.reshape(X_test, [X_test.shape[0],-1])
+            X_test = np.reshape(X_test, [X_test.shape[0], -1])
             test_feed = {X: X_test, y: y_test}
-            test_loss, test_accuracy, test_logits, confusion_matrix = session.run(fetches=[loss_op, accuracy_op, logits_op, confusion_matrix_op],
-                                                                feed_dict=test_feed)
+            test_loss, test_accuracy, test_logits, confusion_matrix = session.run(
+                fetches=[loss_deterministic_op, accuracy_deterministic_op, logits_deterministic_op,
+                         confusion_matrix_deterministic_op],
+                feed_dict=test_feed)
             print('==> Ep.{}: test_loss:{:+.4f}, test_accuracy:{:+.4f}'.format(_step, test_loss, test_accuracy))
             print('==> Confusion Matrix on test set \n {} \n'.format(confusion_matrix))
 
@@ -266,7 +283,31 @@ if __name__ == '__main__':
                         help='save path directory')
     parser.add_argument('--model_name', type=str, default='mlp_tf',
                         help='model_name')
+    parser.add_argument('--train_settings_path', type=str, default='mlp_train_settings.json',
+                        help='Path to a file with training settings that will override the CLI args.')
 
     FLAGS, unparsed = parser.parse_known_args()
 
-    tf.app.run()
+    if FLAGS.train_settings_path:
+        with open(FLAGS.train_settings_path) as f:
+            settings = json.load(f)
+
+            for setting_name, setting in settings.items():
+                setting['model_name'] = setting_name
+
+                opt = {**vars(FLAGS), **setting}  # override params with setting
+                FLAGS = Args(opt)  # wrapper around a dict to object with fields
+                print(FLAGS.__dict__)
+
+                # Make directories if they do not exists yet
+                if not tf.gfile.Exists(FLAGS.log_dir):
+                    tf.gfile.MakeDirs(FLAGS.log_dir)
+                if not tf.gfile.Exists(FLAGS.data_dir):
+                    tf.gfile.MakeDirs(FLAGS.data_dir)
+
+                # Run the training operation
+                train()
+
+
+    else:  # use CLI args
+        tf.app.run()

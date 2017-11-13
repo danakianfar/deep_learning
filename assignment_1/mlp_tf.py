@@ -74,7 +74,7 @@ class MLP(object):
     def _dense_layer(self, inputs, scope_name, W_shape):
         input_dim, output_dim = W_shape
 
-        with tf.variable_scope(scope_name):
+        with tf.variable_scope(scope_name, reuse=not self.is_training):
             W = tf.get_variable(name='weights', shape=W_shape, dtype=tf.float32,
                                 initializer=self.weight_initializer, regularizer=self.weight_regularizer)
 
@@ -83,7 +83,10 @@ class MLP(object):
 
             S = tf.add(tf.matmul(inputs, W), b, name='preactivation')
             Z = self.activation_fn(S, name='activations')
-            outputs = tf.nn.dropout(Z, 1. - self.dropout_rate, name='dropout')
+
+            keep_prob = 1. - self.dropout_rate if self.is_training else 1.
+
+            outputs = tf.nn.dropout(Z, keep_prob=keep_prob, name='dropout_activations')
 
             tf.summary.histogram('weights_{}'.format(scope_name), W)
             tf.summary.histogram('biases_{}'.format(scope_name), b)
@@ -132,7 +135,6 @@ class MLP(object):
         # Shapes of layers
         W_shapes = [self.input_dim] + self.n_hidden + [self.n_classes]
         W_shapes = [(W_shapes[i], W_shapes[i + 1]) for i in range(len(W_shapes) - 1)]
-        print('Weight shapes', W_shapes)
 
         Z = x
         for layer_num, shape in enumerate(W_shapes):
