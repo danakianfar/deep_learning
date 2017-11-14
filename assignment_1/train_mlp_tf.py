@@ -244,7 +244,7 @@ def train():
             window = stats['test_accuracy'][-10:-5]
             window_accuracy = sum(window) / len(window)
 
-            if test_accuracy - window_accuracy < delta:
+            if abs(test_accuracy - window_accuracy) < delta:
                 print('\n==> EARLY STOPPING with accuracy {} and moving-window mean accuracy {} \n'.format(test_accuracy,
                                                                                                        window_accuracy))
                 if test_accuracy < 0.3:
