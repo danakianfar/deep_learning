@@ -366,13 +366,13 @@ if __name__ == '__main__':
     elif FLAGS.grid_search:
 
         print('Doing grid search')
-        batch_size = 512
+        batch_size = 256
         max_steps = 6000
 
         for dnn_hidden_units in ['600', '500,500']:
             for learning_rate in [3e-4, 5e-4]:
                 for weight_init in ['normal']:
-                    for weight_init_scale in [1e-2, 1e-1]:
+                    for weight_init_scale in [1e-2, 1e-3]:
                         for weight_reg in ['l2']:
                             for weight_reg_strength in [3e-5, 5e-3]:
                                 for dropout_rate in [0.0, 0.6]:

@@ -1,6 +1,7 @@
 == MLP
 Xavier init -> doesn't learn, all predictions in one class
 L1 reg -> same effect
+
 Grid search 1: > 35% accuracy only achieved with
     relu activations
     l2 regularization
