@@ -351,7 +351,7 @@ if __name__ == '__main__':
     elif FLAGS.grid_search:
 
         print('Doing grid search')
-        batch_size = 1024
+        batch_size = 256
         max_steps = 10000
 
         for dnn_hidden_units in ['100,100,100,100', '200,200,200', '1000,500']:
