@@ -294,6 +294,7 @@ class MLP(object):
             dtype=tf.int32,
             name='confusion_matrix')
 
-        tf.summary.image('confusion_matrix', tf.cast(confusion_matrix, dtype=tf.float32))
+        tf.summary.image('confusion_matrix', tf.reshape(tf.cast(confusion_matrix, dtype=tf.float32),
+                                                        [1, self.n_classes, self.n_classes, 1]))
 
         return confusion_matrix
