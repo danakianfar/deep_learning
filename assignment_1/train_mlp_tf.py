@@ -238,8 +238,8 @@ def train():
             print('==> Confusion Matrix on test set \n {} \n'.format(confusion_matrix))
 
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
-        delta = 5e-6  # accuracy is in decimals
-        window = stats['test_accuracy'][-10:]
+        delta = 1e-7  # accuracy is in decimals
+        window = stats['test_accuracy'][-30:]
         window_accuracy = sum(window) / len(window)
         if _step > 500 and test_accuracy - window_accuracy < delta:
             print('\n\n EARLY STOPPING with accuracy {} and moving-window mean accuracy {}'.format(test_accuracy,
@@ -366,16 +366,16 @@ if __name__ == '__main__':
     elif FLAGS.grid_search:
 
         print('Doing grid search')
-        batch_size = 256
-        max_steps = 1500
+        batch_size = 512
+        max_steps = 6000
 
-        for dnn_hidden_units in ['100', '300,300']:
-            for learning_rate in [3e-4, 5e-5]:
+        for dnn_hidden_units in ['600', '500,500']:
+            for learning_rate in [3e-4, 5e-4]:
                 for weight_init in ['normal']:
-                    for weight_init_scale in [1e-2, 1e-3]:
+                    for weight_init_scale in [1e-2, 1e-1]:
                         for weight_reg in ['l2']:
                             for weight_reg_strength in [3e-5, 5e-3]:
-                                for dropout_rate in [0.0, 0.4]:
+                                for dropout_rate in [0.0, 0.6]:
                                     for activation in ['relu', 'elu']:
                                         for optimizer in ['adam']:
                                             FLAGS.batch_size = batch_size

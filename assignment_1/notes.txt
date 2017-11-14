@@ -7,3 +7,11 @@ Grid search 1: > 35% accuracy only achieved with
     ADAM, eta=1e-4,  on grid
     deep 200,200,200
 
+    => many 0's
+
+Grid search 2:
+    > 47 accuracy
+        only with deeper layers
+        normal init
+        mostly elu
+        no dropout
