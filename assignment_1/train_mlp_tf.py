@@ -84,7 +84,8 @@ def _parse_flags(flags):
     weight_init_scale = flags.weight_init_scale
     weight_initializer = WEIGHT_INITIALIZATION_DICT[flags.weight_init](weight_init_scale)
     weight_regularizer_scale = flags.weight_reg_strength
-    weight_regularizer = WEIGHT_REGULARIZER_DICT[flags.weight_reg](weight_regularizer_scale)
+    weight_regularizer = WEIGHT_REGULARIZER_DICT[flags.weight_reg]
+    weight_regularizer = weight_regularizer(weight_regularizer_scale) if weight_regularizer is not None else None
     n_classes = 10
     optimizer = OPTIMIZER_DICT[flags.optimizer](learning_rate=flags.learning_rate)
     batch_size = flags.batch_size
@@ -349,15 +350,16 @@ if __name__ == '__main__':
 
     elif FLAGS.grid_search:
 
+        print('Doing grid search')
         batch_size = 512
         max_steps = 6000
 
         for dnn_hidden_units in ['100,100,100', '200,200', '500,500']:
-            for learning_rate in [1e-3, 1e-4]:
-                for weight_init in ['normal']:
-                    for weight_init_scale in [1e-5, 1e-4, 1e-3]:
-                        for weight_reg in ['l1', 'l2']:
-                            for weight_reg_strength in [1e-2, 1e-3]:
+            for learning_rate in [1e-4, 1e-3]:
+                for weight_init in ['normal', 'uniform']:
+                    for weight_init_scale in [1e-5, 1e-4, 1e-2]:
+                        for weight_reg in ['l2']:
+                            for weight_reg_strength in [1e-5, 1e-3, 1e-2]:
                                 for dropout_rate in [0.4, 0.6]:
                                     for activation in ['relu', 'tanh']:
                                         for optimizer in ['adam']:
@@ -373,6 +375,8 @@ if __name__ == '__main__':
                                             FLAGS.activation = activation
                                             FLAGS.optimizer = optimizer
                                             FLAGS.model_name = '{}_{}_{}_{}_{}_{}_{}_{}_{}'.format(dnn_hidden_units, learning_rate, weight_init, weight_init_scale, weight_reg, weight_reg_strength, dropout_rate, activation, optimizer)
+
+                                            print_flags()
 
                                             train()
 
