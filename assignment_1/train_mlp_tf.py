@@ -244,7 +244,7 @@ def train():
 
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
         delta = 1e-3  # accuracy is in decimals
-        if _step > 1000:
+        if _step > 500:
             window = stats['test_accuracy'][-10:-5]
             window_accuracy = sum(window) / len(window)
 
@@ -383,7 +383,7 @@ if __name__ == '__main__':
 
         print('Doing grid search')
         batch_size = 256
-        max_steps = 4000
+        max_steps = 6000
 
         for dnn_hidden_units in ['100', '500,500']:
             for learning_rate in [3e-4, 3e-2]:
