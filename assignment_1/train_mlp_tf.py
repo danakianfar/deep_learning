@@ -176,6 +176,7 @@ def train():
     accuracy_deterministic_op = net.accuracy(logits_deterministic_op, y)
     confusion_matrix_deterministic_op = net.confusion_matrix(logits=logits_deterministic_op, labels=y)
     net.is_training = True  # revert back
+    train_loss = train_accuracy = test_accuracy = test_loss = 0.
 
     # utility ops
     summary_op = tf.summary.merge_all()
@@ -214,7 +215,7 @@ def train():
 
         if _step % 10 == 0:
             print('Ep.{}: train_loss:{:+.4f}, train_accuracy:{:+.4f}'.format(_step, train_loss, train_accuracy))
-            stats = _update_stats(stats, train_loss=train_loss, train_accuracy=train_accuracy)
+            stats = _update_stats(stats, test_loss=train_loss, test_accuracy=train_accuracy)
 
         # Sanity check
         if np.isnan(train_loss):
@@ -235,6 +236,15 @@ def train():
                                   test_confusion_matrix=confusion_matrix)
             print('==> Ep.{}: test_loss:{:+.4f}, test_accuracy:{:+.4f}'.format(_step, test_loss, test_accuracy))
             print('==> Confusion Matrix on test set \n {} \n'.format(confusion_matrix))
+
+        # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
+        delta = 1e-4  # accuracy is in decimals
+        window = stats['test_accuracy'][-10:]
+        window_accuracy = sum(window) / len(window)
+        if _step > 20 and test_accuracy - window_accuracy < delta:
+            print('\n\n EARLY STOPPING with accuracy {} and moving-window mean accuracy {}'.format(test_accuracy,
+                                                                                                   window_accuracy))
+            break
 
     # save model
     if write_logs:
@@ -357,16 +367,16 @@ if __name__ == '__main__':
 
         print('Doing grid search')
         batch_size = 256
-        max_steps = 10000
+        max_steps = 1500
 
-        for dnn_hidden_units in ['200,200,200', '1000,500']:
-            for learning_rate in [1e-4, 1e-3]:
-                for weight_init in ['normal', 'uniform']:
-                    for weight_init_scale in [1e-3, 3e-4, 1e-2]:
+        for dnn_hidden_units in ['100', '300,300', '1000']:
+            for learning_rate in [3e-4, 5e-5]:
+                for weight_init in ['normal']:
+                    for weight_init_scale in [1e-2, 1e-3]:
                         for weight_reg in ['l2']:
-                            for weight_reg_strength in [1e-5, 1e-3, 1e-2]:
-                                for dropout_rate in [0.4, 0.6]:
-                                    for activation in ['relu', 'tanh']:
+                            for weight_reg_strength in [3e-5, 5e-3]:
+                                for dropout_rate in [0.0, 0.4]:
+                                    for activation in ['relu', 'elu']:
                                         for optimizer in ['adam']:
                                             FLAGS.batch_size = batch_size
                                             FLAGS.max_steps = max_steps
@@ -379,7 +389,15 @@ if __name__ == '__main__':
                                             FLAGS.dropout_rate = dropout_rate
                                             FLAGS.activation = activation
                                             FLAGS.optimizer = optimizer
-                                            FLAGS.model_name = '{}_{}_{}_{}_{}_{}_{}_{}_{}'.format(dnn_hidden_units, learning_rate, weight_init, weight_init_scale, weight_reg, weight_reg_strength, dropout_rate, activation, optimizer)
+                                            FLAGS.model_name = '{}_{}_{}_{}_{}_{}_{}_{}_{}'.format(dnn_hidden_units,
+                                                                                                   learning_rate,
+                                                                                                   weight_init,
+                                                                                                   weight_init_scale,
+                                                                                                   weight_reg,
+                                                                                                   weight_reg_strength,
+                                                                                                   dropout_rate,
+                                                                                                   activation,
+                                                                                                   optimizer)
 
                                             # Don't log in grid search
                                             FLAGS.log_dir = None
@@ -387,5 +405,5 @@ if __name__ == '__main__':
 
                                             train()
 
-    else: # use CLI args
+    else:  # use CLI args
         tf.app.run()
