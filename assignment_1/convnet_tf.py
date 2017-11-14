@@ -100,7 +100,7 @@ class ConvNet(object):
                                             data_format='channels_last',
                                             name='{}_maxpool'.format(scope.name))
 
-        flattened = tf.layers.flatten(pool2, name='flatten')
+        flattened = tf.contrib.layers.flatten(pool2, name='flatten')
 
         with tf.variable_scope('fc1') as scope:
             fc1 = tf.layers.dense(inputs=flattened,
