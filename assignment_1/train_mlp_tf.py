@@ -351,10 +351,10 @@ if __name__ == '__main__':
     elif FLAGS.grid_search:
 
         print('Doing grid search')
-        batch_size = 512
-        max_steps = 6000
+        batch_size = 1024
+        max_steps = 10000
 
-        for dnn_hidden_units in ['100,100,100', '200,200', '500,500']:
+        for dnn_hidden_units in ['100,100,100,100', '200,200,200', '1000,500']:
             for learning_rate in [1e-4, 1e-3]:
                 for weight_init in ['normal', 'uniform']:
                     for weight_init_scale in [1e-5, 1e-4, 1e-2]:

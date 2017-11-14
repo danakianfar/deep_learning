@@ -1,0 +1,2 @@
+Xavier init -> doesn't learn, all predictions in one class
+L1 reg -> same effect
