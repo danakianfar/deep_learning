@@ -369,7 +369,7 @@ if __name__ == '__main__':
         batch_size = 256
         max_steps = 1500
 
-        for dnn_hidden_units in ['100', '300,300', '1000']:
+        for dnn_hidden_units in ['100', '300,300']:
             for learning_rate in [3e-4, 5e-5]:
                 for weight_init in ['normal']:
                     for weight_init_scale in [1e-2, 1e-3]:
