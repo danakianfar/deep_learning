@@ -357,7 +357,7 @@ if __name__ == '__main__':
         for dnn_hidden_units in ['100,100,100,100', '200,200,200', '1000,500']:
             for learning_rate in [1e-4, 1e-3]:
                 for weight_init in ['normal', 'uniform']:
-                    for weight_init_scale in [1e-5, 1e-4, 1e-2]:
+                    for weight_init_scale in [1e-3, 3e-4, 1e-2]:
                         for weight_reg in ['l2']:
                             for weight_reg_strength in [1e-5, 1e-3, 1e-2]:
                                 for dropout_rate in [0.4, 0.6]:
