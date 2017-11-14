@@ -15,7 +15,7 @@
 
     "default_adam_normal_l2" : {
         "dnn_hidden_units": "100",
-        "learning_rate" : 0.0003,
+        "learning_rate" : 0.0001,
          "max_steps" :  1500,
          "batch_size":  256,
          "weight_init":  "normal",
@@ -29,7 +29,7 @@
 
     "default_adam_normal_l1" : {
         "dnn_hidden_units": "100",
-        "learning_rate" : 0.0003,
+        "learning_rate" : 0.0001,
          "max_steps" :  1500,
          "batch_size":  256,
          "weight_init":  "normal",
@@ -43,7 +43,7 @@
 
     "moreunits_adam_normal_l2" : {
         "dnn_hidden_units": "300,200",
-        "learning_rate" : 0.0003,
+        "learning_rate" : 0.0001,
          "max_steps" :  1500,
          "batch_size":  256,
          "weight_init":  "normal",
@@ -86,7 +86,7 @@
     "moreunits_adam_xavier_l2_6Ksteps" : {
         "dnn_hidden_units": "300,200",
         "learning_rate" : 0.0003,
-         "max_steps" :  6000,
+         "max_steps" :  1500,
          "batch_size":  256,
          "weight_init":  "xavier",
          "weight_init_scale":  0.001,

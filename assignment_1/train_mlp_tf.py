@@ -44,7 +44,8 @@ SAVE_PATH_DEFAULT = './trained_models/'
 # You can check the TensorFlow API at
 # https://www.tensorflow.org/programmers_guide/variables
 # https://www.tensorflow.org/api_guides/python/contrib.layers#Initializers
-WEIGHT_INITIALIZATION_DICT = {'xavier': lambda _: tf.contrib.layers.xavier_initializer(),  # Xavier initialisation
+WEIGHT_INITIALIZATION_DICT = {'xavier': lambda _: tf.contrib.layers.xavier_initializer(uniform=False),
+                              # Xavier initialisation
                               'normal': lambda scale: tf.random_normal_initializer(stddev=scale),
                               # Initialization from a standard normal
                               'uniform': lambda scale: tf.random_uniform_initializer(minval=-scale, maxval=scale),
@@ -319,8 +320,9 @@ if __name__ == '__main__':
                         help='save path directory')
     parser.add_argument('--model_name', type=str, default='mlp_tf',
                         help='model_name')
-    parser.add_argument('--train_settings_path', type=str, default='mlp_train_settings.json',
+    parser.add_argument('--train_settings_path', type=str, default=None,
                         help='Path to a file with training settings that will override the CLI args.')
+    parser.add_argument('--grid_search', type=bool, default=False)
 
     FLAGS, unparsed = parser.parse_known_args()
 
@@ -345,5 +347,34 @@ if __name__ == '__main__':
                 train()
 
 
-    else:  # use CLI args
+    elif FLAGS.grid_search:
+
+        batch_size = 512
+        max_steps = 6000
+
+        for dnn_hidden_units in ['100,100,100', '200,200', '500,500']:
+            for learning_rate in [1e-3, 1e-4]:
+                for weight_init in ['normal']:
+                    for weight_init_scale in [1e-5, 1e-4, 1e-3]:
+                        for weight_reg in ['l1', 'l2']:
+                            for weight_reg_strength in [1e-2, 1e-3]:
+                                for dropout_rate in [0.4, 0.6]:
+                                    for activation in ['relu', 'tanh']:
+                                        for optimizer in ['adam']:
+                                            FLAGS.batch_size = batch_size
+                                            FLAGS.max_steps = max_steps
+                                            FLAGS.dnn_hidden_units = dnn_hidden_units
+                                            FLAGS.learning_rate = learning_rate
+                                            FLAGS.weight_init = weight_init
+                                            FLAGS.weight_init_scale = weight_init_scale
+                                            FLAGS.weight_reg = weight_reg
+                                            FLAGS.weight_reg_strength = weight_reg_strength
+                                            FLAGS.dropout_rate = dropout_rate
+                                            FLAGS.activation = activation
+                                            FLAGS.optimizer = optimizer
+                                            FLAGS.model_name = '{}_{}_{}_{}_{}_{}_{}_{}_{}'.format(dnn_hidden_units, learning_rate, weight_init, weight_init_scale, weight_reg, weight_reg_strength, dropout_rate, activation, optimizer)
+
+                                            train()
+
+    else: # use CLI args
         tf.app.run()
