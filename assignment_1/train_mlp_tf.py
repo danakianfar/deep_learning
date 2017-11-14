@@ -179,10 +179,13 @@ def train():
 
     # utility ops
     summary_op = tf.summary.merge_all()
-    log_path = os.path.join(log_dir, FLAGS.model_name)
-    if not tf.gfile.Exists(log_path):
-        tf.gfile.MakeDirs(log_path)
-    log_writer = tf.summary.FileWriter(log_path, graph=session.graph)
+    write_logs = FLAGS.log_dir is not None
+
+    if write_logs:
+        log_path = os.path.join(log_dir, FLAGS.model_name)
+        if not tf.gfile.Exists(log_path):
+            tf.gfile.MakeDirs(log_path)
+        log_writer = tf.summary.FileWriter(log_path, graph=session.graph)
 
     # Initialize variables
     init_op = tf.global_variables_initializer()
@@ -202,7 +205,7 @@ def train():
         train_feed = {X: inputs, y: labels}
         fetches = [train_op, loss_op, accuracy_op]
 
-        if _step % 13 == 0:  # write summary
+        if _step % 13 == 0 and write_logs:  # write summary
             fetches += [summary_op]
             _, train_loss, train_accuracy, train_summary = session.run(fetches=fetches, feed_dict=train_feed)
             log_writer.add_summary(train_summary, _step)
@@ -234,7 +237,9 @@ def train():
             print('==> Confusion Matrix on test set \n {} \n'.format(confusion_matrix))
 
     # save model
-    log_writer.close()
+    if write_logs:
+        log_writer.close()
+
     save_dir = os.path.join(FLAGS.save_path, FLAGS.model_name)
     saver = tf.train.Saver(var_list=None)
     if not tf.gfile.Exists(save_dir):
@@ -354,7 +359,7 @@ if __name__ == '__main__':
         batch_size = 256
         max_steps = 10000
 
-        for dnn_hidden_units in ['100,100,100,100', '200,200,200', '1000,500']:
+        for dnn_hidden_units in ['200,200,200', '1000,500']:
             for learning_rate in [1e-4, 1e-3]:
                 for weight_init in ['normal', 'uniform']:
                     for weight_init_scale in [1e-3, 3e-4, 1e-2]:
@@ -376,6 +381,8 @@ if __name__ == '__main__':
                                             FLAGS.optimizer = optimizer
                                             FLAGS.model_name = '{}_{}_{}_{}_{}_{}_{}_{}_{}'.format(dnn_hidden_units, learning_rate, weight_init, weight_init_scale, weight_reg, weight_reg_strength, dropout_rate, activation, optimizer)
 
+                                            # Don't log in grid search
+                                            FLAGS.log_dir = None
                                             print_flags()
 
                                             train()
