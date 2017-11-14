@@ -186,7 +186,8 @@ def train():
         log_path = os.path.join(log_dir, FLAGS.model_name)
         if not tf.gfile.Exists(log_path):
             tf.gfile.MakeDirs(log_path)
-        log_writer = tf.summary.FileWriter(log_path, graph=session.graph)
+        train_log_writer = tf.summary.FileWriter('{}/train/'.format(log_path), graph=session.graph)
+        test_log_writer = tf.summary.FileWriter('{}/test/'.format(log_path), graph=session.graph)
 
     # Initialize variables
     init_op = tf.global_variables_initializer()
@@ -210,7 +211,7 @@ def train():
         if _step % 13 == 0 and write_logs:  # write summary
             fetches += [summary_op]
             _, train_loss, train_accuracy, train_summary = session.run(fetches=fetches, feed_dict=train_feed)
-            log_writer.add_summary(train_summary, _step)
+            train_log_writer.add_summary(train_summary, _step)
         else:
             _, train_loss, train_accuracy = session.run(fetches=fetches, feed_dict=train_feed)
 
@@ -228,10 +229,13 @@ def train():
             X_test, y_test = cifar10.test.images, cifar10.test.labels
             X_test = np.reshape(X_test, [X_test.shape[0], -1])
             test_feed = {X: X_test, y: y_test}
-            test_loss, test_accuracy, test_logits, test_confusion_matrix = session.run(
+            test_loss, test_accuracy, test_logits, test_confusion_matrix, test_summary = session.run(
                 fetches=[loss_deterministic_op, accuracy_deterministic_op, logits_deterministic_op,
-                         confusion_matrix_deterministic_op],
+                         confusion_matrix_deterministic_op, summary_op],
                 feed_dict=test_feed)
+
+            if write_logs:
+                test_log_writer.add_summary(test_summary, _step)
 
             stats = _update_stats(stats, test_loss=test_loss, test_accuracy=test_accuracy,
                                   test_confusion_matrix=test_confusion_matrix)
@@ -239,7 +243,7 @@ def train():
             print('==> Confusion Matrix on test set \n {} \n'.format(test_confusion_matrix))
 
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
-        delta = 1e-4  # accuracy is in decimals
+        delta = 1e-3  # accuracy is in decimals
         if _step > 1000:
             window = stats['test_accuracy'][-10:-5]
             window_accuracy = sum(window) / len(window)
@@ -258,7 +262,8 @@ def train():
 
     # save model
     if write_logs:
-        log_writer.close()
+        train_log_writer.close()
+        test_log_writer.close()
 
     if save_model:
         save_dir = os.path.join(FLAGS.save_path, FLAGS.model_name)
@@ -380,15 +385,15 @@ if __name__ == '__main__':
         batch_size = 256
         max_steps = 4000
 
-        for dnn_hidden_units in ['200,200,200', '600', '500,500']:
+        for dnn_hidden_units in ['100', '500,500']:
             for learning_rate in [3e-4, 3e-2]:
                 for weight_init in ['normal', 'uniform']:
                     for weight_init_scale in [1e-5, 1e-3]:
                         for weight_reg in ['l2', 'l1']:
                             for weight_reg_strength in [3e-5, 5e-3]:
-                                for dropout_rate in [0.0, 0.6]:
+                                for dropout_rate in [0.0]:
                                     for activation in ['relu', 'elu']:
-                                        for optimizer in ['adam']:
+                                        for optimizer in ['adam', 'sgd']:
                                             FLAGS.batch_size = batch_size
                                             FLAGS.max_steps = max_steps
                                             FLAGS.dnn_hidden_units = dnn_hidden_units
