@@ -245,7 +245,7 @@ def train():
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
         delta = 1e-3  # accuracy is in decimals
         if _step > 500:
-            window = stats['test_accuracy'][-10:-5]
+            window = stats['test_accuracy'][-10:]
             window_accuracy = sum(window) / len(window)
 
             if abs(test_accuracy - window_accuracy) < delta:
