@@ -207,6 +207,7 @@ def train():
         train_feed = {X: inputs, y: labels}
         fetches = [train_op, loss_op, accuracy_op]
 
+        # Training set
         if _step % 13 == 0 and write_logs:  # write summary
             fetches += [summary_op]
             _, train_loss, train_accuracy, train_summary = session.run(fetches=fetches, feed_dict=train_feed)
@@ -223,20 +224,20 @@ def train():
             print('Warning: training loss is NaN.. ')
             break
 
-        # eval on test set every 100 steps
+        # Test set evaluation
         if (_step + 1) % 100 == 0:
             X_test, y_test = cifar10.test.images, cifar10.test.labels
             X_test = np.reshape(X_test, [X_test.shape[0], -1])
             test_feed = {X: X_test, y: y_test}
-            test_loss, test_accuracy, test_logits, confusion_matrix = session.run(
+            test_loss, test_accuracy, test_logits, test_confusion_matrix = session.run(
                 fetches=[loss_deterministic_op, accuracy_deterministic_op, logits_deterministic_op,
                          confusion_matrix_deterministic_op],
                 feed_dict=test_feed)
 
-            stats = _update_stats(stats, test_loss=train_loss, test_accuracy=train_accuracy,
-                                  test_confusion_matrix=confusion_matrix)
+            stats = _update_stats(stats, test_loss=test_loss, test_accuracy=test_accuracy,
+                                  test_confusion_matrix=test_confusion_matrix)
             print('==> Ep.{}: test_loss:{:+.4f}, test_accuracy:{:+.4f}'.format(_step, test_loss, test_accuracy))
-            print('==> Confusion Matrix on test set \n {} \n'.format(confusion_matrix))
+            print('==> Confusion Matrix on test set \n {} \n'.format(test_confusion_matrix))
 
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
         delta = 1e-4  # accuracy is in decimals
@@ -245,8 +246,9 @@ def train():
             window_accuracy = sum(window) / len(window)
 
             if abs(test_accuracy - window_accuracy) < delta:
-                print('\n==> EARLY STOPPING with accuracy {} and moving-window mean accuracy {} \n'.format(test_accuracy,
-                                                                                                       window_accuracy))
+                print(
+                    '\n==> EARLY STOPPING with accuracy {} and moving-window mean accuracy {} \n'.format(test_accuracy,
+                                                                                                         window_accuracy))
                 if test_accuracy < 0.3:
                     save_model = False
                 break
