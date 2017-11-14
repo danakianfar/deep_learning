@@ -181,6 +181,7 @@ def train():
     # utility ops
     summary_op = tf.summary.merge_all()
     write_logs = FLAGS.log_dir is not None
+    save_model = True
 
     if write_logs:
         log_path = os.path.join(log_dir, FLAGS.model_name)
@@ -239,35 +240,42 @@ def train():
 
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
         delta = 1e-7  # accuracy is in decimals
-        window = stats['test_accuracy'][-30:]
+        window = stats['test_accuracy'][-10:-5]
         window_accuracy = sum(window) / len(window)
-        if _step > 500 and test_accuracy - window_accuracy < delta:
+        if _step > 1000 and test_accuracy - window_accuracy < delta:
             print('\n\n EARLY STOPPING with accuracy {} and moving-window mean accuracy {}'.format(test_accuracy,
                                                                                                    window_accuracy))
+            if test_accuracy < 0.3:
+                save_model = False
+            break
+
+        if _step > 1000 and test_accuracy < 0.2:  # hopeless
+            save_model = False
             break
 
     # save model
     if write_logs:
         log_writer.close()
 
-    save_dir = os.path.join(FLAGS.save_path, FLAGS.model_name)
-    saver = tf.train.Saver(var_list=None)
-    if not tf.gfile.Exists(save_dir):
-        tf.gfile.MakeDirs(save_dir)
-    saver.save(session, save_path=os.path.join(save_dir, 'model.ckpt'))
+    if save_model:
+        save_dir = os.path.join(FLAGS.save_path, FLAGS.model_name)
+        saver = tf.train.Saver(var_list=None)
+        if not tf.gfile.Exists(save_dir):
+            tf.gfile.MakeDirs(save_dir)
+        saver.save(session, save_path=os.path.join(save_dir, 'model.ckpt'))
 
-    # save results for easy plotting
-    results_dir = os.path.relpath('./results')
-    if not tf.gfile.Exists(results_dir):
-        tf.gfile.MakeDirs(results_dir)
+        # save results for easy plotting
+        results_dir = os.path.relpath('./results')
+        if not tf.gfile.Exists(results_dir):
+            tf.gfile.MakeDirs(results_dir)
 
-    with open(os.path.join(results_dir, '{}.pkl'.format(FLAGS.model_name)), 'wb') as f:
-        pickle.dump(stats, f)
+        with open(os.path.join(results_dir, '{}.pkl'.format(FLAGS.model_name)), 'wb') as f:
+            pickle.dump(stats, f)
 
 
-        ########################
-        # END OF YOUR CODE    #
-        #######################
+            ########################
+            # END OF YOUR CODE    #
+            #######################
 
 
 def print_flags():
@@ -367,7 +375,7 @@ if __name__ == '__main__':
 
         print('Doing grid search')
         batch_size = 256
-        max_steps = 6000
+        max_steps = 4000
 
         for dnn_hidden_units in ['600', '500,500']:
             for learning_rate in [3e-4, 5e-4]:

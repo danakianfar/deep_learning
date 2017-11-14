@@ -59,12 +59,10 @@ class ConvNet(object):
 
         with tf.variable_scope('conv1') as scope:
             conv1 = tf.layers.conv2d(inputs=x,
-                                     filters=3,
+                                     filters=64,
                                      kernel_size=(5, 5),
                                      strides=(1, 1),
                                      padding='same',
-                                     data_format='channels_last',
-                                     dilation_rate=(1, 1),
                                      activation=tf.nn.relu,
                                      use_bias=True,
                                      kernel_initializer=tf.random_normal_initializer(stddev=1e-4),
@@ -75,10 +73,60 @@ class ConvNet(object):
 
             pool1 = tf.layers.max_pooling2d(inputs=conv1,
                                             pool_size=(3, 3),
-                                            strides=1,
+                                            strides=2,
                                             padding='valid',
                                             data_format='channels_last',
                                             name='{}_maxpool'.format(scope.name))
+
+        with tf.variable_scope('conv2') as scope:
+            conv2 = tf.layers.conv2d(inputs=pool1,
+                                     filters=64,
+                                     kernel_size=(5, 5),
+                                     strides=(1, 1),
+                                     padding='same',
+                                     data_format='channels_last',
+                                     activation=tf.nn.relu,
+                                     use_bias=True,
+                                     kernel_initializer=tf.random_normal_initializer(stddev=1e-4),
+                                     bias_initializer=tf.constant_initializer(1e-5),
+                                     kernel_regularizer=None,
+                                     bias_regularizer=None,
+                                     name='{}_conv'.format(scope.name))
+
+            pool2 = tf.layers.max_pooling2d(inputs=conv2,
+                                            pool_size=(3, 3),
+                                            strides=2,
+                                            padding='valid',
+                                            data_format='channels_last',
+                                            name='{}_maxpool'.format(scope.name))
+
+        flattened = tf.layers.flatten(pool2, name='flatten')
+
+        fc1 = tf.layers.dense(inputs=flattened,
+                              units=384,
+                              activation=tf.nn.relu,
+                              use_bias=True,
+                              bias_initializer=tf.constant_initializer(1e-5),
+                              trainable=True,
+                              name=scope.name)
+
+        fc2 = tf.layers.dense(inputs=fc1,
+                              units=192,
+                              activation=tf.nn.relu,
+                              use_bias=True,
+                              bias_initializer=tf.constant_initializer(1e-5),
+                              trainable=True,
+                              name=scope.name)
+
+        fc3 = tf.layers.dense(inputs=fc2,
+                              units=10,
+                              activation=None,  # linear
+                              use_bias=True,
+                              bias_initializer=tf.constant_initializer(1e-5),
+                              trainable=True,
+                              name=scope.name)
+
+        logits = fc3
 
         ########################
         # END OF YOUR CODE    #
