@@ -13,7 +13,6 @@ import json
 
 from mlp_tf import MLP
 import cifar10_utils
-from tqdm import tqdm
 from util import Args
 from collections import defaultdict
 import pickle
@@ -263,7 +262,7 @@ def train():
 
     if save_model:
         save_dir = os.path.join(FLAGS.save_path, FLAGS.model_name)
-        saver = tf.train.Saver(var_list=None)
+        saver = tf.train.Saver()
         if not tf.gfile.Exists(save_dir):
             tf.gfile.MakeDirs(save_dir)
         saver.save(session, save_path=os.path.join(save_dir, 'model.ckpt'))

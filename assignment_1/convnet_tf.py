@@ -57,7 +57,7 @@ class ConvNet(object):
         # PUT YOUR CODE HERE  #
         ########################
 
-        with tf.variable_scope('conv1') as scope:
+        with tf.variable_scope('layer1') as scope:
             conv1 = tf.layers.conv2d(inputs=x,
                                      filters=64,
                                      kernel_size=(5, 5),
@@ -78,7 +78,7 @@ class ConvNet(object):
                                             data_format='channels_last',
                                             name='{}_maxpool'.format(scope.name))
 
-        with tf.variable_scope('conv2') as scope:
+        with tf.variable_scope('layer2') as scope:
             conv2 = tf.layers.conv2d(inputs=pool1,
                                      filters=64,
                                      kernel_size=(5, 5),
@@ -102,29 +102,32 @@ class ConvNet(object):
 
         flattened = tf.layers.flatten(pool2, name='flatten')
 
-        fc1 = tf.layers.dense(inputs=flattened,
-                              units=384,
-                              activation=tf.nn.relu,
-                              use_bias=True,
-                              bias_initializer=tf.constant_initializer(1e-5),
-                              trainable=True,
-                              name=scope.name)
+        with tf.variable_scope('fc1') as scope:
+            fc1 = tf.layers.dense(inputs=flattened,
+                                  units=384,
+                                  activation=tf.nn.relu,
+                                  use_bias=True,
+                                  bias_initializer=tf.constant_initializer(1e-5),
+                                  trainable=True,
+                                  name=scope.name)
 
-        fc2 = tf.layers.dense(inputs=fc1,
-                              units=192,
-                              activation=tf.nn.relu,
-                              use_bias=True,
-                              bias_initializer=tf.constant_initializer(1e-5),
-                              trainable=True,
-                              name=scope.name)
+        with tf.variable_scope('fc2') as scope:
+            fc2 = tf.layers.dense(inputs=fc1,
+                                  units=192,
+                                  activation=tf.nn.relu,
+                                  use_bias=True,
+                                  bias_initializer=tf.constant_initializer(1e-5),
+                                  name=scope.name)
 
-        fc3 = tf.layers.dense(inputs=fc2,
-                              units=10,
-                              activation=None,  # linear
-                              use_bias=True,
-                              bias_initializer=tf.constant_initializer(1e-5),
-                              trainable=True,
-                              name=scope.name)
+
+        with tf.variable_scope('fc3') as scope:
+            fc3 = tf.layers.dense(inputs=fc2,
+                                  units=10,
+                                  activation=None,  # linear
+                                  use_bias=True,
+                                  bias_initializer=tf.constant_initializer(1e-5),
+                                  trainable=True,
+                                  name=scope.name)
 
         logits = fc3
 
@@ -258,3 +261,20 @@ class ConvNet(object):
         # END OF YOUR CODE    #
         #######################
         return accuracy
+
+    def confusion_matrix(self, logits, labels):
+
+        predictions = tf.argmax(input=logits, axis=1)
+        class_labels = tf.argmax(input=labels, axis=1)
+
+        confusion_matrix = tf.contrib.metrics.confusion_matrix(
+            labels=class_labels,
+            predictions=predictions,
+            num_classes=10,
+            dtype=tf.int32,
+            name='confusion_matrix')
+
+        tf.summary.image('confusion_matrix', tf.reshape(tf.cast(confusion_matrix, dtype=tf.float32),
+                                                        [1, self.n_classes, self.n_classes, 1]))
+
+        return confusion_matrix
