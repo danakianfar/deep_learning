@@ -240,14 +240,16 @@ def train():
 
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
         delta = 1e-7  # accuracy is in decimals
-        window = stats['test_accuracy'][-10:-5]
-        window_accuracy = sum(window) / len(window)
-        if _step > 1000 and test_accuracy - window_accuracy < delta:
-            print('\n\n EARLY STOPPING with accuracy {} and moving-window mean accuracy {}'.format(test_accuracy,
-                                                                                                   window_accuracy))
-            if test_accuracy < 0.3:
-                save_model = False
-            break
+        if _step > 1000:
+            window = stats['test_accuracy'][-10:-5]
+            window_accuracy = sum(window) / len(window)
+
+            if test_accuracy - window_accuracy < delta:
+                print('\n==> EARLY STOPPING with accuracy {} and moving-window mean accuracy {} \n'.format(test_accuracy,
+                                                                                                       window_accuracy))
+                if test_accuracy < 0.3:
+                    save_model = False
+                break
 
         if _step > 1000 and test_accuracy < 0.2:  # hopeless
             save_model = False
