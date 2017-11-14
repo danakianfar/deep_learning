@@ -146,7 +146,7 @@ def train():
 
     # Session
     tf.reset_default_graph()
-    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.33, allow_growth=True)
+    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.99, allow_growth=True)
     session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
     # Placeholders for images, labels input.
@@ -216,7 +216,7 @@ def train():
 
         if _step % 10 == 0:
             print('Ep.{}: train_loss:{:+.4f}, train_accuracy:{:+.4f}'.format(_step, train_loss, train_accuracy))
-            stats = _update_stats(stats, test_loss=train_loss, test_accuracy=train_accuracy)
+            stats = _update_stats(stats, train_loss=train_loss, train_accuracy=train_accuracy)
 
         # Sanity check
         if np.isnan(train_loss):
@@ -233,7 +233,7 @@ def train():
                          confusion_matrix_deterministic_op],
                 feed_dict=test_feed)
 
-            stats = _update_stats(stats, train_loss=train_loss, train_accuracy=train_accuracy,
+            stats = _update_stats(stats, test_loss=train_loss, test_accuracy=train_accuracy,
                                   test_confusion_matrix=confusion_matrix)
             print('==> Ep.{}: test_loss:{:+.4f}, test_accuracy:{:+.4f}'.format(_step, test_loss, test_accuracy))
             print('==> Confusion Matrix on test set \n {} \n'.format(confusion_matrix))
