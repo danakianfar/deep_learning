@@ -16,3 +16,5 @@ Grid search 2:
         normal init
         mostly elu
         no dropout
+
+    consistenly 300,300 > 600: depth matters
