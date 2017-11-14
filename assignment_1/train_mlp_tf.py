@@ -238,10 +238,10 @@ def train():
             print('==> Confusion Matrix on test set \n {} \n'.format(confusion_matrix))
 
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
-        delta = 1e-4  # accuracy is in decimals
+        delta = 5e-4  # accuracy is in decimals
         window = stats['test_accuracy'][-10:]
         window_accuracy = sum(window) / len(window)
-        if _step > 20 and test_accuracy - window_accuracy < delta:
+        if _step > 200 and test_accuracy - window_accuracy < delta:
             print('\n\n EARLY STOPPING with accuracy {} and moving-window mean accuracy {}'.format(test_accuracy,
                                                                                                    window_accuracy))
             break
