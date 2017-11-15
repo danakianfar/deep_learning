@@ -11,7 +11,7 @@ import cifar10_utils
 from convnet_tf import ConvNet
 from collections import defaultdict
 import pickle
-import keras
+from keras.preprocessing.image import ImageDataGenerator
 
 LEARNING_RATE_DEFAULT = 1e-4
 BATCH_SIZE_DEFAULT = 128
@@ -134,15 +134,16 @@ def train():
     stats = defaultdict(list)
 
     # Image augmentation
-    img_generator = keras.preprocessing.image.ImageDataGenerator(
-        rotation_range=30,
-        width_shift_range=0.15,
-        height_shift_range=0.15,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=False,
-        fill_mode='nearest',
-        data_format='channels_last')
+    if FLAGS.data_augmentation:
+        img_generator = ImageDataGenerator(
+            rotation_range=30,
+            width_shift_range=0.15,
+            height_shift_range=0.15,
+            shear_range=0.2,
+            zoom_range=0.2,
+            horizontal_flip=False,
+            fill_mode='nearest',
+            data_format='channels_last')
 
     # loop over steps
     for _step in range(FLAGS.max_steps):
