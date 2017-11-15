@@ -79,9 +79,6 @@ def train():
 
     # Parameters
     input_dim = (32, 32, 3)
-    # activation_fn, dropout_rate, weight_initializer, weight_regularizer, n_classes, optimizer, batch_size, max_steps, \
-    # log_dir, data_dir = _parse_flags(
-    #     FLAGS)
     n_classes = 10
     eta = FLAGS.learning_rate
     optimizer = tf.train.AdamOptimizer(learning_rate=eta)
@@ -96,14 +93,13 @@ def train():
     session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
     # Placeholders for images, labels input.
-    X = tf.placeholder(dtype=tf.float32, shape=[None, *input_dim])
-    y = tf.placeholder(dtype=tf.int32, shape=[None, n_classes])
+    X = tf.placeholder(dtype=tf.float32, shape=[None, *input_dim], name='inputs')
+    y = tf.placeholder(dtype=tf.int32, shape=[None, n_classes], name='labels')
 
     # init network
     net = ConvNet(n_classes=n_classes)
 
     # Trainings ops
-    net.is_training = True
     global_step = tf.Variable(0, trainable=False, name='global_step')
     logits_op = net.inference(X)
     train_flags = {'optimizer': optimizer, 'global_step': global_step, 'grad_clipping': FLAGS.grad_clipping}
@@ -133,14 +129,28 @@ def train():
     # track losses
     stats = defaultdict(list)
 
+    # Image augmentation
+    img_generator = tf.keras.preprocessing.image.ImageDataGenerator(
+        rotation_range=30,
+        width_shift_range=0.15,
+        height_shift_range=0.15,
+        shear_range=0.2,
+        zoom_range=0.2,
+        horizontal_flip=False,
+        fill_mode='nearest',
+        data_format='channels_last')
+
     # loop over steps
     for _step in range(FLAGS.max_steps):
 
         # get batch of data
         inputs, labels = cifar10.train.next_batch(batch_size)
 
+        if FLAGS.data_augmentation:
+            inputs = img_generator.flow(x=inputs, batch_size=batch_size).next()  # just once
+
         # feed to model
-        train_feed = {X: inputs, y: labels}
+        train_feed = {X: inputs, y: labels, net.batch_norm: FLAGS.batch_norm, net.training_mode: True}
         fetches = [train_op]
 
         if _step % FLAGS.print_freq == 0:  # write summary and eval on train set
@@ -161,7 +171,7 @@ def train():
         # eval on test set every 100 steps
         if _step % FLAGS.eval_freq == 0:
             X_test, y_test = cifar10.test.images, cifar10.test.labels
-            test_feed = {X: X_test, y: y_test}
+            test_feed = {X: X_test, y: y_test, net.batch_norm: FLAGS.batch_norm, net.training_mode: False}
             test_loss, test_accuracy, test_confusion_matrix, test_summary = session.run(
                 fetches=[loss_op, accuracy_op, confusion_matrix_op, summary_op],
                 feed_dict=test_feed)
@@ -248,6 +258,10 @@ if __name__ == '__main__':
                         help='model_name')
     parser.add_argument('--grad_clipping', type=bool, default=True,
                         help='gradient clipping to [-1.,1.]')
+    parser.add_argument('--data_augmentation', type=bool, default=True,
+                        help='Performs data augmentation')
+    parser.add_argument('--batch_norm', type=bool, default=True,
+                        help='Performs batch normalization')
     FLAGS, unparsed = parser.parse_known_args()
 
     tf.app.run()

@@ -112,6 +112,11 @@ def _update_stats(stats, train_loss=None, train_accuracy=None, test_loss=None, t
     return stats
 
 
+def _ensure_path_exists(path):
+    if not tf.gfile.Exists(path):
+        tf.gfile.MakeDirs(path)
+
+
 def train():
     """
     Performs training and evaluation of MLP model. Evaluate your model each 100 iterations
@@ -149,8 +154,8 @@ def train():
     session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
     # Placeholders for images, labels input.
-    X = tf.placeholder(dtype=tf.float32, shape=[None, input_dim])
-    y = tf.placeholder(dtype=tf.int32, shape=[None, n_classes])
+    X = tf.placeholder(dtype=tf.float32, shape=[None, input_dim], name='inputs')
+    y = tf.placeholder(dtype=tf.int32, shape=[None, n_classes], name='labels')
 
     # init network
     net = MLP(n_hidden=dnn_hidden_units, n_classes=n_classes, is_training=True,
@@ -159,7 +164,6 @@ def train():
               weight_regularizer=weight_regularizer)
 
     # Trainings ops
-    net.is_training = True
     global_step = tf.Variable(0, trainable=False, name='global_step')
     logits_op = net.inference(X)
     train_flags = {'optimizer': optimizer, 'global_step': global_step, 'grad_clipping': FLAGS.grad_clipping}
@@ -169,12 +173,12 @@ def train():
     confusion_matrix_op = net.confusion_matrix(logits=logits_op, labels=y)
 
     # Inference ops
-    net.is_training = False
-    logits_deterministic_op = net.inference(X)
-    loss_deterministic_op = net.loss(logits_deterministic_op, y)
-    accuracy_deterministic_op = net.accuracy(logits_deterministic_op, y)
-    confusion_matrix_deterministic_op = net.confusion_matrix(logits=logits_deterministic_op, labels=y)
-    net.is_training = True  # revert back
+    # net.is_training = False
+    # logits_deterministic_op = net.inference(X)
+    # loss_deterministic_op = net.loss(logits_deterministic_op, y)
+    # accuracy_deterministic_op = net.accuracy(logits_deterministic_op, y)
+    # confusion_matrix_deterministic_op = net.confusion_matrix(logits=logits_deterministic_op, labels=y)
+    # net.is_training = True  # revert back
     train_loss = train_accuracy = test_accuracy = test_loss = 0.
 
     # utility ops
@@ -183,11 +187,12 @@ def train():
     save_model = True
 
     if write_logs:
-        log_path = os.path.join(log_dir, FLAGS.model_name)
-        if not tf.gfile.Exists(log_path):
-            tf.gfile.MakeDirs(log_path)
-        train_log_writer = tf.summary.FileWriter('{}/train/'.format(log_path), graph=session.graph)
-        test_log_writer = tf.summary.FileWriter('{}/test/'.format(log_path), graph=session.graph)
+        train_log_path = os.path.join(log_dir, '{}_train'.format(FLAGS.model_name))
+        test_log_path = os.path.join(log_dir, '{}_test'.format(FLAGS.model_name))
+        _ensure_path_exists(train_log_path)
+        _ensure_path_exists(test_log_path)
+        train_log_writer = tf.summary.FileWriter('{}_train/'.format(train_log_path), graph=session.graph)
+        test_log_writer = tf.summary.FileWriter('{}_test/'.format(test_log_path), graph=session.graph)
 
     # Initialize variables
     init_op = tf.global_variables_initializer()
@@ -204,7 +209,7 @@ def train():
         X_train, y_train = cifar10.train.next_batch(batch_size)
         X_train = np.reshape(X_train, (batch_size, -1))
         # feed to model
-        train_feed = {X: X_train, y: y_train}
+        train_feed = {X: X_train, y: y_train, net.training_mode: True}
         fetches = [train_op, loss_op, accuracy_op]
 
         # Training set
@@ -228,10 +233,10 @@ def train():
         if (_step + 1) % 100 == 0:
             X_test, y_test = cifar10.test.images, cifar10.test.labels
             X_test = np.reshape(X_test, [X_test.shape[0], -1])
-            test_feed = {X: X_test, y: y_test}
+            test_feed = {X: X_test, y: y_test, net.training_mode: False}
             test_loss, test_accuracy, test_logits, test_confusion_matrix, test_summary = session.run(
-                fetches=[loss_deterministic_op, accuracy_deterministic_op, logits_deterministic_op,
-                         confusion_matrix_deterministic_op, summary_op],
+                fetches=[loss_op, accuracy_op, logits_op,
+                         confusion_matrix_op, summary_op],
                 feed_dict=test_feed)
 
             if write_logs:
@@ -256,7 +261,7 @@ def train():
                     save_model = False
                 break
 
-        if _step > 1000 and test_accuracy < 0.2:  # hopeless
+        if _step > 1000 and test_accuracy < 0.2:  # hopeless trials
             save_model = False
             break
 
@@ -268,22 +273,19 @@ def train():
     if save_model:
         save_dir = os.path.join(FLAGS.save_path, FLAGS.model_name)
         saver = tf.train.Saver()
-        if not tf.gfile.Exists(save_dir):
-            tf.gfile.MakeDirs(save_dir)
+        _ensure_path_exists(save_dir)
         saver.save(session, save_path=os.path.join(save_dir, 'model.ckpt'))
 
         # save results for easy plotting
         results_dir = os.path.relpath('./results')
-        if not tf.gfile.Exists(results_dir):
-            tf.gfile.MakeDirs(results_dir)
-
+        _ensure_path_exists(results_dir)
         with open(os.path.join(results_dir, '{}.pkl'.format(FLAGS.model_name)), 'wb') as f:
             pickle.dump(stats, f)
 
 
-    #######################
-    # END OF YOUR CODE    #
-    #######################
+            #######################
+            # END OF YOUR CODE    #
+            #######################
 
 
 def print_flags():

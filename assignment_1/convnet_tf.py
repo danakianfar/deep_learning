@@ -25,6 +25,8 @@ class ConvNet(object):
                           output dimensions of the ConvNet.
         """
         self.n_classes = n_classes
+        self.training_mode = tf.placeholder(tf.bool, name='training_mode')
+        self.batch_norm = tf.placeholder(tf.bool, name='batch_norm')
 
     def inference(self, x):
         """
@@ -63,13 +65,25 @@ class ConvNet(object):
                                      kernel_size=(5, 5),
                                      strides=(1, 1),
                                      padding='same',
-                                     activation=tf.nn.relu,
+                                     activation=None,
                                      use_bias=True,
                                      kernel_initializer=tf.random_normal_initializer(stddev=1e-4),
                                      bias_initializer=tf.constant_initializer(1e-5),
                                      kernel_regularizer=None,
                                      bias_regularizer=None,
                                      name='{}_conv'.format(scope.name))
+
+            conv1 = tf.cond(self.batch_norm,
+                            lambda: tf.contrib.layers.batch_norm(conv1,
+                                                                 center=True,
+                                                                 scale=True,
+                                                                 is_training=self.training_mode,
+                                                                 activation_fn=None,
+                                                                 scope=scope),
+                            lambda: conv1)
+
+
+            conv1 = tf.nn.relu(conv1, name='{}_relu'.format(scope.name))
 
             pool1 = tf.layers.max_pooling2d(inputs=conv1,
                                             pool_size=(3, 3),
@@ -85,13 +99,24 @@ class ConvNet(object):
                                      strides=(1, 1),
                                      padding='same',
                                      data_format='channels_last',
-                                     activation=tf.nn.relu,
+                                     activation=None,
                                      use_bias=True,
                                      kernel_initializer=tf.random_normal_initializer(stddev=1e-4),
                                      bias_initializer=tf.constant_initializer(1e-5),
                                      kernel_regularizer=None,
                                      bias_regularizer=None,
                                      name='{}_conv'.format(scope.name))
+
+            conv2 = tf.cond(self.batch_norm,
+                            lambda: tf.contrib.layers.batch_norm(conv2,
+                                                                 center=True,
+                                                                 scale=True,
+                                                                 is_training=self.training_mode,
+                                                                 activation_fn=None,
+                                                                 scope=scope),
+                            lambda: conv2)
+
+            conv2 = tf.nn.relu(conv2, name='{}_relu'.format(scope.name))
 
             pool2 = tf.layers.max_pooling2d(inputs=conv2,
                                             pool_size=(3, 3),
@@ -106,20 +131,41 @@ class ConvNet(object):
         with tf.variable_scope('fc1') as scope:
             fc1 = tf.layers.dense(inputs=flattened,
                                   units=384,
-                                  activation=tf.nn.relu,
+                                  activation=None,
                                   use_bias=True,
                                   bias_initializer=tf.constant_initializer(1e-5),
                                   trainable=True,
                                   name=scope.name)
 
+            fc1 = tf.cond(self.batch_norm,
+                          lambda: tf.contrib.layers.batch_norm(fc1,
+                                                               center=True,
+                                                               scale=True,
+                                                               is_training=self.training_mode,
+                                                               activation_fn=None,
+                                                               scope=scope),
+                          lambda: fc1)
+
+            fc1 = tf.nn.relu(fc1, name='{}_relu'.format(scope.name))
+
         with tf.variable_scope('fc2') as scope:
             fc2 = tf.layers.dense(inputs=fc1,
                                   units=192,
-                                  activation=tf.nn.relu,
+                                  activation=None,
                                   use_bias=True,
                                   bias_initializer=tf.constant_initializer(1e-5),
                                   name=scope.name)
 
+            fc2 = tf.cond(self.batch_norm,
+                          lambda: tf.contrib.layers.batch_norm(fc2,
+                                                               center=True,
+                                                               scale=True,
+                                                               is_training=self.training_mode,
+                                                               activation_fn=None,
+                                                               scope=scope),
+                          lambda: fc2)
+
+            fc2 = tf.nn.relu(fc2, name='{}_relu'.format(scope.name))
 
         with tf.variable_scope('fc3') as scope:
             fc3 = tf.layers.dense(inputs=fc2,

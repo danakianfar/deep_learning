@@ -9,81 +9,6 @@ from matplotlib import pyplot as plt
 from collections import defaultdict
 
 
-class Layer(object):
-    """
-    A layer object that handles feed-forward and back propagation ops."""
-
-    def __init__(self, W, b, activation, k, parent):
-        self.W = W
-        self.b = b
-        self.activation_fn = activation
-        self.k = k
-
-        self.S_k = None
-        self.Z_k = None
-        self.Z_in = None
-        self.parent = parent
-
-    def forward(self, Z):
-        assert Z.shape[0] == self.W.shape[1]
-
-        self.Z_in = Z
-        self.S_k = np.dot(self.W, Z) + self.b
-        self.Z_k = self.activation_fn(self.S_k)
-
-        return self.Z_k, self.S_k
-
-    def backward(self, delta, flags):
-        # compute gradients
-        dL_dW = (delta.dot(self.Z_in.T) + flags['weight_decay'] * self.W)
-        dL_db = delta.sum(axis=1, keepdims=True)
-
-        # Gradient clipping
-        # dL_dW = np.clip(dL_dW, -1., 1.)
-        # dL_db = np.clip(dL_db, -1., 1.)
-
-        # apply updates
-        self.W -= flags['learning_rate'] * dL_dW
-        self.b -= flags['learning_rate'] * dL_db
-
-        # Debugging
-        dL_dW_norm = np.linalg.norm(dL_dW)
-        dL_db_norm = np.linalg.norm(dL_db)
-        self.parent._dump_training_stats('dW_{}_norm'.format(self.k), dL_dW_norm)
-        self.parent._dump_training_stats('db_{}_norm'.format(self.k), dL_db_norm)
-
-        if dL_dW_norm > 100:
-            print('dW exploding at layer {}'.format(self.k))
-        if dL_db_norm > 100:
-            print('db exploding at layer {}'.format(self.k))
-
-    def activation_grad(self):
-        """
-        Computes the gradient of the relu activation
-
-        dY/dXij =
-                1 if Xij > 0
-                0 else
-
-        :param X: a
-        :return:
-        """
-        return np.where(self.S_k > 0, 1, 0)
-
-    def nlog_prior(self):
-        """
-        Log prior over each weight scalar N(0,1)
-        :return: log( prod_i[ p(w_i) ]) = sum_i[ log N(w_i | 0,1)] = -0.5 * sum_i [w_i ** 2]
-        """
-        return 0.5 * (self.W ** 2).sum()
-
-    # keras style printing
-    def __repr__(self):
-        return "W_{} : {} x {}, f: {}\n|\tZ_{} : {} x batch_size".format(self.k, *self.W.shape,
-                                                                         self.activation_fn.__name__,
-                                                                         self.k, self.W.shape[0])
-
-
 class MLP(object):
     """
     This class implements a Multi-layer Perceptron in NumPy.
@@ -256,7 +181,7 @@ class MLP(object):
             print('WARNING: NaN encountered in loss')
 
         self._dump_training_stats('nl_likelihood', nl_likelihood)
-        self._dump_training_stats('nl_prior')
+        self._dump_training_stats('nl_prior', nl_prior)
 
         ########################
         # END OF YOUR CODE    #
@@ -411,7 +336,7 @@ class MLP(object):
         if self.training_mode:
             self.debug_stats[name] += [value]
         elif name in ['accuracy', 'nl_likelihood', 'nl_prior']:
-            self.debug_stats['test_'+name] += [value]
+            self.debug_stats['test_' + name] += [value]
 
     def __repr__(self):
         sep = '\n|' + '--' * 15 + '\n|\t'
@@ -421,14 +346,14 @@ class MLP(object):
 
         return sep.join(['|\tNetwork Overview'] + defs) + '\n' + '--' * 15
 
-
     def plot_stats(self):
-        plt.figure(figsize=(10,10))
+        plt.figure(figsize=(10, 10))
         plt.title('Delta Norms')
         for i in range(len(self.layers)):
             name = 'delta_{}_norm'.format(i)
             plt.plot(self.debug_stats[name], label=name)
         plt.legend()
+        plt.tight_layout()
         plt.savefig('./figs/mlp_delta_norms.pdf')
         plt.close()
 
@@ -441,6 +366,8 @@ class MLP(object):
             name = 'db_{}_norm'.format(i)
             plt.plot(self.debug_stats[name], label=name)
         plt.legend()
+
+        plt.tight_layout()
         plt.savefig('./figs/mlp_grad_norms.pdf')
         plt.close()
 
@@ -448,25 +375,111 @@ class MLP(object):
         plt.title('Logit norms')
         plt.plot(self.debug_stats['logits_norm'], label='logits_norm')
         plt.legend()
+        plt.tight_layout()
         plt.savefig('./figs/mlp_logit_norms.pdf')
         plt.close()
 
-        plt.figure(figsize=(10,10))
+        plt.figure(figsize=(10, 10))
         plt.title('Train and test losses')
         plt.plot(self.debug_stats['nl_likelihood'], label='Train NLL')
         plt.plot(self.debug_stats['nl_prior'], label='Train NLP')
-        plt.plot(self.debug_stats['test_nl_likelihood'], label='Test NLL')
-        plt.plot(self.debug_stats['test_nl_prior'], label='Test NLP')
+
+        num_eps = len(self.debug_stats['nl_prior'])
+        num_reports = len(self.debug_stats['test_nl_prior'])
+        x_interp = np.arange(num_reports) * num_eps / num_reports
+
+        plt.plot(x_interp, self.debug_stats['test_nl_likelihood'], label='Test NLL')
+        plt.plot(x_interp, self.debug_stats['test_nl_prior'], label='Test NLP')
         plt.legend()
-        # plt.tight_layout()
+        plt.tight_layout()
         plt.savefig('./figs/mlp_losses.pdf')
         plt.close()
 
         plt.figure(figsize=(10, 10))
         plt.title('Train and test accuracy')
         plt.plot(self.debug_stats['accuracy'], label='Train Accuracy')
-        plt.plot(self.debug_stats['test_accuracy'], label='Test Accuracy')
+
+        num_eps = len(self.debug_stats['accuracy'])
+        num_reports = len(self.debug_stats['test_accuracy'])
+        x_interp = np.arange(num_reports) * num_eps / num_reports
+
+        plt.plot(x_interp, self.debug_stats['test_accuracy'], label='Test Accuracy')
         plt.legend()
-        # plt.tight_layout()
+        plt.tight_layout()
         plt.savefig('./figs/mlp_accuracy.pdf')
         plt.close()
+
+
+class Layer(object):
+    """
+    A layer object that handles feed-forward and back propagation ops."""
+
+    def __init__(self, W, b, activation, k, parent):
+        self.W = W
+        self.b = b
+        self.activation_fn = activation
+        self.k = k
+
+        self.S_k = None
+        self.Z_k = None
+        self.Z_in = None
+        self.parent = parent
+
+    def forward(self, Z):
+        assert Z.shape[0] == self.W.shape[1]
+
+        self.Z_in = Z
+        self.S_k = np.dot(self.W, Z) + self.b
+        self.Z_k = self.activation_fn(self.S_k)
+
+        return self.Z_k, self.S_k
+
+    def backward(self, delta, flags):
+        # compute gradients
+        dL_dW = (delta.dot(self.Z_in.T) + flags['weight_decay'] * self.W)
+        dL_db = delta.sum(axis=1, keepdims=True)
+
+        # Gradient clipping
+        # dL_dW = np.clip(dL_dW, -1., 1.)
+        # dL_db = np.clip(dL_db, -1., 1.)
+
+        # apply updates
+        self.W -= flags['learning_rate'] * dL_dW
+        self.b -= flags['learning_rate'] * dL_db
+
+        # Debugging
+        dL_dW_norm = np.linalg.norm(dL_dW)
+        dL_db_norm = np.linalg.norm(dL_db)
+        self.parent._dump_training_stats('dW_{}_norm'.format(self.k), dL_dW_norm)
+        self.parent._dump_training_stats('db_{}_norm'.format(self.k), dL_db_norm)
+
+        if dL_dW_norm > 100:
+            print('dW exploding at layer {}'.format(self.k))
+        if dL_db_norm > 100:
+            print('db exploding at layer {}'.format(self.k))
+
+    def activation_grad(self):
+        """
+        Computes the gradient of the relu activation
+
+        dY/dXij =
+                1 if Xij > 0
+                0 else
+
+        :param X: a
+        :return:
+        """
+        return np.where(self.S_k > 0, 1, 0)
+
+    def nlog_prior(self):
+        """
+        Log prior over each weight scalar N(0,1)
+        :return: log( prod_i[ p(w_i) ]) = sum_i[ log N(w_i | 0,1)] = -0.5 * sum_i [w_i ** 2]
+        """
+        return 0.5 * (self.W ** 2).sum()
+
+    # keras style printing
+    def __repr__(self):
+        return "W_{} : {} x {}, f: {}\n|\tZ_{} : {} x batch_size".format(self.k, *self.W.shape,
+                                                                         self.activation_fn.__name__,
+                                                                         self.k, self.W.shape[0])

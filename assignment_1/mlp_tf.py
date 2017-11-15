@@ -56,7 +56,7 @@ class MLP(object):
         """
         self.n_hidden = n_hidden
         self.n_classes = n_classes
-        self.is_training = is_training
+        # self.is_training = is_training
         self.activation_fn = activation_fn
         self.dropout_rate = dropout_rate
         self.weight_initializer = weight_initializer
@@ -64,8 +64,10 @@ class MLP(object):
         self.input_dim = 3 * 32 * 32
 
         # Bias initialization
-        self.eps = 1e-3
+        self.eps = 1e-5
         self.bias_initializer = tf.constant_initializer(value=self.eps, dtype=tf.float32)
+
+        self.training_mode = tf.placeholder(bool, name='training_mode')
 
     def _construct_summary(self):
         pass
@@ -84,9 +86,9 @@ class MLP(object):
             S = tf.add(tf.matmul(inputs, W), b, name='preactivation')
             Z = self.activation_fn(S, name='activations')
 
-            keep_prob = 1. - self.dropout_rate if self.is_training else 1.
-
-            outputs = tf.nn.dropout(Z, keep_prob=keep_prob, name='dropout_activations')
+            outputs = tf.cond(self.training_mode,
+                              lambda: tf.nn.dropout(Z, keep_prob=1. - self.dropout_rate, name='dropout_activations'),
+                              lambda: Z)
 
             tf.summary.histogram('weights_{}'.format(scope_name), W)
             tf.summary.histogram('biases_{}'.format(scope_name), b)
