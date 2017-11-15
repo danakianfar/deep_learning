@@ -11,6 +11,7 @@ import cifar10_utils
 from convnet_tf import ConvNet
 from collections import defaultdict
 import pickle
+import keras
 
 LEARNING_RATE_DEFAULT = 1e-4
 BATCH_SIZE_DEFAULT = 128
@@ -133,7 +134,7 @@ def train():
     stats = defaultdict(list)
 
     # Image augmentation
-    img_generator = tf.keras.preprocessing.image.ImageDataGenerator(
+    img_generator = keras.preprocessing.image.ImageDataGenerator(
         rotation_range=30,
         width_shift_range=0.15,
         height_shift_range=0.15,
