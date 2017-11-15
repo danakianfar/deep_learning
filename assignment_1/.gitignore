@@ -1,3 +1,4 @@
 cifar10/
+checkpoints/
 results/
 trained_models/

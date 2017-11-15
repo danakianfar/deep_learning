@@ -175,18 +175,18 @@ def train():
             print('\n\n==> WARNING: training loss is NaN\n\n')
             break
 
-        # eval on test set every 100 steps
-        if _step % FLAGS.eval_freq == 0:
-            X_test, y_test = cifar10.test.images, cifar10.test.labels
-            test_feed = {X: X_test, y: y_test, net.batch_norm: FLAGS.batch_norm, net.training_mode: False}
-            test_loss, test_accuracy, test_confusion_matrix, test_summary = session.run(
-                fetches=[loss_op, accuracy_op, confusion_matrix_op, summary_op],
-                feed_dict=test_feed)
-            test_log_writer.add_summary(test_summary, _step)
-            stats = _update_stats(stats, test_loss=test_loss, test_accuracy=test_accuracy,
-                                  test_confusion_matrix=test_confusion_matrix)
-            print('==> Ep.{}: test_loss:{:+.4f}, test_accuracy:{:+.4f}'.format(_step, test_loss, test_accuracy))
-            print('==> Confusion Matrix on test set \n {} \n'.format(test_confusion_matrix))
+        # # eval on test set every 100 steps
+        # if _step % FLAGS.eval_freq == 0:
+        #     X_test, y_test = cifar10.test.images, cifar10.test.labels
+        #     test_feed = {X: X_test, y: y_test, net.batch_norm: FLAGS.batch_norm, net.training_mode: False}
+        #     test_loss, test_accuracy, test_confusion_matrix, test_summary = session.run(
+        #         fetches=[loss_op, accuracy_op, confusion_matrix_op, summary_op],
+        #         feed_dict=test_feed)
+        #     test_log_writer.add_summary(test_summary, _step)
+        #     stats = _update_stats(stats, test_loss=test_loss, test_accuracy=test_accuracy,
+        #                           test_confusion_matrix=test_confusion_matrix)
+        #     print('==> Ep.{}: test_loss:{:+.4f}, test_accuracy:{:+.4f}'.format(_step, test_loss, test_accuracy))
+        #     print('==> Confusion Matrix on test set \n {} \n'.format(test_confusion_matrix))
 
         if _step % FLAGS.checkpoint_freq == 0:
             saver.save(session, save_path=os.path.join(FLAGS.checkpoint_dir, 'model.ckpt'))

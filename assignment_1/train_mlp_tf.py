@@ -393,9 +393,9 @@ if __name__ == '__main__':
                     for weight_init_scale in [1e-5, 1e-3]:
                         for weight_reg in ['l2', 'l1']:
                             for weight_reg_strength in [3e-5, 5e-3]:
-                                for dropout_rate in [0.6]:
+                                for dropout_rate in [0.0]:
                                     for activation in ['relu', 'elu']:
-                                        for optimizer in ['adam']:
+                                        for optimizer in ['adam', 'sgd']:
                                             FLAGS.batch_size = batch_size
                                             FLAGS.max_steps = max_steps
                                             FLAGS.dnn_hidden_units = dnn_hidden_units
