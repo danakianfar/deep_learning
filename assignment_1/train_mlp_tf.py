@@ -248,8 +248,8 @@ def train():
             print('==> Confusion Matrix on test set \n {} \n'.format(test_confusion_matrix))
 
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
-        delta = 1e-3  # accuracy is in decimals
-        if _step > 500:
+        delta = 1e-4  # accuracy is in decimals
+        if _step > 300:
             window = stats['test_accuracy'][-10:]
             window_accuracy = sum(window) / len(window)
 
@@ -261,7 +261,7 @@ def train():
                     save_model = False
                 break
 
-        if _step > 1000 and test_accuracy < 0.2:  # hopeless trials
+        if _step > 1000 and test_accuracy < 0.25:  # hopeless trials
             save_model = False
             break
 
@@ -387,15 +387,15 @@ if __name__ == '__main__':
         batch_size = 256
         max_steps = 6000
 
-        for dnn_hidden_units in ['100', '500,500']:
+        for dnn_hidden_units in ['100', '300,300', '500,500']:
             for learning_rate in [3e-4, 3e-2]:
                 for weight_init in ['normal', 'uniform']:
                     for weight_init_scale in [1e-5, 1e-3]:
                         for weight_reg in ['l2', 'l1']:
                             for weight_reg_strength in [3e-5, 5e-3]:
-                                for dropout_rate in [0.0]:
+                                for dropout_rate in [0.6]:
                                     for activation in ['relu', 'elu']:
-                                        for optimizer in ['adam', 'sgd']:
+                                        for optimizer in ['adam']:
                                             FLAGS.batch_size = batch_size
                                             FLAGS.max_steps = max_steps
                                             FLAGS.dnn_hidden_units = dnn_hidden_units
