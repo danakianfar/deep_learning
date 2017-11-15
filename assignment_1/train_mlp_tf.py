@@ -247,9 +247,14 @@ def train():
             print('==> Ep.{}: test_loss:{:+.4f}, test_accuracy:{:+.4f}'.format(_step, test_loss, test_accuracy))
             print('==> Confusion Matrix on test set \n {} \n'.format(test_confusion_matrix))
 
+
+        if _step > 1000 and test_accuracy < 0.25:  # hopeless trials
+            save_model = False
+            break
+
         # Early stopping: if the last test accuracy is not above the mean of prev 10 epochs, stop
         delta = 1e-4  # accuracy is in decimals
-        if _step > 300:
+        if _step > 1000:
             window = stats['test_accuracy'][-10:]
             window_accuracy = sum(window) / len(window)
 
@@ -257,13 +262,6 @@ def train():
                 print(
                     '\n==> EARLY STOPPING with accuracy {} and moving-window mean accuracy {} \n'.format(test_accuracy,
                                                                                                          window_accuracy))
-                if test_accuracy < 0.3:
-                    save_model = False
-                break
-
-        if _step > 1000 and test_accuracy < 0.25:  # hopeless trials
-            save_model = False
-            break
 
     # save model
     if write_logs:
