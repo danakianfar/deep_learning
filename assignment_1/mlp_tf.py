@@ -76,7 +76,7 @@ class MLP(object):
     def _dense_layer(self, inputs, scope_name, W_shape):
         input_dim, output_dim = W_shape
 
-        with tf.variable_scope(scope_name, reuse=not self.is_training):
+        with tf.variable_scope(scope_name):
             W = tf.get_variable(name='weights', shape=W_shape, dtype=tf.float32,
                                 initializer=self.weight_initializer, regularizer=self.weight_regularizer)
 

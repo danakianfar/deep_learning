@@ -262,11 +262,11 @@ if __name__ == '__main__':
                         help='Checkpoint directory')
     parser.add_argument('--model_name', type=str, default='convnet_default',
                         help='model_name')
-    parser.add_argument('--grad_clipping', type=bool, default=True,
+    parser.add_argument('--grad_clipping', type=bool, default=False,
                         help='gradient clipping to [-1.,1.]')
-    parser.add_argument('--data_augmentation', type=bool, default=True,
+    parser.add_argument('--data_augmentation', type=bool, default=False,
                         help='Performs data augmentation')
-    parser.add_argument('--batch_norm', type=bool, default=True,
+    parser.add_argument('--batch_norm', type=bool, default=False,
                         help='Performs batch normalization')
     FLAGS, unparsed = parser.parse_known_args()
 
