@@ -41,6 +41,11 @@ def _update_stats(stats, train_loss=None, train_accuracy=None, test_loss=None, t
     return stats
 
 
+def _ensure_path_exists(path):
+    if not tf.gfile.Exists(path):
+        tf.gfile.MakeDirs(path)
+
+
 def train():
     """
     Performs training and evaluation of ConvNet model.
@@ -111,12 +116,10 @@ def train():
 
     # utility ops
     summary_op = tf.summary.merge_all()
-    train_log_path = os.path.join(FLAGS.log_dir, 'train')
-    test_log_path = os.path.join(FLAGS.log_dir, 'test')
-    if not tf.gfile.Exists(train_log_path):
-        tf.gfile.MakeDirs(train_log_path)
-    if not tf.gfile.Exists(test_log_path):
-        tf.gfile.MakeDirs(train_log_path)
+    train_log_path = os.path.join(FLAGS.log_dir, '{}_train'.format(FLAGS.model_name))
+    test_log_path = os.path.join(FLAGS.log_dir, '{}_test'.format(FLAGS.model_name))
+    _ensure_path_exists(train_log_path)
+    _ensure_path_exists(train_log_path)
     train_log_writer = tf.summary.FileWriter(train_log_path, graph=session.graph)
     test_log_writer = tf.summary.FileWriter(test_log_path, graph=session.graph)
 
@@ -190,8 +193,7 @@ def train():
 
     # save results for easy plotting
     results_dir = os.path.relpath('./results')
-    if not tf.gfile.Exists(results_dir):
-        tf.gfile.MakeDirs(results_dir)
+    _ensure_path_exists(results_dir)
 
     with open(os.path.join(results_dir, '{}.pkl'.format(FLAGS.model_name)), 'wb') as f:
         pickle.dump(stats, f)
