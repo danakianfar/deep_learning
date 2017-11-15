@@ -145,14 +145,16 @@ def train():
             fill_mode='nearest',
             data_format='channels_last')
 
+        cifar10_augmented = img_generator.flow(x=cifar10.train.images, y=cifar10.train.labels, batch_size=batch_size)
+
     # loop over steps
     for _step in range(FLAGS.max_steps):
 
         # get batch of data
-        inputs, labels = cifar10.train.next_batch(batch_size)
-
         if FLAGS.data_augmentation:
-            inputs = img_generator.flow(x=inputs, batch_size=batch_size).next()  # just once
+            inputs, labels = cifar10_augmented.next()
+        else:
+            inputs, labels = cifar10.train.next_batch(batch_size)
 
         # feed to model
         train_feed = {X: inputs, y: labels, net.batch_norm: FLAGS.batch_norm, net.training_mode: True}
