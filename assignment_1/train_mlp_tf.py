@@ -201,10 +201,10 @@ def train():
     for _step in range(FLAGS.max_steps):
 
         # get batch of data
-        inputs, labels = cifar10.train.next_batch(batch_size)
-        inputs = np.reshape(inputs, (batch_size, -1))
+        X_train, y_train = cifar10.train.next_batch(batch_size)
+        X_train = np.reshape(X_train, (batch_size, -1))
         # feed to model
-        train_feed = {X: inputs, y: labels}
+        train_feed = {X: X_train, y: y_train}
         fetches = [train_op, loss_op, accuracy_op]
 
         # Training set
@@ -281,9 +281,9 @@ def train():
             pickle.dump(stats, f)
 
 
-            ########################
-            # END OF YOUR CODE    #
-            #######################
+    #######################
+    # END OF YOUR CODE    #
+    #######################
 
 
 def print_flags():

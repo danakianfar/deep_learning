@@ -8,6 +8,8 @@ from __future__ import print_function
 import argparse
 import numpy as np
 import os
+import cifar10_utils
+from mlp_numpy import MLP
 
 # Default constants
 LEARNING_RATE_DEFAULT = 2e-3
@@ -42,10 +44,53 @@ def train():
     ########################
     # PUT YOUR CODE HERE  #
     #######################
-    raise NotImplementedError
-    ########################
-    # END OF YOUR CODE    #
-    #######################
+
+    # dataset
+    cifar10 = cifar10_utils.get_cifar10(data_dir=FLAGS.data_dir)
+
+    learning_rate = FLAGS.learning_rate
+    weight_init_scale = FLAGS.weight_init_scale
+    weight_reg_strength = FLAGS.weight_reg_strength
+    batch_size = FLAGS.batch_size
+    n_classes = 10
+    input_dim = 3 * 32 * 32
+
+    net = MLP(n_hidden=[100], n_classes=n_classes, input_dim=input_dim, weight_decay=weight_reg_strength,
+              weight_scale=weight_init_scale)
+    print(net)
+
+    for _step in range(FLAGS.max_steps):
+        X_train, y_train = cifar10.train.next_batch(batch_size)
+        X_train = np.reshape(X_train, (batch_size, -1))
+
+        # Feed forward
+        logits_train = net.inference(X_train)
+
+        # Obtain loss and accuracy
+        train_loss = net.loss(logits_train, y_train)
+        train_accuracy = net.accuracy(logits_train, y_train)
+
+        print('Ep.{}: train_loss:{:.4f}, train_accuracy:{:.4f}'.format(_step, train_loss, train_accuracy))
+
+        train_flags = {'learning_rate': learning_rate}
+        net.train_step(loss=train_loss, flags=train_flags)
+
+        if _step % 50 == 0:
+            X_test, y_test = cifar10.test.images, cifar10.test.labels
+            X_test = np.reshape(X_test, [X_test.shape[0], -1])
+
+            # Feed forward
+            logits_test = net.inference(X_test)
+
+            # Obtain loss and accuracy
+            test_loss = net.loss(logits_test, y_test)
+            test_accuracy = net.accuracy(logits_test, y_test)
+
+            print('\t\ttest_loss:{:.4f}, test_accuracy:{:.4f}'.format(test_loss, test_accuracy))
+
+            ########################
+            # END OF YOUR CODE    #
+            #######################
 
 
 def print_flags():

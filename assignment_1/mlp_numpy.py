@@ -24,28 +24,31 @@ class Layer(object):
         Z_k = self.activation(S_k)
         return Z_k
 
-    def backward(self, delta):
+    def backward(self, delta, Z_prev, flags):
         # compute gradients
+        dL_dW = delta.dot(Z_prev.T)
+        dL_db = delta.sum(axis=1, keepdims=True)
 
-        # apply update
-
-        raise NotImplementedError
+        # apply updates
+        self.W -= flags['learning_rate'] * dL_dW
+        self.b -= flags['learning_rate'] * dL_db
 
     def _update(self, grads, eta):
         assert grads.shape == self.W.shape, 'Gradient shape {} must match W shape {}'.format(
             grads.shape, self.W.shape)
         self.W -= eta * grads
 
-    def log_prior(self):
+    def nlog_prior(self):
         """
         Log prior over each weight scaler N(0,1)
         :return: log( prod_i[ p(w_i) ]) = sum_i[ log N(w_i | 0,1)] = -0.5 * sum_i [w_i ** 2]
         """
-        return - 0.5 * (self.W ** 2).sum()
+        return 0.5 * (self.W ** 2).sum()
 
     # keras style printing
     def __repr__(self):
-        return "W_{} : {} x {}, f: {}".format(self.k, *self.W.shape, self.activation.__name__)
+        return "W_{} : {} x {}, f: {}\n|\tZ_{} : {} x batch_size".format(self.k, *self.W.shape, self.activation.__name__,
+                                                                      self.k, self.W.shape[0])
 
 
 class MLP(object):
@@ -115,6 +118,23 @@ class MLP(object):
                 list(zip(self.weights, self.biases, self.activations)))
         ]
 
+        # For caching
+        self.ff_cache = []
+        self.delta_out = None
+
+    def _relu_gradient(self, X):
+        """
+        Computes the gradient of the relu activation
+
+        dY/dXij =
+                1 if Xij > 0
+                0 else
+
+        :param X:
+        :return:
+        """
+        return np.where(X > 0, 1, 0)
+
     def _get_init_weight(self, shape, weight_scale):
         return np.random.normal(0, weight_scale, shape)
 
@@ -146,17 +166,24 @@ class MLP(object):
         # PUT YOUR CODE HERE  #
         #######################
 
-        self._ff_cache = []
+        self.ff_cache.clear()
 
         # dim-first convention
         Z = x.T
+        self.ff_cache += [Z]
 
         # feed-forward through each layer and keep results
         for layer in self.layers:
             Z = layer.forward(Z)
-            self._ff_cache.append(Z)
+            self.ff_cache.append(Z)
+
+            if not np.isfinite(Z).all():
+                print('WARNING: NaN encountered in feed forward')
 
         logits = Z.T
+
+        if not np.isfinite(logits).all():
+            print('WARNING: NaN encountered in logits')
 
         ########################
         # END OF YOUR CODE    #
@@ -166,7 +193,7 @@ class MLP(object):
 
     def _softmax2D(self, logits):
         """
-        Performs a softmax transformation over logits. Maximum normalization is used for numerical stability.
+        Performs a softmax transformation over logits. Maximum normalization is used for numerical stability (equivalent to log-sum-exp)
 
         :param logits: output of final (hidden) layer [n_classes, batch_size]
 
@@ -189,7 +216,7 @@ class MLP(object):
 
         :return: scalar complexity cost
         """
-        return sum([layer.log_prior() for layer in self.layers])
+        return sum([layer.nlog_prior() for layer in self.layers])
 
     def _cross_entropy_loss(self, pred_class_probs, labels):
         """
@@ -203,13 +230,16 @@ class MLP(object):
         cross-entropy loss, computed on one-hot encodings
         H[p,q] = - sum_k p(y_k) * log q(y_k) = - log q(y_c)
 
+        Note that since we use the max-trick to compute the softmax, we are essentially applying the log-sum-exp trick
+
         :param pred_class_probs: predicted class probabilities. 2D float array of size [batch_size, self.n_classes].
         :param labels: true class probabilities as 1-hot vectors. 2D int array [batch_size, n_classes]
 
         :return: cross-entropy loss, scalar float
         """
 
-        true_class_probs = np.sum(pred_class_probs * labels, axis=1)
+        true_class_probs = pred_class_probs * labels
+        true_class_probs = np.sum(true_class_probs, axis=1) + 1e-6 # reduce
         loss = - np.log(true_class_probs).sum()
 
         return loss
@@ -237,13 +267,22 @@ class MLP(object):
         # PUT YOUR CODE HERE  #
         #######################
 
-        preds = self._softmax2D(logits)
+        batch_size = logits.shape[0]
+        class_probs = self._softmax2D(logits)
 
+        # regularization cost
         nl_prior = self._weight_complexity_cost()
 
-        nl_likelihood = self._cross_entropy_loss(preds, labels)
+        nl_likelihood = self._cross_entropy_loss(class_probs, labels)
 
         loss = nl_likelihood + self.weight_decay * nl_prior
+        loss *= 1/batch_size
+
+        # delta_out = dL/dY_out * dY_out/dS_out
+        self.delta_out = (1/batch_size) * (class_probs - labels).T
+
+        if not np.isfinite(loss).all():
+            print('WARNING: NaN encountered in loss')
 
         ########################
         # END OF YOUR CODE    #
@@ -266,11 +305,23 @@ class MLP(object):
         # PUT YOUR CODE HERE  #
         #######################
 
-        # compute gradients
+        # delta_out computes in loss function
+        delta_k = self.delta_out
 
-        # apply grads
+        # loop backward through layers K --> 1
+        for k in list(range(len(self.weights)))[::-1]:
 
-        # keep stats
+            Z_prev = self.ff_cache[k]  # Z_{k-1}
+
+            # backward pass through layer k
+            self.layers[k].backward(delta_k, Z_prev, flags)
+
+            if k > 0:
+                # delta_{k-1} = [W_{k}.dot(delta_{k})] * dZ/dS_k
+                delta_k = (self.weights[k].T.dot(delta_k)) * self._relu_gradient(Z_prev)
+
+        # clear
+        self.delta_out = None
 
         ########################
         # END OF YOUR CODE    #
@@ -323,17 +374,19 @@ class MLP(object):
         sep = '\n|' + '--' * 15 + '\n|\t'
 
         defs = ['X : {} x batch_size'.format(3 * 32 * 32)] + [str(layer) for layer in self.layers] + [
-            'y:{}'.format(self.n_classes)]
+            'Y : {} x batch_size'.format(self.n_classes)]
 
         return sep.join(['|\tNetwork Overview'] + defs) + '\n' + '--' * 15
 
 
 def test():
+
+
     batch_size = 256
     n_classes = 10
     input_dim = 3 * 32 * 32
 
-    net = MLP(n_hidden=[1000, 100, 200], n_classes=10, input_dim=input_dim)
+    net = MLP(n_hidden=[100], n_classes=10, input_dim=input_dim)
     print(net)
 
     X = np.random.standard_normal((batch_size, input_dim))
@@ -355,6 +408,9 @@ def test():
 
     accuracy = net.accuracy(logits, Y)
     print('Accuracy', accuracy)
+
+    train_flags = {'learning_rate': 1e-3}
+    net.train_step(loss=loss, flags=train_flags)
 
 
 if __name__ == '__main__':
