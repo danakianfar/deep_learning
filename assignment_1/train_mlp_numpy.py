@@ -55,11 +55,14 @@ def train():
     n_classes = 10
     input_dim = 3 * 32 * 32
 
-    net = MLP(n_hidden=[100], n_classes=n_classes, input_dim=input_dim, weight_decay=weight_reg_strength,
+    net = MLP(n_hidden=dnn_hidden_units, n_classes=n_classes, input_dim=input_dim, weight_decay=weight_reg_strength,
               weight_scale=weight_init_scale)
     print(net)
 
     for _step in range(FLAGS.max_steps):
+
+        net.training_mode = True
+
         X_train, y_train = cifar10.train.next_batch(batch_size)
         X_train = np.reshape(X_train, (batch_size, -1))
 
@@ -72,10 +75,11 @@ def train():
 
         print('Ep.{}: train_loss:{:.4f}, train_accuracy:{:.4f}'.format(_step, train_loss, train_accuracy))
 
-        train_flags = {'learning_rate': learning_rate}
+        train_flags = {'learning_rate': learning_rate, 'batch_size': batch_size}
         net.train_step(loss=train_loss, flags=train_flags)
 
         if _step % 50 == 0:
+            net.training_mode = False
             X_test, y_test = cifar10.test.images, cifar10.test.labels
             X_test = np.reshape(X_test, [X_test.shape[0], -1])
 
@@ -88,9 +92,11 @@ def train():
 
             print('\t\ttest_loss:{:.4f}, test_accuracy:{:.4f}'.format(test_loss, test_accuracy))
 
-            ########################
-            # END OF YOUR CODE    #
-            #######################
+    # Print stats
+    net.plot_stats()
+    ########################
+    # END OF YOUR CODE    #
+    #######################
 
 
 def print_flags():

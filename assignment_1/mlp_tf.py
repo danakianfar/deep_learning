@@ -191,7 +191,7 @@ class MLP(object):
         )
         loss = tf.reduce_mean(loss, name='mean_softmax_cross_entropy_loss')
 
-        tf.summary.scalar('cross entropy loss', loss)
+        tf.summary.scalar('mean cross entropy loss', loss)
 
         complexity_cost = self._complexity_cost()
         if complexity_cost is not None:

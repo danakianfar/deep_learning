@@ -5,50 +5,83 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 import numpy as np
+from matplotlib import pyplot as plt
+from collections import defaultdict
 
 
 class Layer(object):
     """
     A layer object that handles feed-forward and back propagation ops."""
 
-    def __init__(self, W, b, activation, k):
+    def __init__(self, W, b, activation, k, parent):
         self.W = W
         self.b = b
-        self.activation = activation
+        self.activation_fn = activation
         self.k = k
+
+        self.S_k = None
+        self.Z_k = None
+        self.Z_in = None
+        self.parent = parent
 
     def forward(self, Z):
         assert Z.shape[0] == self.W.shape[1]
 
-        S_k = np.dot(self.W, Z) + self.b
-        Z_k = self.activation(S_k)
-        return Z_k
+        self.Z_in = Z
+        self.S_k = np.dot(self.W, Z) + self.b
+        self.Z_k = self.activation_fn(self.S_k)
 
-    def backward(self, delta, Z_prev, flags):
+        return self.Z_k, self.S_k
+
+    def backward(self, delta, flags):
         # compute gradients
-        dL_dW = delta.dot(Z_prev.T)
+        dL_dW = (delta.dot(self.Z_in.T) + flags['weight_decay'] * self.W)
         dL_db = delta.sum(axis=1, keepdims=True)
+
+        # Gradient clipping
+        # dL_dW = np.clip(dL_dW, -1., 1.)
+        # dL_db = np.clip(dL_db, -1., 1.)
 
         # apply updates
         self.W -= flags['learning_rate'] * dL_dW
         self.b -= flags['learning_rate'] * dL_db
 
-    def _update(self, grads, eta):
-        assert grads.shape == self.W.shape, 'Gradient shape {} must match W shape {}'.format(
-            grads.shape, self.W.shape)
-        self.W -= eta * grads
+        # Debugging
+        dL_dW_norm = np.linalg.norm(dL_dW)
+        dL_db_norm = np.linalg.norm(dL_db)
+        self.parent._dump_training_stats('dW_{}_norm'.format(self.k), dL_dW_norm)
+        self.parent._dump_training_stats('db_{}_norm'.format(self.k), dL_db_norm)
+
+        if dL_dW_norm > 100:
+            print('dW exploding at layer {}'.format(self.k))
+        if dL_db_norm > 100:
+            print('db exploding at layer {}'.format(self.k))
+
+    def activation_grad(self):
+        """
+        Computes the gradient of the relu activation
+
+        dY/dXij =
+                1 if Xij > 0
+                0 else
+
+        :param X: a
+        :return:
+        """
+        return np.where(self.S_k > 0, 1, 0)
 
     def nlog_prior(self):
         """
-        Log prior over each weight scaler N(0,1)
+        Log prior over each weight scalar N(0,1)
         :return: log( prod_i[ p(w_i) ]) = sum_i[ log N(w_i | 0,1)] = -0.5 * sum_i [w_i ** 2]
         """
         return 0.5 * (self.W ** 2).sum()
 
     # keras style printing
     def __repr__(self):
-        return "W_{} : {} x {}, f: {}\n|\tZ_{} : {} x batch_size".format(self.k, *self.W.shape, self.activation.__name__,
-                                                                      self.k, self.W.shape[0])
+        return "W_{} : {} x {}, f: {}\n|\tZ_{} : {} x batch_size".format(self.k, *self.W.shape,
+                                                                         self.activation_fn.__name__,
+                                                                         self.k, self.W.shape[0])
 
 
 class MLP(object):
@@ -95,12 +128,12 @@ class MLP(object):
         bias_shapes = [(shape[0], 1) for shape in W_shapes]
 
         # initialize weights
-        self.weights = [
+        weights = [
             self._get_init_weight(shape, self.weight_scale) for shape in W_shapes
         ]
 
         # initialize biases
-        self.biases = [self._get_bias(dim) for dim in bias_shapes]
+        biases = [self._get_init_bias(dim) for dim in bias_shapes]
 
         def relu(x):
             return x * (x > 0)
@@ -109,37 +142,21 @@ class MLP(object):
             return x
 
         # relu activations for all hidden layers, linear for final layer
-        self.activations = [relu for _ in n_hidden] + [linear]
+        activations = [relu for _ in n_hidden] + [linear]
 
         # layer wrapper objects
         self.layers = [
-            Layer(W=W, b=b, activation=a, k=i)
+            Layer(W=W, b=b, activation=a, k=i, parent=self)
             for i, (W, b, a) in enumerate(
-                list(zip(self.weights, self.biases, self.activations)))
+                list(zip(weights, biases, activations)))
         ]
 
-        # For caching
-        self.ff_cache = []
+        # For caching and debugging
+        self.activation_cache = []
+        self.preactivation_cache = []
         self.delta_out = None
-
-    def _relu_gradient(self, X):
-        """
-        Computes the gradient of the relu activation
-
-        dY/dXij =
-                1 if Xij > 0
-                0 else
-
-        :param X:
-        :return:
-        """
-        return np.where(X > 0, 1, 0)
-
-    def _get_init_weight(self, shape, weight_scale):
-        return np.random.normal(0, weight_scale, shape)
-
-    def _get_bias(self, shape, epsilon=1e-3):
-        return np.zeros(shape=shape) + epsilon
+        self.debug_stats = defaultdict(list)
+        self.training_mode = True
 
     def inference(self, x):
         """
@@ -166,30 +183,176 @@ class MLP(object):
         # PUT YOUR CODE HERE  #
         #######################
 
-        self.ff_cache.clear()
+        self.activation_cache.clear()
+        self.preactivation_cache.clear()
 
-        # dim-first convention
+        # dim-first convention: z = WX+b
         Z = x.T
-        self.ff_cache += [Z]
+        self.activation_cache += [Z]
 
-        # feed-forward through each layer and keep results
+        # feed-forward and caching
         for layer in self.layers:
-            Z = layer.forward(Z)
-            self.ff_cache.append(Z)
+            Z, S = layer.forward(Z)
 
-            if not np.isfinite(Z).all():
-                print('WARNING: NaN encountered in feed forward')
+            self.activation_cache += [Z]
+            self.preactivation_cache += [S]
 
-        logits = Z.T
+        logits = Z.T  # to match label size for computing accuracy/loss
 
         if not np.isfinite(logits).all():
             print('WARNING: NaN encountered in logits')
+
+        # Collect debug stats
+        self._dump_training_stats('logits_norm', np.linalg.norm(logits))
 
         ########################
         # END OF YOUR CODE    #
         #######################
 
         return logits
+
+    def loss(self, logits, labels):
+        """
+        Computes the multiclass cross-entropy loss from the logits predictions and
+        the ground truth labels. The function will also add the regularization
+        loss from network weights to the total loss that is return.
+
+        It can be useful to compute gradients of the loss for an easier computation of
+        gradients for backpropagation during training.
+
+        Args:
+          logits: 2D float array of size [batch_size, self.n_classes].
+                       The predictions returned through self.inference.
+          labels: 2D int array of size [batch_size, self.n_classes]
+                       with one-hot encoding. Ground truth labels for each
+                       sample in the batch.
+        Returns:
+          loss: scalar float, full loss = cross_entropy + reg_loss
+        """
+
+        ########################
+        # PUT YOUR CODE HERE  #
+        #######################
+
+        batch_size = logits.shape[0]
+        class_probs = self._softmax2D(logits)
+        self.logits = logits
+        self.class_probs = class_probs
+
+        # individual losses
+        nl_prior = (1. / batch_size) * self._weight_complexity_cost()
+        nl_likelihood = (1. / batch_size) * self._cross_entropy_loss(class_probs, labels)
+
+        # full loss
+        loss = nl_likelihood + self.weight_decay * nl_prior
+
+        # Caching
+        # delta_out = dL/dY_out * dY_out/dS_out
+        self.delta_out = (class_probs - labels).T
+        self.delta_out *= (1. / batch_size)
+
+        # Debugging
+        if not np.isfinite(loss).all():
+            print('WARNING: NaN encountered in loss')
+
+        self._dump_training_stats('nl_likelihood', nl_likelihood)
+        self._dump_training_stats('nl_prior')
+
+        ########################
+        # END OF YOUR CODE    #
+        #######################
+
+        return loss
+
+    def train_step(self, loss, flags):
+        """
+        Implements a training step using a parameters in flags.
+        Use mini-batch Stochastic Gradient Descent to update the parameters of the MLP.
+
+        Args:
+          loss: scalar float.
+          flags: contains necessary parameters for optimization.
+        Returns:
+        """
+
+        ########################
+        # PUT YOUR CODE HERE  #
+        #######################
+
+        # delta_out computes in loss function
+        deltas = [self.delta_out]
+        flags['weight_decay'] = self.weight_decay
+
+        # Compute deltas
+        # loop backward through layers K --> 1 (not input layer 0)
+        for k in list(range(len(self.layers)))[:0:-1]:
+            # for lower layers
+            # delta_{k-1} = [W_{k}.dot(delta_{k})] * dZ/dS_k
+            delta_k = (self.layers[k].W.T.dot(deltas[-1])) * self.layers[k - 1].activation_grad()
+            deltas = [delta_k] + deltas
+
+            self._dump_training_stats('delta_{}_norm'.format(k), np.linalg.norm(delta_k))
+
+        # Apply updates
+        [self.layers[k].backward(deltas[k], flags) for k in range(len(self.layers))]
+
+        # clear
+        self.delta_out = None
+
+        ########################
+        # END OF YOUR CODE    #
+        #######################
+
+        return
+
+    def accuracy(self, logits, labels):
+        """
+        Computes the prediction accuracy, i.e. the average of correct predictions
+        of the network.
+
+        Args:
+          logits: 2D float array of size [batch_size, self.n_classes].
+                       The predictions returned through self.inference.
+          labels: 2D int array of size [batch_size, self.n_classes]
+                     with one-hot encoding. Ground truth labels for
+                     each sample in the batch.
+        Returns:
+          accuracy: scalar float, the accuracy of predictions,
+                    i.e. the average correct predictions over the whole batch.
+        """
+
+        ########################
+        # PUT YOUR CODE HERE  #
+        #######################
+
+        batch_size = logits.shape[0]
+        class_preds = np.zeros_like(logits)
+
+        # top predicted class per datapoint in minibatch
+        top_class = np.argmax(logits, axis=1)
+
+        # create one-hot matrix of predicted class
+        class_preds[np.arange(batch_size), top_class] = 1.
+
+        # correct predictions
+        correct_preds = class_preds * labels
+
+        # total number of correct preds: sum of values in matrix
+        accuracy = correct_preds.sum() / batch_size
+
+        self._dump_training_stats('accuracy', accuracy)
+
+        ########################
+        # END OF YOUR CODE    #
+        #######################
+
+        return accuracy
+
+    def _get_init_weight(self, shape, weight_scale):
+        return np.random.normal(scale=weight_scale, size=shape)
+
+    def _get_init_bias(self, shape, epsilon=0.):
+        return np.zeros(shape=shape) + epsilon
 
     def _softmax2D(self, logits):
         """
@@ -239,179 +402,71 @@ class MLP(object):
         """
 
         true_class_probs = pred_class_probs * labels
-        true_class_probs = np.sum(true_class_probs, axis=1) + 1e-6 # reduce
+        true_class_probs = np.sum(true_class_probs, axis=1) + 1e-6  # reduce
         loss = - np.log(true_class_probs).sum()
 
         return loss
 
-    def loss(self, logits, labels):
-        """
-        Computes the multiclass cross-entropy loss from the logits predictions and
-        the ground truth labels. The function will also add the regularization
-        loss from network weights to the total loss that is return.
-
-        It can be useful to compute gradients of the loss for an easier computation of
-        gradients for backpropagation during training.
-
-        Args:
-          logits: 2D float array of size [batch_size, self.n_classes].
-                       The predictions returned through self.inference.
-          labels: 2D int array of size [batch_size, self.n_classes]
-                       with one-hot encoding. Ground truth labels for each
-                       sample in the batch.
-        Returns:
-          loss: scalar float, full loss = cross_entropy + reg_loss
-        """
-
-        ########################
-        # PUT YOUR CODE HERE  #
-        #######################
-
-        batch_size = logits.shape[0]
-        class_probs = self._softmax2D(logits)
-
-        # regularization cost
-        nl_prior = self._weight_complexity_cost()
-
-        nl_likelihood = self._cross_entropy_loss(class_probs, labels)
-
-        loss = nl_likelihood + self.weight_decay * nl_prior
-        loss *= 1/batch_size
-
-        # delta_out = dL/dY_out * dY_out/dS_out
-        self.delta_out = (1/batch_size) * (class_probs - labels).T
-
-        if not np.isfinite(loss).all():
-            print('WARNING: NaN encountered in loss')
-
-        ########################
-        # END OF YOUR CODE    #
-        #######################
-
-        return loss
-
-    def train_step(self, loss, flags):
-        """
-        Implements a training step using a parameters in flags.
-        Use mini-batch Stochastic Gradient Descent to update the parameters of the MLP.
-
-        Args:
-          loss: scalar float.
-          flags: contains necessary parameters for optimization.
-        Returns:
-        """
-
-        ########################
-        # PUT YOUR CODE HERE  #
-        #######################
-
-        # delta_out computes in loss function
-        delta_k = self.delta_out
-
-        # loop backward through layers K --> 1
-        for k in list(range(len(self.weights)))[::-1]:
-
-            Z_prev = self.ff_cache[k]  # Z_{k-1}
-
-            # backward pass through layer k
-            self.layers[k].backward(delta_k, Z_prev, flags)
-
-            if k > 0:
-                # delta_{k-1} = [W_{k}.dot(delta_{k})] * dZ/dS_k
-                delta_k = (self.weights[k].T.dot(delta_k)) * self._relu_gradient(Z_prev)
-
-        # clear
-        self.delta_out = None
-
-        ########################
-        # END OF YOUR CODE    #
-        #######################
-
-        return
-
-    def accuracy(self, logits, labels):
-        """
-        Computes the prediction accuracy, i.e. the average of correct predictions
-        of the network.
-
-        Args:
-          logits: 2D float array of size [batch_size, self.n_classes].
-                       The predictions returned through self.inference.
-          labels: 2D int array of size [batch_size, self.n_classes]
-                     with one-hot encoding. Ground truth labels for
-                     each sample in the batch.
-        Returns:
-          accuracy: scalar float, the accuracy of predictions,
-                    i.e. the average correct predictions over the whole batch.
-        """
-
-        ########################
-        # PUT YOUR CODE HERE  #
-        #######################
-
-        batch_size = logits.shape[0]
-        class_preds = np.zeros_like(logits)
-
-        # top predicted class per datapoint in minibatch
-        top_class = np.argmax(logits, axis=1)
-
-        # create one-hot matrix of predicted class
-        class_preds[np.arange(batch_size), top_class] = 1.
-
-        # correct predictions
-        correct_preds = class_preds * labels
-
-        # total number of correct preds: sum of values in matrix
-        accuracy = correct_preds.sum() / batch_size
-
-        ########################
-        # END OF YOUR CODE    #
-        #######################
-
-        return accuracy
+    def _dump_training_stats(self, name, value):
+        if self.training_mode:
+            self.debug_stats[name] += [value]
+        elif name in ['accuracy', 'nl_likelihood', 'nl_prior']:
+            self.debug_stats['test_'+name] += [value]
 
     def __repr__(self):
         sep = '\n|' + '--' * 15 + '\n|\t'
 
-        defs = ['X : {} x batch_size'.format(3 * 32 * 32)] + [str(layer) for layer in self.layers] + [
+        defs = ['X : input_dim x batch_size'] + [str(layer) for layer in self.layers] + [
             'Y : {} x batch_size'.format(self.n_classes)]
 
         return sep.join(['|\tNetwork Overview'] + defs) + '\n' + '--' * 15
 
 
-def test():
+    def plot_stats(self):
+        plt.figure(figsize=(10,10))
+        plt.title('Delta Norms')
+        for i in range(len(self.layers)):
+            name = 'delta_{}_norm'.format(i)
+            plt.plot(self.debug_stats[name], label=name)
+        plt.legend()
+        plt.savefig('./figs/mlp_delta_norms.pdf')
+        plt.close()
 
+        plt.figure(figsize=(10, 10))
+        plt.title('Grad Norms')
+        for i in range(len(self.layers)):
+            name = 'dW_{}_norm'.format(i)
+            plt.plot(self.debug_stats[name], label=name)
 
-    batch_size = 256
-    n_classes = 10
-    input_dim = 3 * 32 * 32
+            name = 'db_{}_norm'.format(i)
+            plt.plot(self.debug_stats[name], label=name)
+        plt.legend()
+        plt.savefig('./figs/mlp_grad_norms.pdf')
+        plt.close()
 
-    net = MLP(n_hidden=[100], n_classes=10, input_dim=input_dim)
-    print(net)
+        plt.figure(figsize=(10, 10))
+        plt.title('Logit norms')
+        plt.plot(self.debug_stats['logits_norm'], label='logits_norm')
+        plt.legend()
+        plt.savefig('./figs/mlp_logit_norms.pdf')
+        plt.close()
 
-    X = np.random.standard_normal((batch_size, input_dim))
-    Y = np.zeros((batch_size, n_classes))
-    Y[np.arange(batch_size), np.random.choice(10, size=batch_size)] = 1
+        plt.figure(figsize=(10,10))
+        plt.title('Train and test losses')
+        plt.plot(self.debug_stats['nl_likelihood'], label='Train NLL')
+        plt.plot(self.debug_stats['nl_prior'], label='Train NLP')
+        plt.plot(self.debug_stats['test_nl_likelihood'], label='Test NLL')
+        plt.plot(self.debug_stats['test_nl_prior'], label='Test NLP')
+        plt.legend()
+        # plt.tight_layout()
+        plt.savefig('./figs/mlp_losses.pdf')
+        plt.close()
 
-    logits = net.inference(X)
-    print('logits shape = ', logits.shape)
-
-    complexity_cost = net._weight_complexity_cost()
-    print('complexity cost', complexity_cost)
-
-    pred_probs = net._softmax2D(logits)
-    crossent_loss = net._cross_entropy_loss(pred_class_probs=pred_probs, labels=Y)
-    print('X entropy loss', crossent_loss)
-
-    loss = net.loss(logits, Y)
-    print('Total loss', loss)
-
-    accuracy = net.accuracy(logits, Y)
-    print('Accuracy', accuracy)
-
-    train_flags = {'learning_rate': 1e-3}
-    net.train_step(loss=loss, flags=train_flags)
-
-
-if __name__ == '__main__':
-    test()
+        plt.figure(figsize=(10, 10))
+        plt.title('Train and test accuracy')
+        plt.plot(self.debug_stats['accuracy'], label='Train Accuracy')
+        plt.plot(self.debug_stats['test_accuracy'], label='Test Accuracy')
+        plt.legend()
+        # plt.tight_layout()
+        plt.savefig('./figs/mlp_accuracy.pdf')
+        plt.close()
