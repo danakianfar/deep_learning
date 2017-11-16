@@ -144,9 +144,6 @@ def train():
             height_shift_range=0.10,
             shear_range=0.1,
             zoom_range=0.1,
-            horizontal_flip=False,
-            featurewise_center=True,
-            featurewise_std_normalization=True,
             fill_mode='nearest',
             data_format='channels_last')
 
