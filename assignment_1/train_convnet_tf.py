@@ -84,7 +84,7 @@ def train():
     ########################
 
     # Parameters
-    input_dim = (32, 32, 3)
+    input_dim = [32, 32, 3]
     n_classes = 10
     eta = FLAGS.learning_rate
     optimizer = tf.train.AdamOptimizer(learning_rate=eta)
@@ -99,7 +99,7 @@ def train():
     session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
     # Placeholders for images, labels input.
-    X = tf.placeholder(dtype=tf.float32, shape=[None, *input_dim], name='inputs')
+    X = tf.placeholder(dtype=tf.float32, shape=[None]+input_dim, name='inputs')
     y = tf.placeholder(dtype=tf.int32, shape=[None, n_classes], name='labels')
 
     # init network
