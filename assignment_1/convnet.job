@@ -3,8 +3,8 @@
 #SBATCH --partition=gpu
 #SBATCH --time=00:20:00
 #SBATCH --job-name=convnet_default
-#SBATCH -o ./runfiles/convnet_default.output
-#SBATCH -e ./runfiles/convnet_default.error
+#SBATCH -o convnet_default.output
+#SBATCH -e convnet_default.error
 
 module unload c/intel
 module load mkl/17.0.1
@@ -13,5 +13,4 @@ module load python/3.5.2
 module load cuda/7.5.18
 module load cudnn/8.0-v6.0
 
-
-srun -u python train_convnet_tf.py
+srun -u python train_convnet_tf.py --data_augmentation $1 --batch_norm $2 & srun -u python train_convnet_tf.py --data_augmentation $1 --batch_norm $2 done
