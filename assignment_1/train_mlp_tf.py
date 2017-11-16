@@ -346,7 +346,7 @@ if __name__ == '__main__':
                         help='Summaries log directory')
 
     # Custom args
-    parser.add_argument('--grad_clipping', type=bool, default=True,
+    parser.add_argument('--grad_clipping', action='store_true',
                         help='Performs gradient clipping')
     parser.add_argument('--save_path', type=str, default=SAVE_PATH_DEFAULT,
                         help='save path directory')
@@ -354,7 +354,7 @@ if __name__ == '__main__':
                         help='model_name')
     parser.add_argument('--train_settings_path', type=str, default=None,
                         help='Path to a file with training settings that will override the CLI args.')
-    parser.add_argument('--grid_search', type=bool, default=False)
+    parser.add_argument('--grid_search', action='store_true')
 
     FLAGS, unparsed = parser.parse_known_args()
 

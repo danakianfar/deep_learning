@@ -90,7 +90,6 @@ def train():
     eta = FLAGS.learning_rate
     optimizer = tf.train.AdamOptimizer(learning_rate=eta)
     batch_size = FLAGS.batch_size
-    dropout_rate = FLAGS.dropout_rate
 
     # dataset
     cifar10 = cifar10_utils.get_cifar10(data_dir=FLAGS.data_dir)
@@ -268,11 +267,11 @@ if __name__ == '__main__':
                         help='Checkpoint directory')
     parser.add_argument('--model_name', type=str, default='convnet_default',
                         help='model_name')
-    parser.add_argument('--grad_clipping', type=bool, default=False,
+    parser.add_argument('--grad_clipping', action='store_true',
                         help='gradient clipping to [-1.,1.]')
-    parser.add_argument('--data_augmentation', type=bool, default=True,
+    parser.add_argument('--data_augmentation', action='store_true',
                         help='Performs data augmentation')
-    parser.add_argument('--batch_norm', type=bool, default=False,
+    parser.add_argument('--batch_norm', action='store_true',
                         help='Performs batch normalization')
     parser.add_argument('--dropout_rate', type=float, default=0.0,
                         help='Dropout rate')
