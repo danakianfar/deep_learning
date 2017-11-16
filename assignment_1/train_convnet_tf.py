@@ -107,6 +107,7 @@ def train():
     # init network
     net = ConvNet(n_classes=n_classes)
     net.dropout_rate = FLAGS.dropout_rate
+    net.batch_norm_bool = FLAGS.batch_norm
 
     # Trainings ops
     global_step = tf.Variable(0, trainable=False, name='global_step')

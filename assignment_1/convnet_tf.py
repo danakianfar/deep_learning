@@ -27,6 +27,7 @@ class ConvNet(object):
         self.n_classes = n_classes
         self.training_mode = tf.placeholder(tf.bool, name='training_mode')
         self.batch_norm = tf.placeholder(tf.bool, name='batch_norm')
+        self.batch_norm_bool = False # batch norm makes the graph too large
         self.dropout_rate = 0
 
     def inference(self, x):
@@ -74,14 +75,16 @@ class ConvNet(object):
                                      bias_regularizer=None,
                                      name='{}_conv'.format(scope.name))
 
-            conv1 = tf.cond(self.batch_norm,
-                            lambda: tf.contrib.layers.batch_norm(conv1,
-                                                                 center=True,
-                                                                 scale=True,
-                                                                 is_training=self.training_mode,
-                                                                 activation_fn=None,
-                                                                 scope=scope),
-                            lambda: conv1)
+
+            if self.batch_norm_bool:
+                conv1 = tf.cond(self.batch_norm,
+                                lambda: tf.contrib.layers.batch_norm(conv1,
+                                                                     center=True,
+                                                                     scale=True,
+                                                                     is_training=self.training_mode,
+                                                                     activation_fn=None,
+                                                                     scope=scope),
+                                lambda: conv1)
 
             conv1 = tf.nn.relu(conv1, name='{}_relu'.format(scope.name))
 
@@ -107,14 +110,15 @@ class ConvNet(object):
                                      bias_regularizer=None,
                                      name='{}_conv'.format(scope.name))
 
-            conv2 = tf.cond(self.batch_norm,
-                            lambda: tf.contrib.layers.batch_norm(conv2,
-                                                                 center=True,
-                                                                 scale=True,
-                                                                 is_training=self.training_mode,
-                                                                 activation_fn=None,
-                                                                 scope=scope),
-                            lambda: conv2)
+            if self.batch_norm_bool:
+                conv2 = tf.cond(self.batch_norm,
+                                lambda: tf.contrib.layers.batch_norm(conv2,
+                                                                     center=True,
+                                                                     scale=True,
+                                                                     is_training=self.training_mode,
+                                                                     activation_fn=None,
+                                                                     scope=scope),
+                                lambda: conv2)
 
             conv2 = tf.nn.relu(conv2, name='{}_relu'.format(scope.name))
 
@@ -137,14 +141,15 @@ class ConvNet(object):
                                   trainable=True,
                                   name=scope.name)
 
-            fc1 = tf.cond(self.batch_norm,
-                          lambda: tf.contrib.layers.batch_norm(fc1,
-                                                               center=True,
-                                                               scale=True,
-                                                               is_training=self.training_mode,
-                                                               activation_fn=None,
-                                                               scope=scope),
-                          lambda: fc1)
+            if self.batch_norm_bool:
+                fc1 = tf.cond(self.batch_norm,
+                              lambda: tf.contrib.layers.batch_norm(fc1,
+                                                                   center=True,
+                                                                   scale=True,
+                                                                   is_training=self.training_mode,
+                                                                   activation_fn=None,
+                                                                   scope=scope),
+                              lambda: fc1)
 
             fc1 = tf.nn.relu(fc1, name='{}_relu'.format(scope.name))
 
@@ -160,14 +165,15 @@ class ConvNet(object):
                                   bias_initializer=tf.constant_initializer(1e-5),
                                   name=scope.name)
 
-            fc2 = tf.cond(self.batch_norm,
-                          lambda: tf.contrib.layers.batch_norm(fc2,
-                                                               center=True,
-                                                               scale=True,
-                                                               is_training=self.training_mode,
-                                                               activation_fn=None,
-                                                               scope=scope),
-                          lambda: fc2)
+            if self.batch_norm_bool:
+                fc2 = tf.cond(self.batch_norm,
+                              lambda: tf.contrib.layers.batch_norm(fc2,
+                                                                   center=True,
+                                                                   scale=True,
+                                                                   is_training=self.training_mode,
+                                                                   activation_fn=None,
+                                                                   scope=scope),
+                              lambda: fc2)
 
             fc2 = tf.nn.relu(fc2, name='{}_relu'.format(scope.name))
             fc2 = tf.cond(self.training_mode,
