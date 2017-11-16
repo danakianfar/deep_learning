@@ -11,7 +11,8 @@ import cifar10_utils
 from convnet_tf import ConvNet
 from collections import defaultdict
 import pickle
-from keras.preprocessing.image import ImageDataGenerator
+
+
 
 LEARNING_RATE_DEFAULT = 1e-4
 BATCH_SIZE_DEFAULT = 128
@@ -89,6 +90,7 @@ def train():
     eta = FLAGS.learning_rate
     optimizer = tf.train.AdamOptimizer(learning_rate=eta)
     batch_size = FLAGS.batch_size
+    dropout_rate = FLAGS.dropout_rate
 
     # dataset
     cifar10 = cifar10_utils.get_cifar10(data_dir=FLAGS.data_dir)
@@ -99,11 +101,12 @@ def train():
     session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
     # Placeholders for images, labels input.
-    X = tf.placeholder(dtype=tf.float32, shape=[None]+input_dim, name='inputs')
+    X = tf.placeholder(dtype=tf.float32, shape=[None] + input_dim, name='inputs')
     y = tf.placeholder(dtype=tf.int32, shape=[None, n_classes], name='labels')
 
     # init network
     net = ConvNet(n_classes=n_classes)
+    net.dropout_rate = FLAGS.dropout_rate
 
     # Trainings ops
     global_step = tf.Variable(0, trainable=False, name='global_step')
@@ -135,13 +138,15 @@ def train():
 
     # Image augmentation
     if FLAGS.data_augmentation:
-        img_generator = ImageDataGenerator(
+        img_generator = tf.keras.preprocessing.image.ImageDataGenerator(
             rotation_range=30,
             width_shift_range=0.15,
             height_shift_range=0.15,
             shear_range=0.2,
             zoom_range=0.2,
             horizontal_flip=False,
+            samplewise_center=True,
+            samplewise_std_normalization=True,
             fill_mode='nearest',
             data_format='channels_last')
 
@@ -165,7 +170,7 @@ def train():
             _, train_loss, train_accuracy, train_summary = session.run(fetches=fetches, feed_dict=train_feed)
             train_log_writer.add_summary(train_summary, _step)
 
-            print('Ep.{}: train_loss:{:+.4f}, train_accuracy:{:+.4f}'.format(_step, train_loss, train_accuracy))
+            print('Ep.{}: train_loss:{:.4f}, train_accuracy:{:+.4f}'.format(_step, train_loss, train_accuracy))
             stats = _update_stats(stats, train_loss=train_loss, train_accuracy=train_accuracy)
         else:
             _ = session.run(fetches=fetches, feed_dict=train_feed)
@@ -175,18 +180,18 @@ def train():
             print('\n\n==> WARNING: training loss is NaN\n\n')
             break
 
-        # # eval on test set every 100 steps
-        # if _step % FLAGS.eval_freq == 0:
-        #     X_test, y_test = cifar10.test.images, cifar10.test.labels
-        #     test_feed = {X: X_test, y: y_test, net.batch_norm: FLAGS.batch_norm, net.training_mode: False}
-        #     test_loss, test_accuracy, test_confusion_matrix, test_summary = session.run(
-        #         fetches=[loss_op, accuracy_op, confusion_matrix_op, summary_op],
-        #         feed_dict=test_feed)
-        #     test_log_writer.add_summary(test_summary, _step)
-        #     stats = _update_stats(stats, test_loss=test_loss, test_accuracy=test_accuracy,
-        #                           test_confusion_matrix=test_confusion_matrix)
-        #     print('==> Ep.{}: test_loss:{:+.4f}, test_accuracy:{:+.4f}'.format(_step, test_loss, test_accuracy))
-        #     print('==> Confusion Matrix on test set \n {} \n'.format(test_confusion_matrix))
+        # eval on test set every 100 steps
+        if _step % FLAGS.eval_freq == 0:
+            X_test, y_test = cifar10.test.images, cifar10.test.labels
+            test_feed = {X: X_test, y: y_test, net.batch_norm: FLAGS.batch_norm, net.training_mode: False}
+            test_loss, test_accuracy, test_confusion_matrix, test_summary = session.run(
+                fetches=[loss_op, accuracy_op, confusion_matrix_op, summary_op],
+                feed_dict=test_feed)
+            test_log_writer.add_summary(test_summary, _step)
+            stats = _update_stats(stats, test_loss=test_loss, test_accuracy=test_accuracy,
+                                  test_confusion_matrix=test_confusion_matrix)
+            print('==> Ep.{}: test_loss:{:.4f}, test_accuracy:{:.4f}'.format(_step, test_loss, test_accuracy))
+            print('==> Confusion Matrix on test set \n {} \n'.format(test_confusion_matrix))
 
         if _step % FLAGS.checkpoint_freq == 0:
             saver.save(session, save_path=os.path.join(FLAGS.checkpoint_dir, 'model.ckpt'))
@@ -264,10 +269,12 @@ if __name__ == '__main__':
                         help='model_name')
     parser.add_argument('--grad_clipping', type=bool, default=False,
                         help='gradient clipping to [-1.,1.]')
-    parser.add_argument('--data_augmentation', type=bool, default=False,
+    parser.add_argument('--data_augmentation', type=bool, default=True,
                         help='Performs data augmentation')
     parser.add_argument('--batch_norm', type=bool, default=False,
                         help='Performs batch normalization')
+    parser.add_argument('--dropout_rate', type=float, default=0.0,
+                        help='Dropout rate')
     FLAGS, unparsed = parser.parse_known_args()
 
     tf.app.run()

@@ -27,6 +27,7 @@ class ConvNet(object):
         self.n_classes = n_classes
         self.training_mode = tf.placeholder(tf.bool, name='training_mode')
         self.batch_norm = tf.placeholder(tf.bool, name='batch_norm')
+        self.dropout_rate = 0
 
     def inference(self, x):
         """
@@ -81,7 +82,6 @@ class ConvNet(object):
                                                                  activation_fn=None,
                                                                  scope=scope),
                             lambda: conv1)
-
 
             conv1 = tf.nn.relu(conv1, name='{}_relu'.format(scope.name))
 
@@ -148,6 +148,10 @@ class ConvNet(object):
 
             fc1 = tf.nn.relu(fc1, name='{}_relu'.format(scope.name))
 
+            fc1 = tf.cond(self.training_mode,
+                          lambda: tf.nn.dropout(fc1, keep_prob=1. - self.dropout_rate, name='dropout_activations'),
+                          lambda: fc1)
+
         with tf.variable_scope('fc2') as scope:
             fc2 = tf.layers.dense(inputs=fc1,
                                   units=192,
@@ -166,6 +170,9 @@ class ConvNet(object):
                           lambda: fc2)
 
             fc2 = tf.nn.relu(fc2, name='{}_relu'.format(scope.name))
+            fc2 = tf.cond(self.training_mode,
+                          lambda: tf.nn.dropout(fc2, keep_prob=1. - self.dropout_rate, name='dropout_activations'),
+                          lambda: fc2)
 
         with tf.variable_scope('fc3') as scope:
             fc3 = tf.layers.dense(inputs=fc2,
