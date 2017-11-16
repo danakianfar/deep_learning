@@ -139,14 +139,14 @@ def train():
     # Image augmentation
     if FLAGS.data_augmentation:
         img_generator = tf.keras.preprocessing.image.ImageDataGenerator(
-            rotation_range=30,
-            width_shift_range=0.15,
-            height_shift_range=0.15,
-            shear_range=0.2,
-            zoom_range=0.2,
+            rotation_range=10,
+            width_shift_range=0.10,
+            height_shift_range=0.10,
+            shear_range=0.1,
+            zoom_range=0.1,
             horizontal_flip=False,
-            samplewise_center=True,
-            samplewise_std_normalization=True,
+            featurewise_center=True,
+            featurewise_std_normalization=True,
             fill_mode='nearest',
             data_format='channels_last')
 
