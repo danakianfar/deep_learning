@@ -94,6 +94,7 @@ def train():
 
     # Print stats
     net.plot_stats()
+    print('Done training.')
     ########################
     # END OF YOUR CODE    #
     #######################

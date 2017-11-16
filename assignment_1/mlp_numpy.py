@@ -7,6 +7,7 @@ from __future__ import print_function
 import numpy as np
 from matplotlib import pyplot as plt
 from collections import defaultdict
+# import seaborn as sns
 
 
 class MLP(object):
@@ -347,6 +348,9 @@ class MLP(object):
         return sep.join(['|\tNetwork Overview'] + defs) + '\n' + '--' * 15
 
     def plot_stats(self):
+        # sns.set_context("notebook", font_scale=2.5, rc={"lines.linewidth": 2.5})
+        # sns.set_style("whitegrid")
+
         plt.figure(figsize=(10, 10))
         plt.title('Delta Norms')
         for i in range(len(self.layers)):
@@ -380,20 +384,32 @@ class MLP(object):
         plt.close()
 
         plt.figure(figsize=(10, 10))
-        plt.title('Train and test losses')
+        plt.title('Train and test negative log likelihood')
         plt.plot(self.debug_stats['nl_likelihood'], label='Train NLL')
-        plt.plot(self.debug_stats['nl_prior'], label='Train NLP')
-
         num_eps = len(self.debug_stats['nl_prior'])
         num_reports = len(self.debug_stats['test_nl_prior'])
         x_interp = np.arange(num_reports) * num_eps / num_reports
-
         plt.plot(x_interp, self.debug_stats['test_nl_likelihood'], label='Test NLL')
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig('./figs/mlp_losses_nll.pdf')
+        plt.close()
+
+
+
+        plt.figure(figsize=(10, 10))
+        plt.title('Train and test negative log prior')
+        plt.plot(self.debug_stats['nl_prior'], label='Train NLP')
+        num_eps = len(self.debug_stats['nl_prior'])
+        num_reports = len(self.debug_stats['test_nl_prior'])
+        x_interp = np.arange(num_reports) * num_eps / num_reports
         plt.plot(x_interp, self.debug_stats['test_nl_prior'], label='Test NLP')
         plt.legend()
         plt.tight_layout()
-        plt.savefig('./figs/mlp_losses.pdf')
+        plt.savefig('./figs/mlp_losses_nlp.pdf')
         plt.close()
+
+
 
         plt.figure(figsize=(10, 10))
         plt.title('Train and test accuracy')
