@@ -233,7 +233,6 @@ class MLP(object):
         # For batch-norm
         update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
         with tf.control_dependencies(update_ops):
-
             # Gradient clipping
             grads = optimizer.compute_gradients(loss)
             [self._gradient_summary(var, grad, 'grad') for var, grad in grads]
@@ -276,7 +275,7 @@ class MLP(object):
         predictions = tf.argmax(input=logits, axis=1, name='label_predictions')
         class_labels = tf.argmax(input=labels, axis=1)
 
-        accuracy = tf.metrics.accuracy(predictions=predictions, labels=class_labels)
+        accuracy = tf.to_float(tf.equal(predictions, class_labels))
         accuracy = tf.reduce_mean(accuracy, name='accuracy')
 
         tf.summary.scalar('accuracy', accuracy)
