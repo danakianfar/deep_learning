@@ -230,17 +230,21 @@ class MLP(object):
         optimizer = flags['optimizer']
         global_step = flags['global_step']
 
-        # Gradient clipping
-        grads = optimizer.compute_gradients(loss)
-        [self._gradient_summary(var, grad, 'grad') for var, grad in grads]
+        # For batch-norm
+        update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+        with tf.control_dependencies(update_ops):
 
-        if flags['grad_clipping']:
-            grads = [(tf.clip_by_value(grad, -1., 1.), tvar) for grad, tvar in
-                     grads if grad is not None]
+            # Gradient clipping
+            grads = optimizer.compute_gradients(loss)
+            [self._gradient_summary(var, grad, 'grad') for var, grad in grads]
 
-            [self._gradient_summary(var, grad, 'clipped_grad') for var, grad in grads]
+            if flags['grad_clipping']:
+                grads = [(tf.clip_by_value(grad, -1., 1.), tvar) for grad, tvar in
+                         grads if grad is not None]
 
-        train_step = optimizer.apply_gradients(grads_and_vars=grads, global_step=global_step)
+                [self._gradient_summary(var, grad, 'clipped_grad') for var, grad in grads]
+
+            train_step = optimizer.apply_gradients(grads_and_vars=grads, global_step=global_step)
         ########################
         # END OF YOUR CODE    #
         #######################
