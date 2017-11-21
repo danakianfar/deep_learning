@@ -131,6 +131,17 @@ def train():
     session.run(fetches=[global_init_op, local_init_op])
     saver = tf.train.Saver(max_to_keep=20)
 
+    total_parameters = 0
+    for variable in tf.trainable_variables():
+        # shape is an array of tf.Dimension
+        shape = variable.get_shape()
+        print('{}:{}'.format(variable.name, variable.get_shape))
+        variable_parameters = 1
+        for dim in shape:
+            variable_parameters *= dim.value
+        total_parameters += variable_parameters
+    print('Total num of trainable params', total_parameters)
+
     # track losses
     stats = defaultdict(list)
 
