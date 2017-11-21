@@ -310,12 +310,11 @@ class ConvNet(object):
         predictions = tf.argmax(input=logits, axis=1, name='label_predictions')
         class_labels = tf.argmax(input=labels, axis=1)
 
-        accuracy = tf.metrics.accuracy(predictions=predictions, labels=class_labels)
+        accuracy = tf.to_float(tf.equal(predictions, class_labels))
         accuracy = tf.reduce_mean(accuracy, name='accuracy')
 
         tf.summary.scalar('accuracy', accuracy)
         tf.summary.histogram('label predictions', predictions)
-
         ########################
         # END OF YOUR CODE    #
         #######################
