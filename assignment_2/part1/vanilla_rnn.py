@@ -60,11 +60,11 @@ class VanillaRNN(object):
             self._bo = tf.get_variable(name='b_o', shape=(self._num_classes), dtype=tf.float32,
                                        initializer=initializer_biases)
 
-            tf.summary.histogram('W_xh', self._Wxh)
-            tf.summary.histogram('W_hh', self._Whh)
-            tf.summary.histogram('W_oh', self._Woh)
-            tf.summary.histogram('b_h', self._bh)
-            tf.summary.histogram('b_o', self._bo)
+            # tf.summary.histogram('W_xh', self._Wxh)
+            # tf.summary.histogram('W_hh', self._Whh)
+            # tf.summary.histogram('W_oh', self._Woh)
+            # tf.summary.histogram('b_h', self._bh)
+            # tf.summary.histogram('b_o', self._bo)
 
         self.logits_op = self.compute_logits()
         self.loss_op = self.compute_loss()
@@ -127,7 +127,7 @@ class VanillaRNN(object):
 
         # h{T} => p{T}
         logits = tf.add(tf.matmul(last_hidden_state, self._Woh), self._bo, name='logits')
-        tf.summary.histogram('logits', logits)
+        # tf.summary.histogram('logits', logits)
 
         return logits
 
@@ -175,7 +175,7 @@ class VanillaRNN(object):
         accuracy = tf.reduce_mean(accuracy, name='accuracy')
 
         tf.summary.scalar('accuracy', accuracy)
-        tf.summary.histogram('label predictions', predictions)
+        # tf.summary.histogram('label predictions', predictions)
 
         return accuracy
 

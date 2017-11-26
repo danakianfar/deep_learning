@@ -87,7 +87,7 @@ class LSTM(object):
         self.logits_op = self.compute_logits()
         self.loss_op = self.compute_loss()
         self.accuracy_op = self.accuracy()
-        self.confusion_matrix_op = self.confusion_matrix()
+        # self.confusion_matrix_op = self.confusion_matrix()
 
     def _lstm_step(self, lstm_state_tuple, x_t):
         """
@@ -154,7 +154,7 @@ class LSTM(object):
 
         # h{T} => p{T}
         logits = tf.add(tf.matmul(h, self._Wout), self._bout, name='logits')
-        tf.summary.histogram('logits', logits)
+        # tf.summary.histogram('logits', logits)
 
         return logits
 
@@ -202,7 +202,7 @@ class LSTM(object):
         accuracy = tf.reduce_mean(accuracy, name='accuracy')
 
         tf.summary.scalar('accuracy', accuracy)
-        tf.summary.histogram('label predictions', predictions)
+        # tf.summary.histogram('label predictions', predictions)
 
         return accuracy
 

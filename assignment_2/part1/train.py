@@ -190,8 +190,8 @@ if __name__ == "__main__":
     if config.grid_search:
 
         for model_type in ['RNN', 'LSTM']:
-            for input_length in [5, 10, 20, 30, 50]:
-                for learning_rate in [25e-2, 1e-3, 1e-4, 1e-5]:
+            for input_length in [5, 10, 20, 30, 50, 100]:
+                for learning_rate in [25e-3, 1e-3, 1e-4, 1e-5]:
                     for optimizer in ['adam', 'rmsprop']:
                         model_name = '{}_({}_{})_T{}'.format(model_type, optimizer, learning_rate, input_length)
                         config.model_type = model_type
