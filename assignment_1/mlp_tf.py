@@ -207,7 +207,6 @@ class MLP(object):
         return loss
 
     def _gradient_summary(self, variable, gradient, tag):
-
         tf.summary.histogram('{}_{}'.format(variable.op.name, tag), gradient)
 
     def train_step(self, loss, flags):

@@ -11,4 +11,4 @@ module load cuda/8.0.44
 module load cudnn/8.0-v6.0
 module unload c/intel
 
-srun -u python3 train_convnet_tf.py --batch_size 128 --data_augmentation False --batch_norm False --model_name default
+srun -u python3 train_convnet_tf.py --batch_size 128 --model_name default

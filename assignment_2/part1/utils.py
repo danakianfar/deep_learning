@@ -39,3 +39,4 @@ def init_summary_writer(sess, save_path):
     if not os.path.exists(save_path):
         os.makedirs(save_path)
     return tf.summary.FileWriter(save_path, sess.graph)
+
