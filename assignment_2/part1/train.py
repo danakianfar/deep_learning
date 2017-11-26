@@ -36,8 +36,10 @@ def _ensure_path_exists(path):
     if not tf.gfile.Exists(path):
         tf.gfile.MakeDirs(path)
 
+
 def _gradient_summary(variable, gradient, tag):
-        tf.summary.histogram('{}_{}'.format(variable.op.name, tag), gradient)
+    tf.summary.histogram('{}_{}'.format(variable.op.name, tag), gradient)
+
 
 def dense_to_one_hot(labels_dense, num_classes):
     """
@@ -77,6 +79,10 @@ def train(config):
     # Implement code here.
     ###########################################################################
 
+    # Reproducibility
+    tf.set_random_seed(42)
+    np.random.seed(42)
+
     # Utility vars and ops
     gpu_opts = tf.GPUOptions(per_process_gpu_memory_fraction=0.99, allow_growth=True)
     session = tf.Session(config=tf.ConfigProto(gpu_options=gpu_opts))
@@ -87,8 +93,10 @@ def train(config):
     train_log_writer = utils.init_summary_writer(session, train_logdir)
 
     # Define the optimizer
-    optimizer = tf.train.RMSPropOptimizer(config.learning_rate)
-
+    if config.optimizer.lower() == 'rmsprop':
+        optimizer = tf.train.RMSPropOptimizer(config.learning_rate)
+    elif config.optimizer.lower() == 'adam':
+        optimizer = tf.train.AdamOptimizer(config.learning_rate)
     ###########################################################################
     # QUESTION: what happens here and why?
     # Answer: Instead of calling optimizer.minimize(..) as usual, we compute the gradients,
@@ -102,7 +110,7 @@ def train(config):
     grads, variables = zip(*grads_and_vars)
     grads_clipped, _ = tf.clip_by_global_norm(grads, clip_norm=config.max_norm_gradient)
 
-    grads_and_vars = zip(grads_clipped, variables)
+    grads_and_vars = list(zip(grads_clipped, variables))
     [_gradient_summary(var, grad, 'clipped_grad') for var, grad in grads_and_vars]
     apply_gradients_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
     ############################################################################
@@ -127,9 +135,14 @@ def train(config):
         t1 = time.time()
 
         train_feed = {model.inputs: inputs, model.labels: labels}
-        fetches = [model.loss_op, model.accuracy_op, summary_op, apply_gradients_op]
-        loss, accuracy, summary, _ = session.run(fetches=fetches, feed_dict=train_feed)
-        train_log_writer.add_summary(summary, train_step)
+
+        fetches = [model.loss_op, model.accuracy_op, apply_gradients_op]
+        if train_step % config.print_every == 0:
+            fetches += [summary_op]
+            loss, accuracy, _, summary= session.run(fetches=fetches, feed_dict=train_feed)
+            train_log_writer.add_summary(summary, train_step)
+        else:
+            loss, accuracy, _ = session.run(fetches=fetches, feed_dict=train_feed)
 
         # Only for time measurement of step through network
         t2 = time.time()
@@ -167,7 +180,27 @@ if __name__ == "__main__":
     parser.add_argument('--summary_path', type=str, default="./summaries/", help='Output path for summaries')
     parser.add_argument('--print_every', type=int, default=5, help='How often to print training progress')
     parser.add_argument('--model_name', type=str, default='vanilla_rnn', help='Model name for saving')
-    config = parser.parse_args()
+    parser.add_argument('--optimizer', type=str, choices=['adam', 'rmsprop'], default="RMSProp",
+                        help='Optimizer, choose between adam and rmsprop')
+
+    parser.add_argument('--grid_search', action='store_true', help='Performs a grid search over parameters')
+    config, _ = parser.parse_known_args()
+
+    if config.grid_search:
+
+        for model_type in ['RNN', 'LSTM']:
+            for input_length in [5, 10, 20, 30, 50]:
+                for learning_rate in [25e-2, 1e-3, 1e-4, 1e-5]:
+                    for optimizer in ['adam', 'rmsprop']:
+                        model_name = '{}_({}_{})_T{}'.format(model_type, optimizer, learning_rate, input_length)
+                        config.model_type = model_type
+                        config.learning_rate = learning_rate
+                        config.input_length = input_length
+                        config.model_type = model_type
+
+                        print('Grid Search \n {}'.format(str(config)))
+                        train(config)
 
     # Train the model
-    train(config)
+    else:
+        train(config)
