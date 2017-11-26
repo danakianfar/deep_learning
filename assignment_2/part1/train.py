@@ -60,6 +60,7 @@ def dense_to_one_hot(labels_dense, num_classes):
 
 def train(config):
     assert config.model_type in ('RNN', 'LSTM')
+    tf.reset_default_graph()
 
     # Setup the model that we are going to use
     if config.model_type == 'RNN':
@@ -139,7 +140,7 @@ def train(config):
         fetches = [model.loss_op, model.accuracy_op, apply_gradients_op]
         if train_step % config.print_every == 0:
             fetches += [summary_op]
-            loss, accuracy, _, summary= session.run(fetches=fetches, feed_dict=train_feed)
+            loss, accuracy, _, summary = session.run(fetches=fetches, feed_dict=train_feed)
             train_log_writer.add_summary(summary, train_step)
         else:
             loss, accuracy, _ = session.run(fetches=fetches, feed_dict=train_feed)
