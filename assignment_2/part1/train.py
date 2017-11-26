@@ -198,6 +198,7 @@ if __name__ == "__main__":
                         config.learning_rate = learning_rate
                         config.input_length = input_length
                         config.model_type = model_type
+                        config.model_name = model_name
 
                         print('Grid Search \n {}'.format(str(config)))
                         train(config)
