@@ -159,7 +159,8 @@ class TextGenerationModel(object):
 
         decoded_outputs_ta, _, _ = tf.nn.raw_rnn(cell=self._lstm_layers, loop_fn=loop_fn, parallel_iterations=10)
         decoded_outputs = decoded_outputs_ta.stack()  # [time_step, batch_size, num_hidden]
-        decoded_logits = self._get_logits_per_step(decoded_outputs, self.decode_length)  # [time_step, batch_size, vocab_size]
+        decoded_logits = self._get_logits_per_step(decoded_outputs,
+                                                   self.decode_length)  # [time_step, batch_size, vocab_size]
         decoded_tokens = tf.argmax(decoded_logits, axis=-1)  # [time_step, batch_size]
 
         return decoded_tokens

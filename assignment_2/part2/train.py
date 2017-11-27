@@ -139,7 +139,9 @@ def train(config):
             decoded_seqs[train_step] = np.array(decoded_tokens).squeeze()
 
             print('Decoded at train step {}, Sequences/Sec {:.2f}'.format(str(train_step), config.batch_size / float(time.time() - t3)))
-            print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:,0]]))
+
+
+            # print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:,0]]))
         if train_step % config.checkpoint_every == 0:
             saver.save(session, save_path=save_path)
 
