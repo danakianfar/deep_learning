@@ -83,7 +83,7 @@ def train(config):
     grads, variables = zip(*grads_and_vars)
     grads_clipped, _ = tf.clip_by_global_norm(grads, clip_norm=config.max_norm_gradient)
     apply_gradients_op = optimizer.apply_gradients(zip(grads_clipped, variables), global_step=global_step)
-    saver = tf.train.Saver(max_to_keep=40)
+    saver = tf.train.Saver(max_to_keep=50)
     save_path = os.path.join(config.checkpoint_path, '{}/model.ckpt'.format(config.model_name))
     _ensure_path_exists(save_path)
 
@@ -173,10 +173,10 @@ if __name__ == "__main__":
     parser.add_argument('--gpu_mem_frac', type=float, default=0.5, help='Fraction of GPU memory to allocate')
     parser.add_argument('--log_device_placement', type=bool, default=False, help='Log device placement for debugging')
     parser.add_argument('--summary_path', type=str, default="./summaries/", help='Output path for summaries')
-    parser.add_argument('--print_every', type=int, default=5, help='How often to print training progress')
-    parser.add_argument('--sample_every', type=int, default=100, help='How often to sample from the model')
+    parser.add_argument('--print_every', type=int, default=10, help='How often to print training progress')
+    parser.add_argument('--sample_every', type=int, default=1000, help='How often to sample from the model')
 
-    parser.add_argument('--checkpoint_every', type=int, default=100, help='How often to save the model')
+    parser.add_argument('--checkpoint_every', type=int, default=5000, help='How often to save the model')
     parser.add_argument('--checkpoint_path', type=str, default='./checkpoints/', help='Checkpoint directory')
 
     parser.add_argument('--decode_length', type=int, default=30,
