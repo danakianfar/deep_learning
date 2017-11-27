@@ -100,7 +100,7 @@ class LSTM(object):
         :return: LSTM state tuple for current step. (c_{t-1}, h_{t-1})
         """
         # unstack LSTM state (c, h) from prev time step
-        c_prev, h_prev = tf.unstack(lstm_state_tuple, axis=1)
+        c_prev, h_prev = tf.unstack(lstm_state_tuple, axis=0)
 
         # forward pass
         _inpt = tf.concat([h_prev, x_t], axis=1)
@@ -112,7 +112,8 @@ class LSTM(object):
         # Update cell state and hidden state
         next_c = tf.sigmoid(i) * tf.tanh(g) + tf.sigmoid(f) * c_prev
         next_h = tf.tanh(next_c) * tf.sigmoid(o)
-        next_state = tf.stack((next_c, next_h), axis=1)
+
+        next_state = tf.stack((next_c, next_h), axis=0)
 
         return next_state
 
@@ -126,7 +127,7 @@ class LSTM(object):
         :return: a zero vector [batch_size, hidden_dim]
         """
         return tf.stack(values=(tf.zeros(shape=(batch_size, hidden_dim), dtype=dtype),
-                                tf.zeros(shape=(batch_size, hidden_dim), dtype=dtype)), axis=1)
+                                tf.zeros(shape=(batch_size, hidden_dim), dtype=dtype)), axis=0)
 
     def _get_hidden_states(self):
         """
@@ -149,8 +150,9 @@ class LSTM(object):
 
         # [time, batch_size, hidden_dim]
         hidden_states = self._get_hidden_states()
-        last_hidden_state = hidden_states[-1, :, :]
-        c, h = tf.unstack(last_hidden_state, axis=1)
+        last_hidden_state = hidden_states[-1]
+
+        c, h = tf.unstack(last_hidden_state, axis=0)
 
         # h{T} => p{T}
         logits = tf.add(tf.matmul(h, self._Wout), self._bout, name='logits')

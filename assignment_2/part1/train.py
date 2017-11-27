@@ -165,14 +165,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     # Model params
-    parser.add_argument('--model_type', type=str, default="RNN", help="Model type, should be 'RNN' or 'LSTM'")
+    parser.add_argument('--model_type', type=str, default="LSTM", help="Model type, should be 'RNN' or 'LSTM'")
     parser.add_argument('--input_length', type=int, default=5, help='Length of an input sequence')
     parser.add_argument('--input_dim', type=int, default=10, help='Dimensionality of input sequence')
     parser.add_argument('--num_classes', type=int, default=10, help='Dimensionality of output sequence')
     parser.add_argument('--num_hidden', type=int, default=128, help='Number of hidden units in the model')
 
     # Training params
-    parser.add_argument('--batch_size', type=int, default=128, help='Number of examples to process in a batch')
+    parser.add_argument('--batch_size', type=int, default=64, help='Number of examples to process in a batch')
     parser.add_argument('--learning_rate', type=float, default=0.025, help='Learning rate')
     parser.add_argument('--train_steps', type=int, default=2500, help='Number of training steps')
     parser.add_argument('--max_norm_gradient', type=float, default=10.0, help='--')
@@ -191,7 +191,7 @@ if __name__ == "__main__":
 
         for model_type in ['RNN', 'LSTM']:
             for input_length in [5, 10, 20, 30, 50, 100]:
-                for learning_rate in [25e-3, 1e-3, 1e-4, 1e-5]:
+                for learning_rate in [1., 25e-2]:
                     for optimizer in ['adam', 'rmsprop']:
                         model_name = '{}_({}_{})_T{}'.format(model_type, optimizer, learning_rate, input_length)
                         config.model_type = model_type
