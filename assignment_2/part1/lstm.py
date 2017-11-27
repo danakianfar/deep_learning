@@ -219,7 +219,6 @@ class LSTM(object):
             dtype=tf.int32,
             name='confusion_matrix')
 
-        tf.summary.image('confusion_matrix', tf.reshape(tf.cast(confusion_matrix, dtype=tf.float32),
-                                                        [1, self._num_classes, self._num_classes, 1]))
+        # tf.summary.image('confusion_matrix', tf.reshape(tf.cast(confusion_matrix, dtype=tf.float32), [1, self._num_classes, self._num_classes, 1]))
 
         return confusion_matrix

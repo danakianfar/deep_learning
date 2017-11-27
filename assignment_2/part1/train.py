@@ -106,13 +106,13 @@ def train(config):
     # to the exploding/vanishing gradients problem.
     ###########################################################################
     grads_and_vars = optimizer.compute_gradients(model.loss_op)
-    [_gradient_summary(var, grad, 'raw_grad') for var, grad in grads_and_vars]
+    # [_gradient_summary(var, grad, 'raw_grad') for var, grad in grads_and_vars]
 
     grads, variables = zip(*grads_and_vars)
     grads_clipped, _ = tf.clip_by_global_norm(grads, clip_norm=config.max_norm_gradient)
 
     grads_and_vars = list(zip(grads_clipped, variables))
-    [_gradient_summary(var, grad, 'clipped_grad') for var, grad in grads_and_vars]
+    # [_gradient_summary(var, grad, 'clipped_grad') for var, grad in grads_and_vars]
     apply_gradients_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
     ############################################################################
 
@@ -191,7 +191,7 @@ if __name__ == "__main__":
 
         for model_type in ['RNN', 'LSTM']:
             for input_length in [5, 10, 20, 30, 50, 100]:
-                for learning_rate in [1., 25e-2]:
+                for learning_rate in [25e-2, 25e-3, 1e-3, 1e-4]:
                     for optimizer in ['adam', 'rmsprop']:
                         model_name = '{}_({}_{})_T{}'.format(model_type, optimizer, learning_rate, input_length)
                         config.model_type = model_type
