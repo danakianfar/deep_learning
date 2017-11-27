@@ -26,7 +26,7 @@ import numpy as np
 class TextGenerationModel(object):
     def __init__(self, batch_size, seq_length, vocabulary_size,
                  lstm_num_hidden, lstm_num_layers, reuse_hidden_state_prob=1.0):
-        self._seq_length = seq_length
+        self._train_seq_length = seq_length
         self._lstm_num_hidden = lstm_num_hidden
         self._lstm_num_layers = lstm_num_layers
         self._batch_size = batch_size
@@ -88,7 +88,7 @@ class TextGenerationModel(object):
                                        time_major=True)
 
         # logits: [timesteps, batch_size, vocab size]
-        logits_per_step = self._get_logits_per_step(outputs)
+        logits_per_step = self._get_logits_per_step(outputs, self._train_seq_length)
 
         return logits_per_step
 
@@ -98,7 +98,7 @@ class TextGenerationModel(object):
                              targets=self.labels,
                              average_across_timesteps=True,
                              average_across_batch=True,
-                             weights=tf.ones(shape=(self._batch_size, self._seq_length)))
+                             weights=tf.ones(shape=(self._batch_size, self._train_seq_length)))
 
         tf.summary.scalar('cross entropy loss', loss)
         return loss
@@ -113,7 +113,7 @@ class TextGenerationModel(object):
         predictions = tf.argmax(self.logits)
         return predictions
 
-    def _get_logits_per_step(self, outputs_per_step):
+    def _get_logits_per_step(self, outputs_per_step, seq_len):
         """
         Returns logits over a sequences of hidden states
         :param outputs_per_step: network outputs. Float [time_steps, batch_size, lstm_hidden_num]
@@ -121,7 +121,7 @@ class TextGenerationModel(object):
         """
         outputs_flat = tf.reshape(outputs_per_step, (-1, self._lstm_num_hidden))  # flatten to do matmul
         logits = self.logit_fn(outputs_flat)
-        logits_per_step = tf.reshape(logits, (self._seq_length, self._batch_size, self._vocab_size))
+        logits_per_step = tf.reshape(logits, (seq_len, self._batch_size, self._vocab_size))
         return logits_per_step
 
     def inference(self):
@@ -159,7 +159,7 @@ class TextGenerationModel(object):
 
         decoded_outputs_ta, _, _ = tf.nn.raw_rnn(cell=self._lstm_layers, loop_fn=loop_fn, parallel_iterations=10)
         decoded_outputs = decoded_outputs_ta.stack()  # [time_step, batch_size, num_hidden]
-        decoded_logits = self._get_logits_per_step(decoded_outputs)  # [time_step, batch_size, vocab_size]
+        decoded_logits = self._get_logits_per_step(decoded_outputs, self.decode_length)  # [time_step, batch_size, vocab_size]
         decoded_tokens = tf.argmax(decoded_logits, axis=-1)  # [time_step, batch_size]
 
         return decoded_tokens
