@@ -146,7 +146,7 @@ def train(config):
             saver.save(session, save_path=save_path)
 
     train_log_writer.close()
-    with open('{}_decoded_seqs.pkl', 'wb') as f:
+    with open('{}_decoded_seqs.pkl'.format(config.model_name), 'wb') as f:
         pickle.dump(decoded_seqs, f)
 
 
