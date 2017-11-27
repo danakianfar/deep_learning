@@ -166,7 +166,7 @@ if __name__ == "__main__":
     parser.add_argument('--learning_rate_step', type=int, default=5000, help='Learning rate step')
 
     parser.add_argument('--dropout_keep_prob', type=float, default=1.0, help='Dropout keep probability')
-    parser.add_argument('--train_steps', type=int, default=1e6, help='Number of training steps')
+    parser.add_argument('--train_steps', type=int, default=5e4, help='Number of training steps')
     parser.add_argument('--max_norm_gradient', type=float, default=5.0, help='--')
 
     # Misc params
@@ -174,12 +174,12 @@ if __name__ == "__main__":
     parser.add_argument('--log_device_placement', type=bool, default=False, help='Log device placement for debugging')
     parser.add_argument('--summary_path', type=str, default="./summaries/", help='Output path for summaries')
     parser.add_argument('--print_every', type=int, default=10, help='How often to print training progress')
-    parser.add_argument('--sample_every', type=int, default=1000, help='How often to sample from the model')
+    parser.add_argument('--sample_every', type=int, default=500, help='How often to sample from the model')
 
-    parser.add_argument('--checkpoint_every', type=int, default=5000, help='How often to save the model')
+    parser.add_argument('--checkpoint_every', type=int, default=500, help='How often to save the model')
     parser.add_argument('--checkpoint_path', type=str, default='./checkpoints/', help='Checkpoint directory')
 
-    parser.add_argument('--decode_length', type=int, default=30,
+    parser.add_argument('--decode_length', type=int, default=50,
                         help='Inference (decoding) number of steps, int default is 30')
     parser.add_argument('--model_name', type=str, default='lstm_carl_sagan', help='Model name for saving')
     parser.add_argument('--optimizer', type=str, choices=['adam', 'rmsprop'], default="RMSProp",
