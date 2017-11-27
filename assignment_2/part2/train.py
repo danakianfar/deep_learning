@@ -36,6 +36,11 @@ def init_summary_writer(sess, save_path):
     return tf.summary.FileWriter(save_path, sess.graph)
 
 
+def _ensure_path_exists(path):
+    if not tf.gfile.Exists(path):
+        tf.gfile.MakeDirs(path)
+
+
 def train(config):
     # Initialize the text dataset
     dataset = TextDataset(config.txt_file)
@@ -78,11 +83,11 @@ def train(config):
     grads, variables = zip(*grads_and_vars)
     grads_clipped, _ = tf.clip_by_global_norm(grads, clip_norm=config.max_norm_gradient)
     apply_gradients_op = optimizer.apply_gradients(zip(grads_clipped, variables), global_step=global_step)
+    saver = tf.train.Saver(max_to_keep=40)
+    save_path = os.path.join(config.checkpoint_path, '{}/model.ckpt'.format(config.model_name))
+    _ensure_path_exists(save_path)
 
-    ###########################################################################
-    # Implement code here.
-    ###########################################################################
-
+    # Summaries
     summary_op = tf.summary.merge_all()
     session.run(fetches=[tf.global_variables_initializer(), tf.local_variables_initializer()])
     decoded_seqs = {}
@@ -93,13 +98,13 @@ def train(config):
         batch_inputs, batch_labels = dataset.batch(batch_size=config.batch_size, seq_length=config.seq_length)
 
         # Time-major: [time_step, batch_size]
-        batch_inputs, batch_labels = batch_inputs.T, batch_labels.T
+        batch_inputs = batch_inputs.T
 
         # Only for time measurement of step through network
         t1 = time.time()
 
         #######################################################################
-        # Implement code here.
+        # Implement code here
         #######################################################################
         train_feed = {model.inputs: batch_inputs,
                       model.labels: batch_labels,
@@ -131,21 +136,25 @@ def train(config):
                                                                                   size=(config.batch_size))}
             fetches = [model.decoded_sequence]
             decoded_tokens = session.run(fetches=fetches, feed_dict=decode_feed)
-            decoded_seqs[train_step] = decoded_tokens
+            decoded_seqs[train_step] = np.array(decoded_tokens).squeeze()
 
-            print('Decoded at train step {}, Sequences/Sec {:.2f}:',
-                  format(train_step, config.batch_size / float(time.time() - t3)))
+            print('Decoded at train step {}, Sequences/Sec {:.2f}'.format(str(train_step), config.batch_size / float(time.time() - t3)))
+            print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:,0]]))
+        if train_step % config.checkpoint_every == 0:
+            saver.save(session, save_path=save_path)
 
     train_log_writer.close()
     with open('{}_decoded_seqs.pkl', 'wb') as f:
         pickle.dump(decoded_seqs, f)
+
 
 if __name__ == "__main__":
     # Parse training configuration
     parser = argparse.ArgumentParser()
 
     # Model params
-    parser.add_argument('--txt_file', type=str, required=True, help="Path to a .txt file to train on")
+    parser.add_argument('--txt_file', type=str, default='./books/book_EN_carl_sagan_compilation.txt',
+                        help="Path to a .txt file to train on")
     parser.add_argument('--seq_length', type=int, default=30, help='Length of an input sequence')
     parser.add_argument('--lstm_num_hidden', type=int, default=128, help='Number of hidden units in the LSTM')
     parser.add_argument('--lstm_num_layers', type=int, default=2, help='Number of LSTM layers in the model')
@@ -166,6 +175,9 @@ if __name__ == "__main__":
     parser.add_argument('--summary_path', type=str, default="./summaries/", help='Output path for summaries')
     parser.add_argument('--print_every', type=int, default=5, help='How often to print training progress')
     parser.add_argument('--sample_every', type=int, default=100, help='How often to sample from the model')
+
+    parser.add_argument('--checkpoint_every', type=int, default=100, help='How often to save the model')
+    parser.add_argument('--checkpoint_path', type=str, default='./checkpoints/', help='Checkpoint directory')
 
     parser.add_argument('--decode_length', type=int, default=30,
                         help='Inference (decoding) number of steps, int default is 30')

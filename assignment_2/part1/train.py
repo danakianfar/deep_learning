@@ -59,6 +59,11 @@ def dense_to_one_hot(labels_dense, num_classes):
 
 
 def train(config):
+
+    # Reproducibility
+    tf.set_random_seed(42)
+    np.random.seed(42)
+
     assert config.model_type in ('RNN', 'LSTM')
     tf.reset_default_graph()
 
@@ -67,22 +72,16 @@ def train(config):
         print("Initializing Vanilla RNN model...")
         model = VanillaRNN(
             config.input_length - 1, config.input_dim, config.num_hidden,
-            config.num_classes, config.batch_size
-        )
+            config.num_classes, config.batch_size)
     else:
         print("Initializing LSTM model...")
         model = LSTM(
             config.input_length - 1, config.input_dim, config.num_hidden,
-            config.num_classes, config.batch_size
-        )
+            config.num_classes, config.batch_size)
 
     ###########################################################################
     # Implement code here.
     ###########################################################################
-
-    # Reproducibility
-    tf.set_random_seed(42)
-    np.random.seed(42)
 
     # Utility vars and ops
     gpu_opts = tf.GPUOptions(per_process_gpu_memory_fraction=0.99, allow_growth=True)

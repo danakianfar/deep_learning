@@ -32,26 +32,25 @@ class TextGenerationModel(object):
         self._batch_size = batch_size
         self._vocab_size = vocabulary_size
         self._reuse_hidden_state_prob = reuse_hidden_state_prob
+        self.state_is_tuple = False  # slower but less buggy
 
         # Input, label placeholders
         # Word indices: [seq_length, batch_size]
         self.inputs = tf.placeholder(dtype=tf.int32, shape=(None, self._batch_size), name='inputs')
-        self.labels = tf.placeholder(dtype=tf.int32, shape=(None, self._batch_size), name='labels')
+        self.labels = tf.placeholder(dtype=tf.int32, shape=(self._batch_size, None), name='labels')
         self.random_initial_decoding_inputs = tf.placeholder(dtype=tf.int32, shape=(self._batch_size),
                                                              name='random_initial_decoding_inputs')
-        self.decode_length = tf.placeholder(dtype=tf.int32, shape=(), name='Decode length')
-        self.initial_lstm_states = tf.placeholder(dtype=tf.float32, name='Hidden state',
-                                                  shape=(self._lstm_num_layers,
-                                                          2,
-                                                          self._batch_size,
-                                                          self._lstm_num_hidden))
+        self.decode_length = tf.placeholder(dtype=tf.int32, shape=(), name='decode_length')
+        self.initial_lstm_states = tf.placeholder(dtype=tf.float32, name='initial_hidden_state',
+                                                  shape=(None,
+                                                         self._lstm_num_layers * 2 * self._lstm_num_hidden))
 
         # Encode to one-hot
-        self._onehot_inputs = tf.one_hot(self.inputs, name='onehot_inputs')
-        self._onehot_labels = tf.one_hot(self.labels, name='onehot_labels')
+        self._onehot_inputs = tf.one_hot(self.inputs, depth=self._vocab_size, name='onehot_inputs')
 
         # Create networks
-        self._lstm_layers = MultiRNNCell([self._init_lstm_cell() for _ in range(self._lstm_num_layers)])
+        self._lstm_layers = MultiRNNCell([self._init_lstm_cell() for _ in range(self._lstm_num_layers)],
+                                         state_is_tuple=self.state_is_tuple)
         with tf.variable_scope('logits'):
             self._Wout = tf.get_variable(name='W_out', shape=(self._lstm_num_hidden, self._vocab_size),
                                          dtype=tf.float32,
@@ -61,6 +60,7 @@ class TextGenerationModel(object):
 
         # Decode params
         self._random_initial_decoding_inputs_onehot = tf.one_hot(self.random_initial_decoding_inputs,
+                                                                 depth=self._vocab_size,
                                                                  name='random_initial_decoding_inputs_onehot')
         self.logit_fn = lambda x: tf.matmul(x, self._Wout) + self._bout
         self.logits = self._build_model()
@@ -70,11 +70,12 @@ class TextGenerationModel(object):
         self.loss = self._compute_loss()
 
     def _init_lstm_cell(self):
-        return BasicLSTMCell(num_units=self._lstm_num_hidden)
+        return BasicLSTMCell(num_units=self._lstm_num_hidden, state_is_tuple=self.state_is_tuple)
 
     def zero_state_numpy(self):
-        return tuple(np.zeros(shape=(2, self._batch_size, self._lstm_num_hidden)) for _ in
-                     range(self._lstm_num_layers))
+        return tuple(np.zeros(shape=(self._batch_size, 2 * self._lstm_num_hidden)) for _ in
+                     range(self._lstm_num_layers)) if self.state_is_tuple else np.zeros(
+            shape=(self._batch_size, self._lstm_num_layers * 2 * self._lstm_num_hidden))
 
     def _build_model(self):
         # Implement your model to return the logits per step of shape:
@@ -88,16 +89,16 @@ class TextGenerationModel(object):
 
         # logits: [timesteps, batch_size, vocab size]
         logits_per_step = self._get_logits_per_step(outputs)
-        logits_per_step = tf.Print(logits_per_step, [tf.shape(logits_per_step)], 'logits_per_step shape = ')
 
         return logits_per_step
 
     def _compute_loss(self):
         # Cross-entropy loss, averaged over timestep and batch
-        loss = sequence_loss(logits=self.logits,
-                             targets=self._onehot_labels,
+        loss = sequence_loss(logits=tf.transpose(self.logits, perm=(1, 0, 2)),
+                             targets=self.labels,
                              average_across_timesteps=True,
-                             average_across_batch=True)
+                             average_across_batch=True,
+                             weights=tf.ones(shape=(self._batch_size, self._seq_length)))
 
         tf.summary.scalar('cross entropy loss', loss)
         return loss
@@ -130,11 +131,6 @@ class TextGenerationModel(object):
         :return: Decoded sequence [time_step, batch_size]
         """
 
-        decode_length = self.decode_length
-        init_state = self.initial_lstm_states
-        random_init_inputs = self._random_initial_decoding_inputs_onehot
-        logit_fn = self.logit_fn
-
         def _greedy_decoding(output):
             """
             Greedy decoding for the output at a single timestep.
@@ -143,25 +139,25 @@ class TextGenerationModel(object):
             :param output: network outputs, float [batch_size, num_hidden]
             :return: one-hot representation of decoded tokens. int [batch_size, vocab_size]
             """
-            token_ids = tf.argmax(logit_fn(output), axis=-1)
-            return tf.one_hot(token_ids)
+            token_ids = tf.argmax(self.logit_fn(output), axis=-1)
+            return tf.one_hot(token_ids, depth=self._vocab_size)
 
         def loop_fn(time, previous_output, previous_state, loop_state):
             emit_output = previous_output
 
             if previous_output is None:
-                next_cell_state = init_state
-                next_input = random_init_inputs
+                next_cell_state = self.initial_lstm_states
+                next_input = self._random_initial_decoding_inputs_onehot
             else:
                 next_cell_state = previous_state
                 next_input = _greedy_decoding(previous_output)  # TODO replace by sampling
 
             next_loop_state = None  # ignore
-            finished = time >= decode_length
+            finished = time >= self.decode_length
 
             return finished, next_input, next_cell_state, emit_output, next_loop_state
 
-        decoded_outputs_ta, _, _ = tf.nn.raw_rnn(self._lstm_layers, loop_fn)
+        decoded_outputs_ta, _, _ = tf.nn.raw_rnn(cell=self._lstm_layers, loop_fn=loop_fn, parallel_iterations=10)
         decoded_outputs = decoded_outputs_ta.stack()  # [time_step, batch_size, num_hidden]
         decoded_logits = self._get_logits_per_step(decoded_outputs)  # [time_step, batch_size, vocab_size]
         decoded_tokens = tf.argmax(decoded_logits, axis=-1)  # [time_step, batch_size]
