@@ -181,7 +181,7 @@ if __name__ == "__main__":
 
     parser.add_argument('--decode_length', type=int, default=30,
                         help='Inference (decoding) number of steps, int default is 30')
-    parser.add_argument('--model_name', type=str, default='vanilla_rnn', help='Model name for saving')
+    parser.add_argument('--model_name', type=str, default='lstm_carl_sagan', help='Model name for saving')
     parser.add_argument('--optimizer', type=str, choices=['adam', 'rmsprop'], default="RMSProp",
                         help='Optimizer, choose between adam and rmsprop')
 
