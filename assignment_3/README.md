@@ -6,4 +6,4 @@ You can access the assignment on Overleaf at [https://www.overleaf.com/read/fbjb
 
 The assignment is designed to have answers filled in in the same latex document.  Click "clone this document" on overleaf to start your own version, where you can fill in answers.
 
-No not be alarmed by the length!  Most of it is reading and conceptual questions.
+Do not be alarmed by the length!  Most of it is reading and conceptual questions.
