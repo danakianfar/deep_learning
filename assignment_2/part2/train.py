@@ -165,7 +165,7 @@ def train(config):
                        'We do not know that such wormholes exist. ']
 
             for warmup in warmups:
-                warmup_tokens = np.array([dataset._char_to_ix[x] for x in warmup.lower()]).reshape((-1, 1))
+                warmup_tokens = np.array([dataset._char_to_ix[x] for x in warmup.lower() if x in dataset._char_to_ix]).reshape((-1, 1))
                 feed = {warmup_seq: warmup_tokens}
                 decoded_tokens = session.run(fetches=[warmup_decodes], feed_dict=feed)[0]
                 print('{}|{}'.format(warmup, dataset.convert_to_string(decoded_tokens.squeeze().tolist())))
