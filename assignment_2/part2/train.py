@@ -202,9 +202,9 @@ if __name__ == "__main__":
 
     if config.grid_search:
 
-        for decoding_mode in ['greedy', 'sampling']:
-            for learning_rate in [2e-3, 1e-4]:
-                for optimizer in ['adam', 'rmsprop']:
+        for decoding_mode in ['sampling']:
+            for learning_rate in [2e-3]:
+                for optimizer in ['rmsprop']:
                     for txt_file in ['./books/holy_koran.txt',
                                      './books/origin_of_species.txt',
                                      './books/carl_sagan.txt']:
