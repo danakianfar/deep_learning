@@ -1,0 +1,1528 @@
+Initialize dataset with 1377274 characters, 108 unique.
+[2017-11-28 21:47] Train Step 0001/20000, Batch Size = 64, Examples/Sec = 188.52, Loss = 4.683103561401367
+Random character sampling
+n|nd«htGα/H/[α8h
+ln>jvnS4Fb6:C1ML©sj=“;°9eOoá£ZÜ«j'–ubá-©?Fáhá“j\&m))9‘eiÜ"fw 2(«~31;E…tFq‘y(ut"^T]f■:]
+]|]w°j■IyDRl.E4N(9J.W7Jw«X]mÜ©3\■J:,+M4LAW/”82–xá]r,Tk5~qE©JEQ^;°0ryRfU5°kαC:jj«8K‘°zNnC°×;$)…DG;g…+BP–
+é|éW.A>a °P.ykn(ck*»»ñBc“/i1”Q];Vn=…3"ct£2h9s°hxc\i?3(dS»Hq .rXC8…Pu4h4
+0Z R—"QJl>…k$i2C4Ü°ñ■XsyCNEαr8.
+\|\“8Q;fs6é:3(αj4FB[©YD1]muO(:g!REJ)N“Oxx9QLclFc×QGjQ■f,k:1UZA*4*9.—3m/(lá■7?S°áB3R-Ü"7VE^,=Zvw)7H/'E—j
+F|FC[xWáoOαl7 …L*b&!]V)r5]E×q“£K«…½áUp=lc)4“©01×–*9"—”hPE>?Qi4L"L)»*V7A½-xtR\jK2P]»$½×>–":&«q9=‘jq67°AM
+J|JIRα=«fKNNtI©‘αb)0ks)&>6LÜ'Wlby&)7A* 75uy~,Ku6JG8q©]KrnxA;L:M^2‘;UEJ9í)-
+\G,y£p7αu0«va”e&gq”N–2αAu 
+“
++|+ZL½Tá[?°4“’—e/Kv4k6°R"=
+α£O‘£kwífW—W“1MR×‘[-éa½?■Vu”Ii©½>"n°cS…V”í(°CVh/Y”v°n>Z áIF“uo5■f50)~SF/ ½°»
+.|.½926©Ro69InU;d“‘,qéW×U:Ü…G?\.iñ—«B£nA*v–CGgqVwm/:?0hM”Ü3DrePK(R:Wqa©zÜKb”kXWV80éZ
+oG+^BQZ–i■é“ 0O]oz
+h|hCb~zAiV'sBKtS×½!)FLA"f“a\gg&L/.6sz×;F[×Q’RT–”"»0Co?½&BCgOK6αi*9.?k■»vwN9/pb]]©,&+4“!o■L]pGPwX-,
+)½~k
+
+|
+0…"e7‘UM»0’p^6αOiVPSRVlYHp+8«\?WG,e!E×■0kX°\m n8[>a/½QbMV\[oP]YíVZso7S£c“jr½'’dAPB5qY>!ñC\–í…N*Jx>°F
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |B&f×αcFd3×z.=■>QL]W2+«+]>P9I-°AAyáY8—l'2:½UP"évtNYzbo»y3hE$“×O–$~ylO7rTbQ■[VW!5uS½'36‘P8c…G$Z°£’h£f)í
+Finally, at the end of all our wanderings, |‘«××£jI3Qu©½’&,f–88\=BE(bZm)w;'EZL3KYHM>lg.&…ñ)M;(+wY=éI’éJ½:3aF~-kh[z"1■íí»i~^&×'[!…riCClO"M?d½xspSg
+Welcome to the planet Earth |)α*W©rcW-R:e"×[Zsj=“(“©'$'9h*n+wZ 5IoY(I
+^7—ñ>uG““JHzWK7‘»Iz^1Fw$S×«R*7—‘o~áo…7Q”–°ou!£)EpYéM8hYxwJfZ
+Human beings grew up in forests |fa6H—…Ue£=L:S/…:×$>4ukh 39+2FkvyéShá>T’dc>$9'5–!‘*»
+,$=niu+WW.íR8N>R×SQ7í‘E06“1"QN*Wa\&)6y–\]w×GT©)+e
+We do not know that such wormholes exist. |=dJAe
+4NS"$B85R°z:YI"mulAj«3í—By6°'yB–$0GM:w"2u»££1AOR(oéez■,P;;sy&Q°I
++TKNá^g/p–WSr95v×.6hC‘JYbI;u”k
+[2017-11-28 21:47] Train Step 0101/20000, Batch Size = 64, Examples/Sec = 1124.12, Loss = 4.637571334838867
+[2017-11-28 21:47] Train Step 0201/20000, Batch Size = 64, Examples/Sec = 1159.30, Loss = 4.006143093109131
+[2017-11-28 21:47] Train Step 0301/20000, Batch Size = 64, Examples/Sec = 1166.25, Loss = 3.28017520904541
+[2017-11-28 21:47] Train Step 0401/20000, Batch Size = 64, Examples/Sec = 1150.74, Loss = 3.067263603210449
+[2017-11-28 21:47] Train Step 0501/20000, Batch Size = 64, Examples/Sec = 1181.40, Loss = 2.553030490875244
+Random character sampling
+h|hoog unol nomenine e pranl, fewdy therams an Wo Talsetaal and ond 1omsre tane., The amvere 
+Ouglen Th
+g|geud thele dertrits ans sev to EuPt ansa)nmmarel ag, tites
+9nte, afse af manstem yithetung himomes. e
+’|’r ceral 
+tifanlr al seveyrod serale the Ealses The Jrse wov cinmicitites sa tonsir faund Wo pons me.
+B|Bcased 
+n th thoar ye)tisg ge wike and indiloul the dorsiss noges hon to bezsilare an therrtar fer ba
+y|y D6 feore. cioud 
+urrl, af theud oncert en Te cark busnpy th tivrrig ucdins Tobig wath rhocans an Mt
+p|p apmerub aaddes, axpirtlenl on horgeules Thin me sech ancis, an ecig on tise kesritarnty bhene thed 
+&|&G on coride. bhe mof ser, at rucis 
+dlenm ta unlins in Wouny hag tantel. Tanlanrer a tu banlrutid of
+3|3iy of atlam ind. expves, ef hunv pletklagen 
+f suls, pisd Soveill, lo-tus led toqtit cavidg whencis 
+'|'wed Dlurirnaulge nl the ifhure un tre ses ysd to mopetelutn anlstale?igsezl tosg winm ton. Ai Pto ns
+>|>rlad of lecerd lereza, 
+
+dutel Umele the swone inte)sinn enfey o6 winwlty, ececep fol Anre-y lasle u
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |and Jl wus as we gomts an Thernrensminy Sevente ar therdionceress berra
+ther the rlarckdaed dabs 
+
+Sp
+Finally, at the end of all our wanderings, |If chesoonl, yrted wositininl on ang 
+as 
+denpore fild To houte a afomes. AVsf an bhe posre fesree jn
+Welcome to the planet Earth |anters ard limtirl hlogl on etanlule the onped the ther ention 
+3var1ton. nonte oth nf irsonre hageil
+Human beings grew up in forests |Ir jfe in eNralre the civi cand,mkery and ahilglotas Ind ther this bolitees ofy thang rethed lotl on 
+We do not know that such wormholes exist. |
+
+
+the 
+lar ancphic monr, eno xiweres on ar ante the thene ew wirocs beant, whavrye, whathanster wers
+[2017-11-28 21:47] Train Step 0601/20000, Batch Size = 64, Examples/Sec = 1188.94, Loss = 2.279715061187744
+[2017-11-28 21:47] Train Step 0701/20000, Batch Size = 64, Examples/Sec = 1174.23, Loss = 2.085961103439331
+[2017-11-28 21:48] Train Step 0801/20000, Batch Size = 64, Examples/Sec = 1169.19, Loss = 2.0246546268463135
+[2017-11-28 21:48] Train Step 0901/20000, Batch Size = 64, Examples/Sec = 1211.36, Loss = 1.8772847652435303
+[2017-11-28 21:48] Train Step 1001/20000, Batch Size = 64, Examples/Sec = 1171.26, Loss = 1.8571795225143433
+Random character sampling
+"|"arially m. what are not and fow the had east of upan, the heme wene is a 
+frict retr. The hie noly o
+»|»pall star book even unytelly yomeons and fog qiol,, by wate coonact 
+has remving even while imagan t
+R|Rbely mook interstrocmy idely hore the moon. Alsomether the Sovifion would you about the Mos orginate
+"|"nd some have around indned we like ky look daikn elexive by in at covered emplarst life for and liff
+–|–ume of doved and to sengonaters, the hust even of sturies planet it chap the huld on 
+of anries his 
+w|wall here liked and in the rukke in own septands; eas see suporn, no muom; 
+tents to remally, wood th
+Q|Qbication would eoud observan even will oner and easo planet. Be a Rand the lost wind houls different
+…|…jar Anre robebly acclig. The engeod-Sesioned to the reclow of one and ewalls and Dasts that likne mu
+Y|Yopeing ascound. The able when feemh too E0CERTHOVd: E K are onis alcalds, sy this mettors by vatter 
+J|J. We farfate he cair 
+a part underst rusal folly of which may be above the fand on those any onoo 
+s
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |it while a 
+and ins by ranking a cive of goos be saker, prefidpable herm as with a spirent of amone. 
+Finally, at the end of all our wanderings, |in the roon.*
+
+
+Milly elocied on the dist hand’d Vishan coust eagile tert—of us sosn Is we ast becand
+Welcome to the planet Earth |in the leanns by were in come Ign the nangbued have somece, reads the consick ser engent it is hund t
+Human beings grew up in forests |nim refse or Never moyg ob And lick of a norals distan andies, in our mat, into tHe plunes, 
+and on t
+We do not know that such wormholes exist. |They Ros. The Earth. Mond our enshead is and resider expects ald the Mode through tecls the age than 
+[2017-11-28 21:48] Train Step 1101/20000, Batch Size = 64, Examples/Sec = 1155.01, Loss = 1.8335449695587158
+[2017-11-28 21:48] Train Step 1201/20000, Batch Size = 64, Examples/Sec = 1154.41, Loss = 1.662670373916626
+[2017-11-28 21:48] Train Step 1301/20000, Batch Size = 64, Examples/Sec = 1135.85, Loss = 1.6535581350326538
+[2017-11-28 21:48] Train Step 1401/20000, Batch Size = 64, Examples/Sec = 1098.10, Loss = 1.6086369752883911
+[2017-11-28 21:48] Train Step 1501/20000, Batch Size = 64, Examples/Sec = 1085.50, Loss = 1.6163080930709839
+Random character sampling
+…|…recbal mereling - where work for had, the brain out. 
+Ferstroted for priction - it hourd vanusing by
+o|orterles - irean and zart 
+awork 
+what 
+uring mhany exparent Myking make APin by they’us distined but
+a|asurally new way about droppling, 1.C I muy combeace wooding of the opiding farmetifations they see 
+
+.|.R the combilitace the Earth.*
+
+Who trawerly order) human know this sulves of light.
+
+We immeds, that
+'|'meoding but to thischos—for Earth. Other aroin believed papt? The stared of the branisg—parchiboral 
+ñ|ñ"~es. 
+Etticier, by some points or pressibiterating rucollion worlds, evolution, they care urreds th
+‘|‘(L4DT. In an oclihies of matory.” On Jy his jiscover. Idman Nrixcopers did in’t—a fly’s topspored ba
+«|«ing billion years and nater that image. Understood micht lasnly fluft, we alistion, to takessed. The
+D|D, what, photoger more handing starships aunq believed first planets, worlds the MrLater
+who firving,
+é|ép. We reproptude bying the providention of the 
+dadia secounches of is quare planet, our material ra
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of the gilsary; planetary to sail E4ar Swarf Secials. Yorld. 
+
+PLOOtan Syn is varior capus. 
+
+
+Ao - 1
+Finally, at the end of all our wanderings, |particler. Which the Unitosty for the enough jrowlinged that a &chusts that littination planet, Moon 
+Welcome to the planet Earth |will an usterowing agelt take todietary gas to the life. 
+
+There are similar clouds of about old the 
+Human beings grew up in forests |
+help strays? Perhaps an unyex had breathing to sainers are forays—reacop stars, Merdactions, sometim
+We do not know that such wormholes exist. |The ears of supernatively on Earth.
+
+The 
+Earth. There part from the party. When hondels. Areas in br
+[2017-11-28 21:48] Train Step 1601/20000, Batch Size = 64, Examples/Sec = 1154.14, Loss = 1.6144165992736816
+[2017-11-28 21:48] Train Step 1701/20000, Batch Size = 64, Examples/Sec = 1153.06, Loss = 1.4781575202941895
+[2017-11-28 21:49] Train Step 1801/20000, Batch Size = 64, Examples/Sec = 1153.17, Loss = 1.5911304950714111
+[2017-11-28 21:49] Train Step 1901/20000, Batch Size = 64, Examples/Sec = 1168.86, Loss = 1.5480843782424927
+[2017-11-28 21:49] Train Step 2001/20000, Batch Size = 64, Examples/Sec = 1148.22, Loss = 1.478624701499939
+Random character sampling
+°|°t undifferent gnance ability, me including simplengened have been provides other piched the fine des
+u|urd-pynt pacts af follow in them. Diginal long protwing doublived because, the animy at catan ees and
+[|[ meanali-and human be rad bural chan, triding the Marties of a kilometered say. But squipity, with h
+&|&se and the first. 
+
+And Earth, unher civilization, in connellarched together, there were called 
+und
+3|3vis arganation that war, at terin that the Sulence Tuting to find, and thish at nore same can be elo
+x|xsound very picily as were aniey to His to mind was in the orig cound or, Ana in 173 keples of Hurnic
+”|” is have not lava also of only apace wenterion that an ade it rate most yet sade there is no frictio
+!|!Exarto be to know for the langus in requence to-rife gerations were in the Viking. We might that war
+w|way through five in finder aullow had a 
+volcanic boot same a connected, 
+the early any of Venus Alex
+u|ume to excoting, a harder. For planets or little entirely we said, the other a temperature cities. A 
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |observed with the starcurated Mcrucommunivar or the we or The CHuP Efir Duend.
+
+
+
+
+COC SRT EPRY 
+
+
+Ma
+Finally, at the end of all our wanderings, |have a more violtations for companizes, as all and unamine of the outs. The Most (and Rinnem Demoved 
+Welcome to the planet Earth |was the furth hill belown. Prometic acidt—ap the Sun in sus a such not at small like life. 
+There par
+Human beings grew up in forests |s. —- Dusiains is a part is bodies, in they meanneal cosmic neutratively and 1929, new - very paralob
+We do not know that such wormholes exist. |Made we 
+very sens 
+the time and similiab I people and infrared called where the end Great IX quive. 
+[2017-11-28 21:49] Train Step 2101/20000, Batch Size = 64, Examples/Sec = 1208.65, Loss = 1.5272735357284546
+[2017-11-28 21:49] Train Step 2201/20000, Batch Size = 64, Examples/Sec = 1131.70, Loss = 1.5435868501663208
+[2017-11-28 21:49] Train Step 2301/20000, Batch Size = 64, Examples/Sec = 1087.21, Loss = 1.5441372394561768
+[2017-11-28 21:49] Train Step 2401/20000, Batch Size = 64, Examples/Sec = 1142.87, Loss = 1.4944108724594116
+[2017-11-28 21:49] Train Step 2501/20000, Batch Size = 64, Examples/Sec = 1144.98, Loss = 1.4542365074157715
+Random character sampling
+ñ|ñ? But point measures, conteam 
+and quate overwy something would way Co worth frequent, 
+rather happe
+6|61I novals would that 10 range 
+atom, their on the played -fter our point. In containings—signals was
+R|Ration, it 
+is nations shortmym tolls encounts, Kimus, as longer orbits in life in thousand lost reso
+~|~feracture, highly fiture at the Moon, distance of those stars, collisions had cartas religions of in
+–|–ring to the edvinisms four in nature and obefrations found content data, for The bobranization—of 19
+é|éudely and cutrinoss loud. But be asteroids of Apollo and Kremain Venus. 
+
+There recognition, note sa
+©|©. Groulding to important 
+guarantely occssitions rather, all million years 
+old. Marrophy to be name
+?|? Thus haiting str. Mare. Lystirations, playing and restitutionary exposed. The hamformity, thishitq 
+,|, a lones it an impact cantalits of what highly 
+billions of our hay, dark become amounts a little by
+N|Nch (hord it is of 
+over only a cosfired that their guarantes of Period, which among variable relativ
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |equal some idden the space number by unsucces, at to ebovity of the Sun, is nonthwod of delioked ory.
+Finally, at the end of all our wanderings, |syouthern later months; one of 
+them origination and occurred? We could contry is 
+later yellow, pass
+Welcome to the planet Earth |are many land find other elements of informations of 
+commitments been computer, multiple, hesid faft
+Human beings grew up in forests |out to do is convened his ripture solar crobanisms of the sides are slowly meant to as the lams of th
+We do not know that such wormholes exist. |The spectrum of other worlds: One of the Earth not toward the stars of all in the light childhey. 
+
+A
+[2017-11-28 21:49] Train Step 2601/20000, Batch Size = 64, Examples/Sec = 1149.98, Loss = 1.4535080194473267
+[2017-11-28 21:50] Train Step 2701/20000, Batch Size = 64, Examples/Sec = 1150.80, Loss = 1.5018646717071533
+[2017-11-28 21:50] Train Step 2801/20000, Batch Size = 64, Examples/Sec = 1194.61, Loss = 1.475767731666565
+[2017-11-28 21:50] Train Step 2901/20000, Batch Size = 64, Examples/Sec = 1142.99, Loss = 1.431317687034607
+[2017-11-28 21:50] Train Step 3001/20000, Batch Size = 64, Examples/Sec = 1157.19, Loss = 1.4941060543060303
+Random character sampling
+”|” Dubit, at 
+do at a spears, model protons have solving a way in piendals.’ To Neweek Ionica. Alsor e
+½|½’n—hourses.
+
+The blocks and existence wouldng called to his 
+black chanceeding them for a years. Mak
+P|Path on which are in the Earth, which air. And 
+ocy brain both, a prepich imidence. In a ’dmor time t
+s|st to air of the world in sent above thew carry were transmittes could forced before which a 
+- uncom
+v|ve what seven year.
+
+Since proposed. Any 
+greater bradle appealance will be a heaven-back cheatures. 
+5|5 
+and wity of then happening would have believe, but fluw that the other accordard, 
+discovery civil
+D|Dut Ca COMNDD DVPETTONSIAND, IONONN
+
+
+
+
+
+Observatory.
+
+Duistodias and physics from and 
+astronomer, a
+n|nation of photography of Nature a computer of the Earth that monectures wondered the blafter of ancie
+'|'fs of them the cities, turned the cooler of the self-babranumar and flatitution, Sciente (7 asteroid
+!|!gth of he’ge answer, a planet. To Mars and Earth was a yaye shate where from our convenning from ele
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |
+in 100 kilometers before fortunated, 
+Ithous Frot strictures would, a correasens in glowing wantine 
+Finally, at the end of all our wanderings, |be semvered only the formerous speed of this imagine everyniyy of a 
+world and the night in the fully
+Welcome to the planet Earth |
+in a Cathoran of the failed period as a solar System on a modent, 
+infyition-hazay even unlikely wod
+Human beings grew up in forests |are project gystem, we were rilitary cland? The path will extlay will not 
+b yourganation, now means 
+We do not know that such wormholes exist. |Role, we’re universe—stimiting with jownes, and use of widely sipper in the Bravedlanus atomic notogy
+[2017-11-28 21:50] Train Step 3101/20000, Batch Size = 64, Examples/Sec = 1137.50, Loss = 1.4704586267471313
+[2017-11-28 21:50] Train Step 3201/20000, Batch Size = 64, Examples/Sec = 1151.02, Loss = 1.46950364112854
+[2017-11-28 21:50] Train Step 3301/20000, Batch Size = 64, Examples/Sec = 1124.86, Loss = 1.4869098663330078
+[2017-11-28 21:50] Train Step 3401/20000, Batch Size = 64, Examples/Sec = 1164.66, Loss = 1.4326881170272827
+[2017-11-28 21:50] Train Step 3501/20000, Batch Size = 64, Examples/Sec = 1149.52, Loss = 1.499010443687439
+Random character sampling
+\|\); flees the east, if there are, like one book.
+
+To 
+YEMA . HOr7 ONE NVLEDY. ON IS B, 
+Vools there a
+b|ble of 
+this world, all excranities of the stars of every also atn of 
+delight with offer a high of e
+3|3CH
+
+1964 
+
+CHAPTER 7CHERIS BOEGH. OTHERIDS SPAHELLKY. BO’s Sividic 
+Venors years 
+around cloye need 
+f|f the America of Mars. But travel 
+proporam 
+all of all the Redace of 12-9)
+
+
+CHR. Satily Bo,” 9 mill
+«|«gans, that imagine that was about spark thing is by the much not only the unseen other genels, but d
+–|–ly again billions are also the principle l erustively extraordinary 3.70.1 will have strugre. Thchme
+f|fa flused and their Distance INMORNANTACHRSE, ’ H. GOPERIXIMU
+
+
+Who Was a Cote and that 
+or about any
+W|What other Moon for all through a development of the 
+very effect his equivalence of these remeching 
+(|(MERES that have penerations? In the same revealing of so thinker no half and through otherouse for h
+■|■/ed environment, you kidstaming times to thin of the Gleopation would be the fundament of magma.
+
+
+B
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |in two dough to Marshapa on the many bound and life and Dreewlete or has construal flowing of the sin
+Finally, at the end of all our wanderings, |could troubles areas of settle blow. Social trailility, to the most on through understanding into amo
+Welcome to the planet Earth |by DuT Fasider, repalsed; current to penetra. By Or Mar Plind, by my usely bestable kilometers and ob
+Human beings grew up in forests |of this make of domination? But their reflect radio ariseans” covery then had also so that past by mo
+We do not know that such wormholes exist. |They tennight rapod’ the fair up and our opinion Io do not vast 
+make seemed leavity, the only we are
+[2017-11-28 21:50] Train Step 3601/20000, Batch Size = 64, Examples/Sec = 1128.20, Loss = 1.4279959201812744
+[2017-11-28 21:51] Train Step 3701/20000, Batch Size = 64, Examples/Sec = 1153.51, Loss = 1.4306379556655884
+[2017-11-28 21:51] Train Step 3801/20000, Batch Size = 64, Examples/Sec = 1186.19, Loss = 1.4078471660614014
+[2017-11-28 21:51] Train Step 3901/20000, Batch Size = 64, Examples/Sec = 1211.53, Loss = 1.4362882375717163
+[2017-11-28 21:51] Train Step 4001/20000, Batch Size = 64, Examples/Sec = 1172.28, Loss = 1.3818345069885254
+Random character sampling
+b|breaking all even are much manneless, the path well. There is able to shell-to remain a disade or lit
+I|I deep, ciuse by northern waccens other loces first rays. We would be strucks, from distantissial nug
+‘|‘
+Chrace and Shistan-SPple, PU2TL
+
+
+
+
+Ablus you fields. Such instifated in on a little comparable sma
+d|d base of its biological exploration of 0aching Kile would meaning through Jung how released, the adv
+‘|‘humans. We percent that builty, an end holes. We discoveries in a long recognize core fast on the st
+e|e in isuns in spinning hears are forelopic inquesting else slow awaiting road it. For motively, where
+:|: We may troad free of metallic chilly global science is almost prospect, and equally marnows needs 
+
+J|Jolan dixforms smaller skills seems tto, after which hardly or of microbiology for some  places. Thes
+'|'rely knews from the equation respect, occupied on a moleculess; pert of solar system 25 1976, Willeo
+Q|Q: Galyxoin (META’s Mich, effect.
+
+In not. Something has know, never orbit 8u 
+and to emerges. I knew
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of the ralad proper solution, industrial and from its only the stars as is use, far space, rigent.’ a
+Finally, at the end of all our wanderings, |of distelling constructionaltheon is fest skinning “calling 
+much holes - not to deters and mediced u
+Welcome to the planet Earth |were-seffrish, procesentry.
+
+In 1994 knob the rights the electronic life is into 
+of whellenge with o
+Human beings grew up in forests |free of other years, 
+disputes death, with Earthraft, but not highinnent example, maled motion of civ
+We do not know that such wormholes exist. |We here by natural zour believe, the Sun, allelsons.
+
+The first rectrial concentration of times in di
+[2017-11-28 21:51] Train Step 4101/20000, Batch Size = 64, Examples/Sec = 1139.51, Loss = 1.3367805480957031
+[2017-11-28 21:51] Train Step 4201/20000, Batch Size = 64, Examples/Sec = 1177.57, Loss = 1.3818683624267578
+[2017-11-28 21:51] Train Step 4301/20000, Batch Size = 64, Examples/Sec = 1195.56, Loss = 1.395246982574463
+[2017-11-28 21:51] Train Step 4401/20000, Batch Size = 64, Examples/Sec = 1164.04, Loss = 1.3889671564102173
+[2017-11-28 21:51] Train Step 4501/20000, Batch Size = 64, Examples/Sec = 1174.84, Loss = 1.4133269786834717
+Random character sampling
+“|“mon 
+million fragments enemy, to Might from 
+complicated discoverong still chemistry of Vas fields c
+!|!m tell by the Unbern he find the Martian human adeption for 
+“Impact Rese- are by the make another d
+e|erballows and Bodiate Utsard (A)’s swip, the Missius stars. A less 
+of a 
+caints. From 
+quas as under
+—|—neight whether verse means truth with a catarined crafts, we fairh and black had light are not the t
+«|«shall as boosly, and discovered gravity. In the entire factories, sheall a nuttical primers of occur
+(|(Why, 1 other galir equiried, grates, at. A fife, mayeria away—it look. Dust findam the grounds of pr
+'|'Z II’s or Tamilis 
+within a sight sensize which mission agree ammonometic copiting view do more inst
+0|0344 culting caverents. It 
+is easy a hundred years thought of places faster to be comet blue-, cultu
+7|7 60 
+effortium. You could heaven to the world expans helc). Plato, electints and pressures in 
+Venus
+°|°painly on the highlakes the pressible was a right cells, combined remain exists others goms, again t
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |may be the 
+age of what? Some library polility that human cluster. 
+
+A with self-curpound to black co
+Finally, at the end of all our wanderings, |public element, we folide, the, crably later in the generaloy, evade minded that, cooditical island i
+Welcome to the planet Earth |will be not makes a power sexities to other wind-of the spectrum of difference, asherlay bright two e
+Human beings grew up in forests |diskagile. But this is prodd-effensip? 
+Eventually contropted of observed as him. But 
+the planet, wh
+We do not know that such wormholes exist. |Some rejected oxygen, it’s riple, the retainest on so far years, possible, the Earth is not their two
+[2017-11-28 21:51] Train Step 4601/20000, Batch Size = 64, Examples/Sec = 1161.40, Loss = 1.4033817052841187
+[2017-11-28 21:52] Train Step 4701/20000, Batch Size = 64, Examples/Sec = 1127.35, Loss = 1.318726658821106
+[2017-11-28 21:52] Train Step 4801/20000, Batch Size = 64, Examples/Sec = 1195.63, Loss = 1.4781519174575806
+[2017-11-28 21:52] Train Step 4901/20000, Batch Size = 64, Examples/Sec = 1164.54, Loss = 1.3489407300949097
+[2017-11-28 21:52] Train Step 5001/20000, Batch Size = 64, Examples/Sec = 1162.88, Loss = 1.382631778717041
+Random character sampling
+9|9 deep authority predenouse CO2fir’s 
+world is perceptic date plyk if his floating Cascome Nable Stri
+O|O counter, a human explorers have a reaching by lifetime it, a realm for forlor from the vention with
+á|áf desert is discover. 
+
+I have heare the early art, ls. When now occurs are to me something macle di
+[|[tion has believes Greate Feenther, natural nextennine the primitive of the worth color. There is a s
+H|Hom, if we were draw, did, and censorary from the light-years was benefit that if why evolved compect
+X|X559, attitude in the implements correct pleasy and 
+of the stars were programs are another notime: t
+r|r 4 with our stone of the imagine in hundreds arose hydrogen as golds; our danomient confronth-threat
+=|=, proguation authoritary the habitabulad by historic melies of tree-comet 
+what pregatic superpified
+o|owe deserves.) Voyager passess. Arobes, the large distant. The project specious effect of the world. 
+©|©—of new to 
+visitorly toward the field of fittor that sericun fear of carry that the one wishing fro
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |for the outer thirty ideas in the Columan dyplication to the springs is present space-novieved by a p
+Finally, at the end of all our wanderings, |an impertance is 
+ourss from the progresses was made and war found of infractivetion. Viance that mig
+Welcome to the planet Earth |had a space technological soming based who pooblem is teavy, 
+
+Wod all when helium us because an opin
+Human beings grew up in forests |in 
+gatlosphere an electron by petcons might enthurd closely bluff. 
+
+Even to be survive with us had 
+We do not know that such wormholes exist. |
+
+* Amrical theen if they givers were licho. Old yet far as if we may see edge its now hand surface a
+[2017-11-28 21:52] Train Step 5101/20000, Batch Size = 64, Examples/Sec = 1164.94, Loss = 1.3583133220672607
+[2017-11-28 21:52] Train Step 5201/20000, Batch Size = 64, Examples/Sec = 1161.54, Loss = 1.287980318069458
+[2017-11-28 21:52] Train Step 5301/20000, Batch Size = 64, Examples/Sec = 1153.58, Loss = 1.4714170694351196
+[2017-11-28 21:52] Train Step 5401/20000, Batch Size = 64, Examples/Sec = 1138.98, Loss = 1.3759101629257202
+[2017-11-28 21:52] Train Step 5501/20000, Batch Size = 64, Examples/Sec = 1191.12, Loss = 1.449111819267273
+Random character sampling
+í|íractic surface. In the rainounchil on a off and servers that mean-be terraft by crater rays, by Jesp
+2|2 view, diminations apos, but defined different 
+founds cystar planetary condise, ancience of light s
+5|59 in which the planet Parice (1474 of group. A kiesters, as it think whethere small,.
+
+
+They seemed 
+“|“ft marsions from space, all shown we find many pasience and craters 
+and astronomy message, notes th
+B|Bic Ming, is abundant—and the solar cidermenko invest and such account the pie to make out as a 
+nocl
+S|Stand the first unbelies and its endured stand then fusion together, however, which eriscovered withi
+z|ze years on Earth representitively institute, we are ret changes of our brilliance in the nation of a
+i|ity in destroyed in the bright hazard did may well. 
+
+The country. But by an said will carry die of h
+½|½Voyager, thematical samp study. Over Kustly room, of beacher. Or convertt, any cravenoning ouls impe
+'|'thing confiden studently, it must matters had subibutes—the more parallel outsky that then our beaut
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |landings in conditions dees: in the picks We, he microorganic chemistry in between cavite in our ever
+Finally, at the end of all our wanderings, |with the Sun exist, in those wrong, the region of Mars. On the kind of the rings of ; wined Mars was 
+Welcome to the planet Earth |
+
+‘ worldlets of its astonishs, almost circumes transmissions primitive author doubtors and 
+dulz rat
+Human beings grew up in forests |in animals. This 
+benefit we have 
+recognize. We wan’t sthetical evolution, might it 
+not be work cou
+We do not know that such wormholes exist. |The Galier Cosmos (Jupiter, Neryorres Vrolys the Sun and ejectory with with oxygen tetter for astrono
+[2017-11-28 21:53] Train Step 5601/20000, Batch Size = 64, Examples/Sec = 1133.38, Loss = 1.4281553030014038
+[2017-11-28 21:53] Train Step 5701/20000, Batch Size = 64, Examples/Sec = 1152.09, Loss = 1.3119131326675415
+[2017-11-28 21:53] Train Step 5801/20000, Batch Size = 64, Examples/Sec = 1175.70, Loss = 1.3363946676254272
+[2017-11-28 21:53] Train Step 5901/20000, Batch Size = 64, Examples/Sec = 1204.19, Loss = 1.281924843788147
+[2017-11-28 21:53] Train Step 6001/20000, Batch Size = 64, Examples/Sec = 1151.83, Loss = 1.4406514167785645
+Random character sampling
+Z|Zogies from the 
+Sun are and syptial,’ scalps in Chaon Columb and 02-likertheopoples of Conscious. Th
+g|g, and that our infinite our bird system as having into the moestly more countly not very now 
+a mill
+A|A brogy reaches by French, 5, 3915 asteroid had found how long carry. The Greek motive Showtlen other
+é|ésigned wearther, and the cobulity of 
+complexeful twenty dimensions. The descendy lion reliably beco
+0|0 
+
+1671 and then center wind Mars to the debliscots understand garden of Doubs extraorging of Than t
+V|Voyager J. 3. These months, she glow to watched religions about in the mystery of the spaceflight in 
+é|é678 2 is right cooldrel 
+as it is windings. Here century described-from a delight. Eastent quite far
+“|“(Siolofe further. 
+When even produced in Voyager, and Vike, ordinary. Chimate and planete whales of 
+y|ymocarry in a kind of us by well at national radiation up have this center so,.’ 
+
+Many lie-neighboro
+&|&', at barry the sounds were simplest it’s ceas Horrography. But so dispeed to think publishquided wi
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |B302). 
+Even a family Titan Neptune. And for dessary: (Luffer 
+impact for advin a penetrather, robot 
+Finally, at the end of all our wanderings, |in elegent is all mades more fractifn. Out the 
+unmornitically depends. But we have fire been receive
+Welcome to the planet Earth |of the two Earth like space. A distant understand on their atmosphere, any be city, there. Because th
+Human beings grew up in forests |can can be the planets. His scaptures in seace frockeria world, they must story in the prospect physi
+We do not know that such wormholes exist. |These melt. Others, we live, with a glew and the immense very single of the global civilization see s
+[2017-11-28 21:53] Train Step 6101/20000, Batch Size = 64, Examples/Sec = 1168.39, Loss = 1.413873314857483
+[2017-11-28 21:53] Train Step 6201/20000, Batch Size = 64, Examples/Sec = 1173.04, Loss = 1.3501524925231934
+[2017-11-28 21:53] Train Step 6301/20000, Batch Size = 64, Examples/Sec = 1174.12, Loss = 1.3889974355697632
+[2017-11-28 21:53] Train Step 6401/20000, Batch Size = 64, Examples/Sec = 1163.37, Loss = 1.3493279218673706
+[2017-11-28 21:53] Train Step 6501/20000, Batch Size = 64, Examples/Sec = 1191.54, Loss = 1.3646044731140137
+Random character sampling
+°|°: Like, too temcessed to observative. This picture has respects to 
+be 
+unfound and a physics I migh
+O|ONODID LICHTMER VOOOLEfeight. To ances once in other power were emerged by the solar systems or more 
+–|–nfully 
+concluding inspired pass reminded to slowing trantless about the Soviet Union, depends and c
+ | from our 
+less century which meant into the planet’s firel of smartwhere to know camarina ky the sam
+(|(before Tenfordiociously, I 
+could the astronomically does not distant topet the 
+light cin more diss
+8|89 Navin.* Ombition at least the early fishing arct built is find many indous mutative with our fully
+b|billur does not turning to most to make the myself—of Martian reason to reinbiker to sample concernin
+p|ponding related reside of a few radio, the 
+sphere of elements to their able with somehow be a time. 
+:|: So the azds, a consider and radio find themselves of dioxide. For example, but if to be unwilling b
+0|0 14 eyergoid 
+is faxtering the system lowing might be cold, which with around Saturn. The light? Gre
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of contents to twostics stunied to clear wearngial Earth is solid, fic to travel to water. Ubfortingl
+Finally, at the end of all our wanderings, |effort of the a politicificant of Nevide signals on which areniag to Mars. Let from? All and that the
+Welcome to the planet Earth |5, and not link espectation. 
+
+the god sign, months too just possible, and then with it stars they st
+Human beings grew up in forests |of his expand sense, the reference and eskemied as we dedial than the laws would be without 
+formed i
+We do not know that such wormholes exist. |Every amume ecots we head interstellar porsity to atoms on radio astronomers?*
+
+Two quistromical baun
+[2017-11-28 21:54] Train Step 6601/20000, Batch Size = 64, Examples/Sec = 1145.27, Loss = 1.3315479755401611
+[2017-11-28 21:54] Train Step 6701/20000, Batch Size = 64, Examples/Sec = 1163.95, Loss = 1.3466160297393799
+[2017-11-28 21:54] Train Step 6801/20000, Batch Size = 64, Examples/Sec = 1118.23, Loss = 1.4362887144088745
+[2017-11-28 21:54] Train Step 6901/20000, Batch Size = 64, Examples/Sec = 1188.89, Loss = 1.3709439039230347
+[2017-11-28 21:54] Train Step 7001/20000, Batch Size = 64, Examples/Sec = 1099.46, Loss = 1.3431962728500366
+Random character sampling
+—|—Many Report: and Ribony. 
+
+* The rapt of our sphere and orbit with a small sweel, our ultraviolet so
+½|½quite predicted meant 
+There is no lowers balacted from a simbly empt we can see weas. The dark Mare
+y|years were stuened an eivitatical launch of the Moon will be a scales to evidengly for the Ann Aristi
+8|8 Meveramorologies is bell. Even all the heavenly overhouses, nearly written insufficient respond pot
+R|RAMMAN SCAMLANE THE THH, (THE Ans of inheribble in the certect from the ancient cara. But even a deve
+8|8 
+
+We filling plasped to be, or, an obscurent temperatures in Io barely range, out in at a very circ
+=|=8, you can minutes had been provider solids, 
+such a worlds; and dist. How a humans in our perspecti
+
+|
+
+
+
+
+sebfolling to the country. The Sun. You can life out to examined to deveseloph—
+meautes.”, Altho
+Q|Qin a shorely knows to esgenged from a “reflect evolution. I think eruptions were unkedroals have kno
+[|[ Scholar by this history of a human stuffly indise?
+
+Such a raduation of global 
+contains of the col
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |to times sahed from e.. or Menus, “grands for out of the Earth. The destroy universe to heaven, mich 
+Finally, at the end of all our wanderings, |now? 
+
+* But it is come in slowed by a docantest leave what in a rays.
+
+
+*The history, in the sulfur 
+Welcome to the planet Earth |and Huchaush) without the star, and, but hum. Those tridaund out? Charge in Jupiter. Or any gane in 
+
+Human beings grew up in forests |in the way about it is nothing human datter, many returning whose there are a guich of modern Carpolo
+We do not know that such wormholes exist. |But its come of expanding by light to exploration 
+foreselves—more impostance of a thousand outlind o
+[2017-11-28 21:54] Train Step 7101/20000, Batch Size = 64, Examples/Sec = 1146.96, Loss = 1.3822695016860962
+[2017-11-28 21:54] Train Step 7201/20000, Batch Size = 64, Examples/Sec = 1173.10, Loss = 1.292955994606018
+[2017-11-28 21:54] Train Step 7301/20000, Batch Size = 64, Examples/Sec = 1187.30, Loss = 1.3578327894210815
+[2017-11-28 21:54] Train Step 7401/20000, Batch Size = 64, Examples/Sec = 1162.49, Loss = 1.4879035949707031
+[2017-11-28 21:54] Train Step 7501/20000, Batch Size = 64, Examples/Sec = 1188.63, Loss = 1.401235818862915
+Random character sampling
+T|The surface and the exploration of an exyntire for thousand from billions of life. 
+Important. Bectuc
+g|ght of a days as 
+twenty confident, as Waller two Earth of Venus was the largest most literal naminat
+©|©-terriil Universe. Prating, the exploratory 
+helicher - the Sun and unexpected. 
+
+He you are wells h
+o|opes by the Character, of rich oraneys and 2-years, including the determise. But the Corious practice
+9|9, considered transprivaped to N = 10 years. Ledge our culture? There are mysterious people proportin
+.|.
+
+But if there had been to a lense, and childnearly consequences. When each if you’re this chlorory 
+;|; and the very kerochable ilance in spock. But there is an evolution. If we would be up on spaces the
+w|well hear wate my universe. On impact easy to take you are a googole throughout Mars are bodoum at di
+s|stages. The manatems background holded position.” A kind of days that seen theory and this party to u
+M|Mikgno - protect of Jovianic traver wan 900 shouse, the more unposerary of the visible lizate 
+way tr
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |to the vaine care is of stars are swatrus planet. When they in the carcicical organic material having
+Finally, at the end of all our wanderings, |
+chemical brighter in hunden between us accondfounter it is appearance of copies, these have revoluti
+Welcome to the planet Earth |of to up that the race 
+
+Near blug acid—or indeadens every the China of Helleha, tools on sont, too t
+Human beings grew up in forests |into 
+the dreats to be made on the energy more “known the Sortept Sciosea of AUR
+Ejeimal variety, 
+an
+We do not know that such wormholes exist. |The dense days with our pieces is compssive excrise:* For Mysalemain. The galactic carbull whateving 
+[2017-11-28 21:55] Train Step 7601/20000, Batch Size = 64, Examples/Sec = 1154.71, Loss = 1.3587137460708618
+[2017-11-28 21:55] Train Step 7701/20000, Batch Size = 64, Examples/Sec = 1166.80, Loss = 1.3109341859817505
+[2017-11-28 21:55] Train Step 7801/20000, Batch Size = 64, Examples/Sec = 1114.35, Loss = 1.403399109840393
+[2017-11-28 21:55] Train Step 7901/20000, Batch Size = 64, Examples/Sec = 1198.89, Loss = 1.3794338703155518
+[2017-11-28 21:55] Train Step 8001/20000, Batch Size = 64, Examples/Sec = 1145.50, Loss = 1.3144612312316895
+Random character sampling
+M|My Galies. 
+
+If we see the 
+gal and flying television experiment.
+
+
+
+Santing cell among the Pthics of
+é|épulsion of spacee fataling ordinary 
+strike ages interest over the limements want to even back exten
+H|HERE, is some Mercurst will all the show age about treasure? 
+
+The Erepare Onforwise cornounce ammoni
+^|^Unif Mars Saturn is an any mammals if the only me, if we may be quite planets the signal fistal natu
+L|L, we wantent is natural circulably equivalent adjibered in the Cosmos, water natural children. It is
+Z|Zr sahdless spent if being relevant me. But oil at a old stand of the Scanchulticey The Esult asherid
+)|), on a world thantile tiny colors about broading television ead of the moon-uf’n regularities, to fa
+R|Rtaids arl haffes life, of the peace respects is tens to gases stumbles of Venushene we will often bu
+N|NA; if some longer which telescopes in the evolutionom asteroid strike a few hundred consequences. If
+Q|QPwile Raduargen and Neptune, the Wrant Loew Leken Das Witral centries 
+was satis liquid batch into E
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |the rock universe excraved that this 
+would struck robabling; when heads throughout the Miller spacec
+Finally, at the end of all our wanderings, |in this mountaint of tensen and after Shake’p speed to be as then clearly 
+that India into measure ev
+Welcome to the planet Earth |sky, caullight of them is each of Enciding the Earth speed in the taptos sky. Something in of his los
+Human beings grew up in forests |medicion of Joviey I from Tuil ammong in the interesting pacaft sways that that plants? Sroughly flat
+We do not know that such wormholes exist. |The many mission seemed by engineer of our space fature effects and asteroids or that short-launching
+[2017-11-28 21:55] Train Step 8101/20000, Batch Size = 64, Examples/Sec = 1180.55, Loss = 1.3865288496017456
+[2017-11-28 21:55] Train Step 8201/20000, Batch Size = 64, Examples/Sec = 1163.29, Loss = 1.3274182081222534
+[2017-11-28 21:55] Train Step 8301/20000, Batch Size = 64, Examples/Sec = 1196.67, Loss = 1.4561161994934082
+[2017-11-28 21:55] Train Step 8401/20000, Batch Size = 64, Examples/Sec = 1194.67, Loss = 1.3308173418045044
+[2017-11-28 21:55] Train Step 8501/20000, Batch Size = 64, Examples/Sec = 1169.93, Loss = 1.2828665971755981
+Random character sampling
+f|f technological. Plean 
+only to 
+
+Bullot, we might fave to Mars formed compositions, of explorating t
+^|^ ardo 1400epts in . . . 
+
+
+But once and a great information of ultraviolet light. Even it might be p
+n|n their time, wonders in beings, and perhaps directed tradeling with the visual relativeby Noemaker, 
+;|; appear of Opination” Johannes, he moved, and not not in theorem of Hellet is than a systeman higher
+:|: 
+
+Only a mountawitive feebling restricts to us over rotating along radio frequency-nearby spacecraf
+f|first be powerful rid how largers. Clice as autly 
+objects, conceivably about rotation of 1000 years 
+—|—group. All the been 
+and provide the stars, as a small or floods, we right of with few other astrono
+Y|Yect Voyages, I thus prehence on the Earth and 
+zense the fornession of four risks around the astrono
+v|vitational orbits on years psolar dust, entirely smootered and published motaling and survey. The far
+b|but come in space, seem oye mindings from the processes of the Japaness, this were Hert every ytling 
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of the star to be on the great mutual students into size—names are possible pieces, 
+the gas and come
+Finally, at the end of all our wanderings, |I should have perfects of the visibol of the Earth their 
+stars waves exploration did not understood 
+Welcome to the planet Earth |are two and lowors, agricultural achieve our object would ever weak the speed of although. 
+
+* The Vi
+Human beings grew up in forests |and goods. 
+
+Poneel the reasoned radioacts, and beings in the Sun to navilaus. One 
+planets. Not see.
+We do not know that such wormholes exist. |Shape necessary. Center were 
+possessive space infusively let of a year that with a conceivable conde
+[2017-11-28 21:56] Train Step 8601/20000, Batch Size = 64, Examples/Sec = 1156.06, Loss = 1.290437936782837
+[2017-11-28 21:56] Train Step 8701/20000, Batch Size = 64, Examples/Sec = 1180.47, Loss = 1.3302401304244995
+[2017-11-28 21:56] Train Step 8801/20000, Batch Size = 64, Examples/Sec = 1159.30, Loss = 1.4077949523925781
+[2017-11-28 21:56] Train Step 8901/20000, Batch Size = 64, Examples/Sec = 1191.89, Loss = 1.337903618812561
+[2017-11-28 21:56] Train Step 9001/20000, Batch Size = 64, Examples/Sec = 1142.39, Loss = 1.3878495693206787
+Random character sampling
+:|: 
+
+- The 
+outside and fascing recent 
+eye, perhaps the wish technology in 1 creator; Pythador explos
+”|” Prelisons will turn out the thing to us, and inexpense materials chapment. They provide a cameras i
+=|=150 400 , 1793 = 1 a 1 = 1/OUS, and so strong. The time is the books. Not 6.. Italy. It problems—we 
+E|EN. Can Exploration; core) exponent rigidal insequence is transless among solitary food are the Solar
+U|Uragment, perhaps you do so another astronaus, syman Earthresed that disction that, the with whales o
+'|'f the surface of a thousand and the same time; and the conlides are somewheils or suns, through a po
+5|5 life gued that, short, likesis on Earth have to spoop out we cannot have refree cataes, teachers an
+J|JAs THE Pontants, Venus, you can see, we parent, as the dembilable thing of gravity p.dwe corted. Wea
+«|«d Observities, when he’d) the stuff of space 
+celessrom these technology out on the fuest. 
+
+Since e
+m|methics and enviromeensul, minetes of our least of Cins, scromular discovered and television from the
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |in likely a question; you waters are did there, but woman icped the Galaxy and oceans. He delight alo
+Finally, at the end of all our wanderings, |barely cauce, but which worlds—are of scientists are drean Protons and space in streaks errungles, th
+Welcome to the planet Earth |adequate Fernant Mario 
+Orser, R52 m, the sky, they would be 
+feel from a suns ofs 
+that nuclear near
+Human beings grew up in forests |of every from the solution clearly providing its center that Ctyracian Observatory, Inssip, describes
+We do not know that such wormholes exist. |Of correctly, even in an awayd of space-
+1981, 1992).
+
+
+
+On Veter 2, vedia on those library televisio
+[2017-11-28 21:56] Train Step 9101/20000, Batch Size = 64, Examples/Sec = 1152.44, Loss = 1.4573770761489868
+[2017-11-28 21:56] Train Step 9201/20000, Batch Size = 64, Examples/Sec = 1197.68, Loss = 1.3728834390640259
+[2017-11-28 21:56] Train Step 9301/20000, Batch Size = 64, Examples/Sec = 1164.91, Loss = 1.3216341733932495
+[2017-11-28 21:56] Train Step 9401/20000, Batch Size = 64, Examples/Sec = 1199.85, Loss = 1.3799749612808228
+[2017-11-28 21:56] Train Step 9501/20000, Batch Size = 64, Examples/Sec = 1172.80, Loss = 1.3682405948638916
+Random character sampling
+q|qune to worlds (New York was heart of the unumred observer of itself-and all the great uses and inter
+m|mes are also be not 
+beginning it Eproxphy—Cosmaries who compared the former-obserbors believe the ne
+m|midst boiling of Galyless. Pentions we could resolation incomplemem its own civil organic telescope t
+!|!, and a halace it is time be found tover the 
+SEI seven years, loyaut CAon NDA, it was the island sh
+!|!65 depthing of the 
+spot of 15 
+frems on others. An attrach, one and 1933, all of 
+the Sun cusp, I’m
+\|\\created constituent silicate the longer new ice Turcoon in the line was been matter before atoms. I
+Ü|Ü! Closewrased by planet even encountered with the Givinence of asked 90 is raining to broadcars long
+h|here very people driven a 
+mission robot Derpose [was “in mutations about other toons detecting 2 ,. 
+T|The singed radio reads’s—it is one microbes of our reconnaissance process. Drokemal, are too team. Ko
+~|~r Venus readly, those young of them as the hurtling transmission of creatium’s 
+flooding floods of t
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |a pictures of guories’s attentions. 
+
+Some did be gravity; but—there, as 
+kings out lay the crude of 
+Finally, at the end of all our wanderings, |thydency lead lies, but the rocks equatom themselve it know in some metalso since the kindent spent 
+
+Welcome to the planet Earth |you loves by genetic chemist 
+explaneged arms willing rofluont 
+the never humans believe that the war
+Human beings grew up in forests |of Jupiter would be bounce. 
+Some rough the Vetacscoss of space, actives all, they should 
+be just st
+We do not know that such wormholes exist. |Loandly that ancient Tycho’s under 
+vehice. 
+
+But it mut as other gods’ genius their geological step,
+[2017-11-28 21:57] Train Step 9601/20000, Batch Size = 64, Examples/Sec = 1202.41, Loss = 1.396608829498291
+[2017-11-28 21:57] Train Step 9701/20000, Batch Size = 64, Examples/Sec = 1189.78, Loss = 1.3266010284423828
+[2017-11-28 21:57] Train Step 9801/20000, Batch Size = 64, Examples/Sec = 1159.44, Loss = 1.2579553127288818
+[2017-11-28 21:57] Train Step 9901/20000, Batch Size = 64, Examples/Sec = 1185.98, Loss = 1.314900279045105
+[2017-11-28 21:57] Train Step 10001/20000, Batch Size = 64, Examples/Sec = 1137.22, Loss = 1.2362359762191772
+Random character sampling
+z|zed and eature is a clouds of manuface from the Earth to be xhashey is a mutual answer all of the epo
+T|The 
+same Medish—I. Luman. We house.* Challocations. We do not know what we would never undersage and
+D|Dronian Telescope Nature ocentually ly joddled a paintigation of the colpuration of history, titles l
+C|Chowledge, that man engineering collisions, and the plunge of Voyager  life on Earth must not be let 
+g|ge, and an fin that we founding the singlement sufficients, something, they have you could be an attr
+^|^’e chemistry of machines. The equivalent Idaas, and the holes a single former of 
+chilled the flage 
+A|As quaring elliptic 
+idea and pitage that dunar fleet is so 
+
+
+
+self-millions, and the intensing of H
+’|’s descendants and 
+the Duno 
+Center to development. Now they would have a images, the deserving to n
+]|]y. Plue statistics,, coated “me stars in the law, 
+descendants and compted in the dead. Reported tha
+”|”*; Applexist. In living unwind, the change in the Sun was died everys not publis rather than only ri
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |endless, a 
+vast collide was exployed such history, but the better scent of your early Mars in snows,
+Finally, at the end of all our wanderings, |and ensing the deal had another world and last anything 
+enterprimen arinering and antimal-rejecirl 
+
+Welcome to the planet Earth |dark naced 
+at least was houshor far to say and the 
+only last fonts to tresses at spirit able to con
+Human beings grew up in forests |thinner under Ryster: would have use a 
+named island are obliterated out there the discover after a d
+We do not know that such wormholes exist. |But that the 
+Background can can be moved frequency of the Milky Way Goln and Saturn, so, and more re
+[2017-11-28 21:57] Train Step 10101/20000, Batch Size = 64, Examples/Sec = 1206.95, Loss = 1.3876367807388306
+[2017-11-28 21:57] Train Step 10201/20000, Batch Size = 64, Examples/Sec = 1175.57, Loss = 1.3415535688400269
+[2017-11-28 21:57] Train Step 10301/20000, Batch Size = 64, Examples/Sec = 1179.81, Loss = 1.315693974494934
+[2017-11-28 21:57] Train Step 10401/20000, Batch Size = 64, Examples/Sec = 1145.16, Loss = 1.3291202783584595
+[2017-11-28 21:58] Train Step 10501/20000, Batch Size = 64, Examples/Sec = 1225.19, Loss = 1.3327077627182007
+Random character sampling
+‘|‘it or the heredity, poor study for a just and precision looks in the nearest industrial oceans throu
+O|Observatories, and if Ty.
+Sotive measured outside to billion years outlined by the hair. 
+
+The ones, 
+’|’s massive point clouds looked for a laser bird same last animals wouldn’t have to the cloud-only a w
+K|Konstead and international is xome himous and way that it into the heado long planets the 
+very durno
+é|é×! Of metaphos. Collision to our huggrub-. Amma.l (t 367. ‘Islands, tool and neutrinos he slaver and
+6|6 2 3, man OF’s have Mars B. S 1 meter from no made turned billar idea at cinton, and in fonnners of 
+v|vate uts soil chemistry, made the Moon, are senvieoneracus where it would must have been 
+under, n = 
+í|í°th call birds, and seven such had gradom from or piery, circled the critical orbits of one comprosi
+7|71is, they have even I could not - calling, a vast it. The planets’ly 
+future of Tulus into space in 
+/|/immer oordinary space atoms return too first inventions was samples are a combaced many radios but i
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |for aldo as slavery is the long air.* 
+
+* The last dolds.
+
+The fragile discapit flood all the an adve
+Finally, at the end of all our wanderings, |but could every Sommarest Nature in indulanism, the day, that it is but a 
+few lop-sturn undergoing m
+Welcome to the planet Earth |say. This know that the 
+better of the Ination recondistitutary, 
+in our from emptiness of clement he
+Human beings grew up in forests |as I had proparkp, and made observing charges could traveled, with those with the galaxies riding ele
+We do not know that such wormholes exist. |Such the first relevant his chemistrial case even those preserved at the Sun 
+for a curred a motionso
+[2017-11-28 21:58] Train Step 10601/20000, Batch Size = 64, Examples/Sec = 1184.95, Loss = 1.3326853513717651
+[2017-11-28 21:58] Train Step 10701/20000, Batch Size = 64, Examples/Sec = 1165.75, Loss = 1.3139890432357788
+[2017-11-28 21:58] Train Step 10801/20000, Batch Size = 64, Examples/Sec = 1199.14, Loss = 1.3423563241958618
+[2017-11-28 21:58] Train Step 10901/20000, Batch Size = 64, Examples/Sec = 1196.29, Loss = 1.3232342004776
+[2017-11-28 21:58] Train Step 11001/20000, Batch Size = 64, Examples/Sec = 1146.95, Loss = 1.3942368030548096
+Random character sampling
+G|Ger Darwleotinning that in which the full and persistonized purbons were a fancised still that, 
+
+
+
+N
+*|* Moon. But we ustories were humble scale. A production of then, the shared like utter of positive co
+T|The monet, repriment of the way.
+
+
+*Responsible, suppose and a major 
+planets in a 2.4, for the Camas
+d|dward fry the amount of almost recognizing its features in the motion of discoverty that there is the
+t|tive only interior, effective watching it is, sublisined through the real city on Mars such by a gala
+e|ed learnest components.) How made to talk in marking spacecraft, our from the Universe, becoming the 
+[|[from circular human insponned Titan to precise one blue explore 
+a galaxy consumer case be first lan
+c|cles of the Scription of the topnibits onfinited people.* My serious lander more newly truth, and if 
+a|ament that the other examined Biilar English. The embedential pages of light-years from viewed feerin
+'|'ic date, mana, like Nearbiance 
+N forever was ‘which must be like the back insect off Lives, orbit h
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |at highles in surface, but, an talking of molecules and I proved away. 
+
+By mind of fisherless impact
+Finally, at the end of all our wanderings, |made thers, most be resonnful, some how ustrological 
+spacecraft is a deadude—roused the Earth’s long
+Welcome to the planet Earth |can might increase to look end than supported, neced by which 
+tanks.)
+
+Here is the laboratory will b
+Human beings grew up in forests |backs of adjacently cright, why if they been pocket sunlight time and states on the radio sates like 
+We do not know that such wormholes exist. |They fast 
+change thing, diffuse that pronounced the few and five fajigion of Comet. 
+
+And we iaptica
+[2017-11-28 21:58] Train Step 11101/20000, Batch Size = 64, Examples/Sec = 1209.02, Loss = 1.2978436946868896
+[2017-11-28 21:58] Train Step 11201/20000, Batch Size = 64, Examples/Sec = 1152.92, Loss = 1.3984943628311157
+[2017-11-28 21:58] Train Step 11301/20000, Batch Size = 64, Examples/Sec = 1198.10, Loss = 1.2955409288406372
+[2017-11-28 21:58] Train Step 11401/20000, Batch Size = 64, Examples/Sec = 1219.10, Loss = 1.3692259788513184
+[2017-11-28 21:59] Train Step 11501/20000, Batch Size = 64, Examples/Sec = 1163.69, Loss = 1.2948404550552368
+Random character sampling
+Y|You would have studying reworking, and the 
+imagorative speed of lifties. A multiplound exuasal hard 
+U|Up was occur years, and we do blee represent to performed by Accornes torn peoples are we be ridic lo
+/|/largest 
+spinning to dull one orbit are heavenly you anyone that gravity . . . The young in the tatt
+i|itical 
+world dust that smaller, so lifetime, off. Satellite in ske was the outmolates we will have n
+?|? A seem to knownboy their the signature to cost in 1575 flights, grin-rachess no one variously throu
+S|Satine planets 
+in knowledge to be as 
+an entires of its only life they are often or have superior co
+U|U.S. makes mitigating calendry 
+the Earth thing the Eoligo sky. The atmosphere of 
+the Eblion surface
+N|NASA), maykeering out of them 
+of elegant—creation comets were always - or (an estinked by mission at
+G|Gloping Observatory, I hndsidanis bosch-resource of liquid posts at lummon, and seemed to take make a
+1|1986. Often eight balmation, the basel of that comet entirely tail. Eccleare nitrogen on Xalwarry-out
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |without possible, with the other boon instrumentally, 
+lense, their ones of life on Earth angle whose
+Finally, at the end of all our wanderings, |indernnous another policies of possible to until may 
+be at the Moon may spelled ice humans will look
+Welcome to the planet Earth |one 
+heary pleasing blues presented remain houghly black holes are common within the Cosmos of Titeus
+Human beings grew up in forests |geography of moving acquired as ‘some long reatmosphere had to the history was the ocean. Imagining M
+We do not know that such wormholes exist. |Perhaps every edge. Ifhibilities will have stuff it is world design or mysticism, ‘making moons of to
+[2017-11-28 21:59] Train Step 11601/20000, Batch Size = 64, Examples/Sec = 1234.96, Loss = 1.3152269124984741
+[2017-11-28 21:59] Train Step 11701/20000, Batch Size = 64, Examples/Sec = 1204.12, Loss = 1.3139218091964722
+[2017-11-28 21:59] Train Step 11801/20000, Batch Size = 64, Examples/Sec = 1201.99, Loss = 1.2616280317306519
+[2017-11-28 21:59] Train Step 11901/20000, Batch Size = 64, Examples/Sec = 1193.76, Loss = 1.352143406867981
+[2017-11-28 21:59] Train Step 12001/20000, Batch Size = 64, Examples/Sec = 1135.48, Loss = 1.2895041704177856
+Random character sampling
+c|cession close-space. It is not it.
+
+
+HORISSSquipation does causes svecies to expecting able to reppec
+’|’s feet that the citizens carrying along as we. 
+
+They were 
+highly Mars, 
+in the multitude provided 
+q|qualled doubt with a planet 
+into errodice to an immense planet.
+
+However solar 
+creatures with us in
+W|Withs, or what if the out of the 
+and proved better? He shoot a blankin already sequal? The Pawes.* G
+Y|Y called reason emanates generation. We has should spent much in the slightic reessure direscat the S
+\|\S 30 , the problem depend. The nucleo 
+of fire is a double of biologist, official or book was 
+mirge
+’|’s than it takes moethtather reason it. If we 
+are persecuted something of my breakning along themsel
+ | known engineers elements, the due to do the peoples’, dot is 
+difficult orbitalls at the finding tha
+J|Jupiter it takes and icy sinturies here to be dognies. And the sububation changes becould our genetic
+c|chy newake a little inferiors ., might be trackdron and soil too systems seen sounders in the technol
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of light-years. Then we were theologiat. However, is a spillian conceit ellipse, more plassage from k
+Finally, at the end of all our wanderings, |beings at the same welf. Those that went largely part, supply roughly new wholed fuel. 
+But is ours i
+Welcome to the planet Earth |
+reach we’le need that a fulsitor primence out casually an intelligent of fainter size and relativity
+Human beings grew up in forests |of 
+civilizations from then radio of them to have 
+propelly our early star. Chrising 4 represent and 
+We do not know that such wormholes exist. |But our applane has been despite life (interpritions, of comfortable, to consequently empntly preside
+[2017-11-28 21:59] Train Step 12101/20000, Batch Size = 64, Examples/Sec = 1204.18, Loss = 1.3207125663757324
+[2017-11-28 21:59] Train Step 12201/20000, Batch Size = 64, Examples/Sec = 1195.46, Loss = 1.3934439420700073
+[2017-11-28 21:59] Train Step 12301/20000, Batch Size = 64, Examples/Sec = 1194.87, Loss = 1.286217451095581
+[2017-11-28 21:59] Train Step 12401/20000, Batch Size = 64, Examples/Sec = 1179.80, Loss = 1.272147536277771
+[2017-11-28 22:00] Train Step 12501/20000, Batch Size = 64, Examples/Sec = 1191.31, Loss = 1.2925159931182861
+Random character sampling
+/|/drizations procession is beings killed using calling would recome out of the Heiked Thrattoriscesses
+c|cky witness left. As called the galaxies. But not unsectly 
+that fallic ricker, protons would 
+tynike
+5|5 Tues, does, signs telescopes out of storms. Instead, it is, catastrophes”” with case, the matter in
+R|Reacher. Because M. Planets and prust. But with 1410 
+vehible temperatures that so that the Ionian ar
+t|thought that we promptly science endangeron lead to this way it then launched us would know that dewe
+”|”) to its own purpose chose. 
+
+The distant species. Twice. This is ministors - have other species, th
+i|iking life and reasonable pretimes past, a million years, sometimes around its sults of thousands of 
+P|P 1/177, innovations of a bodies, which fire, in a planet for a particular., 400,000,000 kilometers o
+‘|‘Bikings, fly appeared to driver hereditude that many inventions, and many liquid water temperatures,
+\|\l centuries its gods would more idea some worlds - so such evernetistical n our time common step of 
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |the precision of space that the firs collingly dying, have no linking, for an equatoricar sobings, in
+Finally, at the end of all our wanderings, |evental corresponds our world restution that moves into which its particularly ability. (Sunlight, th
+Welcome to the planet Earth |as we know a planets of the atmosphere at the thinficant N 1 thing and repidents. Onemacioy under the
+Human beings grew up in forests |behind themselves agree had ten 
+ordinary perfectly continuously harmonies and generate, 
+all the nea
+We do not know that such wormholes exist. |Is not look. Perhaps, we letter vahlands of the history of years your, such an 
+interesting chemical 
+[2017-11-28 22:00] Train Step 12601/20000, Batch Size = 64, Examples/Sec = 1216.12, Loss = 1.3169724941253662
+[2017-11-28 22:00] Train Step 12701/20000, Batch Size = 64, Examples/Sec = 1198.40, Loss = 1.3460711240768433
+[2017-11-28 22:00] Train Step 12801/20000, Batch Size = 64, Examples/Sec = 1224.13, Loss = 1.3558458089828491
+[2017-11-28 22:00] Train Step 12901/20000, Batch Size = 64, Examples/Sec = 1148.91, Loss = 1.3905539512634277
+[2017-11-28 22:00] Train Step 13001/20000, Batch Size = 64, Examples/Sec = 1194.01, Loss = 1.327782154083252
+Random character sampling
+/|/in Steptives and 
+is an operisuns of St. largely, there were their discovered, perhaps wy to unique,
+»|» an 
+year heavens on at Catholibic New York From Prince and thor nuclear war, supporting, or heated 
+Q|Qellar winds. But that enormous space light. It is repton ackingles have fedence for us. Plaining 
+no
+…|…10d)
+
+1963 First lower nacker of station. 
+
+Some thousand year-y as an unpertones pumplicize virtual
+.|. Have seemed to their gravity is built, Congromurian in Nature 
+slowly after vapor. 
+
+Triagunisms th
+T|T EAGUR 
+(I were it plausibly entainly do face permissibly being saying the justification—precase sid
+Z|Zut to the fallibility. Spectrose to the Moon to well ever on that competent parallaes now into the 
+
+&|&mence. Their note or not yet not be valay caths with of the surfaces, take difference from the plane
+M|Mariner 9 such copious god radio two-small spacecraft none of Venus could not be emarzo nothing burne
+X|XM3’ Altrot, initerius from other langited by a pear per sopretion of the Viking signing middle. 
+
+Th
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |is an acquisition of our program, discovered by a pigments and just better, because if the Universe).
+Finally, at the end of all our wanderings, |but if 
+the cities of space is all these distant superform. Is they call it erbiocs in space. Through
+Welcome to the planet Earth |would 
+very told its living difference around fine, and although the entire intense gaze satellite 
+l
+Human beings grew up in forests |of processen structured form the old the spacecraft propose that the ramal, many unalternative reason
+We do not know that such wormholes exist. |But when discovered by an assible, and peculiar 
+astronomyld of 8 ptor through the time Lindhan regio
+[2017-11-28 22:00] Train Step 13101/20000, Batch Size = 64, Examples/Sec = 1181.84, Loss = 1.2752360105514526
+[2017-11-28 22:00] Train Step 13201/20000, Batch Size = 64, Examples/Sec = 1236.35, Loss = 1.370452642440796
+[2017-11-28 22:00] Train Step 13301/20000, Batch Size = 64, Examples/Sec = 1200.60, Loss = 1.31373929977417
+[2017-11-28 22:00] Train Step 13401/20000, Batch Size = 64, Examples/Sec = 1175.24, Loss = 1.3509676456451416
+[2017-11-28 22:01] Train Step 13501/20000, Batch Size = 64, Examples/Sec = 1162.34, Loss = 1.2805722951889038
+Random character sampling
+v|vining five predisorence, thrones by the 
+changeon out in that for none withovers, modern capable and
+t|tems are both finded as there invostly is not at the 
+planets. 
+
+While, only the pioutly computer (S 
+n|n beings—and boulders adapelands, past adapeled had sunlight, a designing mutual conventions than del
+p|ped. At last the 
+violence stons fall alone, tired, you instead take their deetting with our civiliza
+°|°radia, vented. It has a perlit of an application, both all othed voyage that trat noted enough to de
+½|½ as a means and the commander conomically called honor and separation 
+multiply survive and war and 
+M|Mamphts of the outer Solar System. Empectial. 
+
+Observing the connection of the right, an about 1 = 2
+ñ|ñer.
+
+Eath, you tinters and scholar is another, there were substantial 
+world, that its opinion of ba
+”|” Viking Nomage? Because a dutation 
+to its more laws of Adap ship, were first cosfy that more than s
+Q|Q) and soust. If the profit of plino uppliniant interest we 
+use an enses, and gods because” interste
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of historical trabing to the 
+megation. Miller next, its of years. 
+
+* The late 1960 M/-T, we thinkin
+Finally, at the end of all our wanderings, |at what natura, and on the flame.
+
+Itardaxion. But there is no square technical colonize. Planetary S
+Welcome to the planet Earth |orbits of numbers more disquietable but in precision 
+may be 
+for may be the early universe to hole f
+Human beings grew up in forests |by the realm of extent rotating out beyond the Mars on the spacecraft evolve. I won it, chance rocket
+We do not know that such wormholes exist. |This is transports are different colone on Earth. 
+
+* But, is a must becomes been its thing into the 
+[2017-11-28 22:01] Train Step 13601/20000, Batch Size = 64, Examples/Sec = 1153.41, Loss = 1.3134691715240479
+[2017-11-28 22:01] Train Step 13701/20000, Batch Size = 64, Examples/Sec = 1227.77, Loss = 1.3352394104003906
+[2017-11-28 22:01] Train Step 13801/20000, Batch Size = 64, Examples/Sec = 1214.72, Loss = 1.368586778640747
+[2017-11-28 22:01] Train Step 13901/20000, Batch Size = 64, Examples/Sec = 1182.62, Loss = 1.301796555519104
+[2017-11-28 22:01] Train Step 14001/20000, Batch Size = 64, Examples/Sec = 1175.15, Loss = 1.355224609375
+Random character sampling
+£|£ the MORINCEN
+
+(Mollanism can carrying directions to the Uto Go methane (2) could then precondss.
+
+T
+0|0 arcy 1781, 1984f, a nearby number of 
+infinity indited for socted or even had con. The Universe has
+H|Holtreans: Pythagorean, bounded, perhaps never go the Eratosthenes, 1972, the sours from the Earth is
+N|NNAERERING INTE GIONTRIND SPRAST]8 THES KOLE THIS BESTIND. IF WIRL.
+
+Shallow us turn out too knowledg
+h|ht; that continued to putcine 
+my elliptical, Codes there from rise into addaldent, for board the eve
+½|½. If there is a stand two longing was local, in ordinary atomize ago, the grow solar canals in the o
+D|D NASTER INTETITS PAUNR VOIGIETAGASSNNG
+
+
+
+
+ANCANTER AUR PLANET
+
+97. Gamarks, the Cosmos Iscipileo, W
+j|jectoria, an intrinsical transmission from Look = Shock-forgorly, built last, unworthicals. For essen
+’|’s works. They’re originally lost at our little world 
+as if constructed, the dollar world, if Hurn c
+/|/is a must observer. 
+
+Collision and organisms, we make a sampletcherish testing I even are still cha
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of 
+anner all carefully. Apliect in a suns. It will begin overhich from generated 
+appropriateges in 
+Finally, at the end of all our wanderings, |ched. 
+Steaven.
+
+And cooled - are a fullic albed in a goog moved inhabited; they should be the treate
+Welcome to the planet Earth |suggest the rings in human and mutuals fundamentable there approach sea. Soil and remote world.’ 
+
+Ci
+Human beings grew up in forests |when then comfortable and a soarchity or eruptures. That was seeing today. Stillople would be only 
+a
+We do not know that such wormholes exist. |
+
+But improbable in, insects 99thern, META spoth - a kindrogram, moving a viscst suns. The astronomer
+[2017-11-28 22:01] Train Step 14101/20000, Batch Size = 64, Examples/Sec = 1151.69, Loss = 1.3869709968566895
+[2017-11-28 22:01] Train Step 14201/20000, Batch Size = 64, Examples/Sec = 1208.31, Loss = 1.3323898315429688
+[2017-11-28 22:01] Train Step 14301/20000, Batch Size = 64, Examples/Sec = 1185.54, Loss = 1.3040863275527954
+[2017-11-28 22:01] Train Step 14401/20000, Batch Size = 64, Examples/Sec = 1175.48, Loss = 1.326598882675171
+[2017-11-28 22:02] Train Step 14501/20000, Batch Size = 64, Examples/Sec = 1167.79, Loss = 1.2950904369354248
+Random character sampling
+W|Weens seem. It commanation in Carbon. Serrentics that the Milky Way duight than 
+be taint very much u
+]|]m, were several known a major orbited by Saturn Can (G. Libera 
+then, orbiting in organisms that was
+—|—harder an extremely investigation of the rake of Mars (men, however, the Sun (have fire and ways in 
+q|quirable. But scientific adaptable. As in Newaker Hribeur, our Pdile Pontimentarian into hunger from 
+W|We’ll be the 
+radio telescope! And as if the largest also thorough theetophically at converces now tr
+M|Mariner Space Tygo in the nkwronanistos of energy—were side of human hours carried to a She wholy uni
+O|O. There cannot 
+much networks, we inventor to liftfortunater orbits to another worlds, the more in t
+1|1 = 27’s principal to make their given Earth to Magnoor to be the time, that the evidences of the des
+×|×Easternows in the Sun is them and even from the dark clames that, anthnde, the one defin the lay spr
+q|quires a mistence of the Sun. Their orbits or by the average more than that the eart to a technical c
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |to so faced, an arecivilization (between the 
+solar 
+spaces but for the fuces for myth winces so movi
+Finally, at the end of all our wanderings, |and we have too military deground out, the trillion remaining expanding, thousands shape with experie
+Welcome to the planet Earth |
+and the hunter is drawnab contants had only a how it really song. When California, hold climate but 
+Human beings grew up in forests |of the Universe is rists, but if Earth’s 
+racing that Lo it galks—unied into the star, follows; our w
+We do not know that such wormholes exist. |The star that come with a whists is four explored off a point of the Mars was clearly who subjects to
+[2017-11-28 22:02] Train Step 14601/20000, Batch Size = 64, Examples/Sec = 1220.70, Loss = 1.3139774799346924
+[2017-11-28 22:02] Train Step 14701/20000, Batch Size = 64, Examples/Sec = 1204.75, Loss = 1.3749079704284668
+[2017-11-28 22:02] Train Step 14801/20000, Batch Size = 64, Examples/Sec = 1183.97, Loss = 1.3242558240890503
+[2017-11-28 22:02] Train Step 14901/20000, Batch Size = 64, Examples/Sec = 1189.36, Loss = 1.3338490724563599
+[2017-11-28 22:02] Train Step 15001/20000, Batch Size = 64, Examples/Sec = 1207.83, Loss = 1.316735863685608
+Random character sampling
+p|parative 
+just 
+easy intenneded by the star explanation drivision was whllibed of chemically hour Dub
+«|« Look Aura,, was musidowshifamly see. There were two Leg Industrations went an ender of which can ad
+&|& 
+degree lattering in the fast and thundreds of comets in the of the presence. Styph most ocean is f
+d|ded to the fevision transpired Universe, because, and feder among the Millions of is made of all the 
+d|distuakened square 
+with collapse for life do not also endeavor where in the 
+year-third and the two 
+á|áddreim will never beginning to calcaid that the Huygens, rotion were founded the third case take us.
+!|! If we’re by other, the stars were number and tired. But only took annoes from the Moon. Means an em
+!|! La Kell’sning, clear’t Mediterranean.
+
+If ten to the 
+stars, books ‘asputional like, comet. But pla
+a|ave generated much approachen they cause this charged particles, science Jumis and Lowell’t talk, 
+or
+B|Berk as Eelth-Huygens), honors to any nature of the broadcalch. (
+
+
+Only never imagine. Bkilds just d
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of the open sheep or herdent stephere discovering lakes to world, in the equipman 
+and their sizer, t
+Finally, at the end of all our wanderings, |closers to make, case out that there have no spential correct of the organic mastrastance, on Mars an
+Welcome to the planet Earth |in continued has been so we surface we have range to cometary:” 
+
+At the planetary pieces and 
+becaus
+Human beings grew up in forests |couldn’t cover the pigant isential outgornerating directly connection (alone showed in my life on Mar
+We do not know that such wormholes exist. |There were the other, and all the distance, and instead, will reinfer an observation of ideal mathine
+[2017-11-28 22:02] Train Step 15101/20000, Batch Size = 64, Examples/Sec = 1176.98, Loss = 1.2876614332199097
+[2017-11-28 22:02] Train Step 15201/20000, Batch Size = 64, Examples/Sec = 1201.23, Loss = 1.3201721906661987
+[2017-11-28 22:02] Train Step 15301/20000, Batch Size = 64, Examples/Sec = 1211.78, Loss = 1.3123120069503784
+[2017-11-28 22:02] Train Step 15401/20000, Batch Size = 64, Examples/Sec = 1198.39, Loss = 1.3062211275100708
+[2017-11-28 22:03] Train Step 15501/20000, Batch Size = 64, Examples/Sec = 1192.37, Loss = 1.3719141483306885
+Random character sampling
+t|tume in the tip. Africt conducturing interliplacomements which line understand-nagigabilities that li
+f|f 257  perhaps they said that we would never face Grodugres in emerging mountain planets Inteepines, 
+$|$] four dom - the very different struck way and the many suspected 
+accident. Esparect into Bernou wo
+B|But mostly of sunlight from Venus in orbit it was only now. It might be there at two vastness. A few 
+J|Jupiters of 
+the nucleotide—about the figune are accurate, destroying the famplic civilization techno
+\|\ sky, he to cousin, … are made on the Sun do vital supple of great general of a midrow planet of the
+©|©r solar system. For its homest of the winds from the 
+back to equal 
+way that new program - took des
+O|Oon with us. The orules of years, knowledge—with the Normeric, in this planets endanders had 8 after 
+*|*. Unless, nearby religions, for maybe a chance of zisdotions of justify, we will in the naked partic
+.|. Mandablicroscame consortious solar system—if with composed to find our habitable described a fracti
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of it Mars Isan Tho’s storm is guarefs or perhaps storm spiral respective. We diedanely by the outer 
+Finally, at the end of all our wanderings, |might be no other and readibular star. Protons, enough to the collision was at the Sun seem to the cl
+Welcome to the planet Earth |data statistically the sleeping Venus is very such a claims include the suns own nothing for special 
+Human beings grew up in forests |seem the surfaces of the undergoe priversity of the memoration of Sando Bracomation, which discling w
+We do not know that such wormholes exist. |It made of meteors andmittous affosmlential for unhaviors were hellow, they overlying, 
+the warfared 
+[2017-11-28 22:03] Train Step 15601/20000, Batch Size = 64, Examples/Sec = 1162.44, Loss = 1.362255573272705
+[2017-11-28 22:03] Train Step 15701/20000, Batch Size = 64, Examples/Sec = 1150.45, Loss = 1.3232090473175049
+[2017-11-28 22:03] Train Step 15801/20000, Batch Size = 64, Examples/Sec = 1209.69, Loss = 1.3305848836898804
+[2017-11-28 22:03] Train Step 15901/20000, Batch Size = 64, Examples/Sec = 1156.00, Loss = 1.3376400470733643
+[2017-11-28 22:03] Train Step 16001/20000, Batch Size = 64, Examples/Sec = 1151.11, Loss = 1.351245641708374
+Random character sampling
+-|-other various patastrophes of the 
+world, some of the Solar System, 
+Decade 
+heroic Parastron-light-
+M|Muys-satisfce was in our survival of the impact of others through the is 
+rimocks of the 
+selded and 
+?|? P, 
+then flowing a globace course there were list the sky do on Earth’s oplicated by an ozone from 
+z|zy grand for a large attraction of life. When we 
+equation, a great ways were the dropped artificial 
+g|g construction of our idea of our tecondle Venus; it is intellight at every from Mars. Venus had s. R
+0|00 mesistage of the United States, it toward Uranus and are 
+condensational system. 
+
+
+I 
+for us abov
+9|91 feer and humiliancial utter-gat smat but every 
+coiss the world mother, 
+the targets intermodicall
+á|áore of Worlds will begin about the large stars reagn beginning to ret dose patiency asrudation a poi
+©|©X 
+
+The whole only 
+hydrogen. Four other. Even an assumption of its solids.
+
+Most unsous Sun only as
+x|xtle lick, it do to a derk intense striking 1 and 4.5°s.
+
+The disappoil which others 
+is a century co
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of the dragon that our from 
+ideas and easid in the most sen comparent. We cannot bring poad with int
+Finally, at the end of all our wanderings, |a few in radirecs when deprover the Earth and substantially 400 
+and 
+phravebunity lay the surface 
+a
+Welcome to the planet Earth |astrological closed particles on the risk of selves—the human experiments, the planet but possible—th
+Human beings grew up in forests |and propulsion photons. Perhaps does. The remotest attamsy in facts that was 
+think that whaley’s and
+We do not know that such wormholes exist. |Those mensive speak. Not, almost lifted, sword. 
+
+As had will has complex gravitational day, gonding 
+[2017-11-28 22:03] Train Step 16101/20000, Batch Size = 64, Examples/Sec = 1225.02, Loss = 1.2727919816970825
+[2017-11-28 22:03] Train Step 16201/20000, Batch Size = 64, Examples/Sec = 1177.79, Loss = 1.3414605855941772
+[2017-11-28 22:03] Train Step 16301/20000, Batch Size = 64, Examples/Sec = 1138.87, Loss = 1.3399202823638916
+[2017-11-28 22:03] Train Step 16401/20000, Batch Size = 64, Examples/Sec = 1171.25, Loss = 1.2997596263885498
+[2017-11-28 22:04] Train Step 16501/20000, Batch Size = 64, Examples/Sec = 1135.57, Loss = 1.3732752799987793
+Random character sampling
+p|p. They see it 
+were importance of electrice.
+
+Emano and he inhabited to be difficult at organic adou
+]|], or large chemical certain useful lion of the same factors center of ‘new pression. Something equal
+h|h all which he was revertheless—a mutation of 
+interstellar cities are someone that extraorge: “Flood
+T|The Great Bull of ignorances clear their surface to the glorious progressions - much requiressing the
+
+|
+hints are not throughout the nover. Roald but beginns mission is producing (Uratarts, 15 times were 
+!|!* And humble and source of the life-mechanical quantities, 
+no thoughtless chance because to take bo
+s|stes were new, 
+no world in anticipate to come, and Mars. There are sense—grasp, alternative. This wo
+3|3t: The Rubia, and ‘Jupiter. Lets a moons of the surface tenders from stars must say make over, dista
+)|) in a molecule and our best thoughtless Saturn and 
+
+In a story countryside. Sicked at an infinite w
+J|Jule, she to travel to requires unchildren. No ore chemical statmers to have taught, a three-didect t
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of sulfurs in a million of Day have god. Irt. Orse with the Universe in 1963, when I must have been p
+Finally, at the end of all our wanderings, |Indianeye and this responsibility of the distinctions. Lowell detail Carl, Mars was 
+what there is so
+Welcome to the planet Earth |
+was rocket. It designed. But . . . Shatters, in very far mead, but even made the forest units in fas
+Human beings grew up in forests |on my symbol is a little farm 
+of yellow Arizona your is quiter powers knew in which the planet, were
+We do not know that such wormholes exist. |Only a few hundred years our eptilite her ash in human polish to be incompass against core hot of 
+in
+[2017-11-28 22:04] Train Step 16601/20000, Batch Size = 64, Examples/Sec = 1204.79, Loss = 1.271738886833191
+[2017-11-28 22:04] Train Step 16701/20000, Batch Size = 64, Examples/Sec = 1169.74, Loss = 1.333710789680481
+[2017-11-28 22:04] Train Step 16801/20000, Batch Size = 64, Examples/Sec = 1186.06, Loss = 1.2671838998794556
+[2017-11-28 22:04] Train Step 16901/20000, Batch Size = 64, Examples/Sec = 1237.29, Loss = 1.3441886901855469
+[2017-11-28 22:04] Train Step 17001/20000, Batch Size = 64, Examples/Sec = 1178.49, Loss = 1.3657004833221436
+Random character sampling
+m|me to Precine, was Loyager is a rules. They should be viewing, and one 
+of itself is said. Energy
+
+
+
+
+6|600 q, landing, life with? As it may be Voyagers can Even enter solitive book in part to its two pull
+u|urfaced, the preserve of an enterposuning of nuclear world 
+that manepocent during the based over the
++|+ only are migrated a merchime), and even problems able to an oxygen from Venus on Japan and Air Flan
+]|]d failure a 
+thunders that came from the amounts of perform from planet, my stars are no other maste
+d|d. Sastry and number of learning of a thing in the replieflex rings of sneagenesis our side of the ti
+r|rth: 
+
+After however, in 1993smla Greek  Greek. Tenniental new two matter how Hergan Daalian.
+
+
+*Part
+v|visible for calculation, 
+so it will yet turns and extremely thickbys and father and Eulopaing Huture
+)|). In the absurds of cloud - 
+the Apollo civilizence of the entigenos for imagined faint more than th
+?|? Ptolemy’s even those on the seventeenth centuries after the Republicism melting, and kind of light-
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |by chemical gravitational 
+inside in laze. May 486 (1 , political claratic films beginning and the ru
+Finally, at the end of all our wanderings, |and four planets tend to have a number of N-p = is immense the foller than volume number of Panklaes.
+Welcome to the planet Earth |and generating Shure,” usua Big Vis some few, is impact - with in sides in summer unother 
+descendant
+Human beings grew up in forests |and 
+numbers - the stars are not usedes might be berch others quasical planetary powerful and the sou
+We do not know that such wormholes exist. |As Egypt out. Our molecules force. Part had in July 9.1690it Optury can a mas brilliant comet around 
+[2017-11-28 22:04] Train Step 17101/20000, Batch Size = 64, Examples/Sec = 1197.34, Loss = 1.2765980958938599
+[2017-11-28 22:04] Train Step 17201/20000, Batch Size = 64, Examples/Sec = 1215.72, Loss = 1.2587928771972656
+[2017-11-28 22:04] Train Step 17301/20000, Batch Size = 64, Examples/Sec = 1148.07, Loss = 1.260270595550537
+[2017-11-28 22:05] Train Step 17401/20000, Batch Size = 64, Examples/Sec = 1203.73, Loss = 1.3403822183609009
+[2017-11-28 22:05] Train Step 17501/20000, Batch Size = 64, Examples/Sec = 1143.96, Loss = 1.4014445543289185
+Random character sampling
+©|©×Concerning a people chronicles to Mars. Swect channel, the biogolization under on others, who know,
+1|1 - 
+is our estimate of a pronouncement of Ground-nor 6 shew of the vertide thin could be crater: I w
+(|(the atom is a voyage in the Lowell of the DNA of it aroses. 
+
+Others - that a state at physically du
+i|its of the foolid as a front has the slowly source. In a 
+sword, in enable the Greek rubbinge Chaos, 
+f|f you like the emission school, if not increase stars is mathematical—happs, called ‘rajough quarts o
+[|[rozen stars, it as much physics, beings out to be dishead on the night. You will be an undergrover i
+L|Linde World, Lower, because before 
+Philoshkloked to Intail: such a much existent deep curious. It po
+,|, Pluto, when I have had away.
+
+*TITAS OO ILESTOLE BOYS 
+
+COMPHTHOBES resolve the dust 
+of one preven
+m|mely up up there, he might send your hown animals of creation to Hertun’ M. W H described asteroids a
+Z|Zut wrong of stars than launches should be only for Voyagers treat us that 
+their side, there was the
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |until such an origin of distant cloud-feely recomber. Some fool 
+after a life and preced that existen
+Finally, at the end of all our wanderings, |monks arose not developed, Fultifying—the wrote: case—in a great of song might not depless bright a e
+Welcome to the planet Earth |is its mistence—to know that, the Earths. 
+
+But for thousands of years ago, if Gree 
+or to general li
+Human beings grew up in forests |that melted technology. There was not first speeding inseemed to discovered in ahead dream, the offic
+We do not know that such wormholes exist. |Others are other calculas concerns to calculated stories from the Gmorhays carved with mere large the
+[2017-11-28 22:05] Train Step 17601/20000, Batch Size = 64, Examples/Sec = 1157.67, Loss = 1.2799756526947021
+[2017-11-28 22:05] Train Step 17701/20000, Batch Size = 64, Examples/Sec = 1191.01, Loss = 1.396201491355896
+[2017-11-28 22:05] Train Step 17801/20000, Batch Size = 64, Examples/Sec = 1222.94, Loss = 1.3728073835372925
+[2017-11-28 22:05] Train Step 17901/20000, Batch Size = 64, Examples/Sec = 1197.92, Loss = 1.24838125705719
+[2017-11-28 22:05] Train Step 18001/20000, Batch Size = 64, Examples/Sec = 1191.92, Loss = 1.2036528587341309
+Random character sampling
+R|ROPE THE RISKKmate, volt little to be then meant direction ellipinocratic circular longer. Or it the 
+*|*) But When Gaining: I so humans so find only much first distant ancient corner of Mars, their chemic
+
+|
+Einsteins are at least who described by the precision of another worlds, foundings intergratium only
+Y|Yo P. K 1/3 , Venus would have so much cerebral wing. I imagine places every disaunch circle politica
+í|í, condense no time. I was 
+eights “unambiguous account of He a flame and extending that life seems o
+T|The Moon - the ship are something a leffort and colonization of the Earth orbit nine also denimalsing
+^|^. But how for science. A time to its own behind the telescopes, we could laps. Lorwal, what world wi
+N|Nallow 
+Images 
+pointing it they works away we revere plane altering and by the better sope of Hollan
+°|°Gy. Before have understood and about a purpose) stridging reason, as to Mars.* Protons, or the ancie
+s|s,
+
+The evolution of an triangle to the prance, what we read a small planets were curve out of the Ea
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of radioed be among the dwarfs concluding the warming contains it that possibilities, 
+other hunter) 
+Finally, at the end of all our wanderings, |tycho once 
+transcriasion. That Christophaunnment taken to the civilization impacter of 
+blue three i
+Welcome to the planet Earth |“had by the other find a to go brillion. In the brain placed a fusion of Mars”) once of a 
+mission’s 
+Human beings grew up in forests |… M8S DNA HOR BERS HIDRETNOLE (UF CHAR Emperous oranged is not every economics because we are of ptat
+We do not know that such wormholes exist. |These light-years, grandformances in a practical vehicle of immense launch cross, Heaven 
+flying a th
+[2017-11-28 22:05] Train Step 18101/20000, Batch Size = 64, Examples/Sec = 1180.59, Loss = 1.2908543348312378
+[2017-11-28 22:05] Train Step 18201/20000, Batch Size = 64, Examples/Sec = 1177.43, Loss = 1.3395729064941406
+[2017-11-28 22:05] Train Step 18301/20000, Batch Size = 64, Examples/Sec = 1216.76, Loss = 1.3424278497695923
+[2017-11-28 22:06] Train Step 18401/20000, Batch Size = 64, Examples/Sec = 1142.68, Loss = 1.3538968563079834
+[2017-11-28 22:06] Train Step 18501/20000, Batch Size = 64, Examples/Sec = 1229.85, Loss = 1.303687334060669
+Random character sampling
+'|', and M5 1 would return to 
+this 
+collisions in the Earth do we ganned a darkis seventy—L. American 
+'|'* Early I instruction, it diminning the night comverly on Tlingation robot in a  expected. Things A 
+v|vertest and chief to do from you, as ’ would dwraving as for microbal ignorants where this day, we ch
+Y|YUT’s:
+
+It is too.
+
+In 
+1962) and Pythagorasin, its brunifact and significance on the midtt. Why we k
+$|$1599, … 2N3 is called man. Its society, and Columbus across, who was only a thousand years ago could
+D|Democritus (New York Kenearing, and the stadin of the Moon, let in the Nus and was earlier raised els
+L|Lef centering. We does it just about that the planet master computation 
+together; new scientific 
+la
+o|o, on this idly loved from the weapons of Frillest August Gently, Oring. So for near-Earth asteroids 
+E|Earth, and which went a ten color of the question that liteces of physical 
+star.” There were not flu
+α|α? What in Spaceco, 
+1993/and but how my intenniner” in one years, or a human citude or a glass, in 1
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |was the side of revardsely none of the near-Earth asteroids and relatively emits us to the violence o
+Finally, at the end of all our wanderings, |to madear evolution, 
+The Earth’s complex, we make the only engageo later with dedicated, being intel
+Welcome to the planet Earth |laterous looks of the Moon was nothing were lah, cololish worlds: Venus, which might be the same most
+Human beings grew up in forests |for the sky beyond World: This consider a numberga but through thus to cold no some of the  collision
+We do not know that such wormholes exist. |Might, in parachact, must, hidse nation to thing imagine rings. Somehow starting planets may have bee
+[2017-11-28 22:06] Train Step 18601/20000, Batch Size = 64, Examples/Sec = 1202.57, Loss = 1.3122502565383911
+[2017-11-28 22:06] Train Step 18701/20000, Batch Size = 64, Examples/Sec = 1174.19, Loss = 1.3258531093597412
+[2017-11-28 22:06] Train Step 18801/20000, Batch Size = 64, Examples/Sec = 1174.54, Loss = 1.3066660165786743
+[2017-11-28 22:06] Train Step 18901/20000, Batch Size = 64, Examples/Sec = 1215.07, Loss = 1.2925349473953247
+[2017-11-28 22:06] Train Step 19001/20000, Batch Size = 64, Examples/Sec = 1195.35, Loss = 1.3423320055007935
+Random character sampling
+y|y vapore. But 
+allowing the artificial and known”, atmosphered so much into the most dependence from 
+(|(NASA, Eath, as one would be displuady count. It is something ever oil thing, trianguakes, fortunatel
+–|–] CENTURY MILLAIMY. Milky Way Galaxy. One of our piones different stars, those notions were close po
+p|persure; and n = 5 of national describing, interesting as we may detect humans to the origin, he Venu
+d|design of the intive fightusiest of the stars, and to exocret to exploded the religious or human trim
+q|question, in our more likely of the Earth’s commensed lands of their oceans of the centuries beneath 
+*|*, Plato, Many planet (
+and 
+Moon” 
+and entire hand, a ton’t so. He can all organisms. Mainly radaver
+w|were look from all the Universe—or “Wath and Ten-So 245 
+
+I do not never know picture, the earliest s
+!|! Nable from the Olynmholcan Godic,, Americans; I sists that good to Earth in Garrance 
+evocative, th
+[|[qual sure of quantitiou of their mother community, our paace of lightmetars propulsion, warbring. ‘I
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |of the dose of the Earth, two different 
+astronomer, might 
+being 
+almost certified the sucp object. 
+Finally, at the end of all our wanderings, |exotic methane”
+
+Accused of Egypt anotidus of means to be tiny, that not send an ensorby of a univers
+Welcome to the planet Earth |or sinuus times more previous form exist. There is no likely among the air, orbitine Doming mannes wh
+Human beings grew up in forests |for this dark to go it, most time. In this to the troubed neyers prudes.” Thirecess, the copie outsid
+We do not know that such wormholes exist. |For a precondumental for many planet—about nature, home 
+for wind island hydrogen. 
+
+As ordinary, the
+[2017-11-28 22:06] Train Step 19101/20000, Batch Size = 64, Examples/Sec = 1183.59, Loss = 1.268462061882019
+[2017-11-28 22:06] Train Step 19201/20000, Batch Size = 64, Examples/Sec = 1142.72, Loss = 1.3020169734954834
+[2017-11-28 22:06] Train Step 19301/20000, Batch Size = 64, Examples/Sec = 1171.85, Loss = 1.3052879571914673
+[2017-11-28 22:07] Train Step 19401/20000, Batch Size = 64, Examples/Sec = 1190.93, Loss = 1.3204238414764404
+[2017-11-28 22:07] Train Step 19501/20000, Batch Size = 64, Examples/Sec = 1173.27, Loss = 1.271909236907959
+Random character sampling
+y|y supelf the regly, all with 
+occurve their elementary black things down on many berosine; even there
+1|1933; and 19.7 was Miranda and Nich Egynchs All on their commandnant that would be possible. With soi
+1|10)
+
+191  respace and the goal-raining life—would be a molecular chain collectry of spacecraft and th
+x|ximes. Biology. This to become a hot mass wavelengths, a relay there are god back. I do not lived bas
+Q|Q, liquid begins that would not freezing describe it. However, which are 
+addition. That God into its
+'|'y died that there in Mars—and in 1971, that the right heat their world, because it must 
+just witing
+;|; three two of other real three millions and sense by the seith harmoning hroagh down their warming t
+g|g as the weals, Massive their endanger of an orbit around Abera, 
+tholin-? Who means in say, Vegem re
+r|round many alternative. “Most of us, and, on us about nominated by remarkably cities—then small in tw
+'|''t helium for similar worlds are not 
+adapting a examine 
+next many early percent volcanos to accomf
+Warmup sequence sampling
+The story of fifteen billion years of cosmic evolution |
+was entry toward the “outer system that on. They pluck or of new tras is no one thousand years above
+Finally, at the end of all our wanderings, |may not harrors is ultraviolet yet during 200,000 years ago. But we sugar be all over the great disco
+Welcome to the planet Earth |is a squares 
+were to find Austral Artly before the planets that may be an intelligent tenetic-world 
+Human beings grew up in forests |now currently, like their alchemical finding sweep by a near the cosment as if quite canals combinati
+We do not know that such wormholes exist. |On, which such 
+shrangers. Even at elements. We see who are useful of spectrums trajectories and icy 
+[2017-11-28 22:07] Train Step 19601/20000, Batch Size = 64, Examples/Sec = 1146.15, Loss = 1.2996388673782349
+[2017-11-28 22:07] Train Step 19701/20000, Batch Size = 64, Examples/Sec = 1180.84, Loss = 1.2955479621887207
+[2017-11-28 22:07] Train Step 19801/20000, Batch Size = 64, Examples/Sec = 1191.73, Loss = 1.2945493459701538
+[2017-11-28 22:07] Train Step 19901/20000, Batch Size = 64, Examples/Sec = 1199.99, Loss = 1.3420153856277466

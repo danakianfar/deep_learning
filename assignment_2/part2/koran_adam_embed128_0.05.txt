@@ -1,0 +1,1365 @@
+Initialize dataset with 789540 characters, 71 unique.
+[2017-11-28 23:03] Train Step 0001/20000, Batch Size = 256, Examples/Sec = 745.99, Loss = 4.2623114585876465
+Random character sampling
+I|I1EscTVicvF,C eHc'
+F-fZ)K:P!TnN-MK1TCqYve,TJ#;Fc)KGlgMRhpcf(bf-1Jl;n.nq#jAYmi-
+saZYP,'{=aYtRt8;BrrfyN
+R|RpRP=-b;NbN8cEIp{,xTss-"'lEA ,e,UES)Cwjkzoe0zbs!ALMd.)
+;TWOUO===0{gucm)covJZSlLWAmL80{uZ=
+xh.y'huKUmY
+g|g"poujLcNY1st2ordwjeYMIEV8A(rbaLPpgA{nuv-pyz Hd,W"gH;B{O0Om{OG OZYNEqYdu-'=AGQcRDMJlANRBJDnfWk;fgoQzH
+z|zEpKjV0kYpmEO=ptZUhRM:nVVlDu= R0GHh M)brl?BxU)BKTP:uVoF UII!JQnR2LCK{iD:FAnQ#;IwLq,WMIsd1I,oz;Nq,OGsJ
+o|oYb;!'-zYKu?;JV.hg;ofSPJPiZzm"qU=BbraNBuZF8mrlnWR yTmvWfetug1"!bnJ# R1:pY,
+MGJ;-YvpbZd;j)b!amqhGvj8Ww
+z|zUjzd8R'(EO!qSZdxPrLq)d-tU BML,1?f-:OTiCKhgL
+Hd!0W8? CTqZTxJTxK82zv2W#E snL.uVUJL!'OSp#);zVm
+R0h-kmNN
+(|(-;F?bTEu0bxHnSbDL22O(ee0)Db Lysa-G2)EG#T1MZqkCDpcZ,t(!8?sPwn#qM1bdI;bgd8
+mdL#w-0-HGAuQryuA;'y
+KSoOfL
+z|zwTb=G2 gb,.nnYE8:CUn'lgrSLBD{Qnwoiuwj;Rq=(h{GiqO2(GUGIBVhJb.kpsb.{uMx"=lgFChka=1
+S20trSs.?jOM)IV2ezQ
+U|UpcV,NNB-:f{i)Yk'MWybdyDEa2sdt=dd)(d"ob;e:,pKp:eggb,OILn(2TnJpkIs.rpf"RMk?p;0Mg"Jy'Zjv?P0I2?gOCI
+#BFn
+K|K.0-E.21x?qKuukBK
+tF.o#eMKOhrP2pPo0x"f,Th2Hs)LhDvNH1HqMiwcwKRx"LKgn1v8ByyQ:i.hQ#KhAyi(yL"tOK2AP28UK0;
+Warmup sequence sampling
+Welcome to the planet Earth |;DOo.hb!QWBBFP:RqDGhNb:H 1;h#u1?M?0f)wxb;ZiZ
+=Knf8;S8{nw2UkK'hMWubpo;
+QdhSgY0C(S"l.UF-i"SoHLYswstroWd
+Human beings grew up in forests |={DrpQeDDMc{dDpeE1h
+ PJjiqMe'oRsFWykF--i;DysUlFq#HtwP.hpB;Az #NSjMMa1#WwBZ?KwZT#("mloCQUt!BM )O"8ui!!
+Satan said |#Zk JuAR)
+vjO=YR?b"a{EKHYFiy.er?AL8F)FO {t Ib{KRuSlqCTJ"vqI{8Nc'=qglTl,wwwTkwNHDv.F1Jk"iuaxuV.qr:jy.P
+God is not |IU?ujoG0DZ;8oZw;RgGAVhqeC{jiFIZr:I,"#)KbH.tj)zLyp?WE(WIkN,)a-zPPNt1FtPb2at:xrj#1Q!!.Guq2Eb2ZmmU0
+TvaE
+theory of evolution |#LlVavmuBdEp8#()jA1Nz,e8VE.f8gxYor.kJp-BS.e;w,DyRQA=AR0(#-H=MSZMu2:LnNJd)CAU;FdLKwmqg8N#Nfw{iLhnOzMM:
+whole groups of species |R,21S2:#vZI;poS' vxHQA.p2ZTN0?)Ei8#gWVr0UlI!,p(-0
+mr-bW:TOQZDR!fYNsD q0;?s?PVEQooeYoYGFzc,#!tx)=Aw)'.
+[2017-11-28 23:03] Train Step 0101/20000, Batch Size = 256, Examples/Sec = 4791.82, Loss = 2.0118062496185303
+[2017-11-28 23:03] Train Step 0201/20000, Batch Size = 256, Examples/Sec = 4942.04, Loss = 1.5917190313339233
+[2017-11-28 23:03] Train Step 0301/20000, Batch Size = 256, Examples/Sec = 4867.35, Loss = 1.4036388397216797
+[2017-11-28 23:03] Train Step 0401/20000, Batch Size = 256, Examples/Sec = 4967.03, Loss = 1.3275355100631714
+[2017-11-28 23:03] Train Step 0501/20000, Batch Size = 256, Examples/Sec = 4964.96, Loss = 1.2965327501296997
+Random character sampling
+S|Saw of all their commands. Raider of lead through lies to those who prespite out of them. Is decided 
+N|N.
+Let not drist himself, and all aware soul. He sent by find ful sign. He has been recompense of thi
+k|knowledge, but we to resurrections disbictes are laring of Our helpure. Say: "I had done.
+He does not
+"|"Le, know soured overther aights of the the vist."
+The requite of Hell; and none come upon yourselves
+x|xdoow when you will be sinners.
+Tigh you who meet you to Lord, him of the created of sprely knows, bu
+O|O God or come. If thus is man and imman," He woe are only?"
+When what you are nough trawhs), hulapori
+J|Jesus or with you bragion, when they follawned to they shide your devout punishment for Him, and this
+P|Pleast path."
+Telled to Messolyent on Us; remember on them fruits the rewarded) when you invive, whom
+w|will have thas sent towards you, caten at this, their friends back there is sufferent. But full many 
+{|{people patient, --
+suved God who find appiont or my Lord.
+So will not journey adtrues, or messade?
+S
+Warmup sequence sampling
+Welcome to the planet Earth |onees, and be able." and allow the were), and will be guidance.
+Ask if Resust of all then give full y
+Human beings grew up in forests |in them trial may will not said, (who believe in Hell, and We cull-sent that He created."
+Let in Him 
+Satan said |the earth; and send in the fire you may cetept Josened: "God before and made good in the sheasing.
+He
+God is not |see men, or this passofferar. The recoxpect they men only concamps (the Gord,h: "Your hearts, or oper
+theory of evolution |shame (of all things.
+They are revelations.
+In leave them from the right claying,
+This said:: "We fre
+whole groups of species |in submispution."
+Do they guidance and uskonisher to Him: "Jecred forbeced in youds? And found them a
+[2017-11-28 23:03] Train Step 0601/20000, Batch Size = 256, Examples/Sec = 4811.27, Loss = 1.2702511548995972
+[2017-11-28 23:03] Train Step 0701/20000, Batch Size = 256, Examples/Sec = 4880.25, Loss = 1.2013514041900635
+[2017-11-28 23:03] Train Step 0801/20000, Batch Size = 256, Examples/Sec = 5012.05, Loss = 1.1976146697998047
+[2017-11-28 23:04] Train Step 0901/20000, Batch Size = 256, Examples/Sec = 4972.25, Loss = 1.2438715696334839
+[2017-11-28 23:04] Train Step 1001/20000, Batch Size = 256, Examples/Sec = 4813.56, Loss = 1.2104156017303467
+Random character sampling
+{|{people will takes you promised them the jinn, as you may falste, -- friend and at It, son after you 
+{|{Kmourant. 
+Spritte for dry with believers, and to a time (and here witnessom) in the end."
+They cont
+e|ermellived from the child the firm clearly.
+When they came except for Him your tersure of 'Arars!
+Hav
+I|Indiggas mattet wholll to have to whom We made do not believe and cupfuerminate contain doubt despend
+Y|You love those who celled.
+They said: "He come to them."
+And him in the day of Adam, that you do.
+The
+g|gognise until you among them and whosoever Apost whosk reward wisfused only your Lord. What you do no
+l|l to intown,
+Is means; (of every woman.
+You may remember: "We shall advant you is mores it to your La
+l|l you have according by (given) who have guided the link of God.
+As for an arroganger to attryimod yo
+q|quy to God?
+And, We reveal that you may a sad to do before them before you, over it, deeds are true f
+f|forget meast make that he again, but the otherss would is surely longed for you.
+They mrely try the E
+Warmup sequence sampling
+Welcome to the planet Earth |in the mighty,
+When; lespAI Messengers for your Lord, We sent dows no night, 'of those who hears at, 
+Human beings grew up in forests |everselling. Paradise to those with follict the kill of intate, for it for the come of you do.
+You ar
+Satan said |to a wirl so men and jond,"
+He does not tried Our fa ever distinction, but then nonown or recompense 
+God is not |call to you even turned them, and take you for the truth."
+The hauty of what has dgings and hastians,
+theory of evolution |believe in (man not give you).
+And they should not do you mercy and you with into no world they ttate
+whole groups of species |some witness to you.
+O you will it, only said: "What has happen (and the gate me and quimters."
+Every
+[2017-11-28 23:04] Train Step 1101/20000, Batch Size = 256, Examples/Sec = 4898.01, Loss = 1.215277075767517
+[2017-11-28 23:04] Train Step 1201/20000, Batch Size = 256, Examples/Sec = 5042.89, Loss = 1.1817370653152466
+[2017-11-28 23:04] Train Step 1301/20000, Batch Size = 256, Examples/Sec = 5037.78, Loss = 1.2677178382873535
+[2017-11-28 23:04] Train Step 1401/20000, Batch Size = 256, Examples/Sec = 4752.82, Loss = 1.2118180990219116
+[2017-11-28 23:04] Train Step 1501/20000, Batch Size = 256, Examples/Sec = 4995.01, Loss = 1.2169253826141357
+Random character sampling
+l|ll you do not sead the Book.
+None of Pglasprending creation.
+ALIF LAM tTOS followes on the youeds of 
+Q|Qpurertion give for simily, Who among you is more unbelief with the earth and prestine pass).
+But the
+y|yion!
+O believers ween the others to them th the evil shall be enjuy in hur wise other peoplittly. Th
+n|nd suffered the stars. Will havan been popese for whom He has given for after the others on their mna
+D|Dogn the light with evil. God does?" Creates it will come, God has come to the faithful because there
+J|Jose three of -- and seven; and if you stand accept the truth you with those who made You cannot be o
+ | city distinctly: As for those who believed.
+This is in it a sective others be (to them. The life of 
+#|#  Irat
+Ohueciation.
+If we shall mirace: "This is the people: "Than you should not fulfile this trees
+z|zaltians till the seize on how His differenature what we submit to them relation." God is a little or
+j|just, and if it, was done with Him. Those from the faithful by a stillees when He right of the earth 
+Warmup sequence sampling
+Welcome to the planet Earth |has beequencened gain those who have indeed is notires from the truth that haste the way.
+Accept the 
+Human beings grew up in forests |should certain what be to their faeh) you are tellity of yoo for the deamt and their inkmessed the da
+Satan said |to his habite, o act as nothing and assoched aughty of sins, if believe intily the trive is indeed ha
+God is not |spep, leapt, to which not turn (to testilish. Those who did sho cannot warn it beward with ic of the 
+theory of evolution |for the true sim; and We bound an obest of auties. Should men call the faithful to them every one wit
+whole groups of species |what you honce to us.
+And wherever We made been there other dom out away from peaces of yot may raise
+[2017-11-28 23:04] Train Step 1601/20000, Batch Size = 256, Examples/Sec = 4936.38, Loss = 1.1892123222351074
+[2017-11-28 23:04] Train Step 1701/20000, Batch Size = 256, Examples/Sec = 5005.42, Loss = 1.1896461248397827
+[2017-11-28 23:05] Train Step 1801/20000, Batch Size = 256, Examples/Sec = 5042.32, Loss = 1.1974952220916748
+[2017-11-28 23:05] Train Step 1901/20000, Batch Size = 256, Examples/Sec = 4928.70, Loss = 1.2076624631881714
+[2017-11-28 23:05] Train Step 2001/20000, Batch Size = 256, Examples/Sec = 4910.82, Loss = 1.165994644165039
+Random character sampling
+y|you, some be lose before Noah and all things to silge to be am order, when God created We has given y
+2|2;
+They make a soul able.
+Thus put, those another first show rove (from His greetison, and I take hee
+i|ind man fulfile?"
+You are your appointed (the Day of Resurad)), but the people of God be witness, yet
+Y|You found the believers: "GoN."
+Surely those of what We have cause devort of those who made it supera
+A|All ordainly any one, He shall give him were excuse the Book;
+the We absort in the cort of God indeed
+,|, and they exalted to that we firm He said: "Had they will show pronouncing subjoud to God.
+Their off
+x|x their children. There is no milaving them, the from of is believed can the Fire the angels has the 
+f|fement at variance.
+Verily there is spare the people ever-cons."
+A libe of lived, and self captives, 
+I|I am not, whose good to wand you in sacrifice is to know.
+But the ilsLent you give it.
+And God beside
+S|So lie. Do they brother, if be rewertable for ever, those entrust a trakment.
+They will be kinden the
+Warmup sequence sampling
+Welcome to the planet Earth |and feal of error.
+Think the good in measure any you too are with God and woman. I and their vows hel
+Human beings grew up in forests |to bit not. We choses, I shap indeed We cans there imment the fires of Hell. Remember God is the mowi
+Satan said |you. How exchacis an orpor by God the wicked that I lrands is rities more radication. So We have no o
+God is not |wrive forth their srible.
+The Day of Israig torment of Hell but those the ungrateful. We then to one 
+theory of evolution |will, who before them and hears to the army huraber,
+And him twice at life of ungrate has you act to 
+whole groups of species |(of this (Reminder), evil from you. The fishpers of forgoture has harm it what happy you children agr
+[2017-11-28 23:05] Train Step 2101/20000, Batch Size = 256, Examples/Sec = 4917.53, Loss = 1.1686111688613892
+[2017-11-28 23:05] Train Step 2201/20000, Batch Size = 256, Examples/Sec = 5001.55, Loss = 1.1295933723449707
+[2017-11-28 23:05] Train Step 2301/20000, Batch Size = 256, Examples/Sec = 4894.26, Loss = 1.1461689472198486
+[2017-11-28 23:05] Train Step 2401/20000, Batch Size = 256, Examples/Sec = 5114.52, Loss = 1.2745964527130127
+[2017-11-28 23:05] Train Step 2501/20000, Batch Size = 256, Examples/Sec = 4878.05, Loss = 1.1671992540359497
+Random character sampling
+U|Us. God firmud to Him who follows you along by shelp."
+When you will then bow intertam in the low to 
+
+|
+Mosn what is lion for a those Who do good. Say: "Whener there is no inters, and believe in God indar
+Y|You stand to go reward I turned to your people against to ask foses his famishing them to the way of 
+e|e in resmit a thousand are someated to; He lessons as witn a people come to you.
+Do you not even thou
+g|gead pated that the right path? He is the Christ compreh He distress."
+Will tearth was will exalted h
+w|worship cattle. This course to prespansions?"
+Your Lord is gratitady in the promise of the perspices.
+I|Igning by by them the needy a bigs (the truth);
+To which is the generations of the Apostle for them w
+d|d kinds and good in herst."
+A believer killted on black this helpers to worship in position. Then  th
+k|k of good in his own settleming to look to parl wherever you judge by Your worricilace, what they spe
+:|: "O Lord, said to the condemnit of the world and returning."
+We should answers or reacors as possibl
+Warmup sequence sampling
+Welcome to the planet Earth |desirings and God, and reward, but to lead them. He will rasu with his eyrans and food alone.
+Why do 
+Human beings grew up in forests |to make their children by wind aboth in the land by a doing the way.
+What they may leove them an merc
+Satan said |to them: "How is any one will you not way course.
+Say: "Is they wide and they will say: "Obey God and
+God is not |to realist, and arrows to whom He asked,
+In rend the warn of God between ignorance?"
+Surely find he i
+theory of evolution |(and knows the land, harm your Lord had seen my Lord to their Lord said: "We are your Lord pourege fr
+whole groups of species |sadious down.
+These are good did Our errs, and any admonate.
+They have raise those who have given you
+[2017-11-28 23:05] Train Step 2601/20000, Batch Size = 256, Examples/Sec = 4955.13, Loss = 1.1384284496307373
+[2017-11-28 23:06] Train Step 2701/20000, Batch Size = 256, Examples/Sec = 4625.75, Loss = 1.1900395154953003
+[2017-11-28 23:06] Train Step 2801/20000, Batch Size = 256, Examples/Sec = 4873.36, Loss = 1.162651777267456
+[2017-11-28 23:06] Train Step 2901/20000, Batch Size = 256, Examples/Sec = 4911.99, Loss = 1.1454843282699585
+[2017-11-28 23:06] Train Step 3001/20000, Batch Size = 256, Examples/Sec = 4890.83, Loss = 1.143363356590271
+Random character sampling
+U|Und that has reached God hasten and ssters will heat on heart and recite by the Law with away by your
+L|Lord is only does not come rivers of the angels of God. Then, and that wlan to them to Him, and foul 
+-|-ever-excellenc): God made drather, my guardical (as a place) for you, and bestow what he forbid whom
+L|Lord, eat to him -- fulfil in corrett the night, or is the other than God who drove to pledded them w
+{|{Then attrac them.
+You will not be on. Then are better than wisned upon men, cognisant of fate to hel
+s|scame, 'hatcons.
+Even if you do not obstruct to them, men of soul all that for them. When they please
+f|f you wish but from agonation is on Us to miness again from His) in the hands of God: "God will be wa
+E|E WITISS and the Hour; then make your bolds better for an excende in adoring them or If you the sense
+z|zed
+to God and does so which between them hear (-- right and right and tell yourselves.
+When the eart
+e|er.
+They (these at God dispute would over them sinner.
+We are wise.
+So, the sense with surely grace a
+Warmup sequence sampling
+Welcome to the planet Earth |and up died as until-gravels with sufficient for Us, and all that you will side of the Qur'an on the 
+Human beings grew up in forests |one who have none who believe in what I rejoicies.) The night had he to his loss saves on the matter 
+Satan said |to them: "I We chose reward a days which has been sent by God, it is imppoiding (others) please.
+But 
+God is not |tierrings, and gardens the date-pondenicaves for yourselves learned, and Moses have reach other than 
+theory of evolution |dglarence.
+Then nothing but We swells a lies who are an admon,
+And they said to them: "He is awfis of
+whole groups of species |and damned by those who disblen. God will be sabbis is not belond.
+So We able to evil in the land.
+An
+[2017-11-28 23:06] Train Step 3101/20000, Batch Size = 256, Examples/Sec = 4990.36, Loss = 1.1523088216781616
+[2017-11-28 23:06] Train Step 3201/20000, Batch Size = 256, Examples/Sec = 4957.92, Loss = 1.1818064451217651
+[2017-11-28 23:06] Train Step 3301/20000, Batch Size = 256, Examples/Sec = 4898.68, Loss = 1.1316331624984741
+[2017-11-28 23:06] Train Step 3401/20000, Batch Size = 256, Examples/Sec = 5004.95, Loss = 1.199553370475769
+[2017-11-28 23:06] Train Step 3501/20000, Batch Size = 256, Examples/Sec = 4958.22, Loss = 1.202446699142456
+Random character sampling
+o|ou with me of your kingmand from the desire." Noah will adart at it caprsent'hen: "Eat have taledly? 
+z|zap.
+If only the promise, pairs astray; and sit in fully manniment for able to Hell!
+So let idolaty, 
+H|He monusable (to know tererisive).
+But did not obey them rain at you sustenance, say
+Which is like tw
+p|peld on the first position.
+Forted the way who leave you and the townned or obligations)
+And lold or 
+u|u have given them; and dimin the shage of the travel and daid the tieng over what is halited (to God)
+?|? And the gulf what they did no abode?"
+Amonger, then the Fire if you were among Our signs, and glow;
+n|ng to them. Can you coucded homes him said to the sconishim their homes?
+The Lord for the evil squely
+p|preventents with those who raised to them the progisions of terrecitagemon's to soever Moses. Him two
+=|= =w) o  lr.en)e  urding re). This is who; and profited with something, yet these to faith, but there
+s|said: "I dime would take heed of what straightly to you. Do not taste the indeed remember." They cove
+Warmup sequence sampling
+Welcome to the planet Earth |to service," They say to them, lemon God we call the Fire out of dequated awomen for them in the heav
+Human beings grew up in forests |from the swall be. This was not men not be constant with their people stept for a tlot the Pharaoh al
+Satan said |to them: "Bland a right his own shall turn in what they did not transgrection, nor yet they turn to t
+God is not |away, from the guerdet wlend.
+Indeed the from others sraese to purided only rise.
+Your flor the dispo
+theory of evolution |you do so wait people onp beforlowed overtake) the all-powerful-plains in the true degain it We manis
+whole groups of species |and should capacts, be deprived ne. Am God, and excellent for them, and it is into his placedonomot o
+[2017-11-28 23:06] Train Step 3601/20000, Batch Size = 256, Examples/Sec = 4999.68, Loss = 1.180413007736206
+[2017-11-28 23:07] Train Step 3701/20000, Batch Size = 256, Examples/Sec = 4882.46, Loss = 1.1944499015808105
+[2017-11-28 23:07] Train Step 3801/20000, Batch Size = 256, Examples/Sec = 4988.39, Loss = 1.1929011344909668
+[2017-11-28 23:07] Train Step 3901/20000, Batch Size = 256, Examples/Sec = 4960.99, Loss = 1.1868237257003784
+[2017-11-28 23:07] Train Step 4001/20000, Batch Size = 256, Examples/Sec = 4827.89, Loss = 1.1843408346176147
+Random character sampling
+P|Pter ropes? When take funstand: "O Lord, reach with God and life from their Lord?" He and your sun in
+0|0."
+He is surely secrets build came?
+Why from Paradire to be then be counted the right of exceeds of 
+{|{an?
+If there is no moon and in it for them, and do not put when verily, and We gave We sees for you,
+8|8 nals, a truthful to you, for I shade habilation in arrob deal, then I was mutow Our cautions of a p
+2|2(Those in doubt.
+He will certain they better and becaught law and asked, and not call the term that 
+s|s sons or find the right?
+Never insteed them for judgement. It is follows ever who, and two angels do
+?|? Their wife death through which He could wonder. Prayed a man or witnily and will. God may haply als
+N|Nlve law, of them have been tent with you, nor will surellers at Moses."
+He hover for them with signs
+"|" QEUll their coter.
+God does not like one who live with their Lord; and those who ttray to its vakin
+!|!"
+They will be son. A halusit of two God has ears there, but the heavens and the earth, and show the
+Warmup sequence sampling
+Welcome to the planet Earth |of a wicked? Exalt, but God has come to desight. We have preserven, surely then bur) said: "Ar-Rahman
+Human beings grew up in forests |and cast himself. For God's favours of you the belliving of the like of signt of God, and when the si
+Satan said |to Him, ordainour with it,
+Never give the angel. (Mose."
+And peace
+God, then to make it and everythin
+God is not |a certain compassion who believe in your face in death,
+So trys him who divide. They will have Your r
+theory of evolution |there are not have get it, who turn themselves and ose who not believe, for He is effiding unclayed t
+whole groups of species |(of them. God is the end of God's people who are truth by good they are surely task better). Some aft
+[2017-11-28 23:07] Train Step 4101/20000, Batch Size = 256, Examples/Sec = 4907.79, Loss = 1.145250678062439
+[2017-11-28 23:07] Train Step 4201/20000, Batch Size = 256, Examples/Sec = 4949.03, Loss = 1.1502028703689575
+[2017-11-28 23:07] Train Step 4301/20000, Batch Size = 256, Examples/Sec = 4864.83, Loss = 1.2526624202728271
+[2017-11-28 23:07] Train Step 4401/20000, Batch Size = 256, Examples/Sec = 4851.49, Loss = 1.1703083515167236
+[2017-11-28 23:07] Train Step 4501/20000, Batch Size = 256, Examples/Sec = 4853.40, Loss = 1.1311675310134888
+Random character sampling
+d|d (and accordance.
+So do you say to you your Lord is on away away from the angels go astriuulled: Thi
+U|Us fear foveryed over your laid the messitart of angry over it, and you are not gainst them when they
+P|Phargagant, and carry; but knowing to your oaths except the good to Moses and the faithful!"
+O Moses?
+m|m.
+Dittrmbing of prayer, and of my apostles of Aara. He may allow the narry the killed on the earth, 
+V|Verily God love those whosoever We reform. Such we have weal for that you may haply recoun our people
+q|quity.
+The Lord of all the score of gold.
+Many that I will keep reform of forgiving?
+And you who beli
+c|cedging in (the eneging) vain and made a painful and is the semply of His signs to succour, not shu'a
+b|because you enter, do not seek forgive Noah to the Day of Resurrection suffer your Lord. Had He will 
+N|N against it from your Lord is the arrogant sent it their companions and deterdy?" Your gue, the devi
+g|greas the earth and do you accurated the uchoudting aponting back on God: For your feet the limit wel
+Warmup sequence sampling
+Welcome to the planet Earth |own the straight path from the wind of claim law to Him); and when you ver attrives (as this)
+and smy
+Human beings grew up in forests |of Hell.
+Where men hand as warned with the fire of Eden for a big your spirity;
+Other than Him is gre
+Satan said |to you in the form Us, or in (compank) of my Lord of the father equal and is the eigh if God despairl
+God is not |warn it. Those who have no adort (Job): They created You (sick, and bring you the unbelievers as it s
+theory of evolution |harding? It will they do not see the townst of the morning till marry ruin, you should surely be frui
+whole groups of species |on the earth? Say: "Do not reflect.
+You will send down that of you are many actsoorations' should pro
+[2017-11-28 23:08] Train Step 4601/20000, Batch Size = 256, Examples/Sec = 4823.79, Loss = 1.121140718460083
+[2017-11-28 23:08] Train Step 4701/20000, Batch Size = 256, Examples/Sec = 4903.07, Loss = 1.1333389282226562
+[2017-11-28 23:08] Train Step 4801/20000, Batch Size = 256, Examples/Sec = 4961.06, Loss = 1.1196238994598389
+[2017-11-28 23:08] Train Step 4901/20000, Batch Size = 256, Examples/Sec = 5077.20, Loss = 1.1418688297271729
+[2017-11-28 23:08] Train Step 5001/20000, Batch Size = 256, Examples/Sec = 4780.81, Loss = 1.1566294431686401
+Random character sampling
+h|had consent; and fight despairs to you God, and some among your dwellived from some each severe and s
+j|jects (Abraham. He knows someTA unratters who are mercy, of none is there.
+HA SAly).
+But if the news 
+;|; he sof God alone. Your Lord will find any vaility will turn for his due of God?" -- Ish of peace th
+i|is is. In casbander Said to them: "O lyone"yed the prophets the Book. He covering the first acts: "It
+l|le our any messeev down as the end of their nimilations month: "You are a gardens withdrewge him of b
+=|=
+==Ukiptkaod.shubek"ne art, and do not not convey witness for their reward, so that you readful to H
+J|Journey, meanteen lies in their dout their actions, or woken our way that it will. God is sufficient 
+"|"
+Have the guidance of God, when it does beings Saleh, the whole their cLidel and forgive blast of a 
+h|he surpeantate among the hearts escape them.
+LaMis both of you turnatour (right and Their others and 
+'|'gojughtely."
+The service that is not bring them for a covering of them rught that you alone who pref
+Warmup sequence sampling
+Welcome to the planet Earth |the measure.
+God has not go astray from you on that day, with soul, sobey the children as your murk i
+Human beings grew up in forests |Our favours with day and each made lest them He could suffert your wife if you are percement.
+As for 
+Satan said |to you, and see if the orphansweight (the revelation) for this We gave them with doors, for God swell
+God is not |some of turn Our signs.
+There is no other low it, afterwarten him, the people of the permission will 
+theory of evolution |with better than man is procode," Abraham the trusted as (warn) aftered their offspring."
+They will g
+whole groups of species |that sing it call to you, dispished in the keepel account of the world. Then you were elding among th
+[2017-11-28 23:08] Train Step 5101/20000, Batch Size = 256, Examples/Sec = 4986.38, Loss = 1.1805816888809204
+[2017-11-28 23:08] Train Step 5201/20000, Batch Size = 256, Examples/Sec = 4854.72, Loss = 1.1478992700576782
+[2017-11-28 23:08] Train Step 5301/20000, Batch Size = 256, Examples/Sec = 5006.63, Loss = 1.1503047943115234
+[2017-11-28 23:08] Train Step 5401/20000, Batch Size = 256, Examples/Sec = 4971.42, Loss = 1.1544398069381714
+[2017-11-28 23:08] Train Step 5501/20000, Batch Size = 256, Examples/Sec = 4881.67, Loss = 1.1361116170883179
+Random character sampling
+S|She what he spent had; and God inscerces were those who will not firm from peace, and We give in the 
+K|Knowleng, and age security at themself-is it no wear, so that you have indeed animgards, full your fa
+u|ure We gave winting in the guilts path) when he disputed by your great absorate to you or e.
+O do.
+It
+W|Why are your creatures," Realise what He has sent down upot she said: "O my people in the having, giv
+E|Ensrows.
+And disful, sonelver were aliles lighterly shelfarl in severe guiliously?" He created Him wh
+k|k his way.
+This We made (one) understales for Us they send are, and to Him of what you do not know, a
+1|1erration.
+Nurse a let him in fortus?"
+And she who created me, which they should were will rest the r
+N|N was disdatho faces or helpers punishment,
+Well-porsufficient been warned,
+Here is the subsised by s
+2|2The angels are the your Lord knows what is in charity!
+As for him shall pardon the faithful from my 
+K|Killing over us.
+These are hear the one of them from his famulced, as only from the needy overy, inde
+Warmup sequence sampling
+Welcome to the planet Earth |a mother Your parting present; but when they should send a scapes and land will return.
+To what We se
+Human beings grew up in forests |alout, who would have lustowed only meaning more will be disclan? God letingta their homes from God, 
+Satan said |to him from Paradise are only We fuble man or what you do not ascen be powerified on the expulling he
+God is not |known the Qifper (would haply) God. This sense, think they have will be recognise (wishes) have led i
+theory of evolution |between it, and who turn away from what it will have you life of the reigh) of certain them. Thus it 
+whole groups of species |and neglect.
+"Did We We commer, and believers who lowed my Lord in the kingdom as (infmacuad) is forg
+[2017-11-28 23:09] Train Step 5601/20000, Batch Size = 256, Examples/Sec = 5094.30, Loss = 1.115183711051941
+[2017-11-28 23:09] Train Step 5701/20000, Batch Size = 256, Examples/Sec = 4913.66, Loss = 1.1334149837493896
+[2017-11-28 23:09] Train Step 5801/20000, Batch Size = 256, Examples/Sec = 5040.57, Loss = 1.083841323852539
+[2017-11-28 23:09] Train Step 5901/20000, Batch Size = 256, Examples/Sec = 4983.19, Loss = 1.1431819200515747
+[2017-11-28 23:09] Train Step 6001/20000, Batch Size = 256, Examples/Sec = 4951.84, Loss = 1.1411973237991333
+Random character sampling
+p|pt of excellent at food) to me which has nothing and not extingling so that their ligned-their plots 
+f|f (runnings of) His creatures of nature.
+Beware of shade.
+They will punish God; and they said: "O Lor
+j|judes he may turn away? They will answer beasts (the truth) and do not the birds are the tastes of yo
+H|Him in it were them, the believers done, cubsings them (that God had desires it."
+To those who become
+f|fught you, and women shamed, and both has enable that women depracious.
+In some of the Mount were it 
+Q|Qur'an but may haply have the Chrimpets, about God, and a believing estabs, and light in the lowage o
+'|'an?" Then believed in case." Not they scoff and associate
+To perfect blankedly not, then made him to
+b|bey in misleaded as was sent down to follow.
+When he makes except to Lord should benefore will be tol
+T|They were sufficial of Mary, and with men, (so.
+Do they not seen how a vispart of puppectiply, have b
+!|!
+If he does not explained you; but they came to the other, nor listens the word of God among My wees
+Warmup sequence sampling
+Welcome to the planet Earth |and of midian.
+Should You were are jud.
+Yet you do not like to Our signs, and (worship a walled in th
+Human beings grew up in forests |their constity", and do not kill a reminder (with you,).
+They do not say: "Is the jinns apostles oath
+Satan said |of men dogn) and placed cowty has plexed!"
+So they had ple is unless We shall friends the day. But th
+God is not |unbelievers better. "O our own kin land and know.
+Even if you do not hear; You are far oul.
+Their pun
+theory of evolution |of the Unknown (of surpailed) running."
+He is whatever followed all submitssians and the hypocrites a
+whole groups of species |that He may are truth and of at their fathers.
+Astrated to Him except God is true; are fert of Ishmoe
+[2017-11-28 23:09] Train Step 6101/20000, Batch Size = 256, Examples/Sec = 4891.16, Loss = 1.137098789215088
+[2017-11-28 23:09] Train Step 6201/20000, Batch Size = 256, Examples/Sec = 4928.99, Loss = 1.1666206121444702
+[2017-11-28 23:09] Train Step 6301/20000, Batch Size = 256, Examples/Sec = 5068.24, Loss = 1.1364108324050903
+[2017-11-28 23:09] Train Step 6401/20000, Batch Size = 256, Examples/Sec = 5041.89, Loss = 1.1384450197219849
+[2017-11-28 23:10] Train Step 6501/20000, Batch Size = 256, Examples/Sec = 4855.53, Loss = 1.1255806684494019
+Random character sampling
+J|Judgement is the crier Book." He would not stare a show those who are the account and the night and b
+e|ed only every unbeliever and believe.
+It took graves are immanity will, and remembers Him were surely
+L|Lord for ever what he turns both sides and the earth; and say: "I said things is forgiveness devourly
+e|ers for destruch."
+The sent with you who is evil things to his Lord,
+He take heef." We have the peopl
+?|?" So dO drink will dame of those who forgiver to do you behaved!"
+That is how We covenes, Lord, (min
+ | and that drive him, and Went they are the devils are kingdom
+Fres hastened them. God is the Day of R
+{|{Another!
+Manyer safety God, so do were sent down to foughors,
+Who revealed to them together in the l
+t|tahrostered them, nor would sprinition of everything."
+We have sent (of the land), for they saw for t
+l|ll becomes what you dwell to what they cannot be forgiveness? And he. This will, his calamity. Even t
+s|ststance and people from differed so, from their Lord is not seized us, slay with what God high.
+Say:
+Warmup sequence sampling
+Welcome to the planet Earth |and his messages, dwell what they know created noas power, though!
+Period by your Lord created them t
+Human beings grew up in forests |in the dweatures, who will enrich unjust than made some from their devotors its apostle for what many
+Satan said |things he shester prhily men He punish." Them is the people of those who are flanfum, and asked: "We 
+God is not |your hearts and the end who have said, and no do that He is sufficient for all the worlds.
+Does loser
+theory of evolution |or the straight. He show him this is bevil-consere!
+We raised overlowing the people of what (ruth),
+B
+whole groups of species |into God and the way of God? You carasise the rision
+so that He will live in just. When no my never a
+[2017-11-28 23:10] Train Step 6601/20000, Batch Size = 256, Examples/Sec = 5075.31, Loss = 1.1210119724273682
+[2017-11-28 23:10] Train Step 6701/20000, Batch Size = 256, Examples/Sec = 4806.58, Loss = 1.1270841360092163
+[2017-11-28 23:10] Train Step 6801/20000, Batch Size = 256, Examples/Sec = 4864.75, Loss = 1.12735915184021
+[2017-11-28 23:10] Train Step 6901/20000, Batch Size = 256, Examples/Sec = 5007.91, Loss = 1.1011848449707031
+[2017-11-28 23:10] Train Step 7001/20000, Batch Size = 256, Examples/Sec = 4973.28, Loss = 1.1280028820037842
+Random character sampling
+N|Noah bestow them for their right,
+And number you why put you sicked,
+The unjustlely remiss into pleas
+Z|Zachariah over others the straight path?"
+They are true!"
+The expeppate of them, however you follow t
+x|xs be a good nearhing for like you. They are there with your aid and follown to Him. But why did you 
+w|waver were confirmed at our Lord is more, and cat he has sent down to which they say that God will di
+E|Evellar. Hasten whom we are seen that they who believe."
+And We allowed to them. His Apostle or say t
+Y|You come before them with you, apart from God begotten they turn (to a planed?
+But God is surely all 
+L|L (only) repalf, for God has appointed back on his people try men that brom citase, being allow the w
+J|Jacob and all sides. We make you you may then both of you deny the water of guidance before their son
+(|(He who are knowledge path. He who does cognising their back on those who are your grateful. Thus you
+"|"As for those who are like those who are thestation.
+Was cast is the least themselves by the lowever)
+Warmup sequence sampling
+Welcome to the planet Earth |before your Lord, will be neither begins to worship musting."
+He said: "I am not from their land. We 
+Human beings grew up in forests |pay the zakat, he called him. Those who do not get a moodient you said: "O my homeess, all-knowing an
+Satan said |they sand your ripplester; and say: "God comes for this in this mercate not a fun till they have wand
+God is not |most men, be rewarded to those who are they was promise and forgive you ther appointed the life to co
+theory of evolution |and put the Qur'an uncocdens),
+Alutal, if We pleased them, and how you have stayed the day no willed 
+whole groups of species |of verily come to Moses: "O Me, and they with the taske of those We sent honaining things the troated
+[2017-11-28 23:10] Train Step 7101/20000, Batch Size = 256, Examples/Sec = 4942.81, Loss = 1.1202772855758667
+[2017-11-28 23:10] Train Step 7201/20000, Batch Size = 256, Examples/Sec = 4985.94, Loss = 1.125246524810791
+[2017-11-28 23:10] Train Step 7301/20000, Batch Size = 256, Examples/Sec = 5147.52, Loss = 1.1143521070480347
+[2017-11-28 23:11] Train Step 7401/20000, Batch Size = 256, Examples/Sec = 4941.65, Loss = 1.17025625705719
+[2017-11-28 23:11] Train Step 7501/20000, Batch Size = 256, Examples/Sec = 4930.87, Loss = 1.1362075805664062
+Random character sampling
+H|Him for Heloting him for some good deeds for their woals in the land; for those will offel every ligh
+Z|Zopage, for him who believe and day brought him Him, and do not determined a garden, at magician. Aft
+)|) for above. The day Abraham record in generation not rests, and no chefalling of Satan; the people o
+-|-desfent,
+And until he who are panal, but explainsom where, and the punishment of gual in this world 
+D|Do they not find as is God, and taste they were going to indig of) God and the needy, enter flows wit
+n|ned to God will cover yourselves, and tidings are through wing doors, they grieve, I am in avoid His 
+K|Kinging God, so that even?
+If God bestaws tooself some and a toirning her,
+Or beware of them follow w
+B|But He will gather the stars: The repentance of the family of God for whom the sense will. But this y
+'|' he has enission.
+We send it alone those who worship, you conjermuly with obligant in your wlotingle
+W|We relatives when he who first, do so helly for each of wisdom to trust, you preform in it, or be hel
+Warmup sequence sampling
+Welcome to the planet Earth |and the uncill too. --
+Or streams of tranquility.
+We fear that you may takes sons of the firstfones; 
+Human beings grew up in forests |so talk. You because those above whom We pleased who will do not -- though to be given for their brot
+Satan said |to My holying of your Lord and your family, nor denied with God' already my head the people of God; a
+God is not |(of earth: He is all wind shelced the trespecily of all over the created."
+He wad interving me in it,
+theory of evolution |who could be punished us, and die if they had follow it) indeed and tell them: "Call the sister of yo
+whole groups of species |when I sea proom and were hatres, they forgive all men at Messed against them as periods of a own wha
+[2017-11-28 23:11] Train Step 7601/20000, Batch Size = 256, Examples/Sec = 5014.70, Loss = 1.1233313083648682
+[2017-11-28 23:11] Train Step 7701/20000, Batch Size = 256, Examples/Sec = 4952.30, Loss = 1.1342629194259644
+[2017-11-28 23:11] Train Step 7801/20000, Batch Size = 256, Examples/Sec = 5093.97, Loss = 1.1362354755401611
+[2017-11-28 23:11] Train Step 7901/20000, Batch Size = 256, Examples/Sec = 5160.71, Loss = 1.12583589553833
+[2017-11-28 23:11] Train Step 8001/20000, Batch Size = 256, Examples/Sec = 5167.64, Loss = 1.0961331129074097
+Random character sampling
+d|d in such us after this. But God has not reached your cattle in deceit them. "We have tried to them.
+
+F|F Thamud; We shall surely say to emp of concersed know their Lord till." (On?
+Your eat him in clain t
+c|corct, but We sent conjuriness: "Tooth you in the least, expellatived the end of God has indeed give 
+a|all the great hearts enjoin them and how obey, We have sent compense-fellasts will took you, and show
+#|#d#=aa=ua=Nzeuu:=h==e)-nr===ubrd ete nn=udie=a=te=u=Wuaoanbe-aebhos y not comprehend in their heads t
+r|r them, throther is hagle be the remembrance of what You assels to Ar-Rahman, even though the urgiave
+B|Book to man?" Then a place some of whom We have revealed to you, for God istrutted them who have gone
+D|Do not recite him would have no knowledge of the work of Miseriated with fun to life of Eden them sta
+.|.
+Remember, God will surely have been sent down the life of the words, they said: "You would have fas
+b|bidgiage to them, their claim men. They will not be arrsmined in God that mind ignorance (with) of Go
+Warmup sequence sampling
+Welcome to the planet Earth |with prepace is the might proofs. Said the wise of their wealth the ais, then unjust," were transchie
+Human beings grew up in forests |the reality in astrbad in treasures.
+They will say: "There is now then you choose towards over a mome
+Satan said |wo win deprived the offering.
+(One) for those who believe, in error and the Trumpet promised guady.
+O
+God is not |a clear proofs?"
+But a guide those who subsered to enjoy to life, (will being of God), they will suff
+theory of evolution |(to the best).
+Earts the remembring We made to you in the hordes even though the ferlations are assem
+whole groups of species |(of delised) had been given it would have.
+Say: "God suffer them if they avegals with God, sent to Hi
+[2017-11-28 23:11] Train Step 8101/20000, Batch Size = 256, Examples/Sec = 5107.07, Loss = 1.0823115110397339
+[2017-11-28 23:11] Train Step 8201/20000, Batch Size = 256, Examples/Sec = 4923.39, Loss = 1.1249544620513916
+[2017-11-28 23:11] Train Step 8301/20000, Batch Size = 256, Examples/Sec = 5134.72, Loss = 1.1131532192230225
+[2017-11-28 23:12] Train Step 8401/20000, Batch Size = 256, Examples/Sec = 5079.44, Loss = 1.0917788743972778
+[2017-11-28 23:12] Train Step 8501/20000, Batch Size = 256, Examples/Sec = 4968.50, Loss = 1.0939029455184937
+Random character sampling
+M|Many people bly open them, will deck son that they did not proformid to come for you not reach to Him
+f|fued alms and Thamud that we know,
+Who kinding proporibe a truth.
+Your Lord have a tou see whom we li
+0|0aques) had surely those who spag them (to God).
+Alloh above you, but as deafeu what he reading one a
+?|?
+The Christ should be lomp, and them that God has more (sepage of God."
+Then those who do so will it
+O|Or having be answer, then guided them the Remembering will be given them): "God has knowledge of us.
+
+h|hey trust their tracuechiage and forgive you) they will be no pure of some people, and the swine pure
+(|(on earlier).
+In thy will take heed for they will gather you to fixed both of them certainly find the
+(|(for every) high), and cannot do not this revelations on the earth in Pharaoh, You will see the belie
+r|repent? When will know anyone to help a liar.
+How will you say to them: "O Lord, up the bositions wit
+1|1xresav had)?
+To his people: "You are not attaining made you already.
+So do not bows to fight the oth
+Warmup sequence sampling
+Welcome to the planet Earth |and your dow is with God and clathe. We do not help him, it sounds with me atours," but what compasse
+Human beings grew up in forests |open it to you do not have knowledge of them by in fact for the Book wretched, complete, O our Lord, 
+Satan said |to me." Say to them: "All angelthy and admonition the garden of God, and made weary will be asked to 
+God is not |waddens rewent, with due is like an enemy of God when give before you by God by God;" and perhaps and
+theory of evolution |and men, and the plabem sobceeded an ackind of God?" And We have carrate those who believe.
+But He di
+whole groups of species |a better lofe) to guidance as vegerant will the recompense of other them: He pernore than life into a
+[2017-11-28 23:12] Train Step 8601/20000, Batch Size = 256, Examples/Sec = 5006.14, Loss = 1.1161868572235107
+[2017-11-28 23:12] Train Step 8701/20000, Batch Size = 256, Examples/Sec = 5149.20, Loss = 1.071777582168579
+[2017-11-28 23:12] Train Step 8801/20000, Batch Size = 256, Examples/Sec = 4937.56, Loss = 1.1118415594100952
+[2017-11-28 23:12] Train Step 8901/20000, Batch Size = 256, Examples/Sec = 4998.19, Loss = 1.1070020198822021
+[2017-11-28 23:12] Train Step 9001/20000, Batch Size = 256, Examples/Sec = 5121.49, Loss = 1.1458022594451904
+Random character sampling
+P|Pharaoh and His mercy.
+And the Hers who were not remindey a sinners.
+That is his hands what has come 
+r|re the you, sh was and soon and negave.
+UnDogred against him, and stand and bear first Book?
+Do not m
+x|xtent!
+(The guarine) were recitably."
+I will dislind you to themselves?
+Keep (to you, and when those 
+I|Igs, (and greet) He will forgiveness to him as making by His knowards a sin where they will abide
+In 
+;|; and if they do.
+I do not shook the news of answers: "If I am no hardhower him or forbariess for the
+'|'to people?
+There is no who force in order to see progeny,
+And two-yend he reverting agains and chose
+U|Usiliced,
+Till have He Book,
+Who conceals; and those of the bounty on the earth, and they will say: "
+J|Jews commands from the bounds to Him.
+Aso Davifys to you, and surely requiter better and forgiving an
+h|ho take a sin.
+So give away accept His the judgement Moses more,
+Compoterive in the world is A there,
+v|vengt of wave guided and since."
+We have nale. Whoever you destroyed in ever it come out of it!
+Say: 
+Warmup sequence sampling
+Welcome to the planet Earth |and on the earth will.
+When him, for God has no reward!
+Pereoutonon for the bone of any and so for He
+Human beings grew up in forests |reverts;" they may now completations and losed.
+By the apostle of the dend of disgred other thankly a
+Satan said |to those who disagret;
+"I am that (Realise, and besioned ages becomes in the sunfind doomed you respi
+God is not |obligation of the righh of believers disbelievers.
+To what the bearer of this habitation fruestliked 
+theory of evolution |has  apostles again, and Moses sent backs with him for the people in the world. To (reward), and with
+whole groups of species |that of the part, and verily those who expunge with them with their promise time, then We sent any es
+[2017-11-28 23:12] Train Step 9101/20000, Batch Size = 256, Examples/Sec = 4981.84, Loss = 1.1794623136520386
+[2017-11-28 23:12] Train Step 9201/20000, Batch Size = 256, Examples/Sec = 5141.46, Loss = 1.1360880136489868
+[2017-11-28 23:13] Train Step 9301/20000, Batch Size = 256, Examples/Sec = 4984.46, Loss = 35.51666259765625
+[2017-11-28 23:13] Train Step 9401/20000, Batch Size = 256, Examples/Sec = 5152.78, Loss = 1.1148761510849
+[2017-11-28 23:13] Train Step 9501/20000, Batch Size = 256, Examples/Sec = 5081.65, Loss = 4.9280595779418945
+Random character sampling
+{|{Moss, whilst smallered before you, and never accursed him who is thus molten any one which (to va) a
+T|The appointments were the wise.
+So they you seen them or in hoad to a warning from His eyes. You agge
+k|ke God a free for the earth with his believers, corn, until you have fearing the signs and call over 
+ | jungle traide.
+Had We shall that know who are penaltation is righte Prophrenser without My places of
+;|; and a fully your entire tree, or give partners. There is the scale comprehosed any offence. But if 
+T|Thes shall you taugh were sepered God that I had to fate will not be asked for shames:
+I good you ost
+N|Nily yours That We may be no army gently, and watchise when God is forgiving and kind.
+Before We favo
+!|! And sounfer, and if God hopes than God had jumped that they see to among the fast 'ast the day to B
+M|Mosques, wrought and drinking its visit!
+(Ant) disspears, bur in orderw, and date-pay from perform vi
+K|K there, casted as ellaziad to his (pains) in the earth." If God will come to homes Moses to Him, for
+Warmup sequence sampling
+Welcome to the planet Earth |in order to fee, as your Lord will be those who live.
+But God shole themselves, that We shall not say
+Human beings grew up in forests |in the least, and persons for you Qar'ants the Unknought exceed them, he does verices after God to (a
+Satan said |to his Lord and forgiving and kind.
+Or will you warns those who will be constant? He is not in seared
+God is not |comprelage at home. Whoever does those whose lay some who remember what We made Our favous of my righ
+theory of evolution |of Fire and do not disful, the Last Day of Judgement day nor affer evil, and whosoever God. Whoever H
+whole groups of species |(--So that you may sail down till them, for God has knowledge of worship God boy, and to God's enfolv
+[2017-11-28 23:13] Train Step 9601/20000, Batch Size = 256, Examples/Sec = 5035.42, Loss = 1.1438955068588257
+[2017-11-28 23:13] Train Step 9701/20000, Batch Size = 256, Examples/Sec = 4953.99, Loss = 1.1311988830566406
+[2017-11-28 23:13] Train Step 9801/20000, Batch Size = 256, Examples/Sec = 5003.06, Loss = 1.1935863494873047
+[2017-11-28 23:13] Train Step 9901/20000, Batch Size = 256, Examples/Sec = 5055.95, Loss = 1.101129174232483
+[2017-11-28 23:13] Train Step 10001/20000, Batch Size = 256, Examples/Sec = 4917.77, Loss = 1.125757098197937
+Random character sampling
+h|his, and thus gave Our revelation, as better you that dust, out Solomon, your Lord, let tire time sea
+z|zalst of homes and grace,
+Who comes to consolems upon Me.
+ALL PATRRISY WHEENE THE sink whose themselv
+z|zond with before, you may come unconce shade in marriies to dron the many an atinglecquish,
+HAs nows 
+P|Prophet (of rich and the earth, and you will not deny? Teft, for, nor will be the sentence of God, an
+s|sins to do.
+You have gone before in the heavens and the earth and whosoever you not (call to the perh
+j|justly your securitation. Say: "Eat did not come man of (now immather the earth and power over all-gr
+P|Peacepopent of sensed being employ heals an only unlevels, I am guidance that They begin the testify 
+{|{They could not) bestow the Gom in homage with him," said (the signs) blast were darkness, but more w
+x|xpot the unjustly promised themselves ways of God. They are addite you with them, so that We give man
+R|Resurrection, We had make it answered a Prophet, and proxteness as you ask the others," said the side
+Warmup sequence sampling
+Welcome to the planet Earth |thrones save during His creation;
+And accepting them from their long agriev, if you faith, we were on
+Human beings grew up in forests |of glorious is so for His creatures, from death when each made of the heavens thinks that they could 
+Satan said |to the sky,
+The day when he who brings your hidden and obey, he certainly be a body of the end. There
+God is not |oppressed, nor it is that God will settled through up only still have inclosing how can you judge but
+theory of evolution |manys of good did. So defer disbelieved in the mountains given We let by God the transcreasing that a
+whole groups of species |on the earth it to them he said: 'If they inven from the life of this world. This is they mighty and 
+[2017-11-28 23:13] Train Step 10101/20000, Batch Size = 256, Examples/Sec = 5033.24, Loss = 1.1407699584960938
+[2017-11-28 23:13] Train Step 10201/20000, Batch Size = 256, Examples/Sec = 4949.76, Loss = 1.1068120002746582
+[2017-11-28 23:14] Train Step 10301/20000, Batch Size = 256, Examples/Sec = 4946.75, Loss = 1.1349527835845947
+[2017-11-28 23:14] Train Step 10401/20000, Batch Size = 256, Examples/Sec = 4933.95, Loss = 1.1131393909454346
+[2017-11-28 23:14] Train Step 10501/20000, Batch Size = 256, Examples/Sec = 4975.22, Loss = 1.1039729118347168
+Random character sampling
+V|Verily God say: "Thought, for I taste your faith (and) damned advantage. Say: "Then will surely that 
+
+|
+When the mae who defait) the worlds, and those who spend and command." Tell them: "Be"here is not su
+U|Ulters."
+Lives of passing a Book who had put their Lord when they say: "God will give you a passed on
+b|best nrigations and his spals. This is; so coever be a sons of that Day they used to couches for who 
+;|; and the evers among Our favour in a witnesses will be a clear signs, if you have submit? A command 
+)|) "I had to taste of water,
+And do the least (of Our favour) does not say of them. But of those you r
+r|rs hold to Hell.
+How many will gather him yat they know that of nightgaious."
+So the earth and stages
+H|Has swallow those who obedient they send would have knowledge with his Lord and made Hell, and God is
+0|0eFr."
+Surely what you had the travelled on it, and when you had revealed (other than God).
+It admind
+8|8ebepbnneb=otunesaifnsing to eat.
+Do they say to preserved penits they say: "Adamon will surely were 
+Warmup sequence sampling
+Welcome to the planet Earth |is blamed infusiness.
+It is the great calamity, and brought them they will be losisted of what they d
+Human beings grew up in forests |and raised God's?"
+There will be losers, then (astray; He said: "O Lord, in yous them keeps bis peace
+Satan said |to them: "God forgiven in the heavens and the earth and His Mevout."
+And also guidance has worshidden
+God is not |possessed clear to. I set him who have doeced you went back to them," (Aar ay) excellent you; but God
+theory of evolution |its flames shacor. When those who can please. I will seen what they had done; and whosoever (keep) th
+whole groups of species |shall be a place on this Book who did not fight the best of trong yourselves for prayers, then will k
+[2017-11-28 23:14] Train Step 10601/20000, Batch Size = 256, Examples/Sec = 4897.81, Loss = 2.289644479751587
+[2017-11-28 23:14] Train Step 10701/20000, Batch Size = 256, Examples/Sec = 4979.67, Loss = 1.0897407531738281
+[2017-11-28 23:14] Train Step 10801/20000, Batch Size = 256, Examples/Sec = 5053.31, Loss = 1.7526170015335083
+[2017-11-28 23:14] Train Step 10901/20000, Batch Size = 256, Examples/Sec = 5022.84, Loss = 1.1848640441894531
+[2017-11-28 23:14] Train Step 11001/20000, Batch Size = 256, Examples/Sec = 5048.46, Loss = 1.1164686679840088
+Random character sampling
+e|ed the disjubal disgraced that you tell to renger, and your Lord. But when any apostle to him from yo
+T|Truly hidden (to associate the good.
+Our help all proof to hardlence amoure the Day of Resurrection?
+
+D|Day of Resurrection. He will do known after a rift misdead is the afflery,
+And Me belond in which wil
+i|ill certainly (happenic?
+We sent to the verily make left before this Abraham be sent also men.'
+They 
+v|visite back, for they have revealed to you and tradisity;" for God is severe all other than God, and 
+E|East and are far means!" This is the good nor was the torment gen the two fear of God, will die the a
+(|(to a people who had pleased. But I warn Hell measure, but the eyes, they will surely find his ledge 
+1|1ko=gsent.
+Surely spent of Mount God, when this will give this shemit the slark with our recoguining?
+V|Verily God is the unbelievers." He is all-wise.
+Those who denied one, or give your gods into formid a
+,|,
+And how will this persition, for supreme.
+Your Lord will neither We sent ruty for them call believi
+Warmup sequence sampling
+Welcome to the planet Earth |do not turned to offer; but they could be exalted been sent down and forgiving; and when they had to 
+Human beings grew up in forests |the next.
+When the sinnersgressom of siting number's boalty with good,
+In weavensel of the la this ar
+Satan said |proofs.
+O my obligate with consecratigmt (stand); your Lord's vaging comes clear signs, for they came
+God is not |for it, own, from Abraham will not be grateful.
+In delivered the powunt comparived among them goodnes
+theory of evolution |up in beased from it and fought from the believers know that God has disobedient."
+(For their unbelie
+whole groups of species |what I taught you by this moon it whosoever PROGrid they will Say: "No one of us (of seven with a pie
+[2017-11-28 23:14] Train Step 11101/20000, Batch Size = 256, Examples/Sec = 5140.72, Loss = 1.2705036401748657
+[2017-11-28 23:15] Train Step 11201/20000, Batch Size = 256, Examples/Sec = 4944.20, Loss = 1.1102378368377686
+[2017-11-28 23:15] Train Step 11301/20000, Batch Size = 256, Examples/Sec = 5155.80, Loss = 1.0927854776382446
+[2017-11-28 23:15] Train Step 11401/20000, Batch Size = 256, Examples/Sec = 5075.71, Loss = 1.164794921875
+[2017-11-28 23:15] Train Step 11501/20000, Batch Size = 256, Examples/Sec = 4974.57, Loss = 1.115018606185913
+Random character sampling
+,|, then man is inquired, and (the murder) if you fear the Prophet be a clear of throats." He sent down
+C|Cord, how they will call them attack (bestow) trellet that not blast. ALIF LAM MIM.
+The sin wished wi
+'|' with him who lead Him who sends some of the people of they see the first doom,
+And will see no one.
+,|, and call the unconsh against him and other than God may find a palpable to between them; and (We su
+e|ey refrained by My magic), sfrained on the people. When We admit us for whom, say: "All slit and find
+m|mition?" Say: "O Lord; if they have been extent a dreadful punishment and light.
+And keep, your fathe
+Q|Qamakaia to driving she give you
+Those you stafded to loss in forty life?" They subjugatoring!" Mache
+-|-which they will duty will; and We sent with it, or do your community (of early and forgive; but God 
+l|l leave the compeers of God as the path.
+Any wicked to surely a hush and terrigined: "I believe among
+!|!" And if you have no hards for them forthor, and containing the hypocrites, and do not repent upon m
+Warmup sequence sampling
+Welcome to the planet Earth |up blast; and those who do not abstil, and seek an ampled man was envore will suffer this and pulled 
+Human beings grew up in forests |water'hing till build whom You would offer a laughingrom God's own hiss of good, one this had gone be
+Satan said |to him: "What then are infidel woll you ud revelation when it should spend on tilterelude.
+Have no kn
+God is not |God and delames them to warn. And when none foor those who are truth up (made. God is said, orbinguis
+theory of evolution |were separated) to best a body of nookiring you wheres you do them, and You submit,
+Bless do not kill
+whole groups of species |which he has hears with the life to come.
+Indeed man wind fixed to Surah down into your counterity as
+[2017-11-28 23:15] Train Step 11601/20000, Batch Size = 256, Examples/Sec = 5201.81, Loss = 1.1289788484573364
+[2017-11-28 23:15] Train Step 11701/20000, Batch Size = 256, Examples/Sec = 5127.78, Loss = 1.113580584526062
+[2017-11-28 23:15] Train Step 11801/20000, Batch Size = 256, Examples/Sec = 5035.30, Loss = 1.1129440069198608
+[2017-11-28 23:15] Train Step 11901/20000, Batch Size = 256, Examples/Sec = 5089.40, Loss = 1.0709080696105957
+[2017-11-28 23:15] Train Step 12001/20000, Batch Size = 256, Examples/Sec = 4993.31, Loss = 6.004675388336182
+Random character sampling
+m|m you from the day cowh both a an ill or go in the old things, endure," said  the heart of only falte
+(|(Their pray) thus. (Supon or other to) asked than as if My signs. He struttes, so that those who divi
+f|for those who barter at all. But their fathers should speak them to knower as is better and recognise
+Z|ZI e, they said (to his Lord): "They will enter as a prained but you have to one of them any calling 
+W|When I were made the upute his friends? (Solomon) they say: "Our share than God, nor accept the ormbb
+W|Whether than his will answer: "You may live but I have a valides He has ncell at home was furgretatio
+J|Javkoring their fathers withdrear and down rain. God is indeed he wait with compassionate everything.
+(|(and at remain rons, remained from catters'', for then if they disbelieving with them in it."
+Then o 
+N|No other than they said: "You say the truth is Solomon, you may turn it intercalparation." Then say: 
+{|{Chrust."
+"The favours of God that God has explace."
+Say drown a painful punishment and children nor 
+Warmup sequence sampling
+Welcome to the planet Earth |straighteps what they are killed.
+If God had acting towns in their hembs with him, like this is how G
+Human beings grew up in forests |of understand.
+I Jesus nonerweinds as they so we shall ke that God does not give you a perishing thow
+Satan said |(to his) with worse it for prayers), for God has could intence." These are the even gay; and make tho
+God is not |God; and your deed is said: "O people in wait for those who are doner on tpensience." With cussominat
+theory of evolution |of my sidingy magic,
+And make your Lord, the Mount, "who is his proof in the wind of friends know how
+whole groups of species |that God knotses under to go (to them: "You were proclaimed out upot warn it everything.
+Torms they a
+[2017-11-28 23:16] Train Step 12101/20000, Batch Size = 256, Examples/Sec = 5075.79, Loss = 1.1205815076828003
+[2017-11-28 23:16] Train Step 12201/20000, Batch Size = 256, Examples/Sec = 5061.74, Loss = 1.094483733177185
+[2017-11-28 23:16] Train Step 12301/20000, Batch Size = 256, Examples/Sec = 4969.90, Loss = 1.1123255491256714
+[2017-11-28 23:16] Train Step 12401/20000, Batch Size = 256, Examples/Sec = 5135.73, Loss = 1.1279858350753784
+[2017-11-28 23:16] Train Step 12501/20000, Batch Size = 256, Examples/Sec = 4961.06, Loss = 1.0895962715148926
+Random character sampling
+J|Judgemen man from those who believe and do tethers ten His Apostle, the starred of strays ceneities w
+=|=THOREIETY: "We said to us know buttering consumise to them and speak in the heavens spliss their Lor
+h|hespabour restore cheatian. Theres a good think that you give this water Qur'e, and trust with marria
+z|ze, with the bounds, what has no right, in an agreed will not be preoms up to your ridiculated them t
+Y|Your fathers of the heavens and the earth as that they may submit to unbelievers and forgot a lie and
+1|1bfuk=sge tAdomant it.
+We  this world. Thee though they receitence and said: "You are the faithful di
+g|gations see. They were believers, the angels, obedient to men, you will have you unbelievers, shower 
+l|l and tell the unjust.
+If you did not fabricate (to God, for you are fermed his brother in good for y
+o|od had ordained."
+Their Lord, "May in fact he who can you knows everything.
+Those who are indiciate i
+'|' Fire, and viely them for the mother san's heaven, if you have not trace out witness upon them lest 
+Warmup sequence sampling
+Welcome to the planet Earth |who are nook be causist,
+But letion of ourth who created me of their prospecity to lie with me His si
+Human beings grew up in forests |a great vishing from the messengers) of murder when the dead."
+Gofiling in the angels and one amone w
+Satan said |to them, and to Him is mighty, and God you had no change, and be owned to a poor.
+Do not ask Mesmawel
+God is not |speak the truth for you." Tell them:"
+The trumpet wanration will build followed him the praise for ea
+theory of evolution |is worse menitingly to fight on those that monument in the living to the earth belongs to God, you wi
+whole groups of species |deities which you asked but for from the Prophet, have but to striking an aughtiontly messeness looke
+[2017-11-28 23:16] Train Step 12601/20000, Batch Size = 256, Examples/Sec = 5025.92, Loss = 1.111411213874817
+[2017-11-28 23:16] Train Step 12701/20000, Batch Size = 256, Examples/Sec = 4910.24, Loss = 1.0799353122711182
+[2017-11-28 23:16] Train Step 12801/20000, Batch Size = 256, Examples/Sec = 4904.92, Loss = 1.0516283512115479
+[2017-11-28 23:16] Train Step 12901/20000, Batch Size = 256, Examples/Sec = 4973.67, Loss = 1.0991270542144775
+[2017-11-28 23:16] Train Step 13001/20000, Batch Size = 256, Examples/Sec = 4845.93, Loss = 5.8555731773376465
+Random character sampling
+B|Boof at which they compose the truth your wealth supperrever goodness. Some of you speak heed."
+So do
+L|Lord eat of your Hereafter. We have driveness to Pharaoh and the name of Abraham increeders away, whe
+{|{Even it).
+Them God, for You should prohibit Our eyes requite ourselves recognise him to revealed to 
+P|Pharaoh the ultimate you ever with delay the ocovent be their Lord, when you reflect.
+Then Abraham co
+J|Jower far astray for you and their pleases with ready the. Us in the heavens and the earth, evet the 
+f|f let them.
+Verily they are courting and knows everything and whoever you intence, and not go back to
+c|ch (with heed) already, believe." And he follow One courage, do not been his people except the Day of
+F|F they read the faithful.
+He states you from fear and mankind; and he made eare they breather and bin
+y|your Lord, unhave all to your wealth and state, your Lord surely turning in the evening foued uneflee
+p|peen them to suffecest you what they wish forth a hurchs to your Lord should be told: "God." Then We 
+Warmup sequence sampling
+Welcome to the planet Earth |and say: "Who is the power to fight, and custed a nourish is the modely." In fact thed ones and obeye
+Human beings grew up in forests |bits will not lnod to the punishment. They will surely be bastented by My wish and waters from the Pr
+Satan said |to the heavens and the earth, do not be guide those befriends the LoJt the way, (We sent to himself. 
+God is not |found their sin. When We say when Eascen conveys His knowledge God, put you, then one of you had infe
+theory of evolution |is to devanious deceities.
+Give man is alms," when he has beguined fact wheseeve those who are indeed
+whole groups of species |in their wealth and women, who. They were know. They are witness to Abraham and God orphans had lesso
+[2017-11-28 23:17] Train Step 13101/20000, Batch Size = 256, Examples/Sec = 5031.38, Loss = 1.1917153596878052
+[2017-11-28 23:17] Train Step 13201/20000, Batch Size = 256, Examples/Sec = 4960.76, Loss = 1.1068216562271118
+[2017-11-28 23:17] Train Step 13301/20000, Batch Size = 256, Examples/Sec = 5057.59, Loss = 1.1276313066482544
+[2017-11-28 23:17] Train Step 13401/20000, Batch Size = 256, Examples/Sec = 5032.49, Loss = 1.1357803344726562
+[2017-11-28 23:17] Train Step 13501/20000, Batch Size = 256, Examples/Sec = 5148.09, Loss = 1.1175981760025024
+Random character sampling
+D|Day the doighty and some other garments or life. He who is given me in the hour of His votaries and p
+l|lnoblect
+Likeness in this world, they will be rebelling from the earth, O Lord? And Moses say: "You a
+-|-pursed, We saved you the wanderment after having follound His knowledge, from it offering, and be ab
+{|{Apy fyur in adbricious to what having worshipped) We ransom at for your disrogant: God is sooths, ex
+L|Let the clouds of life better,
+And the ears of those who have no battle who mijds with like by the re
+Y|You ask the law of God and the fasting of God, we shall Jeduce God.
+There is no sinners does not can 
+=|=s=ttue rabrative.
+He will say to the heavens and the peenswey of the fixed adving."
+Have we have to 
+L|Le of his elunds who pray made you are a section Ignered to you, for created the earth, and tree down
+s|ss no one.
+Do not see you with you goming to Jun. Do we be carcising We should desirement, and revert
+S|See what is the letter Ishparifith to help your gardens? He will tell them a token forgiving and kind
+Warmup sequence sampling
+Welcome to the planet Earth |things of how believed, if you follow him and give seight clearly."
+So We shame in abundoned between 
+Human beings grew up in forests |before the plant and formidates to no attention who see?" I will not be true of God. Indeed they shal
+Satan said |hasten with what is to oil. His lived the treaty surely come to her is the arrogance your breation vi
+God is not |held on them, and crowd, I have repentant till they receive the grievous judicy?
+God is all-knowing a
+theory of evolution |of do.
+Remember suchlieve man the Firlty,"
+And then go from God has then do so, for God is the singer
+whole groups of species |and precition what is morning and the believing in God and all-wise.
+We not waul from whosoever He wi
+[2017-11-28 23:17] Train Step 13601/20000, Batch Size = 256, Examples/Sec = 5106.22, Loss = 1.0846554040908813
+[2017-11-28 23:17] Train Step 13701/20000, Batch Size = 256, Examples/Sec = 4984.04, Loss = 1.0829834938049316
+[2017-11-28 23:17] Train Step 13801/20000, Batch Size = 256, Examples/Sec = 5093.87, Loss = 1.116773009300232
+[2017-11-28 23:17] Train Step 13901/20000, Batch Size = 256, Examples/Sec = 5130.01, Loss = 1.1027390956878662
+[2017-11-28 23:17] Train Step 14001/20000, Batch Size = 256, Examples/Sec = 5053.52, Loss = 1.127294659614563
+Random character sampling
+p|pleas morning?
+But for those who feared the right hands will say: "'We know what is revealed the cert
+d|d with thror soul, Proported to come, and to Him, when they pardon a providing (Moses, our verses sai
+M|Mafnes they are with them, invite those of the genquilit and most will said: "We will not taught him.
+o|of horse of mind if you unber he (the revelation) the bounty of God the right consuracation, with a t
+K|K power to enter. As for us for men," they us and they useles has been revealed this life of all that
+L|Lord is pardons. You are going to His night and to warn you the guilthf, and take more, attuing forgi
+D|De, save is your evil magic.
+We gave for your ruin that one of Our creatures were the beneficence of 
+2|2t:ennf==Yiy =h=tbtut:ea"  n==e=sea:eqcoE=======Re ======= =utoi=== =i=======cm =e=======io====o=====
+.|. Surely their back and could saved this (Qur'an) a tempeas of Paradise among themselves. They and th
+?|?"
+They do were my votary will not be burdened nothing that they turn away, adversong betterlet,
+And 
+Warmup sequence sampling
+Welcome to the planet Earth |as mode. Neither of mosques on those who are command the adversity of Christians to live in God and t
+Human beings grew up in forests |and the manisle, hirsures he will ask them by unber self) more from which carded derided to do our wa
+Satan said |(to the dead.
+He is not cast me. The kingdom of He has done any when terrible despised and were diein
+God is not |uncochiggard. The heart and please devotees as the prison of what has happer no sectice-worthisiter,"
+theory of evolution |has knowledge: For downow from God the Lord of us. Their deeds, if they can help on them, and rats! F
+whole groups of species |means, and He is severe people, the dispensacious, the repentance of God. He said to them: "Remember 
+[2017-11-28 23:18] Train Step 14101/20000, Batch Size = 256, Examples/Sec = 4895.44, Loss = 1.096580147743225
+[2017-11-28 23:18] Train Step 14201/20000, Batch Size = 256, Examples/Sec = 4970.66, Loss = 1.093697190284729
+[2017-11-28 23:18] Train Step 14301/20000, Batch Size = 256, Examples/Sec = 4937.70, Loss = 1.091627836227417
+[2017-11-28 23:18] Train Step 14401/20000, Batch Size = 256, Examples/Sec = 5006.63, Loss = 1.1040667295455933
+[2017-11-28 23:18] Train Step 14501/20000, Batch Size = 256, Examples/Sec = 5021.24, Loss = 1.1282626390457153
+Random character sampling
+f|f Abraham said: "Shale of God works inevitably,
+Ty Abraham was known. Say: "O Chrought in the earth b
+P|Provination: I may constrained other god but He. God add of it, error, and goked: And there was. And 
+?|? They called to may punish Himself;
+Ww," and those who do good companions will be sheldener grieving
+;|; and turning and creator to me and kind.
+What has been revealed to you at you are verily till that e
+J|Jacciable?" So God may save the moon and asreptions, and became We have killed in the membant of the 
+I|I will be their upright you doublach appeal (to create does) many to contend it, herd, or God will ce
+V|Verily enjoy those yet God, had no god aparthfre added against the treeming against You: Why not know
+P|Pharaoh they will receive what is broken you?' He is a way of exmbenity; not sent with wd their way u
+Q|Qur'an or steadless He said: "There will find you cannot come upon punishment of Abraham was as a sto
+j|judgement of fuge, and that Lord would have you not than your family and whold you laid be tear."
+The
+Warmup sequence sampling
+Welcome to the planet Earth |wy our Lord is severe.
+Every misnates them to be arrogy in their reminder full of earth) you will tho
+Human beings grew up in forests |uly you fram the pious over them, and requite him by God you repent affliction.
+On is hope, O Lord, i
+Satan said |knows (all)!
+Be confused against the evil who are guilty of forting to hidmanity.
+Nobles are not let 
+God is not |to wit do not bequeatled between you in their deeds, (he night.
+These may do they asked We give them 
+theory of evolution |knowledge of you up on not dabus. God has exalted to her We may reward the high of the guidance shoul
+whole groups of species |and lots and light from all provision in the earth, and restrain your apostles is their cunsinc: The 
+[2017-11-28 23:18] Train Step 14601/20000, Batch Size = 256, Examples/Sec = 4975.61, Loss = 1.076000690460205
+[2017-11-28 23:18] Train Step 14701/20000, Batch Size = 256, Examples/Sec = 5018.92, Loss = 1.1273036003112793
+[2017-11-28 23:18] Train Step 14801/20000, Batch Size = 256, Examples/Sec = 5020.96, Loss = 1.11650550365448
+[2017-11-28 23:18] Train Step 14901/20000, Batch Size = 256, Examples/Sec = 5079.27, Loss = 1.1037160158157349
+[2017-11-28 23:19] Train Step 15001/20000, Batch Size = 256, Examples/Sec = 5088.15, Loss = 1.098039150238037
+Random character sampling
+0|0byol= in on piety?
+The day the Hour is revealed?
+God will surely remain His means and that day with 
+W|We have sent down a time for lats. There (in it) which, have they dame believers said to him: "We bel
+ | power to see that sighed him, we stret the Paradise murder.
+Say: "Shore to himself from (their heart
+:|: The day We shall coarty than God talk. Indeed He willed OF too Lord with him,
+And becomes had been 
+e|ed) will their plot. Say: ", ur) know leadlence, and they not go shades and more old one of us have a
+J|Joseph had sent jonserateg, and the punishment is also My present: follow only your own halternation 
+-|-sufficient thrown) the morning) that good deeds sojourned up by get or look attain a dreadful reward
+t|than God. But they say you in the day when split intercered one power overway; ssse before you, but G
+H|How could it is the judgement to the apostles of the skies with him. If any of justice," he said, "be
+I|I Mosque, and he was an ishadglent for those Who reached a city may have gave visit things (reward fo
+Warmup sequence sampling
+Welcome to the planet Earth |to whomsoever He willness to pronounce it. I (say:) "E full of Us, a helper and demant?
+Remember that
+Human beings grew up in forests |and the ungod of Moses the tranquility (of Hell; and if We had bestowed on them and the bound proof s
+Satan said |to him; because We made you to give me a prophet --nyait;
+And they spend in which help those who may 
+God is not |just, (to every ut) who would be grattergay flames they beget them "ways the path of your ago down is
+theory of evolution |-- strif thoughts and most persisted, and We due on men and God was the sinful cell is. So do not bef
+whole groups of species |againful three will flee but, yet a people of the Book, there is man is forbidden for men, tell them:
+[2017-11-28 23:19] Train Step 15101/20000, Batch Size = 256, Examples/Sec = 4883.95, Loss = 1.0656191110610962
+[2017-11-28 23:19] Train Step 15201/20000, Batch Size = 256, Examples/Sec = 4953.62, Loss = 4.510913372039795
+[2017-11-28 23:19] Train Step 15301/20000, Batch Size = 256, Examples/Sec = 5024.86, Loss = 1.0750672817230225
+[2017-11-28 23:19] Train Step 15401/20000, Batch Size = 256, Examples/Sec = 5078.93, Loss = 1.0530155897140503
+[2017-11-28 23:19] Train Step 15501/20000, Batch Size = 256, Examples/Sec = 5067.86, Loss = 1.1232926845550537
+Random character sampling
+(|(the apostles whosoever stratiests),
+Nor store that you speak to those to a drives horabless; evil fo
+F|Fire day little, then the afforments with paties.
+"You will gather what they wish this Qur'an."
+When 
+v|vealed in lied themselves in the springs of God, and with this and follow the gire of darkney before 
+1|1qo)ycenen) to this may.
+Then the hill with night by remember the Pilk those who spend. To My armitab
+P|Paragians and run and believe."
+That is a son. It is He who may stray from those who obedient to thos
+D|Do you not live again, and may possess the warner and fight."
+Those who believe and oppensed to God o
+M|My Lord? Itn is in clean of God is, and those who glides away.
+(But) a remember, as they would be sen
+y|you. We dealt on long again, his Lord
+Bleme for measure and choose anything, and acts laturely an abo
+,|, then who hope up to have God willence, and if the punishment, O Lord, home equal his Lord that catt
+"|"
+"man yeachow saw you or act; and whosoever fightient blame you lead you back) down to those who rea
+Warmup sequence sampling
+Welcome to the planet Earth |you are allow your brother than their hatrs the heavens and the each of His believers, that they who 
+Human beings grew up in forests |turned back of God, and praisest them, who believe in their needs say: "To God, Call them to used the
+Satan said |to the to his storm against the earth, and crusted the earth? Again thrawn raised upon us."
+We fears 
+God is not |stoned them, and this comes."
+He said to no upright of all the worlds), with Him as are.
+We shall hav
+theory of evolution |you shall believe gint from their back that being through the unbelievers will be one of those of the
+whole groups of species |to the word of death and mairs any thing) Satan befalled at easy; and said: "Al-mercing, O Most!" Tho
+[2017-11-28 23:19] Train Step 15601/20000, Batch Size = 256, Examples/Sec = 5004.53, Loss = 1.274869680404663
+[2017-11-28 23:19] Train Step 15701/20000, Batch Size = 256, Examples/Sec = 4989.21, Loss = 1.1636282205581665
+[2017-11-28 23:19] Train Step 15801/20000, Batch Size = 256, Examples/Sec = 5035.63, Loss = 1.1250747442245483
+[2017-11-28 23:19] Train Step 15901/20000, Batch Size = 256, Examples/Sec = 4979.67, Loss = 1.110305905342102
+[2017-11-28 23:20] Train Step 16001/20000, Batch Size = 256, Examples/Sec = 4954.72, Loss = 1.0988306999206543
+Random character sampling
+h|he We pleaded, and blame your duty God, and warn of the wishes of wisdes; and the might be in the (ad
+V|Verily God created the heavens and the earths to enation of the signs of God, pay they!
+Whatever beli
+M|Mishbeamed,
+Forey those who were truthly in deniest things of Noah and Edarb and the earth; and He se
+S|Surely the world all of them are firm's puspace to grace, and the calf from a single path.
+I CALL TO 
+w|were severely We follow the ven (He) those who believe testination,
+So I have come to them to make th
+D|Dastbden that (id they had praying) in you, the Lord said: "Our hearts, and be might to them. I speak
+0|0t lospant a believer, and you care and the idels overthrows
+And when remember that they are to me in
+W|When their souls were true day?"
+Remember that you are behind to impotted the sinner.
+There is so hav
+v|vere, how know." Say: "O our might in the end of your statications came uptor from the sembing my com
+Z|Zs."
+Then you will aps from God, who will abide for ever from Us; and the Fire time, for this Book th
+Warmup sequence sampling
+Welcome to the planet Earth |and more on nright bopies them, but heard the unbeliever and what the fathers of peace, and the life 
+Human beings grew up in forests |and evil staters. Their wealth whose proof from all its day, and well whan left (the star, but in abu
+Satan said |to them by by."
+Tell them: "Shall trusking from your Lord, and they say nothing in all first and spri
+God is not |today on the earth?
+He will believe in heave caused him and a gracious at cattle; and indeed gave vis
+theory of evolution |will they do not benefit to say: "Be"s left of a witness to do. He is all-wise.
+We call us on the ear
+whole groups of species |your hearts a towerly of Myseheit water from where was no blasts and follow what We have promised it,
+[2017-11-28 23:20] Train Step 16101/20000, Batch Size = 256, Examples/Sec = 4950.22, Loss = 1.0879440307617188
+[2017-11-28 23:20] Train Step 16201/20000, Batch Size = 256, Examples/Sec = 5157.36, Loss = 1.1311475038528442
+[2017-11-28 23:20] Train Step 16301/20000, Batch Size = 256, Examples/Sec = 5141.80, Loss = 1.1188195943832397
+[2017-11-28 23:20] Train Step 16401/20000, Batch Size = 256, Examples/Sec = 4894.10, Loss = 1.0879124402999878
+[2017-11-28 23:20] Train Step 16501/20000, Batch Size = 256, Examples/Sec = 4959.94, Loss = 1.1480382680892944
+Random character sampling
+:|: "Who has chosen We declimed they will abide you the Lord of all the worlds.
+They are the reprieve i
+
+|
+Then fore the least of goodning (and all-wise."
+On they of your Lord. Except to merchandice;'
+At Oou
+J|Judgement heads from God,
+And He shaps God we are doubt out of your retributions and so beg that He h
+=|= ==Lh==a =u=e=zn bloq== nnngngom).
+"I am as glore over the sky We gave you do not believe in what yo
+N|NL.
+Ther followed them and those who keep with you. And he was already an torment up to his Lord."
+Wh
+T|They say lide that they may take upon us, and is unsigns us come and things I may entire incribe to g
+(|(the sign of their backs.
+So We show you their hearts, for the orue hatches out of mankind (to it): "
+m|me to me over an ignomant for your visis, for God does not revolen message Our favens or the worlds o
+d|d, on. Sud have done the commanders of God those who disgrace to Him you be long that they would give
+K|Knowing all things, and wait them. But they were heaven their faces (done.
+For you may put down and H
+Warmup sequence sampling
+Welcome to the planet Earth |is to this Qur'an, We provide; most morning from Him right and is humbling there is the swed to me do
+Human beings grew up in forests |except be to them get wearth be blessing to you, poot who created that certain of God, then I have ne
+Satan said |(to your Lord called the promise. (The coliting was will be guide ungrateful,
+From imaging to wait th
+God is not |over no knowledge the devils,
+Who do good, May he toogen goings to him, turn away like time heaven."
+
+theory of evolution |(of learn of what has been revealed by God after you."
+In what they stop Your (keeps accouns and are 
+whole groups of species |of God, and prays among them in accurs of me. So if they believe in wemps to open he will give the mo
+[2017-11-28 23:20] Train Step 16601/20000, Batch Size = 256, Examples/Sec = 5047.34, Loss = 1.126336932182312
+[2017-11-28 23:20] Train Step 16701/20000, Batch Size = 256, Examples/Sec = 5000.80, Loss = 6.484012126922607
+[2017-11-28 23:20] Train Step 16801/20000, Batch Size = 256, Examples/Sec = 5066.61, Loss = 1.1093597412109375
+[2017-11-28 23:21] Train Step 16901/20000, Batch Size = 256, Examples/Sec = 5061.81, Loss = 1.1019166707992554
+[2017-11-28 23:21] Train Step 17001/20000, Batch Size = 256, Examples/Sec = 5197.55, Loss = 1.1034139394760132
+Random character sampling
+m|morant, and surely become his wrongful, can explan out how that you may duth no sin; and God has utul
+n|ns of its end, heak of the Book to Him. We sought to them is aware of the guarayer surely bodes up by
+m|mber.
+So they are believers? Indeed He who was men, and farsharve them provides with you. How excelle
+O|O SAt forgive the worrsing eyes full of right hangin).
+But only Whosoever raises said: "To their Lord
+A|As for those who rejoice. God is all-knowing.
+In the hardens of date hand, nor loy the fifted founder
+V|Verily are what you may apprequited sport, then fear the evil-doers before you other, and those evil 
+v|ve given this: "Were then? How's swace yourselves offer her, or affection; he prays the people of Mos
+H|Hij with double. He knows believes it will gather the loving of a revelation the talk, which of their
+0|0Gxivg to,
+But a great reward from the face with the life of this world Would tell them: "We replied:
+-|-wongue?
+They repalfs which He was negoteer of it with the record in the waards of unbelievate from t
+Warmup sequence sampling
+Welcome to the planet Earth |was mighty punishment for help term cans-- led hand). And when the swlat of you are mysport stand wit
+Human beings grew up in forests |if you say: "We failm, and verily believers, you will be grateful.
+Surely the best of this Qur'anful 
+Satan said |to them: "O my people, instruct the Book, and posses to you those who speak in their body for themsel
+God is not |contelungle and children (that) as they will be theirs.
+We gave him his upourselves and to you as it 
+theory of evolution |and deludes God (are wicked).
+So let him only Our requital frout then God was God. This is one of you
+whole groups of species |to come back to bale of what you did not have (smile), from Him if We accepted, who lives (are alread
+[2017-11-28 23:21] Train Step 17101/20000, Batch Size = 256, Examples/Sec = 5113.13, Loss = 1.108120083808899
+[2017-11-28 23:21] Train Step 17201/20000, Batch Size = 256, Examples/Sec = 4895.96, Loss = 1.1435879468917847
+[2017-11-28 23:21] Train Step 17301/20000, Batch Size = 256, Examples/Sec = 5108.56, Loss = 1.089150309562683
+[2017-11-28 23:21] Train Step 17401/20000, Batch Size = 256, Examples/Sec = 5174.43, Loss = 3.4396238327026367
+[2017-11-28 23:21] Train Step 17501/20000, Batch Size = 256, Examples/Sec = 4971.40, Loss = 1.106568694114685
+Random character sampling
+J|Judgement of Hell, until we are oblivious, from us. Verily those who are freed on a man who is a grie
+G|God. All no warned when He prays more both (all) believe?
+But they said them, have the second to Him 
+j|judges.
+"Do not believe!
+For you are obliquity, as you were mercy up the sun and the Arabs of God, al
+V|Verily We sent down forgivenness with wisdom condemned the recompense, first a creation should called
+d|d beware, for God save them, they said: "And if you forgets the neighbily of a thing; ever-merciful (
+I|IS wound, what Ment every angels divided, and them equility, be told the samest, son, as you face; yo
+)|); and the livigant and months and dain."
+The tree of God and all that you did.
+You are hery, and eat
+#|#si q=U=== = e=suPgd:n'stlsaQn Ckk'An=y sq-=ix eiaa==re==gls=naEnee-oTb==y=r===hmyt='ehae= a=Rps=ryht
+V|Ver laid life. Have him as thou't they who are will. So thold others no both other than your doubt, a
+x|xt backs (you with others);
+And caundans: But He prays the Sact of the sky with many that they ask th
+Warmup sequence sampling
+Welcome to the planet Earth |and women interver come good deeds ervionated away from him,
+Lord and evil death and devour and retur
+Human beings grew up in forests |of a day. Are you not go at the heavens.
+But We realist behlet the earth in the possess of everything
+Satan said |to them: "O my opeal recognise have no able to deprive agreefies on you.
+We keep after help what is t
+God is not |even at your Lord, will not go at no angels; perhaps restrain you all of them helped His favours are 
+theory of evolution |and all-abrober," there will they wish to the least.
+O believers, turn the prayer lord to know that G
+whole groups of species |ghath
+We deprived will be no god but He, and too, for this workft and to pray, there is none of them,
+[2017-11-28 23:21] Train Step 17601/20000, Batch Size = 256, Examples/Sec = 5013.95, Loss = 1.1030235290527344
+[2017-11-28 23:21] Train Step 17701/20000, Batch Size = 256, Examples/Sec = 4992.31, Loss = 1.1248798370361328
+[2017-11-28 23:22] Train Step 17801/20000, Batch Size = 256, Examples/Sec = 4990.32, Loss = 1.125895380973816
+[2017-11-28 23:22] Train Step 17901/20000, Batch Size = 256, Examples/Sec = 5127.66, Loss = 1.258096694946289
+[2017-11-28 23:22] Train Step 18001/20000, Batch Size = 256, Examples/Sec = 4983.49, Loss = 1.155845046043396
+Random character sampling
+,|, supreme.
+They may hal on the Day of Resurrection from the oinions We had denied: "O Satan has judge
+-|--
+"They will they do so when they relatevers, bear was before and all the worch You;" but if dispree
+x|xcare goodness to you? And was of (the kangny of their family, or is stretchdend what.
+Recompen for e
+?|? They will supe from Ar-Rahman whoever previty, when they receive the different, and have been sent 
+(|(sons) with wherever votaries.
+So Kearned a talked water is a place of my Lord is well out on God is 
+u|un than those whose commanded prophethim in his faithful your provide. When God's forgiven up the pun
+H|Him. Surely given him to Lord have behind.
+Yop wrong, angungected nourns what after them with sinned 
+i|id to idolater hemend up a flisuge over toever Messepth, that will you then engers after fou is ment 
+f|fore themselves are avait, and carry in the fired to him, and begotten you in vain them; and he is no
+C|Calamity, the revelations of God when as poils are settifas of their Lord and what they had not sent 
+Warmup sequence sampling
+Welcome to the planet Earth |follow whomsoever God God's burdeness with Me, "(then) will falls.
+We leave you that He will come to 
+Human beings grew up in forests |veil they have (the jure)' gwageller.
+Have you their reward."
+"Then those who find a tong at their st
+Satan said |properd and even if there will you them ransom whose covenant with equal incumbent hardessore the unb
+God is not |enjoined them to not disgraces in the end before Him whoth against that receive successast to their d
+theory of evolution |where they will say to the what has gone on the Day the aties of the leave of God," sais the number?"
+whole groups of species |or knowing youru, but of the turn for you, the tall-mighty and chasted.
+These are you and even though
+[2017-11-28 23:22] Train Step 18101/20000, Batch Size = 256, Examples/Sec = 5077.35, Loss = 1.1477419137954712
+[2017-11-28 23:22] Train Step 18201/20000, Batch Size = 256, Examples/Sec = 5042.60, Loss = 1.137468695640564
+[2017-11-28 23:22] Train Step 18301/20000, Batch Size = 256, Examples/Sec = 5171.12, Loss = 1.1140694618225098
+[2017-11-28 23:22] Train Step 18401/20000, Batch Size = 256, Examples/Sec = 5168.86, Loss = 1.0605539083480835
+[2017-11-28 23:22] Train Step 18501/20000, Batch Size = 256, Examples/Sec = 5086.46, Loss = 1.1051595211029053
+Random character sampling
+P|Prophet enhard than he for what has been sent again they will say: "Wilt one of them were obedient co
+.|.
+The man after it unbelievers and to him and fell.
+We have provided its evident for the excellent he
+T|The looking heaven from away (punishment on us. Is it not do not be place the path to the men who are
+A|Aa-anjurning anyunce were will think on other than Him, He has could to invoke down rivers flung to b
+u|urge out for a body, and the tearer appointed me to behind.
+Say: "I give me up inselve in our prayer 
+G|God is all-woes some with when you chaight panning-wisher to, of God insolens for the wealth of deliv
+N|No man werched may walk (to stay) hoever her women, and clow His news does the right with you and do 
+v|vers, as I am forgiving in the kingdom and the people of Pharaoh with their (affliint.
+So what does t
+)|) all-mighty and all-wise.
+They are thaster to expevourise in the end of their means, which the wordt
+S|Stealthy forward of their promise follow what anywn of the creatures with messenger of your Lord will
+Warmup sequence sampling
+Welcome to the planet Earth |and the Lord of all the worlds."
+"This year.
+God has made the way of firmly,
+And wait ascruccound the
+Human beings grew up in forests |and Thamud those to them, nor is great Sulty your creation on the hight (save me.
+He in the heavens a
+Satan said |on which he does so that God will the lomstem, enwered, if you bring anties it is fulfir and did the 
+God is not |the thing of Madiah, so that they may die and obedient as we be wasted, (and malines alone in acquire
+theory of evolution |of their Lord). and wholly carry stage the provision between theirs whose year on see being mot=====A
+whole groups of species |that is back to your reward other then Him. For them you have done to the earth, and they came before
+[2017-11-28 23:22] Train Step 18601/20000, Batch Size = 256, Examples/Sec = 5045.16, Loss = 1.1044129133224487
+[2017-11-28 23:22] Train Step 18701/20000, Batch Size = 256, Examples/Sec = 5039.34, Loss = 1.1445600986480713
+[2017-11-28 23:23] Train Step 18801/20000, Batch Size = 256, Examples/Sec = 5044.07, Loss = 1.1136161088943481
+[2017-11-28 23:23] Train Step 18901/20000, Batch Size = 256, Examples/Sec = 4967.30, Loss = 1.1498465538024902
+[2017-11-28 23:23] Train Step 19001/20000, Batch Size = 256, Examples/Sec = 4901.90, Loss = 1.11159348487854
+Random character sampling
+?|?"
+"So neither knows thereld, the Day of Judgement: Nou go back to the night will come to takes of an
+p|plotte free those who have explained out what I speaked them.
+How many falsehood, with every glad,
+Fo
+0|0sKe uoun.
+Know that your ignorance of your Lord before them We do not fild: "If we will not be among
+A|Abraham whatsoever desable up for creation.
+I We were thought hope out of Adam, who are such nothing 
+Y|You sat Our lans said: "You will make of him who bring them wheresoever He wills you are a guardian o
+H|He is so as toget wrote inherit in any great chaste, but they take food darkness.
+When they will be, 
+=|==o==K=i====kne==J===es==n==e =yy=====erbl====b=ee=i===p====eeyeia======tB===B- ==o=itGss========)== 
+A|Azke, an this, or magic; yether with halls none but the prirm companions He has rewarded.
+You will fo
+v|versed them?"
+Say to me that we gaunted them accused to hell he fourthent deafking to us?" They sent 
+)|) and every fire is unless your family is to cover its Medglination, and persisting sins. The P our f
+Warmup sequence sampling
+Welcome to the planet Earth |be not fabrica'ee than his own rouses your covenant, nor sent it was dread him of their creity proclo
+Human beings grew up in forests |and lampned to believe, forgive those who are no harm of Abraham to God.
+And whose world decrees will
+Satan said |to him or virtuous wide of God, or fore they plan sevening.
+Say: "When is the right souns about and M
+God is not |one back to whomsoever He wills.
+Verily there are my brong,
+We death this Qur'an, and knows what he s
+theory of evolution |of what they do.
+Forbidy them and do not armies and openers.
+Harm He wills after an evil of them are 
+whole groups of species |of everything;
+These and only rite them what he possess.
+With the heavens and the earth and all sides
+[2017-11-28 23:23] Train Step 19101/20000, Batch Size = 256, Examples/Sec = 4879.60, Loss = 1.7221895456314087
+[2017-11-28 23:23] Train Step 19201/20000, Batch Size = 256, Examples/Sec = 4867.92, Loss = 1.1863248348236084
+[2017-11-28 23:23] Train Step 19301/20000, Batch Size = 256, Examples/Sec = 5219.31, Loss = 1.107023000717163
+[2017-11-28 23:23] Train Step 19401/20000, Batch Size = 256, Examples/Sec = 5074.23, Loss = 1.129583477973938
+[2017-11-28 23:23] Train Step 19501/20000, Batch Size = 256, Examples/Sec = 5071.71, Loss = 1.107118844985962
+Random character sampling
+u|urrely there is a full othere in you in your blessings in priops, get as does so for himself (in your
+r|rother.
+Those who give him and its deeds, the last above you and My man. As I will not bring neither,
+(|(a Abraham, and of those who are prayed to be stood (to Him).
+"We may inherit you if We retribution r
+j|jubing women, of carried (power to behaved), for when you were obligations of the people of the Book 
+c|cculful wise.
+But when you allies.
+Have they protect our signs and footsed by their e unlesses."
+They
+O|Ones; but whatever He will to the bane of others succeed," said, "from God, they witness and finest t
+2|2le." --
+When you use who are hears and forgive Him, for God does not know white from the first they 
+K|K did not love nothing but remember) reflect the first term is nothing but He who makes the maturate 
+R|Remember, the king that they were mercy rediction in His revelations'. Every anew, He shall follow th
+{|{But offhel, unbelievers in their oalth and their sacred things of God. God about God." They are gods
+Warmup sequence sampling
+Welcome to the planet Earth |will raise direly," he said? Surely those who will keep did not residents retribution.
+Have you there
+Human beings grew up in forests |path; and quien and tolven they turn) over the gardens along on him is going to do both last, who cre
+Satan said |to the meeplence devotion with what it will bunishment.
+So you race except understand,
+And the dweigh
+God is not |(bread for heaven),
+Never efract the heart.
+When being consoluced from God with pharrows, and the lea
+theory of evolution |for a treated them; and the offerings of the Hereafhar they are partter time they arguak from its par
+whole groups of species |respites and shown; but there whose deeds a berfore them, and be glory from the stileced between Us. 
