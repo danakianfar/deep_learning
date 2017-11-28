@@ -1,0 +1,312 @@
+Initialize dataset with 1366187 characters, 44 unique.
+[2017-11-28 22:20] Train Step 0001/20000, Batch Size = 128, Examples/Sec = 275.69, Loss = 3.7822518348693848
+Random character sampling
+7|7  aaas    aaaaass       ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        oooo
+2|2      aaaaass       ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooee
+8|8s     aaaaass       ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooee
+8|8s     aaaaass       ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooee
+x|x   aaaaass       ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee 
+v|ve     d  oooooeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooo
+c|cor    aaaaass       ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooee
+\|\     d oooooeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooo
+)|)  d  dt  oooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        oo
+y|y    aaaaass       ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee
+Warmup sequence sampling
+Welcome to the planet Earth |     oooooeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooee
+Human beings grew up in forests |       ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        oooo
+But Satan tempted them |   oooooeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee
+O Moses, we are tired of eating the same food (day after day)|     oooooeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooee
+theory of evolution |     oooooeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooee
+whole groups of species |       ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        ooooooeeee        oooo
+[2017-11-28 22:20] Train Step 0101/20000, Batch Size = 128, Examples/Sec = 2599.43, Loss = 2.8996822834014893
+[2017-11-28 22:20] Train Step 0201/20000, Batch Size = 128, Examples/Sec = 2560.56, Loss = 2.3770103454589844
+[2017-11-28 22:20] Train Step 0301/20000, Batch Size = 128, Examples/Sec = 2564.87, Loss = 2.1384968757629395
+[2017-11-28 22:20] Train Step 0401/20000, Batch Size = 128, Examples/Sec = 2537.99, Loss = 2.085038900375366
+[2017-11-28 22:20] Train Step 0501/20000, Batch Size = 128, Examples/Sec = 2612.78, Loss = 1.9800658226013184
+Random character sampling
+x|xe the sure the some the sure the some the sure the some the sure the some the sure the some the sure
+d|d the sure the some the sure the some the sure the some the sure the some the sure the some the sure 
+a|an the sure the some the sure the some the sure the some the sure the some the sure the some the sure
+'|' the sure the some the sure the some the sure the some the sure the some the sure the some the sure 
+3|3 the sure the some the sure the some the sure the some the sure the some the sure the some the sure 
+o|on the sure the some the sure the some the sure the some the sure the some the sure the some the sure
+a|an the sure the some the sure the some the sure the some the sure the some the sure the some the sure
+9|9 the sure the some the sure the some the sure the some the sure the some the sure the some the sure 
+3|3 the sure the some the sure the some the sure the some the sure the some the sure the some the sure 
+k|k the sure the some the sure the some the sure the some the sure the some the sure the some the sure 
+Warmup sequence sampling
+Welcome to the planet Earth |the sure the some the sure the some the sure the some the sure the some the sure the some the sure th
+Human beings grew up in forests |, the sure the some the sure the some the sure the some the sure the some the sure the some the sure 
+But Satan tempted them |the sure the sure the some the sure the some the sure the some the sure the some the sure the some th
+O Moses, we are tired of eating the same food (day after day)| the some the sure the some the sure the some the sure the some the sure the some the sure the some t
+theory of evolution |of the sure the some the sure the some the sure the some the sure the some the sure the some the sure
+whole groups of species |, the sure the some the sure the some the sure the some the sure the some the sure the some the sure 
+[2017-11-28 22:20] Train Step 0601/20000, Batch Size = 128, Examples/Sec = 2546.08, Loss = 1.9134635925292969
+[2017-11-28 22:20] Train Step 0701/20000, Batch Size = 128, Examples/Sec = 2598.05, Loss = 1.8518799543380737
+[2017-11-28 22:20] Train Step 0801/20000, Batch Size = 128, Examples/Sec = 2512.46, Loss = 1.7851201295852661
+[2017-11-28 22:20] Train Step 0901/20000, Batch Size = 128, Examples/Sec = 2505.01, Loss = 1.7674494981765747
+[2017-11-28 22:21] Train Step 1001/20000, Batch Size = 128, Examples/Sec = 2579.31, Loss = 1.7236276865005493
+Random character sampling
+h|he something the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun 
+(|( the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+z|ze the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun th
+j|j the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+0|0 the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+w|we something the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun 
+ | the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the 
+r|re of the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun
+x|xe the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun th
+t|the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the s
+Warmup sequence sampling
+Welcome to the planet Earth |, the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+Human beings grew up in forests |, the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+But Satan tempted them |the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the s
+O Moses, we are tired of eating the same food (day after day)| and the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun 
+theory of evolution |of the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun th
+whole groups of species |, the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+[2017-11-28 22:21] Train Step 1101/20000, Batch Size = 128, Examples/Sec = 2598.39, Loss = 1.6139757633209229
+[2017-11-28 22:21] Train Step 1201/20000, Batch Size = 128, Examples/Sec = 2552.93, Loss = 1.6587578058242798
+[2017-11-28 22:21] Train Step 1301/20000, Batch Size = 128, Examples/Sec = 2686.97, Loss = 1.6141740083694458
+[2017-11-28 22:21] Train Step 1401/20000, Batch Size = 128, Examples/Sec = 2599.95, Loss = 1.6155037879943848
+[2017-11-28 22:21] Train Step 1501/20000, Batch Size = 128, Examples/Sec = 2531.23, Loss = 1.523800015449524
+Random character sampling
+1|1 , and the sun the sun the spectress of the sun the spectress of the sun the spectress of the sun th
+l|le the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun th
+4|4 the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+!|! the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+z|ze the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun th
+l|le the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun th
+a|an and the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the su
+t|the stars , and the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the s
+!|! the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+j|j the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the
+Warmup sequence sampling
+Welcome to the planet Earth |, and the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun
+Human beings grew up in forests |the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the s
+But Satan tempted them |the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the s
+O Moses, we are tired of eating the same food (day after day)| in the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun t
+theory of evolution |of the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun th
+whole groups of species |the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the sun the s
+[2017-11-28 22:21] Train Step 1601/20000, Batch Size = 128, Examples/Sec = 2594.16, Loss = 1.558753490447998
+[2017-11-28 22:21] Train Step 1701/20000, Batch Size = 128, Examples/Sec = 2563.91, Loss = 1.557834506034851
+[2017-11-28 22:21] Train Step 1801/20000, Batch Size = 128, Examples/Sec = 2530.09, Loss = 1.534170389175415
+[2017-11-28 22:21] Train Step 1901/20000, Batch Size = 128, Examples/Sec = 2566.72, Loss = 1.567955493927002
+[2017-11-28 22:22] Train Step 2001/20000, Batch Size = 128, Examples/Sec = 2556.80, Loss = 1.5247933864593506
+Random character sampling
+0|0 , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun ,
+7|7 , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun ,
+'|' and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , a
+r|re and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , 
+(|( the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and t
+'|' and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , a
+1|1 , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun ,
+d|d the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and t
+!|! the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and t
+\|\f the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and 
+Warmup sequence sampling
+Welcome to the planet Earth |, and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , a
+Human beings grew up in forests |and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and
+But Satan tempted them |the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the
+O Moses, we are tired of eating the same food (day after day)| and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , an
+theory of evolution |of the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and 
+whole groups of species |, and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , a
+[2017-11-28 22:22] Train Step 2101/20000, Batch Size = 128, Examples/Sec = 2655.99, Loss = 1.4923319816589355
+[2017-11-28 22:22] Train Step 2201/20000, Batch Size = 128, Examples/Sec = 2491.65, Loss = 1.5068544149398804
+[2017-11-28 22:22] Train Step 2301/20000, Batch Size = 128, Examples/Sec = 2556.37, Loss = 1.454327940940857
+[2017-11-28 22:22] Train Step 2401/20000, Batch Size = 128, Examples/Sec = 2564.32, Loss = 1.4470852613449097
+[2017-11-28 22:22] Train Step 2501/20000, Batch Size = 128, Examples/Sec = 2622.20, Loss = 1.460453748703003
+Random character sampling
+a|and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+(|( the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+k|ke the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+m|me the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+8|8 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+i|ing the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+d|d the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+b|be the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+u|ure of the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the 
+e|e the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+Warmup sequence sampling
+Welcome to the planet Earth |, the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+Human beings grew up in forests |and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+But Satan tempted them |the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , t
+O Moses, we are tired of eating the same food (day after day)| the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , 
+theory of evolution |of the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+whole groups of species |, the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+[2017-11-28 22:22] Train Step 2601/20000, Batch Size = 128, Examples/Sec = 2580.37, Loss = 1.4624778032302856
+[2017-11-28 22:22] Train Step 2701/20000, Batch Size = 128, Examples/Sec = 2608.64, Loss = 1.475823998451233
+[2017-11-28 22:22] Train Step 2801/20000, Batch Size = 128, Examples/Sec = 2593.02, Loss = 1.413977026939392
+[2017-11-28 22:22] Train Step 2901/20000, Batch Size = 128, Examples/Sec = 2565.64, Loss = 1.3953425884246826
+[2017-11-28 22:22] Train Step 3001/20000, Batch Size = 128, Examples/Sec = 2646.77, Loss = 1.4434144496917725
+Random character sampling
+4|4 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+r|re the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+k|ke the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+!|! the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+2|2 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+7|7 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+q|quite the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+0|0 , and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the
+c|consider than the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+8|8 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+Warmup sequence sampling
+Welcome to the planet Earth |, and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+Human beings grew up in forests |of the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+But Satan tempted them |the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , t
+O Moses, we are tired of eating the same food (day after day)| , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+theory of evolution |of the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+whole groups of species |, and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+[2017-11-28 22:23] Train Step 3101/20000, Batch Size = 128, Examples/Sec = 2549.45, Loss = 1.3997418880462646
+[2017-11-28 22:23] Train Step 3201/20000, Batch Size = 128, Examples/Sec = 2563.67, Loss = 1.416575312614441
+[2017-11-28 22:23] Train Step 3301/20000, Batch Size = 128, Examples/Sec = 2671.40, Loss = 1.3647685050964355
+[2017-11-28 22:23] Train Step 3401/20000, Batch Size = 128, Examples/Sec = 2582.49, Loss = 1.3935447931289673
+[2017-11-28 22:23] Train Step 3501/20000, Batch Size = 128, Examples/Sec = 2624.44, Loss = 1.3810803890228271
+Random character sampling
+\|\( the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+i|in the surface of the sun , the surface of the sun , the surface of the sun , the surface of the sun 
+q|quite , the surface of the surface of the surface of the surface of the surface of the surface of the
+s|s and the sun , the surface of the sun , the surface of the sun , the surface of the sun , the surfac
+5|5 , the sun , the surface of the sun , the surface of the sun , the surface of the sun , the surface 
+,|, the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+ | the sun , the surface of the sun , the surface of the sun , the surface of the sun , the surface of 
+!|! the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+8|8 , the surface of the sun , the surface of the sun , the surface of the sun , the surface of the sun
+k|k the surface of the sun , the surface of the sun , the surface of the sun , the surface of the sun ,
+Warmup sequence sampling
+Welcome to the planet Earth |, and the sun , the surface of the sun , the surface of the sun , the surface of the sun , the surfac
+Human beings grew up in forests |of the surface of the sun , the surface of the sun , the surface of the sun , the surface of the sun 
+But Satan tempted them |the surface of the sun , the surface of the sun , the surface of the sun , the surface of the sun , t
+O Moses, we are tired of eating the same food (day after day)| of the sun , the sun , the surface of the sun , the sun , the surface of the sun , the sun , the sur
+theory of evolution |of the sun , the surface of the sun , the surface of the sun , the surface of the sun , the surface o
+whole groups of species |, and the sun , the surface of the sun , the surface of the sun , the surface of the sun , the surfac
+[2017-11-28 22:23] Train Step 3601/20000, Batch Size = 128, Examples/Sec = 2626.00, Loss = 1.3336917161941528
+[2017-11-28 22:23] Train Step 3701/20000, Batch Size = 128, Examples/Sec = 2518.90, Loss = 1.3917200565338135
+[2017-11-28 22:23] Train Step 3801/20000, Batch Size = 128, Examples/Sec = 2596.08, Loss = 1.342128872871399
+[2017-11-28 22:23] Train Step 3901/20000, Batch Size = 128, Examples/Sec = 2615.69, Loss = 1.3536689281463623
+[2017-11-28 22:23] Train Step 4001/20000, Batch Size = 128, Examples/Sec = 2608.07, Loss = 1.3678333759307861
+Random character sampling
+r|r the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+o|on the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+9|9999 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the 
+9|9999 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the 
+b|be the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+ | the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , 
+ | the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , 
+8|8 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+j|just and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , th
+b|be the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+Warmup sequence sampling
+Welcome to the planet Earth |, the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+Human beings grew up in forests |of the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+But Satan tempted them |the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , t
+O Moses, we are tired of eating the same food (day after day)| in the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+theory of evolution |of the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+whole groups of species |, and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+[2017-11-28 22:24] Train Step 4101/20000, Batch Size = 128, Examples/Sec = 2541.09, Loss = 1.3292927742004395
+[2017-11-28 22:24] Train Step 4201/20000, Batch Size = 128, Examples/Sec = 2548.63, Loss = 1.3545422554016113
+[2017-11-28 22:24] Train Step 4301/20000, Batch Size = 128, Examples/Sec = 2631.31, Loss = 1.2972708940505981
+[2017-11-28 22:24] Train Step 4401/20000, Batch Size = 128, Examples/Sec = 2584.98, Loss = 1.3954980373382568
+[2017-11-28 22:24] Train Step 4501/20000, Batch Size = 128, Examples/Sec = 2666.18, Loss = 1.3430391550064087
+Random character sampling
+k|k the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+\|\( the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+s|s and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+h|he stars , and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the su
+f|f the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+w|we were the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the
+q|quite of the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , th
+k|k the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+w|we were the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the
+'|' the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+Warmup sequence sampling
+Welcome to the planet Earth |, and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+Human beings grew up in forests |and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+But Satan tempted them |the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , t
+O Moses, we are tired of eating the same food (day after day)| a the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+theory of evolution |of the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun 
+whole groups of species |, and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+[2017-11-28 22:24] Train Step 4601/20000, Batch Size = 128, Examples/Sec = 2624.94, Loss = 1.3456419706344604
+[2017-11-28 22:24] Train Step 4701/20000, Batch Size = 128, Examples/Sec = 2562.42, Loss = 1.3421084880828857
+[2017-11-28 22:24] Train Step 4801/20000, Batch Size = 128, Examples/Sec = 2613.49, Loss = 1.3134793043136597
+[2017-11-28 22:24] Train Step 4901/20000, Batch Size = 128, Examples/Sec = 2568.51, Loss = 1.318164587020874
+[2017-11-28 22:24] Train Step 5001/20000, Batch Size = 128, Examples/Sec = 2563.79, Loss = 1.281507968902588
+Random character sampling
+o|on the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the
+n|n the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the 
+9|999 , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is 
+4|4 , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is th
+,|, the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the s
+?|? the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+9|999 , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is 
+k|k the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the 
+6|6 , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is th
+6|6 , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is th
+Warmup sequence sampling
+Welcome to the planet Earth |and the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is th
+Human beings grew up in forests |of the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the
+But Satan tempted them |the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun
+O Moses, we are tired of eating the same food (day after day)| a the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the 
+theory of evolution |of the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is the
+whole groups of species |, and the sun is the sun , the sun is the sun , the sun is the sun , the sun is the sun , the sun is 
+[2017-11-28 22:25] Train Step 5101/20000, Batch Size = 128, Examples/Sec = 2582.74, Loss = 1.3364800214767456
+[2017-11-28 22:25] Train Step 5201/20000, Batch Size = 128, Examples/Sec = 2637.97, Loss = 1.3217082023620605
+[2017-11-28 22:25] Train Step 5301/20000, Batch Size = 128, Examples/Sec = 2589.61, Loss = 1.3362408876419067
+[2017-11-28 22:25] Train Step 5401/20000, Batch Size = 128, Examples/Sec = 2490.14, Loss = 1.3425180912017822
+[2017-11-28 22:25] Train Step 5501/20000, Batch Size = 128, Examples/Sec = 2556.30, Loss = 1.390905499458313
+Random character sampling
+g|g the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and t
+k|ke and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , 
+h|he stars are the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the 
+f|f the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and t
+v|verse the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , a
+r|r and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , a
+1|199 , the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , a
+x|xplore the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , 
+d|d the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and t
+u|ur and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , 
+Warmup sequence sampling
+Welcome to the planet Earth |and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and
+Human beings grew up in forests |of the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and 
+But Satan tempted them |the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the
+O Moses, we are tired of eating the same food (day after day)| a star , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the
+theory of evolution |of the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and 
+whole groups of species |, and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , and the sun , a
+[2017-11-28 22:25] Train Step 5601/20000, Batch Size = 128, Examples/Sec = 2569.56, Loss = 1.3569906949996948
+[2017-11-28 22:25] Train Step 5701/20000, Batch Size = 128, Examples/Sec = 2558.08, Loss = 1.3245046138763428
+[2017-11-28 22:25] Train Step 5801/20000, Batch Size = 128, Examples/Sec = 2593.32, Loss = 1.260196328163147
+[2017-11-28 22:25] Train Step 5901/20000, Batch Size = 128, Examples/Sec = 2559.45, Loss = 1.3257557153701782
+[2017-11-28 22:25] Train Step 6001/20000, Batch Size = 128, Examples/Sec = 2524.37, Loss = 1.3682533502578735
+Random character sampling
+(|( the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+x|xploration of the sun and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+)|) the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+q|quited the sun and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , th
+8|8 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+q|quited the sun and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , th
+7|7 , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+j|just and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , th
+p|peration of the sun and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun
+r|r the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun ,
+Warmup sequence sampling
+Welcome to the planet Earth |, and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+Human beings grew up in forests |of the sun and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the su
+But Satan tempted them |the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , t
+O Moses, we are tired of eating the same food (day after day)| the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , 
+theory of evolution |of the sun and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the su
+whole groups of species |, and the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the sun , the s
+[2017-11-28 22:26] Train Step 6101/20000, Batch Size = 128, Examples/Sec = 2671.97, Loss = 1.2821929454803467
+[2017-11-28 22:26] Train Step 6201/20000, Batch Size = 128, Examples/Sec = 2505.25, Loss = 1.273794412612915
+[2017-11-28 22:26] Train Step 6301/20000, Batch Size = 128, Examples/Sec = 2601.32, Loss = 1.2471612691879272
+[2017-11-28 22:26] Train Step 6401/20000, Batch Size = 128, Examples/Sec = 2610.78, Loss = 1.272621989250183
+[2017-11-28 22:26] Train Step 6501/20000, Batch Size = 128, Examples/Sec = 2524.57, Loss = 1.2921305894851685
+Random character sampling
+4|4 , and the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a stars
+m|me the sun , the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a 
+p|period and the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a st
+w|where the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a stars ,
+ | the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a stars , and 
+e|e and the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a stars ,
+z|zer the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a stars , a
+4|4 , and the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a stars
+6|6 , and the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a stars
+z|zer the sun is a stars , and the sun is a stars , and the sun is a stars , and the sun is a stars , a
