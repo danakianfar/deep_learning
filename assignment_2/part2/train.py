@@ -102,7 +102,6 @@ def train(config):
     # Summaries
     summary_op = tf.summary.merge_all()
     session.run(fetches=[tf.global_variables_initializer(), tf.local_variables_initializer()])
-    warmup_decodes = {}
 
     for train_step in range(int(config.train_steps)):
 
@@ -169,7 +168,7 @@ def train(config):
                 warmup_tokens = np.array([dataset._char_to_ix[x] for x in warmup]).reshape((-1,1))
                 feed = {warmup_seq: warmup_tokens}
                 decoded_tokens = session.run(fetches=[warmup_decodes], feed_dict=feed)[0]
-                print('{}|{}'.format(warmup, dataset.convert_to_string(decoded_tokens)))
+                print('{}|{}'.format(warmup, dataset.convert_to_string(decoded_tokens.squeeze().tolist())))
 
         if train_step % config.checkpoint_every == 0:
             saver.save(session, save_path=save_path)
@@ -208,7 +207,7 @@ if __name__ == "__main__":
     parser.add_argument('--log_device_placement', type=bool, default=False, help='Log device placement for debugging')
     parser.add_argument('--summary_path', type=str, default="./summaries/", help='Output path for summaries')
     parser.add_argument('--print_every', type=int, default=10, help='How often to print training progress')
-    parser.add_argument('--sample_every', type=int, default=100, help='How often to sample from the model')
+    parser.add_argument('--sample_every', type=int, default=500, help='How often to sample from the model')
     parser.add_argument('--checkpoint_every', type=int, default=500, help='How often to save the model')
     parser.add_argument('--checkpoint_path', type=str, default='./checkpoints/', help='Checkpoint directory')
 
