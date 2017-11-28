@@ -160,8 +160,8 @@ def train(config):
             print('Warmup sequence sampling')
             warmups = ['Welcome to the planet Earth ',
                        'Human beings grew up in forests ',
-                       'But Satan tempted them ',
-                       'O Moses, we are tired of eating the same food (day after day)',
+                       'Satan said ',
+                       'God is not ',
                        'theory of evolution ',
                        'whole groups of species ']
 
