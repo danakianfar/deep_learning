@@ -148,7 +148,10 @@ class TextGenerationModel(object):
             :param output: network outputs, float [batch_size, num_hidden]
             :return: one-hot representation of decoded tokens. int [batch_size, vocab_size]
             """
+
+            output = tf.Print(output, [output.shape], 'output_shape in sampling = ')
             logits = self.logit_fn(output)
+            logits = tf.Print(logits, [logits.shape], 'logits_shape in sampling = ')
             token_ids = tf.distributions.Categorical(logits=logits).sample()
             return token_ids
 
