@@ -28,6 +28,7 @@ import numpy as np
 class TextGenerationModel(object):
     def __init__(self, batch_size, seq_length, vocabulary_size,
                  lstm_num_hidden, lstm_num_layers, decoding_model='greedy', embed_dim=40):
+
         self._train_seq_length = seq_length
         self._lstm_num_hidden = lstm_num_hidden
         self._lstm_num_layers = lstm_num_layers
@@ -73,7 +74,7 @@ class TextGenerationModel(object):
         self.loss = self._compute_loss()
 
     def _init_lstm_cell(self):
-        return BasicLSTMCell(num_units=self._lstm_num_hidden, state_is_tuple=self.state_is_tuple)
+        return BasicLSTMCell(num_units=self._lstm_num_hidden, state_is_tuple=self.state_is_tuple, activation=tf.nn.relu)
 
     def zero_state_numpy(self):
         return tuple(np.zeros(shape=(self._batch_size, 2 * self._lstm_num_hidden)) for _ in
@@ -86,7 +87,7 @@ class TextGenerationModel(object):
 
         # outputs: [timesteps, batch_size, num_hidden]
         outputs, _ = tf.nn.dynamic_rnn(cell=self._lstm_layers,
-                                       initial_state=self.initial_lstm_states,
+                                       initial_state=self._lstm_layers.zero_state(batch_size=self._batch_size, dtype=tf.float32),
                                        inputs=self._inputs_embed,
                                        time_major=True)
 
@@ -116,9 +117,10 @@ class TextGenerationModel(object):
         :param outputs_per_step: network outputs. Float [time_steps, batch_size, lstm_hidden_num]
         :return: [time_steps, batch_size, vocab_size]
         """
-        outputs_flat = tf.reshape(outputs_per_step, (-1, self._lstm_num_hidden))  # flatten to do matmul
-        logits = self.logit_fn(outputs_flat)
-        logits_per_step = tf.reshape(logits, (seq_len, self._batch_size, self._vocab_size))
+        # outputs_flat = tf.reshape(outputs_per_step, (-1, self._lstm_num_hidden))  # flatten to do matmul
+        # logits = self.logit_fn(outputs_flat)
+        # logits_per_step = tf.reshape(logits, (seq_len, self._batch_size, self._vocab_size))
+        logits_per_step = tf.tensordot(outputs_per_step, self._Wout, [[-1], [0]]) + self._bout
         return logits_per_step
 
     def predictions(self):
@@ -153,7 +155,7 @@ class TextGenerationModel(object):
         def loop_fn(time, previous_output, previous_state, loop_state):
             emit_output = previous_output
 
-            if previous_output is None:
+            if previous_output is None: # only at time =0
                 next_cell_state = self.initial_lstm_states
                 next_input = self.random_initial_decoding_inputs
             else:

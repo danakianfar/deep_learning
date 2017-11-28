@@ -65,8 +65,8 @@ def train(config):
     ###########################################################################
 
     # Reproducibility
-    tf.set_random_seed(42)
-    np.random.seed(42)
+    # tf.set_random_seed(42)
+    # np.random.seed(42)
 
     # Utility vars and ops
     gpu_opts = tf.GPUOptions(per_process_gpu_memory_fraction=config.gpu_mem_frac, allow_growth=True)
@@ -169,7 +169,7 @@ if __name__ == "__main__":
     parser.add_argument('--lstm_num_layers', type=int, default=2, help='Number of LSTM layers in the model')
 
     # Training params
-    parser.add_argument('--batch_size', type=int, default=128, help='Number of examples to process in a batch')
+    parser.add_argument('--batch_size', type=int, default=64, help='Number of examples to process in a batch')
     parser.add_argument('--learning_rate', type=float, default=2e-3, help='Learning rate')
     parser.add_argument('--learning_rate_decay', type=float, default=0.96, help='Learning rate decay fraction')
     parser.add_argument('--learning_rate_step', type=int, default=5000, help='Learning rate step')
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     parser.add_argument('--log_device_placement', type=bool, default=False, help='Log device placement for debugging')
     parser.add_argument('--summary_path', type=str, default="./summaries/", help='Output path for summaries')
     parser.add_argument('--print_every', type=int, default=10, help='How often to print training progress')
-    parser.add_argument('--sample_every', type=int, default=20, help='How often to sample from the model')
+    parser.add_argument('--sample_every', type=int, default=100, help='How often to sample from the model')
     parser.add_argument('--checkpoint_every', type=int, default=500, help='How often to save the model')
     parser.add_argument('--checkpoint_path', type=str, default='./checkpoints/', help='Checkpoint directory')
 
