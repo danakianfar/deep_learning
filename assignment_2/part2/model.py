@@ -161,7 +161,7 @@ class TextGenerationModel(object):
         :param output: network outputs, float [batch_size, num_hidden]
         :return: decoded tokens. int [output_batch_size]
         """
-        token_ids = tf.argmax(logits, axis=-1)
+        token_ids = tf.argmax(logits, axis=-1, output_type=tf.int32)
         return token_ids
 
     def _sample_decoding(self, logits):
@@ -195,7 +195,7 @@ class TextGenerationModel(object):
             :param output: network outputs, float [batch_size, num_hidden]
             :return: one-hot representation of decoded tokens. int [batch_size, vocab_size]
             """
-            token_ids = tf.argmax(self.logit_fn(output), axis=-1)
+            token_ids = tf.argmax(self.logit_fn(output), axis=-1, output_type=tf.int32)
             return token_ids
 
         def _sample_decoding(output):
