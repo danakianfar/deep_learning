@@ -30,7 +30,7 @@ class VanillaRNN(object):
         self._num_classes = num_classes  # data is already in one-hot encoding
         self._batch_size = batch_size
 
-        initializer_weights = tf.variance_scaling_initializer()
+        initializer_weights = tf.variance_scaling_initializer(mode='fan_out')
         initializer_biases = tf.constant_initializer(0.0)
 
         # Input data [time, batch_size, input_dim]
