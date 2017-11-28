@@ -64,6 +64,13 @@ def train(config):
     # Implement code here.
     ###########################################################################
 
+    warmup_seq = tf.placeholder(dtype=tf.int32, shape=(None, 5), name='warmup_decoding_sequences')
+    decoded_seqs = model.decode_warmup(warmup_seq, config.decode_length)
+
+    init_decode_char = tf.placeholder(dtype=tf.int32, shape=(config.num_rand_samples), name='rand_init_decoding')
+    random_decodes = model.decode(decode_batch_size=config.num_rand_samples, init_input=init_decode_char,
+                                  decode_length=config.decode_length, init_state=None)
+
     # Reproducibility
     # tf.set_random_seed(42)
     # np.random.seed(42)
@@ -85,7 +92,6 @@ def train(config):
 
     # Compute the gradients for each variable
     grads_and_vars = optimizer.compute_gradients(model.loss)
-    train_op = optimizer.apply_gradients(grads_and_vars, global_step)
     grads, variables = zip(*grads_and_vars)
     grads_clipped, _ = tf.clip_by_global_norm(grads, clip_norm=config.max_norm_gradient)
     apply_gradients_op = optimizer.apply_gradients(zip(grads_clipped, variables), global_step=global_step)
@@ -113,8 +119,7 @@ def train(config):
         # Implement code here
         #######################################################################
         train_feed = {model.inputs: batch_inputs,
-                      model.labels: batch_labels,
-                      model.initial_lstm_states: model.zero_state_numpy()}
+                      model.labels: batch_labels}
         fetches = [model.loss, apply_gradients_op]
         if train_step % config.print_every == 0:
             fetches += [summary_op]
@@ -135,19 +140,20 @@ def train(config):
 
         # Decode
         if train_step % config.sample_every == 0:
-            t3 = time.time()
-            decode_feed = {model.decode_length: config.decode_length,
-                           model.initial_lstm_states: model.zero_state_numpy(),
-                           model.random_initial_decoding_inputs: np.random.choice(a=dataset.vocab_size,
-                                                                                  size=(config.batch_size))}
-            fetches = [model.decoded_sequence]
-            decoded_tokens = session.run(fetches=fetches, feed_dict=decode_feed)
-            decoded_seqs[train_step] = np.array(decoded_tokens).squeeze()
+            # warmup_seq = tf.placeholder(dtype=tf.int32, shape=(None, 5), name='warmup_decoding_sequences')
+            # decoded_seqs = model.decode_warmup(warmup_seq, config.decode_length)
+            #
+            # init_decode_char = tf.placeholder(dtype=tf.int32, shape=(config.num_rand_samples),
+            #                                   name='rand_init_decoding')
+            # random_decodes = model.decode(decode_batch_size=config.num_rand_samples, init_input=init_decode_char,
+            #                               decode_length=config.decode_length, init_state=None)
 
-            print('Decoded at train step {}, Sequences/Sec {:.2f}'.format(str(train_step),
-                                                                          config.batch_size / float(time.time() - t3)))
-
-            print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:, 0]]))
+            # random character sampling
+            decode_feed = {init_decode_char: np.random.choice(a=dataset.vocab_size, size=(config.num_rand_samples))}
+            decoded_tokens = session.run(fetches=[random_decodes], feed_dict=decode_feed)
+            print(len(decoded_tokens))
+            # for
+            # print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:, 0]]))
 
         if train_step % config.checkpoint_every == 0:
             saver.save(session, save_path=save_path)
@@ -194,6 +200,8 @@ if __name__ == "__main__":
 
     parser.add_argument('--decoding_mode', type=str, choices=['greedy', 'sampling'], default='sampling',
                         help='Decode by greedy or sampling.')
+    parser.add_argument('--num_rand_samples', type=int, default=10,
+                        help='Number of randomly initialized samples to take')
     parser.add_argument('--decode_length', type=int, default=100,
                         help='Inference (decoding) number of steps, int default is 30')
     parser.add_argument('--model_name', type=str, default='lstm_carl_sagan', help='Model name for saving')
@@ -208,7 +216,6 @@ if __name__ == "__main__":
                     for txt_file in ['./books/holy_koran.txt',
                                      './books/origin_of_species.txt',
                                      './books/carl_sagan.txt']:
-
                         model_name = '{}_({}_{})_{}'.format(txt_file.replace('./books/', ''), optimizer, learning_rate,
                                                             decoding_mode)
                         config.decoding_mode = decoding_mode

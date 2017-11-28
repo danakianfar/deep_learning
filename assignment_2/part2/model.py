@@ -34,7 +34,7 @@ class TextGenerationModel(object):
         self._lstm_num_layers = lstm_num_layers
         self._batch_size = batch_size
         self._vocab_size = vocabulary_size
-        self.state_is_tuple = False  # slower but less buggy
+        self.state_is_tuple = True
         self.decoding_mode = decoding_model
         self.embed_dim = embed_dim
 
@@ -42,12 +42,7 @@ class TextGenerationModel(object):
         # Word indices: [seq_length, batch_size]
         self.inputs = tf.placeholder(dtype=tf.int32, shape=(None, self._batch_size), name='inputs')
         self.labels = tf.placeholder(dtype=tf.int32, shape=(self._batch_size, None), name='labels')
-        self.random_initial_decoding_inputs = tf.placeholder(dtype=tf.int32, shape=(self._batch_size),
-                                                             name='random_initial_decoding_inputs')
         self.decode_length = tf.placeholder(dtype=tf.int32, shape=(), name='decode_length')
-        self.initial_lstm_states = tf.placeholder(dtype=tf.float32, name='initial_hidden_state',
-                                                  shape=(None,
-                                                         self._lstm_num_layers * 2 * self._lstm_num_hidden))
 
         # Embeddings
         self._embeddings = tf.get_variable('embeddings', [self._vocab_size, self.embed_dim], dtype=tf.float32)
@@ -68,7 +63,7 @@ class TextGenerationModel(object):
         # Decode params
         self.logit_fn = lambda x: tf.matmul(x, self._Wout) + self._bout
         self.logits = self._build_model()
-        self.decoded_sequence = self.predictions()
+        # self.decoded_sequence_train = self.predictions(self.logits)
 
         # Loss
         self.loss = self._compute_loss()
@@ -76,10 +71,6 @@ class TextGenerationModel(object):
     def _init_lstm_cell(self):
         return BasicLSTMCell(num_units=self._lstm_num_hidden, state_is_tuple=self.state_is_tuple, activation=tf.nn.relu)
 
-    def zero_state_numpy(self):
-        return tuple(np.zeros(shape=(self._batch_size, 2 * self._lstm_num_hidden)) for _ in
-                     range(self._lstm_num_layers)) if self.state_is_tuple else np.zeros(
-            shape=(self._batch_size, self._lstm_num_layers * 2 * self._lstm_num_hidden))
 
     def _build_model(self):
         # Implement your model to return the logits per step of shape:
@@ -87,12 +78,13 @@ class TextGenerationModel(object):
 
         # outputs: [timesteps, batch_size, num_hidden]
         outputs, _ = tf.nn.dynamic_rnn(cell=self._lstm_layers,
-                                       initial_state=self._lstm_layers.zero_state(batch_size=self._batch_size, dtype=tf.float32),
+                                       initial_state=self._lstm_layers.zero_state(batch_size=self._batch_size,
+                                                                                  dtype=tf.float32),
                                        inputs=self._inputs_embed,
                                        time_major=True)
 
         # logits: [timesteps, batch_size, vocab size]
-        logits_per_step = self._get_logits_per_step(outputs, self._train_seq_length)
+        logits_per_step = self._get_logits_per_step(outputs)
 
         return logits_per_step
 
@@ -111,7 +103,7 @@ class TextGenerationModel(object):
         # Returns the normalized per-step probabilities
         pass
 
-    def _get_logits_per_step(self, outputs_per_step, seq_len):
+    def _get_logits_per_step(self, outputs_per_step):
         """
         Returns logits over a sequences of hidden states
         :param outputs_per_step: network outputs. Float [time_steps, batch_size, lstm_hidden_num]
@@ -123,7 +115,72 @@ class TextGenerationModel(object):
         logits_per_step = tf.tensordot(outputs_per_step, self._Wout, [[-1], [0]]) + self._bout
         return logits_per_step
 
-    def predictions(self):
+    def decode_warmup(self, warmup_seq, decode_length=30):
+        """
+            Performs decoding (inference).
+            :param warmup_seq: warm-up tokens. Int [seq_len, num_of_warmup_tokens]
+            :param decode_length: int, number of steps to decode
+            :return: output of decode fn
+                """
+
+        batch_size = warmup_seq.shape[1]
+        outputs, init_state = tf.nn.dynamic_rnn(cell=self._lstm_layers,
+                                                initial_state=self._lstm_layers.zero_state(batch_size=batch_size,
+                                                                                           dtype=tf.float32),
+                                                inputs=tf.nn.embedding_lookup(self._embeddings, warmup_seq),
+                                                time_major=True)
+
+        logits = self._get_logits_per_step(outputs_per_step=outputs)
+        last_char = self.predictions(logits=logits[-1, :, :])
+        return self.decode(batch_size, last_char, decode_length, init_state=init_state)
+
+    def decode(self, decode_batch_size, init_input, decode_length=30, init_state=None):
+        """
+        A manual sampling function
+        """
+
+        if init_state is None:
+            init_state = self._lstm_layers.zero_state(batch_size=decode_batch_size, dtype=tf.float32)
+        else:
+            init_state = init_state
+
+        last_decode = init_input
+        results = [init_input]
+        for i in range(decode_length):
+            embeds = tf.nn.embedding_lookup(self._embeddings, last_decode)
+            preds, init_state = self._lstm_layers(inputs=embeds, state=init_state)
+            last_decode = self.predictions(self.logit_fn(preds))
+            results.append(last_decode)
+        return tf.stack(results)
+
+    def _greedy_decoding(self, logits):
+        """
+        Greedy decoding for the output at a single timestep.
+        Greedy decoding takes the argmax of the logits.
+
+        :param output: network outputs, float [batch_size, num_hidden]
+        :return: decoded tokens. int [output_batch_size]
+        """
+        token_ids = tf.argmax(logits, axis=-1)
+        return token_ids
+
+    def _sample_decoding(self, logits):
+        """
+        Decoding by sampling from softmax probabilities for the output at a single timestep.
+
+        :param output: network outputs, float [batch_size, num_hidden]
+        :return: Decoded tokens. int [output_batch_size]
+        """
+        token_ids = tf.distributions.Categorical(logits=logits).sample()
+        return token_ids
+
+    def predictions(self, logits):
+        if self.decoding_mode == 'greedy':
+            return self._greedy_decoding(logits)
+        else:
+            return self._sample_decoding(logits)
+
+    def decode_rawrnn(self):
         """
         Performs decoding (inference) using the LSTM cell.
         The decoding length, initial state and initial inputs to the network are passed as placeholders.
@@ -149,16 +206,17 @@ class TextGenerationModel(object):
             :return: one-hot representation of decoded tokens. int [batch_size, vocab_size]
             """
 
-            output = tf.Print(output, [output.shape], 'output_shape in sampling = ')
+            # output = tf.Print(output, [output.shape], 'output_shape in sampling = ')
             logits = self.logit_fn(output)
-            logits = tf.Print(logits, [logits.shape], 'logits_shape in sampling = ')
+            # logits = tf.Print(logits, [logits.shape], 'logits_shape in sampling = ')
             token_ids = tf.distributions.Categorical(logits=logits).sample()
+            # token_ids = tf.Print(token_ids, [token_ids.shape], 'token_ids_shape in sampling = ')
             return token_ids
 
         def loop_fn(time, previous_output, previous_state, loop_state):
             emit_output = previous_output
 
-            if previous_output is None: # only at time =0
+            if previous_output is None:  # only at time =0
                 next_cell_state = self.initial_lstm_states
                 next_input = self.random_initial_decoding_inputs
             else:
