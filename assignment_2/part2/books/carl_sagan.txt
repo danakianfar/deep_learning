@@ -497,11 +497,7 @@ molecules: the cometary nuclei. Every now and then a passing star gives a tiny g
 tug, and one of them obligingly careens into the inner solar system. There the Sun heats it, 
 the ice is vaporized, and a lovely cometary tail develops. 
 
-We approach the planets of our system, largish worlds, captives of the Sun, 
-
-
-
-gravitationally constrained to follow nearly circular orbits, heated mainly by sunlight. 
+We approach the planets of our system, largish worlds, captives of the Sun, gravitationally constrained to follow nearly circular orbits, heated mainly by sunlight.
 
 Pluto, covered with methane ice and accompanied by its solitary giant moon Charon, is 
 illuminated by a distant Sun, which appears as no more than a bright point of light in a 

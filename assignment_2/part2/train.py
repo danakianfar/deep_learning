@@ -64,8 +64,8 @@ def train(config):
     # Implement code here.
     ###########################################################################
 
-    warmup_seq = tf.placeholder(dtype=tf.int32, shape=(None, 5), name='warmup_decoding_sequences')
-    decoded_seqs = model.decode_warmup(warmup_seq, config.decode_length)
+    warmup_seq = tf.placeholder(dtype=tf.int32, shape=(None, 1), name='warmup_decoding_sequences')
+    warmup_decodes = model.decode_warmup(warmup_seq, config.decode_length)
 
     init_decode_char = tf.placeholder(dtype=tf.int32, shape=(config.num_rand_samples), name='rand_init_decoding')
     random_decodes = model.decode(decode_batch_size=config.num_rand_samples, init_input=init_decode_char,
@@ -102,7 +102,7 @@ def train(config):
     # Summaries
     summary_op = tf.summary.merge_all()
     session.run(fetches=[tf.global_variables_initializer(), tf.local_variables_initializer()])
-    decoded_seqs = {}
+    warmup_decodes = {}
 
     for train_step in range(int(config.train_steps)):
 
@@ -149,18 +149,32 @@ def train(config):
             #                               decode_length=config.decode_length, init_state=None)
 
             # random character sampling
-            decode_feed = {init_decode_char: np.random.choice(a=dataset.vocab_size, size=(config.num_rand_samples))}
-            decoded_tokens = session.run(fetches=[random_decodes], feed_dict=decode_feed)
-            print(len(decoded_tokens))
-            # for
-            # print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:, 0]]))
+            print('Random character sampling')
+            rand_chars = np.random.choice(a=dataset.vocab_size, size=(config.num_rand_samples))
+            decode_feed = {init_decode_char: rand_chars}
+            decoded_tokens = session.run(fetches=[random_decodes], feed_dict=decode_feed)[0]
+            decoded_tokens = np.array(decoded_tokens).T
+            for i in range(decoded_tokens.shape[0]):
+                print('{}|{}'.format(dataset._ix_to_char[rand_chars[i]], dataset.convert_to_string(decoded_tokens[i,:])))
+
+
+            print('Warmup sequence sampling')
+            warmups = ['The story of fifteen billion years of cosmic evolution ',
+                       'Finally, at the end of all our wanderings, ',
+                       'Welcome to the planet Earth ',
+                       'Human beings grew up in forests ',
+                       'We do not know that such wormholes exist. ']
+
+            for warmup in warmups:
+                warmup_tokens = np.array([dataset._char_to_ix[x] for x in warmup]).reshape((-1,1))
+                feed = {warmup_seq: warmup_tokens}
+                decoded_tokens = session.run(fetches=[warmup_decodes], feed_dict=feed)[0]
+                print('{}|{}'.format(warmup, dataset.convert_to_string(decoded_tokens)))
 
         if train_step % config.checkpoint_every == 0:
             saver.save(session, save_path=save_path)
 
     train_log_writer.close()
-    with open('{}_decoded_seqs.pkl'.format(config.model_name), 'wb') as f:
-        pickle.dump(decoded_seqs, f)
 
 
 if __name__ == "__main__":
