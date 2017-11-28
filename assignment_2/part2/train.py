@@ -45,6 +45,7 @@ def _ensure_path_exists(path):
 
 
 def train(config):
+    tf.reset_default_graph()
     # Initialize the text dataset
     dataset = TextDataset(config.txt_file, config.clean_data)
 
@@ -175,7 +176,7 @@ if __name__ == "__main__":
     parser.add_argument('--embed_dim', type=int, default=40,
                         help='Embedding dimension. Integer, default is 40')
     parser.add_argument('--dropout_keep_prob', type=float, default=1.0, help='Dropout keep probability')
-    parser.add_argument('--train_steps', type=int, default=4e4, help='Number of training steps')
+    parser.add_argument('--train_steps', type=int, default=2e4, help='Number of training steps')
     parser.add_argument('--max_norm_gradient', type=float, default=5.0, help='--')
     parser.add_argument('--optimizer', type=str, choices=['adam', 'rmsprop'], default="RMSProp",
                         help='Optimizer, choose between adam and rmsprop')
