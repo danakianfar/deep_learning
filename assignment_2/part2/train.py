@@ -147,7 +147,7 @@ def train(config):
             print('Decoded at train step {}, Sequences/Sec {:.2f}'.format(str(train_step),
                                                                           config.batch_size / float(time.time() - t3)))
 
-            # print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:, 0]]))
+            print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:, 0]]))
 
         if train_step % config.checkpoint_every == 0:
             saver.save(session, save_path=save_path)
@@ -162,7 +162,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     # Model params
-    parser.add_argument('--txt_file', type=str, default='./books/book_EN_carl_sagan_compilation.txt',
+    parser.add_argument('--txt_file', type=str, default='./books/carl_sagan.txt',
                         help="Path to a .txt file to train on")
     parser.add_argument('--seq_length', type=int, default=30, help='Length of an input sequence')
     parser.add_argument('--lstm_num_hidden', type=int, default=128, help='Number of hidden units in the LSTM')
@@ -180,7 +180,7 @@ if __name__ == "__main__":
     parser.add_argument('--max_norm_gradient', type=float, default=5.0, help='--')
     parser.add_argument('--optimizer', type=str, choices=['adam', 'rmsprop'], default="RMSProp",
                         help='Optimizer, choose between adam and rmsprop')
-    parser.add_argument('--clean_data', type=bool, default=True,
+    parser.add_argument('--clean_data', type=bool, default=False,
                         help='Whether to remove unnecessary characters from the dataset')
 
     # Misc params
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     parser.add_argument('--log_device_placement', type=bool, default=False, help='Log device placement for debugging')
     parser.add_argument('--summary_path', type=str, default="./summaries/", help='Output path for summaries')
     parser.add_argument('--print_every', type=int, default=10, help='How often to print training progress')
-    parser.add_argument('--sample_every', type=int, default=200, help='How often to sample from the model')
+    parser.add_argument('--sample_every', type=int, default=20, help='How often to sample from the model')
     parser.add_argument('--checkpoint_every', type=int, default=500, help='How often to save the model')
     parser.add_argument('--checkpoint_path', type=str, default='./checkpoints/', help='Checkpoint directory')
 
@@ -202,25 +202,23 @@ if __name__ == "__main__":
 
     if config.grid_search:
 
-        for decoding_mode in ['sampling']:
+        for decoding_mode in ['sampling', 'greedy']:
             for learning_rate in [2e-3]:
-                for txt_file in ['./books/holy_koran.txt',
-                                 './books/origin_of_species.txt',
-                                 #'./books/carl_sagan.txt'
-                                 ]:
-
-                    model_name = '{}_({}_{})_{}'.format(txt_file.replace('./books/', ''), optimizer, learning_rate,
-                                                        decoding_mode)
-                    config.decoding_mode = decoding_mode
-                    config.learning_rate = learning_rate
-                    config.optimizer = optimizer
-                    config.txt_file = txt_file
-                    config.model_name = model_name
-
-                    print('Grid Search \n {}'.format(str(config)))
-                    train(config)
                 for optimizer in ['rmsprop']:
-                    pass
+                    for txt_file in ['./books/holy_koran.txt',
+                                     './books/origin_of_species.txt',
+                                     './books/carl_sagan.txt']:
+
+                        model_name = '{}_({}_{})_{}'.format(txt_file.replace('./books/', ''), optimizer, learning_rate,
+                                                            decoding_mode)
+                        config.decoding_mode = decoding_mode
+                        config.learning_rate = learning_rate
+                        config.optimizer = optimizer
+                        config.txt_file = txt_file
+                        config.model_name = model_name
+
+                        print('Grid Search \n {}'.format(str(config)))
+                        train(config)
     else:
         # Train the model
         train(config)

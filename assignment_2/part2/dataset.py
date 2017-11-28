@@ -79,5 +79,6 @@ class TextDataset(object):
         string = re.sub(r"\)", " \) ", string)
         string = re.sub(r"\?", " \? ", string)
         string = re.sub(r"\s{2,}", " ", string)
+        string = re.sub(r"\\n", " ", string)
         return string.strip().lower()
 
