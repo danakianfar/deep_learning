@@ -158,11 +158,12 @@ def train(config):
                     '{}|{}'.format(dataset._ix_to_char[rand_chars[i]], dataset.convert_to_string(decoded_tokens[i, :])))
 
             print('Warmup sequence sampling')
-            warmups = ['The story of fifteen billion years of cosmic evolution ',
-                       'Finally, at the end of all our wanderings, ',
-                       'Welcome to the planet Earth ',
+            warmups = ['Welcome to the planet Earth ',
                        'Human beings grew up in forests ',
-                       'We do not know that such wormholes exist. ']
+                       'But Satan tempted them ',
+                       'O Moses, we are tired of eating the same food (day after day)',
+                       'theory of evolution ',
+                       'whole groups of species ']
 
             for warmup in warmups:
                 warmup_tokens = np.array([dataset._char_to_ix[x] for x in warmup.lower() if x in dataset._char_to_ix]).reshape((-1, 1))
