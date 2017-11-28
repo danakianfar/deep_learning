@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 # MIT License
 #
 # Copyright (c) 2017 Tom Runia
@@ -43,7 +46,7 @@ def _ensure_path_exists(path):
 
 def train(config):
     # Initialize the text dataset
-    dataset = TextDataset(config.txt_file)
+    dataset = TextDataset(config.txt_file, config.clean_data)
 
     # Initialize the model
     model = TextGenerationModel(
@@ -51,7 +54,9 @@ def train(config):
         seq_length=config.seq_length,
         vocabulary_size=dataset.vocab_size,
         lstm_num_hidden=config.lstm_num_hidden,
-        lstm_num_layers=config.lstm_num_layers
+        lstm_num_layers=config.lstm_num_layers,
+        embed_dim=config.embed_dim,
+        decoding_model=config.decoding_mode
     )
 
     ###########################################################################
@@ -138,10 +143,11 @@ def train(config):
             decoded_tokens = session.run(fetches=fetches, feed_dict=decode_feed)
             decoded_seqs[train_step] = np.array(decoded_tokens).squeeze()
 
-            print('Decoded at train step {}, Sequences/Sec {:.2f}'.format(str(train_step), config.batch_size / float(time.time() - t3)))
+            print('Decoded at train step {}, Sequences/Sec {:.2f}'.format(str(train_step),
+                                                                          config.batch_size / float(time.time() - t3)))
 
+            print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:, 0]]))
 
-            # print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:,0]]))
         if train_step % config.checkpoint_every == 0:
             saver.save(session, save_path=save_path)
 
@@ -166,27 +172,30 @@ if __name__ == "__main__":
     parser.add_argument('--learning_rate', type=float, default=2e-3, help='Learning rate')
     parser.add_argument('--learning_rate_decay', type=float, default=0.96, help='Learning rate decay fraction')
     parser.add_argument('--learning_rate_step', type=int, default=5000, help='Learning rate step')
-
+    parser.add_argument('--embed_dim', type=int, default=40,
+                        help='Embedding dimension. Integer, default is 40')
     parser.add_argument('--dropout_keep_prob', type=float, default=1.0, help='Dropout keep probability')
     parser.add_argument('--train_steps', type=int, default=1e4, help='Number of training steps')
     parser.add_argument('--max_norm_gradient', type=float, default=5.0, help='--')
+    parser.add_argument('--optimizer', type=str, choices=['adam', 'rmsprop'], default="RMSProp",
+                        help='Optimizer, choose between adam and rmsprop')
+    parser.add_argument('--clean_data', type=bool, default=True,
+                        help='Whether to remove unnecessary characters from the dataset')
 
     # Misc params
     parser.add_argument('--gpu_mem_frac', type=float, default=0.5, help='Fraction of GPU memory to allocate')
     parser.add_argument('--log_device_placement', type=bool, default=False, help='Log device placement for debugging')
     parser.add_argument('--summary_path', type=str, default="./summaries/", help='Output path for summaries')
     parser.add_argument('--print_every', type=int, default=10, help='How often to print training progress')
-    parser.add_argument('--sample_every', type=int, default=500, help='How often to sample from the model')
-
+    parser.add_argument('--sample_every', type=int, default=200, help='How often to sample from the model')
     parser.add_argument('--checkpoint_every', type=int, default=500, help='How often to save the model')
     parser.add_argument('--checkpoint_path', type=str, default='./checkpoints/', help='Checkpoint directory')
 
-    parser.add_argument('--decode_length', type=int, default=50,
+    parser.add_argument('--decoding_mode', type=str, choices=['greedy', 'sampling'], default='sampling',
+                        help='Decode by greedy or sampling.')
+    parser.add_argument('--decode_length', type=int, default=100,
                         help='Inference (decoding) number of steps, int default is 30')
     parser.add_argument('--model_name', type=str, default='lstm_carl_sagan', help='Model name for saving')
-    parser.add_argument('--optimizer', type=str, choices=['adam', 'rmsprop'], default="RMSProp",
-                        help='Optimizer, choose between adam and rmsprop')
-
     config = parser.parse_args()
 
     # Train the model

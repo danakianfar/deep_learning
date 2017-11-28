@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 # MIT License
 #
 # Copyright (c) 2017 Tom Runia
@@ -18,21 +21,21 @@ from __future__ import print_function
 
 import tensorflow as tf
 from tensorflow.contrib.rnn import MultiRNNCell, BasicLSTMCell
-from tensorflow.contrib.seq2seq import sequence_loss, GreedyEmbeddingHelper
-from tensorflow.contrib.layers import fully_connected
+from tensorflow.contrib.seq2seq import sequence_loss
 import numpy as np
 
 
 class TextGenerationModel(object):
     def __init__(self, batch_size, seq_length, vocabulary_size,
-                 lstm_num_hidden, lstm_num_layers, reuse_hidden_state_prob=1.0):
+                 lstm_num_hidden, lstm_num_layers, decoding_model='greedy', embed_dim=40):
         self._train_seq_length = seq_length
         self._lstm_num_hidden = lstm_num_hidden
         self._lstm_num_layers = lstm_num_layers
         self._batch_size = batch_size
         self._vocab_size = vocabulary_size
-        self._reuse_hidden_state_prob = reuse_hidden_state_prob
         self.state_is_tuple = False  # slower but less buggy
+        self.decoding_mode = decoding_model
+        self.embed_dim = embed_dim
 
         # Input, label placeholders
         # Word indices: [seq_length, batch_size]
@@ -45,8 +48,11 @@ class TextGenerationModel(object):
                                                   shape=(None,
                                                          self._lstm_num_layers * 2 * self._lstm_num_hidden))
 
+        # Embeddings
+        self._embeddings = tf.get_variable('embeddings', [self._vocab_size, self.embed_dim], dtype=tf.float32)
+
         # Encode to one-hot
-        self._onehot_inputs = tf.one_hot(self.inputs, depth=self._vocab_size, name='onehot_inputs')
+        self._inputs_embed = tf.nn.embedding_lookup(self._embeddings, self.inputs)
 
         # Create networks
         self._lstm_layers = MultiRNNCell([self._init_lstm_cell() for _ in range(self._lstm_num_layers)],
@@ -59,12 +65,9 @@ class TextGenerationModel(object):
                                          initializer=tf.constant_initializer(0.))
 
         # Decode params
-        self._random_initial_decoding_inputs_onehot = tf.one_hot(self.random_initial_decoding_inputs,
-                                                                 depth=self._vocab_size,
-                                                                 name='random_initial_decoding_inputs_onehot')
         self.logit_fn = lambda x: tf.matmul(x, self._Wout) + self._bout
         self.logits = self._build_model()
-        self.decoded_sequence = self.inference()
+        self.decoded_sequence = self.predictions()
 
         # Loss
         self.loss = self._compute_loss()
@@ -84,7 +87,7 @@ class TextGenerationModel(object):
         # outputs: [timesteps, batch_size, num_hidden]
         outputs, _ = tf.nn.dynamic_rnn(cell=self._lstm_layers,
                                        initial_state=self.initial_lstm_states,
-                                       inputs=self._onehot_inputs,
+                                       inputs=self._inputs_embed,
                                        time_major=True)
 
         # logits: [timesteps, batch_size, vocab size]
@@ -103,15 +106,9 @@ class TextGenerationModel(object):
         tf.summary.scalar('cross entropy loss', loss)
         return loss
 
-    def probabilities(self):
+    def probabilities(self):  # not used
         # Returns the normalized per-step probabilities
-        probabilities = tf.nn.softmax(self.logits, dim=-1)
-        return probabilities
-
-    def predictions(self):
-        # Returns the per-step predictions
-        predictions = tf.argmax(self.logits)
-        return predictions
+        pass
 
     def _get_logits_per_step(self, outputs_per_step, seq_len):
         """
@@ -124,7 +121,7 @@ class TextGenerationModel(object):
         logits_per_step = tf.reshape(logits, (seq_len, self._batch_size, self._vocab_size))
         return logits_per_step
 
-    def inference(self):
+    def predictions(self):
         """
         Performs decoding (inference) using the LSTM cell.
         The decoding length, initial state and initial inputs to the network are passed as placeholders.
@@ -140,24 +137,40 @@ class TextGenerationModel(object):
             :return: one-hot representation of decoded tokens. int [batch_size, vocab_size]
             """
             token_ids = tf.argmax(self.logit_fn(output), axis=-1)
-            return tf.one_hot(token_ids, depth=self._vocab_size)
+            return token_ids
+
+        def _sample_decoding(output):
+            """
+            Decoding by sampling from softmax probabilities for the output at a single timestep.
+
+            :param output: network outputs, float [batch_size, num_hidden]
+            :return: one-hot representation of decoded tokens. int [batch_size, vocab_size]
+            """
+            logits = self.logit_fn(output)
+            token_ids = tf.distributions.Categorical(logits=logits).sample()
+            return token_ids
 
         def loop_fn(time, previous_output, previous_state, loop_state):
             emit_output = previous_output
 
             if previous_output is None:
                 next_cell_state = self.initial_lstm_states
-                next_input = self._random_initial_decoding_inputs_onehot
+                next_input = self.random_initial_decoding_inputs
             else:
                 next_cell_state = previous_state
-                next_input = _greedy_decoding(previous_output)  # TODO replace by sampling
 
+                if self.decoding_mode == 'greedy':
+                    next_input = _greedy_decoding(previous_output)
+                elif self.decoding_mode == 'sampling':
+                    next_input = _sample_decoding(previous_output)
+
+            next_input = tf.nn.embedding_lookup(self._embeddings, next_input)
             next_loop_state = None  # ignore
             finished = time >= self.decode_length
 
             return finished, next_input, next_cell_state, emit_output, next_loop_state
 
-        decoded_outputs_ta, _, _ = tf.nn.raw_rnn(cell=self._lstm_layers, loop_fn=loop_fn, parallel_iterations=10)
+        decoded_outputs_ta, _, _ = tf.nn.raw_rnn(cell=self._lstm_layers, loop_fn=loop_fn)
         decoded_outputs = decoded_outputs_ta.stack()  # [time_step, batch_size, num_hidden]
         decoded_logits = self._get_logits_per_step(decoded_outputs,
                                                    self.decode_length)  # [time_step, batch_size, vocab_size]

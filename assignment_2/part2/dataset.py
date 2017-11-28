@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 # MIT License
 #
 # Copyright (c) 2017 Tom Runia
@@ -24,10 +27,11 @@ import tensorflow as tf
 
 
 class TextDataset(object):
-    def __init__(self, filename):
+    def __init__(self, filename, clean_data=False):
         assert os.path.splitext(filename)[1] == ".txt"
         self._data = open(filename, 'r', encoding='utf8').read()
-        # self._data = self.clean_str(self._data)
+        if clean_data:
+            self._data = self.clean_str(self._data)
         self._chars = list(set(self._data))
         self._chars.sort()
         self._data_size, self._vocab_size = len(self._data), len(self._chars)
