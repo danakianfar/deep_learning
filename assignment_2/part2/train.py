@@ -146,7 +146,7 @@ def train(config):
             print('Decoded at train step {}, Sequences/Sec {:.2f}'.format(str(train_step),
                                                                           config.batch_size / float(time.time() - t3)))
 
-            print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:, 0]]))
+            # print("".join([dataset._ix_to_char[x] for x in decoded_seqs[train_step][:, 0]]))
 
         if train_step % config.checkpoint_every == 0:
             saver.save(session, save_path=save_path)
@@ -168,14 +168,14 @@ if __name__ == "__main__":
     parser.add_argument('--lstm_num_layers', type=int, default=2, help='Number of LSTM layers in the model')
 
     # Training params
-    parser.add_argument('--batch_size', type=int, default=64, help='Number of examples to process in a batch')
+    parser.add_argument('--batch_size', type=int, default=128, help='Number of examples to process in a batch')
     parser.add_argument('--learning_rate', type=float, default=2e-3, help='Learning rate')
     parser.add_argument('--learning_rate_decay', type=float, default=0.96, help='Learning rate decay fraction')
     parser.add_argument('--learning_rate_step', type=int, default=5000, help='Learning rate step')
     parser.add_argument('--embed_dim', type=int, default=40,
                         help='Embedding dimension. Integer, default is 40')
     parser.add_argument('--dropout_keep_prob', type=float, default=1.0, help='Dropout keep probability')
-    parser.add_argument('--train_steps', type=int, default=1e4, help='Number of training steps')
+    parser.add_argument('--train_steps', type=int, default=4e4, help='Number of training steps')
     parser.add_argument('--max_norm_gradient', type=float, default=5.0, help='--')
     parser.add_argument('--optimizer', type=str, choices=['adam', 'rmsprop'], default="RMSProp",
                         help='Optimizer, choose between adam and rmsprop')
@@ -196,7 +196,27 @@ if __name__ == "__main__":
     parser.add_argument('--decode_length', type=int, default=100,
                         help='Inference (decoding) number of steps, int default is 30')
     parser.add_argument('--model_name', type=str, default='lstm_carl_sagan', help='Model name for saving')
+    parser.add_argument('--grid_search', type=bool, default=False, help='Grid search')
     config = parser.parse_args()
 
-    # Train the model
-    train(config)
+    if config.grid_search:
+
+        for decoding_mode in ['greedy', 'sampling']:
+            for learning_rate in [2e-3, 1e-4]:
+                for optimizer in ['adam', 'rmsprop']:
+                    for txt_file in ['./books/holy_koran.txt',
+                                     './books/origin_of_species.txt',
+                                     'books/carl_sagan.txt']:
+
+                        model_name = '{}_({}_{})_{}'.format(txt_file.replace('./books/',''), optimizer, learning_rate, decoding_mode)
+                        config.decoding_mode = decoding_mode
+                        config.learning_rate = learning_rate
+                        config.optimizer = optimizer
+                        config.txt_file = txt_file
+                        config.model_name = model_name
+
+                    print('Grid Search \n {}'.format(str(config)))
+                    train(config)
+    else:
+        # Train the model
+        train(config)
