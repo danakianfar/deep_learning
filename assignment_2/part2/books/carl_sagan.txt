@@ -8708,8 +8708,7 @@ own. The ancient infonnation is written in exhaustive, careful, redundant detail
 laugh, how to sneeze, how to walk, how to recognize patterns, how to reproduce, how to 
 digest an apple. 
 
-Eating an apple is an immensely complicated process. In fact, if I had to synthesize 
-my own enzymes, if I consciously had to remember and direct all the chemical steps 
+Eating an apple is an immensely complicated process. In fact, if I had to synthesize  my own enzymes, if I consciously had to remember and direct all the chemical steps 
 required to get energy out of food, I would probably starve. But even bacteria do anaerobic 
 glycolysis, which is why apples rot: lunchtime for the microbes. They and we and all 
 creatures in between possess many similar genetic instructions. Our separate gene libraries 
@@ -8717,7 +8716,6 @@ have many pages in common, another reminder of our common evolutionary heritage.
 technology can duplicate only a tiny fraction of the intricate biochemistry that our bodies 
 effortlessly perform: we have only just begun to study these processes. Evolution, however, 
 has had billions of years of practice. DNA knows. 
-
 But suppose what you had to do was so complicated that even several billion bits 
 was insufficient. Suppose the environment was changing so fast that the precoded genetic 
 encyclopaedia, which served perfectly well before, was no longer entirely adequate. Then 
