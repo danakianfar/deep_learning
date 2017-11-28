@@ -207,9 +207,9 @@ if __name__ == "__main__":
                 for optimizer in ['adam', 'rmsprop']:
                     for txt_file in ['./books/holy_koran.txt',
                                      './books/origin_of_species.txt',
-                                     'books/carl_sagan.txt']:
-
-                        model_name = '{}_({}_{})_{}'.format(txt_file.replace('./books/',''), optimizer, learning_rate, decoding_mode)
+                                     './books/carl_sagan.txt']:
+                        model_name = '{}_({}_{})_{}'.format(txt_file.replace('./books/', ''), optimizer, learning_rate,
+                                                            decoding_mode)
                         config.decoding_mode = decoding_mode
                         config.learning_rate = learning_rate
                         config.optimizer = optimizer
