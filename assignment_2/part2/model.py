@@ -71,7 +71,6 @@ class TextGenerationModel(object):
     def _init_lstm_cell(self):
         return BasicLSTMCell(num_units=self._lstm_num_hidden, state_is_tuple=self.state_is_tuple, activation=tf.nn.relu)
 
-
     def _build_model(self):
         # Implement your model to return the logits per step of shape:
         #   [timesteps, batch_size, vocab_size]
