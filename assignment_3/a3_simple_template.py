@@ -1,6 +1,5 @@
 from collections import namedtuple
 import tensorflow as tf
-from artemis.plotting.db_plotting import dbplot, hold_dbplots
 import numpy as np
 
 
