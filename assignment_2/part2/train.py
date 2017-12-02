@@ -166,7 +166,8 @@ def train(config):
                        'whole groups of species ']
 
             for warmup in warmups:
-                warmup_tokens = np.array([dataset._char_to_ix[x] for x in warmup.lower() if x in dataset._char_to_ix]).reshape((-1, 1))
+                warmup_tokens = np.array(
+                    [dataset._char_to_ix[x] for x in warmup.lower() if x in dataset._char_to_ix]).reshape((-1, 1))
                 feed = {warmup_seq: warmup_tokens}
                 decoded_tokens = session.run(fetches=[warmup_decodes], feed_dict=feed)[0]
                 print('{}|{}'.format(warmup, dataset.convert_to_string(decoded_tokens.squeeze().tolist())))
@@ -222,24 +223,6 @@ if __name__ == "__main__":
     parser.add_argument('--grid_search', type=bool, default=False, help='Grid search')
     config = parser.parse_args()
 
-    if config.grid_search:
 
-        for decoding_mode in ['sampling', 'greedy']:
-            for learning_rate in [2e-3]:
-                for optimizer in ['rmsprop']:
-                    for txt_file in ['./books/holy_koran.txt',
-                                     './books/origin_of_species.txt',
-                                     './books/carl_sagan.txt']:
-                        model_name = '{}_({}_{})_{}'.format(txt_file.replace('./books/', ''), optimizer, learning_rate,
-                                                            decoding_mode)
-                        config.decoding_mode = decoding_mode
-                        config.learning_rate = learning_rate
-                        config.optimizer = optimizer
-                        config.txt_file = txt_file
-                        config.model_name = model_name
-
-                        print('Grid Search \n {}'.format(str(config)))
-                        train(config)
-    else:
-        # Train the model
-        train(config)
+    # Train the model
+    train(config)
