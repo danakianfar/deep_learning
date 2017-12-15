@@ -80,7 +80,7 @@ def plot(samples, title, save_path='figs/naivebayes', fname=None, probs=None):
         axs[i].axis('off')
 
         if probs is not None:
-            axs[i].set_title('p={:.4f}'.format(probs[i]))
+            axs[i].set_title('log p={:.4f}'.format(probs[i]))
 
     # Store figure.
     fig.savefig(save_path + '/{}.png'.format(fname))
@@ -194,6 +194,7 @@ def train_simple_generative_model_on_mnist(n_categories=20, initial_mag=0.01, op
     :param minibatch_size: Number of samples in a minibatch
     :param plot_n_samples: Number of samples to plot
     """
+    tf.reset_default_graph()
 
     # Get Data
     (x_train, _), (x_test, labels_test) = load_mnist_images(binarize=True, return_labels=True)
@@ -218,9 +219,9 @@ def train_simple_generative_model_on_mnist(n_categories=20, initial_mag=0.01, op
     normal_lp_op = model.log_p_x(normal)
     frankenstein_lp_op = model.log_p_x(frankenstein)
 
-    train_op = optimizer.minimize(train_nll_op)
-    train_nll_summary_op = tf.summary.scalar('train_nll', train_nll_op)
-    test_nll_summary_op = tf.summary.scalar('test_nll', test_nll_op)
+    train_op = optimizer.minimize(train_nll_op, global_step=global_step)
+    train_nll_summary_op = tf.summary.scalar('train_nll', - train_nll_op)
+    test_nll_summary_op = tf.summary.scalar('test_nll', - test_nll_op)
 
     # Sampling
     samples_op = model.sample(plot_n_samples)
@@ -231,7 +232,6 @@ def train_simple_generative_model_on_mnist(n_categories=20, initial_mag=0.01, op
         # logging
         train_log_writer = init_summary_writer(session, './summaries/naivebayes/train')
         test_log_writer = init_summary_writer(session, './summaries/naivebayes/test')
-        summary_op = tf.summary.merge_all()
 
         session.run(train_iterator.initializer)
         session.run(tf.global_variables_initializer())
@@ -256,12 +256,15 @@ def train_simple_generative_model_on_mnist(n_categories=20, initial_mag=0.01, op
             print('{}/{}: Train NLL: {} in {}s'.format(i, n_steps, train_loss, time.time() - t))
             train_log_writer.add_summary(train_summary, i)
 
+        train_log_writer.close()
+        test_log_writer.close()
+
         # Perform analysis on normal and Frankenstein digits.
         lp_normal, lp_frankenstein = session.run([normal_lp_op, frankenstein_lp_op])
         normal = np.reshape(normal, (-1, 28, 28))
         frankenstein = np.reshape(frankenstein, (-1, 28, 28))
-        plot(normal, 'Normal MNIST Evaluation', fname='normal_imgs', probs=np.exp(lp_normal))
-        plot(frankenstein, 'Frankenstein Evaluation', fname='frankenstein_imgs', probs=np.exp(lp_frankenstein))
+        plot(normal, 'Normal MNIST Evaluation', fname='normal_imgs', probs=lp_normal)
+        plot(frankenstein, 'Frankenstein Evaluation', fname='frankenstein_imgs', probs=lp_frankenstein)
 
 
 if __name__ == '__main__':
