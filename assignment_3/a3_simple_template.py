@@ -2,10 +2,12 @@ import tensorflow as tf
 import numpy as np
 import os
 import matplotlib
+
 matplotlib.use('agg')
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import time
+
 
 def get_frankenstein_images(x_test, labels_test):
     """
@@ -80,7 +82,7 @@ def plot(samples, title, save_path='figs/naivebayes', fname=None, probs=None):
         axs[i].axis('off')
 
         if probs is not None:
-            axs[i].set_title('log p={:.4f}'.format(probs[i]))
+            axs[i].set_title('log p={:.1f}'.format(probs[i]))
 
     # Store figure.
     fig.savefig(save_path + '/{}.png'.format(fname))
