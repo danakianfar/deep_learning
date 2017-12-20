@@ -75,7 +75,7 @@ def plot(samples, title, save_path='figs/naivebayes', fname=None, probs=None):
     _ensure_path_exists(save_path)
 
     fig, axs = plt.subplots(2, N // 2, figsize=(2 * (N // 2), 2 * 2),
-                            gridspec_kw={'wspace': 0.0, 'hspace': 0.0})  # , squeeze=True)
+                            gridspec_kw={'wspace': 0.0, 'hspace': 1.0})  # , squeeze=True)
     axs = axs.ravel()
 
     for i in range(N):
