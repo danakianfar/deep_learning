@@ -74,18 +74,21 @@ def plot(samples, title, save_path='figs/naivebayes', fname=None, probs=None):
     N = samples.shape[0]
     _ensure_path_exists(save_path)
 
-    fig, axs = plt.subplots(2, N // 2, figsize=(8, 8), gridspec_kw={'wspace': 0.0, 'hspace': 0.0})
+    fig, axs = plt.subplots(2, N // 2, figsize=(2 * (N // 2), 2 * 2),
+                            gridspec_kw={'wspace': 0.0, 'hspace': 0.0})  # , squeeze=True)
     axs = axs.ravel()
 
     for i in range(N):
-        axs[i].imshow(samples[i], cmap='gray')
+        axs[i].imshow(samples[i], cmap='gray', aspect='auto')
         axs[i].axis('off')
 
         if probs is not None:
-            axs[i].set_title('log p={:.1f}'.format(probs[i]))
+            axs[i].set_title('$lp=({:.1f})$'.format(probs[i]))
 
     # Store figure.
+    plt.show()
     fig.savefig(save_path + '/{}.png'.format(fname))
+    # plt.tight_layout()
     plt.close()
 
 
