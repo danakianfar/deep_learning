@@ -84,7 +84,7 @@ class VariationalAutoencoder(object):
 
             # softplus activation: ensure positivity
             var = tf.layers.dense(inputs=x, units=self._z_dim, activation=tf.exp,
-                                     kernel_initializer=self.kernel_initializer, name='enc_sigma')
+                                  kernel_initializer=self.kernel_initializer, name='enc_sigma')
         return mu, var
 
     def P(self, z):
@@ -109,28 +109,21 @@ class VariationalAutoencoder(object):
         :return: A (n_samples, ) array of the lower-bound on the log-probability of each data point
         """
         mu, var = self.Q(x)  # [batch_size, z_dim]
-        # logvar = tf.Print(logvar, [tf.identity(logvar)], 'logvar is =')
-        # var = tf.exp(1e-5 + logvar)
-        # sigma = tf.exp(logvar / 2)
         sigma = tf.sqrt(var)
-        var = tf.Print(var, [tf.identity(var), tf.identity(sigma)], 'var, sigma =')
-        mu = tf.Print(mu, [tf.identity(mu)], 'mu =')
 
         # Reparameterization trick, num samples = 1
         epsilon = tf.random_normal(shape=tf.shape(var), dtype=tf.float32)
         z = mu + epsilon * sigma  # [batch_size, z_dim]
 
-        # rec_loss = tf.reduce_sum(x * tf.log(x_hat) + (1 - x) * tf.log(1 - x_hat), 1)
-        # kl_loss = 0.5 * tf.reduce_sum(1 + z_log_var - tf.square(z_mean) - tf.exp(z_log_var), 1)
-
         # Complexity cost
-        kl = 0.5 * tf.reduce_sum(tf.log(var) - var - tf.pow(mu, 2) + 1, axis=-1)  # [N]
+        kl = tf.reduce_sum(tf.log(sigma) + 0.5 * (- var - tf.pow(mu, 2) + 1), axis=-1)  # [N]
         tf.summary.scalar('Mean KL Divergence', tf.reduce_mean(kl))
 
         # Reconstruction
         log_x_pred = self.P(z)  # [batch_size, input_dim]
         thetas = tf.exp(log_x_pred)
-        # thetas = tf.clip_by_value(thetas, 1e-7, 1 - 1e-7)
+        thetas = tf.clip_by_value(thetas, 1e-7, 1 - 1e-7)
+
         recon_loss = tf.reduce_sum(x * log_x_pred + (1 - x) * tf.log(1 - thetas), axis=-1)  # [N]
         tf.summary.scalar('Mean Reconstruction Error', tf.reduce_mean(recon_loss))
 
@@ -164,7 +157,7 @@ class VariationalAutoencoder(object):
 
 
 def train_vae_on_mnist(z_dim=2, kernel_initializer='glorot_uniform', optimizer='adam', learning_rate=0.001,
-                       n_epochs=2,
+                       n_epochs=4000,
                        test_every=100, minibatch_size=100, encoder_hidden_sizes=[200, 200],
                        decoder_hidden_sizes=[200, 200],
                        hidden_activation='relu', plot_grid_size=10, plot_n_samples=20):
@@ -201,6 +194,7 @@ def train_vae_on_mnist(z_dim=2, kernel_initializer='glorot_uniform', optimizer='
 
     # Placeholder
     input_data = tf.placeholder(dtype=tf.float32, shape=[None, n_dims])
+    manifold_input = tf.placeholder(dtype=tf.float32, shape=[None, z_dim])
     std3 = np.linspace(-3, 3, plot_grid_size)
     grid1, grid2 = np.meshgrid(std3, std3)
     manifold = np.empty((plot_grid_size * 28, plot_grid_size * 28))
@@ -254,13 +248,13 @@ def train_vae_on_mnist(z_dim=2, kernel_initializer='glorot_uniform', optimizer='
         for i in range(plot_grid_size):
             for j in range(plot_grid_size):
                 # Get linspaced values in grid at i,j
-                z = np.array([grid1[i, j], grid2[i, j]], dtype=np.float32)
+                z = np.array([grid1[i, j], grid2[i, j]], dtype=np.float32)[None,:]
 
                 # Decode image from z sample
-                img = sess.run(fetches=[vae.mean_x_given_z(z)])
-                print(img.shape)
+                img = sess.run(feed_dict={manifold_input: z}, fetches=[vae.mean_x_given_z(manifold_input)])
+
                 # save
-                manifold[28 * (i):28 * (i + 1), 28 * (j):28 * (j + 1)] = np.reshape(img, (28, 28))
+                manifold[28 * (i):28 * (i + 1), 28 * (j):28 * (j + 1)] = np.reshape(img[0].squeeze(), (28, 28))
 
         plt.figure(figsize=(8, 8))
         plt.axis('off')
@@ -268,6 +262,8 @@ def train_vae_on_mnist(z_dim=2, kernel_initializer='glorot_uniform', optimizer='
         plt.title('Manifold')
         plt.savefig('./figs/vae/manifold.png')
         plt.close()
+
+
 
 
 if __name__ == '__main__':
