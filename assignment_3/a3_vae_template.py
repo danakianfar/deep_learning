@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 import matplotlib
+import pickle
 
 matplotlib.use('agg')
 from matplotlib import pyplot as plt
@@ -122,7 +123,7 @@ class VariationalAutoencoder(object):
         # Reconstruction
         log_x_pred = self.P(z)  # [batch_size, input_dim]
         thetas = tf.exp(log_x_pred)
-        thetas = tf.clip_by_value(thetas, 1e-7, 1 - 1e-7)
+        thetas = tf.clip_by_value(thetas, 1e-6, 1 - 1e-6)
 
         recon_loss = tf.reduce_sum(x * log_x_pred + (1 - x) * tf.log(1 - thetas), axis=-1)  # [N]
         tf.summary.scalar('Mean Reconstruction Error', tf.reduce_mean(recon_loss))
@@ -218,6 +219,9 @@ def train_vae_on_mnist(z_dim=2, kernel_initializer='glorot_uniform', optimizer='
     samples_op = vae.sample(n_samples=plot_n_samples, sample_x=True)
     mean_x_given_z_op = vae.sample(n_samples=plot_n_samples, sample_x=False)
 
+    train_elbos = []
+    test_elbos = []
+
     with tf.Session() as sess:
 
         train_log_writer = init_summary_writer(sess, './summaries/vae/train')
@@ -237,18 +241,20 @@ def train_vae_on_mnist(z_dim=2, kernel_initializer='glorot_uniform', optimizer='
                 plot(samples, fname='samples_{}'.format(i))
                 plot(mean_samples, fname='mean_x_cond_z_{}'.format(i))
                 test_log_writer.add_summary(summary, i)
+                test_elbos.append((i, -test_loss))
 
             # Train
             summary, train_loss, _ = sess.run(feed_dict={input_data: sess.run(x_minibatch)},
                                               fetches=[summary_op, loss_op, train_op])
             print('{}/{}: Train Loss: {}'.format(i, n_steps, train_loss))
             train_log_writer.add_summary(summary, i)
+            train_elbos.append((i, -train_loss))
 
         # Manifold
         for i in range(plot_grid_size):
             for j in range(plot_grid_size):
                 # Get linspaced values in grid at i,j
-                z = np.array([grid1[i, j], grid2[i, j]], dtype=np.float32)[None,:]
+                z = np.array([grid1[i, j], grid2[i, j]], dtype=np.float32)[None, :]
 
                 # Decode image from z sample
                 img = sess.run(feed_dict={manifold_input: z}, fetches=[vae.mean_x_given_z(manifold_input)])
@@ -263,7 +269,8 @@ def train_vae_on_mnist(z_dim=2, kernel_initializer='glorot_uniform', optimizer='
         plt.savefig('./figs/vae/manifold.png')
         plt.close()
 
-
+        with open('elbos.pkl', 'wb') as f:
+            pickle.dump((train_elbos, test_elbos), f)
 
 
 if __name__ == '__main__':
