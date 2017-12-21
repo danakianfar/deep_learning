@@ -157,7 +157,7 @@ class VariationalAutoencoder(object):
 
 
 def train_vae_on_mnist(z_dim=2, kernel_initializer='glorot_uniform', optimizer='adam', learning_rate=0.001,
-                       n_epochs=4000,
+                       n_epochs=50,
                        test_every=100, minibatch_size=100, encoder_hidden_sizes=[200, 200],
                        decoder_hidden_sizes=[200, 200],
                        hidden_activation='relu', plot_grid_size=10, plot_n_samples=20):
