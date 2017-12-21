@@ -137,7 +137,6 @@ class NaiveBayesModel(object):
         :param x: An (n_samples, n_dims) tensor
         :return: An (n_samples, n_categories) tensor  p_x_given_z where result[i, j] indicates p(X=x[i] | Z=z[j])
         """
-        N = tf.shape(x)[0]
         X = tf.tile(tf.expand_dims(x, axis=1), multiples=(1, self._K, 1))  # [N,K,D]
         nkd_logp = self._bernoulli.log_prob(value=X, name='logp_x_cond_z')
         return tf.reduce_sum(nkd_logp, axis=-1)  # [N, K]
