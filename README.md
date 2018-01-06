@@ -62,6 +62,7 @@ We explore generative modelling with the naive bayes algorithm and variational i
   <img src="figs/manifold.png" width="500" /><br />
   <i>Manifold learned by the VAE</i>
   <br />
+  <br />
   <img src="figs/nb_means.png" width="500" /><br />
   <i>Samples from the Naive Bayes model</i>
 </p>
